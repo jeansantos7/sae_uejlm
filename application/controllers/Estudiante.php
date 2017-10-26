@@ -23,7 +23,7 @@ class Estudiante extends CI_Controller
 	$data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
 	$data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
 	$data['listarEstudiante']=$this->Modelo_Estudiante->listarEstudiante();
-	$this->load->view("plantilla", $data);
+	$this->load->view("plantilla_Secretaria", $data);
 		
 	}
 
@@ -92,7 +92,7 @@ else{
 			$data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
 		$data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
 			$data['datosEstudiante'] = $this->Modelo_Estudiante->editEstudiante($id_Estudiante);
-			$this->load->view('plantilla', $data);
+			$this->load->view('plantilla_Secretaria', $data);
 		}
 		else
 		{
