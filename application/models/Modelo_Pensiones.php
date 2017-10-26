@@ -94,7 +94,6 @@ where estudiante.cedula_Estudiante=historial_pagos.id_estudiante");
     public function historialEstudiante()
     {
       
-       # code...
         $query = $this->db->query("select * from bd_sae.estudiante,bd_sae.historial_pagos 
 where estudiante.cedula_Estudiante=historial_pagos.id_estudiante
 and estudiante.cedula_Estudiante");

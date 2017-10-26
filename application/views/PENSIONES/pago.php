@@ -47,8 +47,8 @@
 
         <div class="form-group" id="">
             <label for="exampleInputEmail1">Valor de Pension </label>
-            <input type="text" class="form-control" readonly="readonly" aria-describedby="emailHelp"  
-             value="<?php echo $value->pension_Estudiante; ?>" name="valor_de_matricula" id="valor_de_matricula">
+            <input type="text" class="form-control" readonly="readonly" aria-describedby="emailHelp"
+                   value="<?php echo $value->pension_Estudiante; ?>" name="valor_de_matricula" id="valor_de_matricula">
 
 
     <!--            <input type="hidden" name="valor_de_matricula" id="valor_de_matricula" value=""-->
@@ -65,7 +65,7 @@
 
         <div class="form-group">
            
-                       <input type="hidden" class="form-control"  id="fech_Pensiones" name="fech_Pensiones" aria-describedby="emailHelp" >
+            <input type="hidden" class="form-control"  id="fech_Pensiones" name="fech_Pensiones" aria-describedby="emailHelp" >
         </div>
 
 
@@ -76,13 +76,10 @@
     <?php } ?>
     <script src="<?php echo base_url('public/js/jquery.js'); ?>"></script>
 
-    <script>
+   <script>
             $(document).on('ready', function () {
-
-
                 $('#btn-ingresar').click(function () {
                     //alert($("#formulario").serialize());
-
                     var url = "<?php echo base_url('Pensiones/Pensi_insert'); ?>";
                     $.ajax({
                         type: "POST",
@@ -103,15 +100,12 @@
                                 $("#valor_Pensiones").val("");
                                 $("#valorquedebe").val(data.Valorquedebe);
                                 location.href="../";
-                             //   location.href"../Pensiones";
-
                             }
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
                             $("#resp").html(errorThrown);
                         }
                     });
-
                 });
                 Valor(1);
             });
@@ -134,40 +128,25 @@
                         $("#resultado").html("Procesando, espere por favor...");
                     },
                     success: function (data)
-
                     {
-
                         if (data.Valorquedebe == data.valortotal) {
-
 //                            $("#valor_Pensiones").prop("disabled", true);
-//                         $("#btn-ingresar").prop("disabled", true);
+//                            $("#btn-ingresar").prop("disabled", true);
                           //  $("#valor_de_matricula").val(data.valortotal);
                             $("#valorquedebe").val("");
                             
-
-
                         } else {
                             $("#valorquedebe").val(data.Valorquedebe);
                             //$("#valor_de_matricula").val(data.valortotal);
-
                             if (data.Valorquedebe <= 0) {
                                 $("#valor_Pensiones").prop("disabled", true);
-
                             }
                             $("#valor_Pensiones").val("");
-
-
-
                         }
-
-
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
                         $("#resp").html(errorThrown);
-
                     }
                 });
-
             }
-
     </script>

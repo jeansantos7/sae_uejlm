@@ -32,9 +32,9 @@ class Materias extends CI_Controller
 		if (isset($datos)) {
 			$nom_Materias=$datos['nom_Materias'];
 			$nom_corto_Materias=$datos['nom_corto_Materias']; 
-			$id_Curso= $datos['id_Curso'];
+			$id_Cursos= $datos['id_Cursos'];
 
-			$this->Modelo_Materias->inserMaterias( $nom_Materias, $nom_corto_Materias, $id_Curso);
+			$this->Modelo_Materias->inserMaterias( $nom_Materias, $nom_corto_Materias, $id_Cursos);
 			redirect('/Materias');
 		}
 

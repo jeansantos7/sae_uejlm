@@ -21,8 +21,9 @@ class Estudiante extends CI_Controller
 
 	$data['contenido'] = "ESTUDIANTE/index";
 	$data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
+	$data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
 	$data['listarEstudiante']=$this->Modelo_Estudiante->listarEstudiante();
-	$this->load->view("plantilla4", $data);
+	$this->load->view("plantilla", $data);
 		
 	}
 
@@ -42,19 +43,12 @@ class Estudiante extends CI_Controller
 			$nom_Estudiante		=$datos['nom_Estudiante'];
 			$fech_nac_Estudiante=$datos['fech_nac_Estudiante'];
 			$dir_Estudiante		=$datos['dir_Estudiante'];
-			$disc_Estudiante	=$datos['carnet_Estudiante'];
 			$carnet_Estudiante	=$datos['carnet_Estudiante'];
-			$cedula_Representante_Estudiante=$datos['cedula_Representante_Estudiante'];
-			$ape_Representante_Estudiante	=$datos['ape_Representante_Estudiante'];
-			$nom_Representante_Estudiante	=$datos['nom_Representante_Estudiante'];
-			$telf_Representante_Estudiante	=$datos['telf_Representante_Estudiante'];
-			$correo_Representante_Estudiante=$datos['correo_Representante_Estudiante'];
-			$dir_Representante_Estudiante	=$datos['dir_Representante_Estudiante'];
-			$parentesco_Representante_Estudiante=$datos['parentesco_Representante_Estudiante'];
-			$ocup_Representante_Estudiante		=$datos['ocup_Representante_Estudiante'];
-			$user_Estudiante					=$datos['user_Estudiante'];
-			$pass_Estudiante				=$datos['pass_Estudiante'];	
-			$pension_Estudiante				=$datos['pension_Estudiante'];
+			$parentesco_Estudiante=$datos['parentesco_Estudiante'];
+			$user_Estudiante=$datos['user_Estudiante'];
+			$pass_Estudiante=$datos['pass_Estudiante'];	
+			$pension_Estudiante	=$datos['pension_Estudiante'];
+			$id_Representantes  =$datos['id_Representantes'];
 		 
 			
 			
@@ -69,7 +63,7 @@ class Estudiante extends CI_Controller
 
 else{
 
-			$this->Modelo_Estudiante->inserEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $disc_Estudiante, $carnet_Estudiante, $cedula_Representante_Estudiante, $ape_Representante_Estudiante, $nom_Representante_Estudiante, $telf_Representante_Estudiante, $correo_Representante_Estudiante, $dir_Representante_Estudiante, $parentesco_Representante_Estudiante, $ocup_Representante_Estudiante,  $user_Estudiante, $pass_Estudiante, $pension_Estudiante);
+			$this->Modelo_Estudiante->inserEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante,  $carnet_Estudiante, $parentesco_Estudiante, $user_Estudiante, $pass_Estudiante,$pension_Estudiante,$id_Representantes);
 			redirect('/Estudiante');
 		}
 
@@ -96,6 +90,7 @@ else{
 			//mostrar datos
 			$data['contenido'] = 'Estudiante/edit';
 			$data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
+		$data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
 			$data['datosEstudiante'] = $this->Modelo_Estudiante->editEstudiante($id_Estudiante);
 			$this->load->view('plantilla', $data);
 		}
@@ -117,28 +112,21 @@ else{
 $datos=$this->input->post();
 
 			//$id_Estudiante = $datos['id_Estudiante'];
-			$matricula_Estudiante =$datos['matricula_Estudiante'];
+		$matricula_Estudiante =$datos['matricula_Estudiante'];
 			$fech_matricula_Estudiante=$datos['fech_matricula_Estudiante'];
 			$cedula_Estudiante =$datos['cedula_Estudiante'];
 			$ape_Estudiante		=$datos['ape_Estudiante'];
 			$nom_Estudiante		=$datos['nom_Estudiante'];
 			$fech_nac_Estudiante=$datos['fech_nac_Estudiante'];
 			$dir_Estudiante		=$datos['dir_Estudiante'];
-			$disc_Estudiante	=$datos['carnet_Estudiante'];
 			$carnet_Estudiante	=$datos['carnet_Estudiante'];
-			$cedula_Representante_Estudiante=$datos['cedula_Representante_Estudiante'];
-			$ape_Representante_Estudiante	=$datos['ape_Representante_Estudiante'];
-			$nom_Representante_Estudiante	=$datos['nom_Representante_Estudiante'];
-			$telf_Representante_Estudiante	=$datos['telf_Representante_Estudiante'];
-			$correo_Representante_Estudiante=$datos['correo_Representante_Estudiante'];
-			$dir_Representante_Estudiante	=$datos['dir_Representante_Estudiante'];
-			$parentesco_Representante_Estudiante=$datos['parentesco_Representante_Estudiante'];
-			$ocup_Representante_Estudiante		=$datos['ocup_Representante_Estudiante'];
-			$user_Estudiante					=$datos['user_Estudiante'];
-			$pass_Estudiante				=$datos['pass_Estudiante'];	
-			$pension_Estudiante 			=$datos['pension_Estudiante'];
+			$parentesco_Estudiante=$datos['parentesco_Estudiante'];
+			$user_Estudiante=$datos['user_Estudiante'];
+			$pass_Estudiante=$datos['pass_Estudiante'];	
+			$pension_Estudiante	=$datos['pension_Estudiante'];
+			$id_Representantes=$datos['id_Representantes'];
 
-	$this->Modelo_Estudiante->updateEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $disc_Estudiante, $carnet_Estudiante, $cedula_Representante_Estudiante, $ape_Representante_Estudiante, $nom_Representante_Estudiante, $telf_Representante_Estudiante, $correo_Representante_Estudiante, $dir_Representante_Estudiante, $parentesco_Representante_Estudiante, $ocup_Representante_Estudiante,  $user_Estudiante, $pass_Estudiante,$pension_Estudiante);
+	$this->Modelo_Estudiante->updateEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante,  $carnet_Estudiante, $parentesco_Estudiante, $user_Estudiante, $pass_Estudiante,$pension_Estudiante,$id_Representantes);
 
 	echo '<script languaje="javascript"> alert("este dato se actualizo"); </script>';
 			

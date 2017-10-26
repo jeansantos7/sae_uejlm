@@ -35,7 +35,7 @@ public function selCursos()
 		$array1 = array(
 			'nom_Materias' => $nom_Materias , 
 			'nom_corto_Materias' => $nom_corto_Materias,
-			'id_Curso' => $id_Curso
+			'id_Cursos' => $id_Cursos
 
 			);
 

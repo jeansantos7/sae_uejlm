@@ -4,7 +4,7 @@
 <h1> Vista de Pensiones </h1>
 
 
-<h1>hbhjgh</h1>
+<h1>   </h1>
  <div>
 
   <!-- Nav tabs -->

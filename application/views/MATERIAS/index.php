@@ -57,20 +57,27 @@ function myFunction() {
 
 
 
- <div>
+ 
 
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Lista de Materias </a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Registrar Materias</a></li>
-    
-  </ul>
+  
 <input type="text" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
   <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
+   <div class="portlet box green">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-comments"></i>Striped Table </div>
+                                    <div class="tools">
+                                        <a href="javascript:;" class="collapse"> </a>
+                                        <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                        <a href="javascript:;" class="reload"> </a>
+                                        <a href="javascript:;" class="remove"> </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="table-scrollable">
 
-  <table class="table table-striped" id="myTable">
+  <table class="table table-striped table-hover" id="myTable">
       <thead>
         
         <th> ID</th>
@@ -90,42 +97,46 @@ function myFunction() {
             
             <a href=" "><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Eliminar</a>
 
-            <a href=""><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Editar</a>
+            <a href=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Editar</a>
           </td>
       <?php  } ?>
       </tr>
       </tbody>
 
+
+</div>
+  </div>
+    </div>
   </table>
 
-    </div>
+  
+  
     <div role="tabpanel" class="tab-pane" id="profile">
       
-<div class="form-group" >
- 
-  </div>
+
 <form method="POST" action="<?php echo base_url('Materias/insert'); ?>">
-  <div class="form-group">
+ 
     <label for="exampleInputEmail1">Nombre de la Materia </label>
     <input type="text" class="form-control" id="nom_Materias" name="nom_Materias" aria-describedby="emailHelp" placeholder="cedula de ciudadania">
   </div>
 
 
   
-  <div class="form-group">
+  
     <label for="exampleInputEmail1">Nombre Corto de la Materia </label>
     <input type="text" class="form-control" id="nom_corto_Materias" name="nom_corto_Materias" aria-describedby="emailHelp" placeholder="Apellidos">
-  </div>
-<div class="form-group">
+  
+
 
 <label for="exampleInputEmail1">Seleccione al Curso</label>
+</br>
 <select id="id_Curso" name="id_Curso">
   <?php foreach ($selCursos as  $value) { ?>
     <option value="<?php echo $value->id_Cursos ?>"> <?php echo $value->nom_Cursos; ?>  </option>
  <?php } ?>
 
  </select>
-</div>
+</br>
 
 
   <button type="submit" class="btn btn-primary">Guardar</button>
@@ -134,18 +145,8 @@ function myFunction() {
 
 
 
-    </div>
-   
-  </div>
-
-</div>
-
-<?php 
-
-print_r($selCursos);
-
- ?>
 
 
 
-<form method="post" action="<?php echo base_url('Materias/inser'); ?>">
+
+

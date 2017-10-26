@@ -15,38 +15,40 @@ class Modelo_Estudiante extends CI_Controller
 	public function selEstudiante()
 	{
 
-		$query = $this->db->query("select * from Estudiante");
+		$query = $this->db->query("select * from Estudiante, Representante");
 		return $query->result();
 
 	}
 
-	public function inserEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $disc_Estudiante, $carnet_Estudiante, $cedula_Representante_Estudiante, $ape_Representante_Estudiante, $nom_Representante_Estudiante, $telf_Representante_Estudiante, $correo_Representante_Estudiante, $dir_Representante_Estudiante, $parentesco_Representante_Estudiante, $ocup_Representante_Estudiante,  $user_Estudiante, $pass_Estudiante, $pension_Estudiante)
+	public function selRepresentante()
+	{
+		$query = $this->db->query("select * from  Representante");
+		return $query->result();
+
+	}
+
+	public function inserEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante,  $carnet_Estudiante, $parentesco_Estudiante, $user_Estudiante, $pass_Estudiante,$pension_Estudiante, $id_Representantes)
 	{
 		 $array1 = array(
 		 //	'id_Estudiante' => $id_Estudiante,
 		 	
 		 	
 			'matricula_Estudiante'	=>	 			$matricula_Estudiante,
-			'fech_matricula_Estudiante'=> 			$fech_matricula_Estudiante,
+			//'fech_matricula_Estudiante'=> 			$fech_matricula_Estudiante,
 			'cedula_Estudiante' =>		 			$cedula_Estudiante, 
 			'ape_Estudiante'	=>		 			$ape_Estudiante, 
 			'nom_Estudiante'	=>		 			$nom_Estudiante, 
-			'fech_nac_Estudiante'	=>	 			$fech_nac_Estudiante, 
 			'dir_Estudiante'		=>	 			$dir_Estudiante, 
-			'disc_Estudiante'		=>	 			$disc_Estudiante, 
 			'carnet_Estudiante'		=>  			$carnet_Estudiante, 
-			'cedula_Representante_Estudiante' => 	$cedula_Representante_Estudiante, 
-			'ape_Representante_Estudiante'    =>	$ape_Representante_Estudiante, 
-			'nom_Representante_Estudiante'	  =>	$nom_Representante_Estudiante, 
-			'telf_Representante_Estudiante' =>	 	$telf_Representante_Estudiante, 
-			'correo_Representante_Estudiante' => 	$correo_Representante_Estudiante, 
-			'dir_Representante_Estudiante'	=>	 	$dir_Representante_Estudiante, 
-			'parentesco_Representante_Estudiante'=>	$parentesco_Representante_Estudiante, 
-			'ocup_Representante_Estudiante' 	=>	$ocup_Representante_Estudiante,  
+			'parentesco_Estudiante'=>				$parentesco_Estudiante, 
 			'user_Estudiante'	=>				 	$user_Estudiante, 
 			'pass_Estudiante'	=>				 	$pass_Estudiante,
-			'pension_Estudiante' =>					$pension_Estudiante
+			'pension_Estudiante' =>					$pension_Estudiante,
+			'id_Representantes'=>		$id_Representantes,
 		   );
+
+		  $this->db->set('fech_matricula_Estudiante', 'NOW()', FALSE);
+		 
 
 
 		 $this->db->insert('Estudiante',$array1);
@@ -75,30 +77,24 @@ class Modelo_Estudiante extends CI_Controller
 		return $query->result();
 	}
 
-	public function updateEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $disc_Estudiante, $carnet_Estudiante, $cedula_Representante_Estudiante, $ape_Representante_Estudiante, $nom_Representante_Estudiante, $telf_Representante_Estudiante, $correo_Representante_Estudiante, $dir_Representante_Estudiante, $parentesco_Representante_Estudiante, $ocup_Representante_Estudiante,  $user_Estudiante, $pass_Estudiante, $pension_Estudiante)
+	public function updateEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante,  $carnet_Estudiante, $parentesco_Estudiante, $user_Estudiante, $pass_Estudiante,$pension_Estudiante,$id_Representantes)
 	{
 		 $array2 = array(
 
-		 	'matricula_Estudiante'	=>	 	$matricula_Estudiante,
-			'fech_matricula_Estudiante'=> 	$fech_matricula_Estudiante,
-			'cedula_Estudiante' =>		 	$cedula_Estudiante, 
-			'ape_Estudiante'	=>		 	$ape_Estudiante, 
-			'nom_Estudiante'	=>		 	$nom_Estudiante, 
-			'fech_nac_Estudiante'	=>	 	$fech_nac_Estudiante, 
-			'dir_Estudiante'		=>	 	$dir_Estudiante, 
-			'disc_Estudiante'		=>	 	$disc_Estudiante, 
-			'carnet_Estudiante'		=>  	$carnet_Estudiante, 
-			'cedula_Representante_Estudiante' => 	$cedula_Representante_Estudiante, 
-			'ape_Representante_Estudiante'    =>	$ape_Representante_Estudiante, 
-			'nom_Representante_Estudiante'	  =>	$nom_Representante_Estudiante, 
-			'telf_Representante_Estudiante' =>	 	$telf_Representante_Estudiante, 
-			'correo_Representante_Estudiante' => 	$correo_Representante_Estudiante, 
-			'dir_Representante_Estudiante'	=>	 	$dir_Representante_Estudiante, 
-			'parentesco_Representante_Estudiante'=>	$parentesco_Representante_Estudiante, 
-			'ocup_Representante_Estudiante' 	=>	$ocup_Representante_Estudiante,  
+		 	'matricula_Estudiante'	=>	 			$matricula_Estudiante,
+		 	'fech_matricula_Estudiante'=> 			$fech_matricula_Estudiante,
+			'cedula_Estudiante' =>		 			$cedula_Estudiante, 
+			'ape_Estudiante'	=>		 			$ape_Estudiante, 
+			'nom_Estudiante'	=>		 			$nom_Estudiante, 
+			'fech_nac_Estudiante'	=>	 			$fech_nac_Estudiante, 
+			'dir_Estudiante'		=>	 			$dir_Estudiante, 
+			'carnet_Estudiante'		=>  			$carnet_Estudiante, 
+			'parentesco_Estudiante'=>				$parentesco_Estudiante, 
 			'user_Estudiante'	=>				 	$user_Estudiante, 
 			'pass_Estudiante'	=>				 	$pass_Estudiante,
-			'pension_Estudiante' =>					$pension_Estudiante
+			'pension_Estudiante' =>					$pension_Estudiante,
+			'id_Representantes'=>		$id_Representantes,
+
 			);
 
 		 $this->db->where('cedula_Estudiante',$cedula_Estudiante);
