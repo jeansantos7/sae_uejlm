@@ -213,7 +213,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item  ">
-                                    <a href="form_controls.html" class="nav-link ">
+                                    <a href=href="<?php echo base_url('Estudiante/index') ?>" class="nav-link ">
                                      <i class="icon-user"></i>
                                         <span class="title">Estudiantes
                                     </a>
@@ -384,7 +384,7 @@
                             </li>
                         </ul>
 
-                        
+
                         <div class="page-toolbar">
                             <div class="btn-group pull-right">
                                 <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
@@ -1009,49 +1009,41 @@
             </div>
             <!-- END FOOTER -->
             <!-- BEGIN QUICK NAV -->
-            <nav class="quick-nav">
-                <a class="quick-nav-trigger" href="#0">
-                    <span aria-hidden="true"></span>
-                </a>
-                <ul>
-                    <li>
-                        <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" target="_blank" class="active">
-                            <span>Purchase Metronic</span>
-                            <i class="icon-basket"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/reviews/4021469?ref=keenthemes" target="_blank">
-                            <span>Customer Reviews</span>
-                            <i class="icon-users"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://keenthemes.com/showcast/" target="_blank">
-                            <span>Showcase</span>
-                            <i class="icon-user"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://keenthemes.com/metronic-theme/changelog/" target="_blank">
-                            <span>Changelog</span>
-                            <i class="icon-graph"></i>
-                        </a>
-                    </li>
-                </ul>
-                <span aria-hidden="true" class="quick-nav-bg"></span>
-            </nav>
-            <div class="quick-nav-overlay"></div>
-            <!-- END QUICK NAV -->
-            <!--[if lt IE 9]>
+            
+         <script src="<?php echo base_url('public/assets/global/plugins/jquery.min.js') ?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('public/assets/global/plugins/bootstrap/js/bootstrap.min.js') ?>" type="text/javascript">
+    </script>
+         <script src="<?php echo base_url('public/assets/global/plugins/js.cookie.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/jquery.blockui.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/moment.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/morris.min.jscounterup/jquery.counterup.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/raphael-min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/counterup/jquery.waypoints.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/counterup/jquery.counterup.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/flot/jquery.flot.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/flot/jquery.flot.resize.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/flot/jquery.flot.categories.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/jquery.sparkline.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js') ?>" type="text/javascript"></script>
+
+         <script src="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js') ?>" type="text/javascript"></script>
+
+         <script src="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/assets/global/plugins/app.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/pages/scripts/dashboard.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/layouts/layout2/scripts/layout.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/layouts/layout2/scripts/demo.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/layouts/global/scripts/quick-sidebar.min.js') ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('public/layouts/global/scripts/quick-nav.min.js') ?>" type="text/javascript"></script>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-
-
-
-    <script src="" type="text/javascript"></script>
+   
   </body>
 </html>	

@@ -22,7 +22,7 @@ class Secretaria extends CI_Controller
 	$data['contenido'] = "SECRETARIA/index";
 	$data['selSecretaria'] = $this->Modelo_Secretaria->selSecretaria();
 	$data['listarSecretaria']=$this->Modelo_Secretaria->listarSecretaria();
-	$this->load->view("plantilla3", $data);
+	$this->load->view("plantilla_Directivo", $data);
 		
 	}
 
@@ -85,7 +85,7 @@ else{
 			$data['contenido'] = 'Secretaria/edit';
 			$data['selSecretaria'] = $this->Modelo_Secretaria->selSecretaria();
 			$data['datosSecretaria'] = $this->Modelo_Secretaria->editSecretaria($id_Secretaria);
-			$this->load->view('plantilla3', $data);
+			$this->load->view('plantilla_Directivo', $data);
 		}
 		else
 		{

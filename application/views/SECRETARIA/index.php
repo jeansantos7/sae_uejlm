@@ -1,4 +1,4 @@
-¬<!-- aqui estara el crud de de usuario-->
+<!-- aqui estara el crud de de usuario-->
 
 
 
@@ -76,7 +76,7 @@
   </div>
 
 
-  
+  <div role="tabpanel" class="tab-pane" id="">
   <div class="form-group">
     <label for="exampleInputEmail1">Apellidos </label>
     <input type="text" class="form-control" id="ape_Secretaria" name="ape_Secretaria" aria-describedby="emailHelp" placeholder="Apellidos">
