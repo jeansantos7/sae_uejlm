@@ -17,15 +17,13 @@ class Pensiones extends CI_Controller {
         $data['contenido'] = "Pensiones/index";
         $data['listarEstudiante_P'] = $this->Modelo_Pensiones->listarEstudiante_P();
 
-        $data['listarHistorial']= $this->Modelo_Pensiones->listarHistorial();
-         
+        $data['listarHistorial'] = $this->Modelo_Pensiones->listarHistorial();
+
 
         //$data['listarHistorial']= $this->Modelo_Pensiones->listarHistorial();
 
-        $this->load->view("plantilla5", $data);
+        $this->load->view("plantilla_Pensiones", $data);
     }
-
-    
 
     public function pago($id_Estudiante = NULL) {
 
@@ -33,7 +31,7 @@ class Pensiones extends CI_Controller {
             //mostrar datos
             $data['contenido'] = 'Pensiones/pago';
             $data['datosPensiones'] = $this->Modelo_Pensiones->pagoPensiones($id_Estudiante);
-            $this->load->view('plantilla5', $data);
+            $this->load->view('plantilla_Pensiones', $data);
         } else {
 
             redirect('/Pensiones');
@@ -64,7 +62,7 @@ class Pensiones extends CI_Controller {
         }
     }
 
-  public function Pensi_insert() {
+    public function Pensi_insert() {
         $datos = $this->input->post();
         //print_r($datos);
         if (isset($datos)) {
@@ -94,18 +92,18 @@ class Pensiones extends CI_Controller {
                     'Mes Agregado' => $mes_Pensiones,
                     'Valorquedebe' => '0'
                 );
-                
             }
             echo json_encode($datos, JSON_FORCE_OBJECT);
         }
     }
+
     public function Consultavalores() {
         $datos = $this->input->post();
         $cedula_Estudiante_Pensiones = $datos["cedula_Estudiante_Pensiones"];
         $mes_Pensiones = $datos["id_de_mes"];
         $data = $this->Modelo_Pensiones->ConsultarValores($cedula_Estudiante_Pensiones, $mes_Pensiones);
         if ($data) {
-            if ($data[0]->valor_pagado != null  ) {
+            if ($data[0]->valor_pagado != null) {
                 $valor_que_deb = $data[0]->valor_matricula - $data[0]->valor_pagado;
             } else {
                 $valor_que_deb = $data[0]->valor_matricula;
@@ -116,7 +114,6 @@ class Pensiones extends CI_Controller {
                 'Estado' => 'ok',
                 'Valorquedebe' => $valor_que_deb,
                 'valortotal' => $valortotal
-                 
             );
         } else {
             header('Content-Type: application/json');
@@ -129,25 +126,21 @@ class Pensiones extends CI_Controller {
         echo json_encode($datos, JSON_FORCE_OBJECT);
     }
 
+    public function historial($id_Estudiante = NULL) {
 
-    public function historial( $id_Estudiante = NULL)
-    {
-
-        if( $id_Estudiante != NULL)
-        {
+        if ($id_Estudiante != NULL) {
             //mostrar datos
-            $data['contenido'] = 'Pensiones/historial';
-           $data['historialEstudiante']= $this->Modelo_Pensiones->historialEstudiante();
-            $data['datosPensiones'] = $this->Modelo_Pensiones->historialEstudiante($id_Estudiante);
-            $this->load->view('plantilla5', $data);
-        }
-        else
-        {
+//           $data['contenido'] = 'Pensiones/historial';
+//           $data['historialEstudiante']= $this->Modelo_Pensiones->historialEstudiante();
+//           $data['datosPensiones'] = $this->Modelo_Pensiones->historialEstudiante($id_Estudiante);
+//           $this->load->view('plantilla5', $data);
+
+            $data = $this->Modelo_Pensiones->historialEstudiante($id_Estudiante);
+            echo json_encode($data, JSON_FORCE_OBJECT);
+        } else {
 
             redirect('');
         }
-
-
     }
 
 }

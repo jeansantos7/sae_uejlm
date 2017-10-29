@@ -30,7 +30,7 @@ class Estudiante extends CI_Controller
 	public function insert()
 	{
 		$datos=$this->input->post();
-
+                print_r($_POST);
 		if(isset($datos))
 		{
 			//$id_Estudiante = $datos['id_Estudiante'];
@@ -44,11 +44,11 @@ class Estudiante extends CI_Controller
 			$fech_nac_Estudiante=$datos['fech_nac_Estudiante'];
 			$dir_Estudiante		=$datos['dir_Estudiante'];
 			$carnet_Estudiante	=$datos['carnet_Estudiante'];
-			$parentesco_Estudiante=$datos['parentesco_Estudiante'];
+			$parentesco_Estudiante=$datos['parentesco_Representante_Estudiante'];
 			$user_Estudiante=$datos['user_Estudiante'];
 			$pass_Estudiante=$datos['pass_Estudiante'];	
 			$pension_Estudiante	=$datos['pension_Estudiante'];
-			$id_Representantes  =$datos['id_Representantes'];
+			$id_Representantes  =$datos['cedula_Representante_Estudiante'];
 		 
 			
 			

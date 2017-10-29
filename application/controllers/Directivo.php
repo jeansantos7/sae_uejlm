@@ -22,7 +22,7 @@ class Directivo extends CI_Controller
 	$data['contenido'] = "DIRECTIVO/index";
 	$data['selDirectivo'] = $this->Modelo_Directivo->selDirectivo();
 	$data['listarDirectivo']=$this->Modelo_Directivo->listarDirectivo();
-	$this->load->view("plantilla4", $data);
+	$this->load->view("plantilla_Directivo", $data);
 		
 	}
 
@@ -85,7 +85,7 @@ else{
 			$data['contenido'] = 'Directivo/edit';
 			$data['selDirectivo'] = $this->Modelo_Directivo->selDirectivo();
 			$data['datosDirectivo'] = $this->Modelo_Directivo->editDirectivo($id_Directivo);
-			$this->load->view('plantilla', $data);
+			$this->load->view('plantilla_Directivo', $data);
 		}
 		else
 		{

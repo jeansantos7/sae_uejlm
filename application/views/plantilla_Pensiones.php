@@ -28,17 +28,17 @@
         <link href="<?php echo base_url('public/assets/global/plugins/fullcalendar/fullcalendar.min.css'); ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/jqvmap.css'); ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('public/assets/global/plugins/jstree/dist/themes/default/style.min.css'); ?>" rel="stylesheet" type="text/css" />
-              <!-- END PAGE LEVEL PLUGINS -->
-              <!-- BEGIN THEME GLOBAL STYLES -->
+
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
 
 
-              <!-- END THEME GLOBAL STYLES -->
-              <!-- BEGIN THEME LAYOUT STYLES -->
-              <link href="<?php echo base_url('public/assets/layouts/layout2/css/layout.min.css'); ?>" rel="stylesheet" type="text/css" />
+        <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <link href="<?php echo base_url('public/assets/layouts/layout2/css/layout.min.css'); ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('public/assets/layouts/layout2/css/themes/blue.min.css'); ?>" rel="stylesheet" type="text/css" id="style_color" />
         <link href="<?php echo base_url('public/assets/layouts/layout2/css/custom.min.css'); ?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url('public/assets/global/css/components.min.css'); ?>" rel="stylesheet" id="style_components" type="text/css" />
-        <link href="<?php echo base_url('public/assets/global/plugins/uniform/css/uniform.default.css'); ?>" rel="stylesheet" type="text/css" />
+                <link href="<?php echo base_url('public/assets/global/css/components.min.css'); ?>" rel="stylesheet" id="style_components" type="text/css" />
 
         <!-- END THEME LAYOUT STYLES -->
         <!--<link rel="shortcut icon" href="favicon.ico" />-->
@@ -184,7 +184,7 @@
                             </a>
 
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active open ">
                             <a href="<?php echo base_url('/PENSIONES/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-notebook"></i>
                                 <span class="title">Pensiones</span>
@@ -201,7 +201,7 @@
 
 
 
-                        <li class="nav-item active open">
+                        <li class="nav-item">
                             <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="icon-users"></i>
                                 <span class="title">Matriculación</span>
@@ -211,15 +211,15 @@
 
 
                             </a>
-                            <ul class="sub-menu ">
-                                <li class="nav-item   ">
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
                                     <a href="<?php echo base_url('/Estudiante/'); ?>" class="nav-link ">
                                         <i class="icon-user"></i>
                                         <span class="title">Estudiantes
                                     </a>
                                 </li>
                                 <li class="nav-item  ">
-                                    <a href="#" class="nav-link ">
+                                    <a href="form_controls_md.html" class="nav-link ">
                                         <i class="icon-tag"></i>
                                         <span class="title">Representantes
 
@@ -243,7 +243,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item  ">
-                                    <a href="<?php echo base_url('/directivo/'); ?>" class="nav-link ">
+                                    <a href="../directivo/index" class="nav-link ">
                                         <i class="icon-user"></i>
                                         <span class="title">Usuarios Profesores</span>
                                     </a>
@@ -910,7 +910,7 @@
             <script src="<?php echo base_url('public/assets/layouts/global/scripts/quick-nav.min.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/global/plugins/jstree/dist/jstree.min.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/pages/scripts/ui-tree.js'); ?>" type="text/javascript"></script>
-<script src="<?php echo base_url('public/assets/global/plugins/uniform/jquery.uniform.min.js'); ?>" type="text/javascript"></script>
+            
 
 
 
