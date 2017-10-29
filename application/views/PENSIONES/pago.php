@@ -96,18 +96,18 @@
                                         <label for="exampleInputEmail1">Mes a Pagar </label>
                                         <select onchange="Valor(this.value)" name="mes_Pensiones" id="mes_Pensiones"  class="form-control">
 
-                                            <option value="1" >Enero</option>
-                                            <option  value="2">Febrero</option>
-                                            <option value="3" >Marzo</option>
-                                            <option value="4"  >Abril</option>
-                                            <option value="5" >Mayo</option>
-                                            <option  value="6" >Junio</option>
-                                            <option  value="7" >Julio</option>
-                                            <option  value="8" >Agosto</option>
-                                            <option  value="9" >Septiembre</option>
-                                            <option  value="10" >Octubre</option>
-                                            <option  value="11" >Noviembre</option>
-                                            <option  value="12" >Diciembre</option>
+                                            <option value="0" >Enero</option>
+                                            <option  value="1">Febrero</option>
+                                            <option value="2" >Marzo</option>
+                                            <option value="3"  >Abril</option>
+                                            <option value="4" >Mayo</option>
+                                            <option  value="5" >Junio</option>
+                                            <option  value="6" >Julio</option>
+                                            <option  value="7" >Agosto</option>
+                                            <option  value="8" >Septiembre</option>
+                                            <option  value="9" >Octubre</option>
+                                            <option  value="10" >Noviembre</option>
+                                            <option  value="11" >Diciembre</option>
                                         </select>
                                     </div>
 

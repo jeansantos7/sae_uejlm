@@ -55,7 +55,7 @@
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Consulta </a></li>
                         <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Historial de Pago</a></li>
-                        
+
                     </ul>
 
                 </div>
@@ -88,7 +88,7 @@
                                                 <a href="<?php echo base_url('Pensiones/pago/') . "/" . $value->cedula_Estudiante; ?>" class="btn btn-default"><span class="fa fa-money" aria-hidden="true"></span>  Pago</a>
                                                 <!--<a href="<?php echo base_url('Pensiones/historial/') . "/" . $value->cedula_Estudiante; ?>" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Historial de Pago</a>-->
                                                 <button type="button" class="btn btn-default" onclick="historial(<?php echo $value->cedula_Estudiante; ?>)" data-toggle="modal" data-target="#exampleModal">
-                                                 <span class="fa fa-history" aria-hidden="true"></span>   Historial de Pago
+                                                    <span class="fa fa-history" aria-hidden="true"></span>   Historial de Pago
                                                 </button>
                                             </td>
 
@@ -116,7 +116,14 @@
                                         <tr>
                                             <td> <?php echo $value->id_estudiante; ?>   </td>
                                             <td> <?php echo $value->ape_Estudiante . ' ' . $value->nom_Estudiante; ?>   </td>
-                                            <td> <?php echo $value->id_mes; ?>   </td>
+                                            <td> <?php
+                                            $array_opciones=array("Enero"=>"0","Febrero"=>"1", "Marzo"=>"2", "Abril"=>"3", "Mayo"=>"4", "Junio"=>"5", "Julio"=>"6", "Agosto"=>"7", "Septiembre"=>"8", "Octubre"=>"9", "Noviembre"=>"10", "Diciembre"=>"11"); 
+                                                foreach ($array_opciones as $indice => $valor) {
+                                                    if ($value->id_mes == $valor) {
+                                                        echo $indice;
+                                                    }
+                                                }
+                                                ?>   </td>
                                             <td> <?php echo $value->valor_del_pago; ?>   </td>
                                             <td> <?php echo $value->fecha; ?>   </td>
                                         </tr>
@@ -126,7 +133,7 @@
                             </table>
 
                         </div>
-                        
+
 
                     </div>
 
