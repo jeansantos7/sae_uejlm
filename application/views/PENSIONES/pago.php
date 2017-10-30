@@ -188,7 +188,7 @@
                                                     }
                                                 });
                                             });
-                                            Valor(1);
+                                            Valor(0);
                                         });
                                         function Valor(id) {
                                             $("#valor_Pensiones").prop("disabled", false);

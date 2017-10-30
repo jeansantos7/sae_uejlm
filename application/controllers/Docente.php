@@ -22,7 +22,7 @@ class Docente extends CI_Controller
 	$data['contenido'] = "DOCENTE/index";
 	$data['selDocente'] = $this->Modelo_Docente->selDocente();
 	$data['listarDocente']=$this->Modelo_Docente->listarDocente();
-	$this->load->view("plantilla", $data);
+	$this->load->view("plantilla5", $data);
 		
 	}
 
@@ -85,7 +85,7 @@ else{
 			$data['contenido'] = 'Docente/edit';
 			$data['selDocente'] = $this->Modelo_Docente->selDocente();
 			$data['datosDocente'] = $this->Modelo_Docente->editDocente($id_Docente);
-			$this->load->view('plantilla', $data);
+			$this->load->view('plantilla5', $data);
 		}
 		else
 		{

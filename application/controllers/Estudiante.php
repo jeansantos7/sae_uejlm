@@ -48,7 +48,7 @@ class Estudiante extends CI_Controller
 			$user_Estudiante=$datos['user_Estudiante'];
 			$pass_Estudiante=$datos['pass_Estudiante'];	
 			$pension_Estudiante	=$datos['pension_Estudiante'];
-			$id_Representantes  =$datos['cedula_Representante_Estudiante'];
+			$id_Representantes  =$datos['id_Representantes'];
 		 
 			
 			

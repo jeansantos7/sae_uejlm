@@ -70,7 +70,7 @@ function myFunction() {
 <input type="text" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
+    
 
   <table class="table table-striped" id="myTable">
       <thead>
@@ -90,9 +90,13 @@ function myFunction() {
           
           <td>
             
-            <a href=" <?php echo base_url('Docente/delete/')."/".$value->id_Docente; ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Eliminar</a>
+            <a href=" <?php echo base_url('Docente/delete/')."/".$value->id_Docente; ?>" class="btn btn-outline btn-circle btn-sm purple">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Eliminar</a>
 
-            <a href="<?php echo base_url('Docente/edit/')."/".$value->id_Docente; ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Editar</a>
+
+            <a href="<?php echo base_url('Docente/edit/')."/".$value->id_Docente; ?>" class="btn btn-outline btn-circle dark btn-sm black">
+            
+            <i class="fa fa-edit"></i> Editar </a>
           </td>
       <?php  } ?>
       </tr>
@@ -101,7 +105,7 @@ function myFunction() {
   </table>
 
     </div>
-    <div role="tabpanel" class="tab-pane" id="profile">
+    
       
 <div class="form-group" >
     <label for="exampleInputEmail1">dato </label>

@@ -66,12 +66,25 @@ var h=false;
                     <input type="text" class="form-control large" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
                 </div>
             </div>
+            <div class="portlet box blue">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-comments"></i>Estudiantes </div>
+                                    <div class="tools">
+                                        <a href="javascript:;" class="collapse"> </a>
+                                        <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                        <a href="javascript:;" class="reload"> </a>
+                                        <a href="javascript:;" class="remove"> </a>
+                                    </div>
+                                </div>
             <div class="portlet-body">
                 <div class="table-scrollable">
 
                     <div class="tab-content">
+
+
                         <div role="tabpanel" class="tab-pane active" id="home">
-                            <table class="table table-hover table-light" id="myTable">
+                            <table class="table table-striped table-bordered table-advance table-hover" id="myTable">
                                 <thead>
                                     <tr>
                                         <th> ID</th>
@@ -107,14 +120,14 @@ var h=false;
                             <form method="POST" action="<?php echo base_url('Estudiante/insert'); ?>">
 
 
-                                <div class="col-md-6">
+                         <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Numero de Matricula </label>
                                         <input type="text" class="form-control" id="matricula_Estudiante" name="matricula_Estudiante" aria-describedby="emailHelp" placeholder="000">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Fecha de matricula</label>
-                                        <input type="date" class="form-control" id="fech_matricula_Estudiante" name="fech_matricula_Estudiante" >
+                                        
+                                        <input type="hidden" class="form-control" id="fech_matricula_Estudiante" name="fech_matricula_Estudiante" >
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Cedula </label>
@@ -128,17 +141,19 @@ var h=false;
                                         <label for="exampleInputEmail1">Nombres </label>
                                         <input type="text" class="form-control" id="nom_Estudiante" name="nom_Estudiante" aria-describedby="emailHelp" placeholder="Nombres">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Direccion </label>
-                                        <input type="text" class="form-control" id="dir_Estudiante" name="dir_Estudiante" aria-describedby="emailHelp" placeholder="Domicilio">
-                                    </div>
-                                    <div class="form-group">
+                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Fecha de nacimiento</label>
                                         <input type="date" class="form-control" id="fech_nac_Estudiante" name="fech_nac_Estudiante" placeholder="contraseña"/>
                                     </div>
                                     <div class="form-group">
+                                        <label for="exampleInputEmail1">Direccion </label>
+                                        <input type="text" class="form-control" id="dir_Estudiante" name="dir_Estudiante" aria-describedby="emailHelp" placeholder="Domicilio">
+                                    </div>
+                                   
+                                    <div class="form-group">
                                         <label for="exampleInputPassword1">Discapacitado </label>
                                         <input type="Checkbox" onClick="javascript:h = !h;" class="btn btn-small" id="disc_Estudiante" name="disc_Estudiante" >
+
 
                                     </div>
                                     <div class="form-group">
@@ -147,44 +162,7 @@ var h=false;
                                                     this.blur();
                                                 }" id="carnet_Estudiante" name="carnet_Estudiante" placeholder="carnet de Discapacidad">
                                     </div>
-                                    <div class="form-group">
-
-                                        <label for="exampleInputPassword1">Cedula del Representante </label>
-                                        <input type="text" class="form-control" id="cedula_Representante_Estudiante" name="cedula_Representante_Estudiante" placeholder="Cedula">
-
-                                    </div>
-                                    <div class="form-group">
-
-                                        <label for="exampleInputPassword1">Apellidos del Representante </label>
-                                        <input type="text" class="form-control" id="ape_Representante_Estudiante" name="ape_Representante_Estudiante" placeholder="Apellidos">
-
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-
-                                        <label for="exampleInputPassword1">Nombres del Representante </label>
-                                        <input type="text" class="form-control" id="nom_Representante_Estudiante" name="nom_Representante_Estudiante" placeholder="Nombres">
-
-                                    </div>
-                                    <div class="form-group">
-
-                                        <label for="exampleInputPassword1">Numero de Contacto del Representante </label>
-                                        <input type="text" class="form-control" id="telf_Representante_Estudiante" name="telf_Representante_Estudiante" placeholder="Telefono o Celular">
-
-                                    </div>
-                                    <div class="form-group">
-
-                                        <label for="exampleInputPassword1"> Correo  de Contacto del Representante </label>
-                                        <input type="text" class="form-control" id="correo_Representante_Estudiante" name="correo_Representante_Estudiante" placeholder="Cedula">
-
-                                    </div>
-                                    <div class="form-group">
-
-                                        <label for="exampleInputPassword1"> Direccion del Representante </label>
-                                        <input type="text" class="form-control" id="dir_Representante_Estudiante" name="dir_Representante_Estudiante" placeholder="Direccion">
-
-                                    </div>
+                                   
                                     <div class="form-group">
 
                                         <label for="exampleInputPassword1"> Parentesco familiar del Representante </label>
@@ -195,15 +173,10 @@ var h=false;
                                             <option> Abuelo (a)</option>
                                         </select>
                                     </div>
-                                    <div class="form-group">
-
-                                        <label for="exampleInputPassword1"> Ocupacion  del Representante </label>
-                                        <input type="text" class="form-control" id="ocup_Representante_Estudiante" name="ocup_Representante_Estudiante" placeholder="Ocupacion">
-
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Usuario </label>
-                                        <input type="text" class="form-control" id="user_Estudiante" name="user_Estudiante" placeholder="contraseña">
+                                        <input type="text" class="form-control" id="user_Estudiante" name="user_Estudiante" placeholder="Usuario">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Password</label>
@@ -212,6 +185,15 @@ var h=false;
                                     <div class="form-group">
                                         <label for="exampleInputPassword1"> Valor de la Pension</label>
                                         <input type="text" class="form-control" id="pension_Estudiante" name="pension_Estudiante" placeholder="valor de la pension">
+                                    </div>
+
+                                    <div class="form-group" >
+                                        <label for="exampleInputEmail1">Representante </label>
+                                        </br>
+                                        <select name="id_Representantes" id="id_Representantes"> <?php   foreach ($selRepresentante as $key => $value) {?>
+                                            <option value="<?php echo $value->id_Representante?>" ><?php  echo $value->ape_Representante.' '. $value->nom_Representante ; ?></option>
+                                        <?php }  ?>
+                                         </select>
                                     </div>
                                 </div>
 

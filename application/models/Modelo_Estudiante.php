@@ -44,7 +44,7 @@ class Modelo_Estudiante extends CI_Controller
 			'user_Estudiante'	=>				 	$user_Estudiante, 
 			'pass_Estudiante'	=>				 	$pass_Estudiante,
 			'pension_Estudiante' =>					$pension_Estudiante,
-			'Representante_id_Representante'=>		$id_Representantes,
+			'id_Representantes'=>		$id_Representantes,
 		   );
 
 		  $this->db->set('fech_matricula_Estudiante', 'NOW()', FALSE);
@@ -82,7 +82,7 @@ class Modelo_Estudiante extends CI_Controller
 		 $array2 = array(
 
 		 	'matricula_Estudiante'	=>	 			$matricula_Estudiante,
-		 	'fech_matricula_Estudiante'=> 			$fech_matricula_Estudiante,
+		 //	'fech_matricula_Estudiante'=> 			$fech_matricula_Estudiante,
 			'cedula_Estudiante' =>		 			$cedula_Estudiante, 
 			'ape_Estudiante'	=>		 			$ape_Estudiante, 
 			'nom_Estudiante'	=>		 			$nom_Estudiante, 

@@ -10,7 +10,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Cedula </label>
-    <input type="text" class="form-control" readonly="readonly" id="cedula_Secretaria" name="cedula_Secretaria" aria-describedby="emailHelp" value=" <?php echo $value->cedula_Secretaria; ?>"">
+    <input type="text" class="form-control" readonly="readonly" id="cedula_Secretaria" name="cedula_Secretaria" aria-describedby="emailHelp" value=" <?php echo $value->cedula_Secretaria; ?>">
   </div>
 
 
