@@ -14,17 +14,16 @@ class Estudiante extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model("Modelo_Estudiante");
-        
     }
 
     public function index() {
 
-        if ($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'administracion') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Admin') {
             $data['contenido'] = "ESTUDIANTE/index";
             $data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
             $data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
             $data['listarEstudiante'] = $this->Modelo_Estudiante->listarEstudiante();
-            $data['user']=$this->session->userdata('username');
+            $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
         } else {
             redirect(base_url(''));

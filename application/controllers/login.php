@@ -17,7 +17,7 @@ class login extends CI_Controller {
                 $data['titulo'] = 'Login con roles de usuario en codeigniter';
                 $this->load->view('login_vista', $data);
                 break;
-            case 'Secretario':
+            case 'Admin':
                 redirect(base_url() . 'Estudiante');
                 break;
             case 'Profesor':
