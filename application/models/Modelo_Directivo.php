@@ -4,7 +4,7 @@
 /**
 * 
 */
-class Modelo_Directivo extends CI_Controller
+class Modelo_Directivo extends CI_Model
 {
 	function __construct()
 	{

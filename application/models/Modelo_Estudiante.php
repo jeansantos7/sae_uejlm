@@ -4,7 +4,7 @@
 /**
 * 
 */
-class Modelo_Estudiante extends CI_Controller
+class Modelo_Estudiante extends CI_Model
 {
 	function __construct()
 	{
