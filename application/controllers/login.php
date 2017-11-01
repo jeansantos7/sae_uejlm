@@ -7,28 +7,25 @@ class login extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Modelo_Login');
-        $this->load->library(array('session', 'form_validation'));
-        $this->load->helper(array('url', 'form'));
-        $this->load->database('default');
     }
 
     public function index() {
-        
+
         switch ($this->session->userdata('perfil')) {
             case '':
                 $data['token'] = $this->token();
                 $data['titulo'] = 'Login con roles de usuario en codeigniter';
                 $this->load->view('login_vista', $data);
                 break;
-            case 'administracion':
+            case 'Secretario':
                 redirect(base_url() . 'Estudiante');
                 break;
-            case 'secretaria':
-                redirect(base_url() . 'secretaria');
+            case 'Profesor':
+                redirect(base_url() . 'directivo');
                 break;
             case 'profesor':
                 redirect(base_url() . 'Docente');
-             case 'estudiante':
+            case 'estudiante':
                 redirect(base_url() . 'Pensiones');
                 break;
             default:
