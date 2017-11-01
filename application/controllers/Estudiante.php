@@ -1,6 +1,10 @@
+
+
+
 <?php
 
-
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 /**
 * 
 */
@@ -11,20 +15,31 @@ class Estudiante extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model("Modelo_Estudiante");
+		 $this->load->library(array('session'));
+        $this->load->helper(array('url'));
 	}
 
 
 	public function index()
+	
 	{
 
+	if ($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'administracion') 
+		{
+					$data['contenido'] = "ESTUDIANTE/index";
+					$data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
+					$data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
+					$data['listarEstudiante']=$this->Modelo_Estudiante->listarEstudiante();
+					$this->load->view("plantilla_Secretaria", $data);
+						
+		}
+
+	else
+			{
+				redirect(base_url(''));
+			}
 
 
-	$data['contenido'] = "ESTUDIANTE/index";
-	$data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
-	$data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
-	$data['listarEstudiante']=$this->Modelo_Estudiante->listarEstudiante();
-	$this->load->view("plantilla_Secretaria", $data);
-		
 	}
 
 	public function insert()

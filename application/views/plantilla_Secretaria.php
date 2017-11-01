@@ -147,6 +147,8 @@
                                 <span class="sr-only">Toggle Quick Sidebar</span>
                                 <i class="icon-logout"></i>
                             </li>
+                            
+                           
                             <!-- END QUICK SIDEBAR TOGGLER -->
                         </ul>
                     </div>
@@ -875,6 +877,7 @@
             </div>
             <!-- END FOOTER -->
             <!-- BEGIN QUICK NAV -->
+            
 
             <script src="<?php echo base_url('public/assets/global/plugins/jquery.min.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/global/plugins/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript">
