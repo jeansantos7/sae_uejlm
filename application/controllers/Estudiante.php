@@ -19,7 +19,7 @@ class Estudiante extends CI_Controller {
 
     public function index() {
 
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Admin') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
             $data['contenido'] = "ESTUDIANTE/index";
             $data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
             $data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
@@ -51,6 +51,7 @@ class Estudiante extends CI_Controller {
             $pass_Estudiante = $datos['pass_Estudiante'];
             $pension_Estudiante = $datos['pension_Estudiante'];
             $id_Representantes = $datos['id_Representantes'];
+            $tipo="estudiante";
 
 
 
@@ -64,43 +65,17 @@ class Estudiante extends CI_Controller {
             } else {
 
                 $this->Modelo_Estudiante->inserEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $parentesco_Estudiante, $user_Estudiante, $pass_Estudiante, $pension_Estudiante, $id_Representantes);
+
+                $this->Modelo_Estudiante->inserUsuario($cedula_Estudiante, $user_Estudiante, $pass_Estudiante, $tipo);
+
+
                 redirect('/Estudiante');
             }
         }
     }
 
 
-    public function insertUsu ()
-
-    {
-            
-            $datos = $this->input->post();
-        print_r($_POST);
-
-        if (isset($datos)) 
-        {
-            $cedula_Estudiante = $datos['cedula']; 
-             $user_Estudiante = $datos['usuario'];
-            $pass_Estudiante = $datos['contra'];
-           $tipo =$datos["tipo"];
-
-             $datoexiste = $this->Modelo_Estudiante->ConsultaExiste($user_Estudiante);
-             if ($datoexiste == true) 
-             {
-                echo '<script languaje="javascript"> alert("el usuario ya existe");
-                location.href="../Estudiante";
-                </script>';
-            } 
-
-            else
-             {
-                     $this->Modelo_Estudiante->inserUsuario($cedula_Estudiante, $user_Estudiante, $pass_Estudiante, $tipo);
-                }
-
-        }
-
-
-    }
+    
 
     public function delete($id_Estudiante = NULL) {
 

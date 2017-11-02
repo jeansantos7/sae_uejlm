@@ -38,6 +38,7 @@ class Modelo_Estudiante extends CI_Model {
             'pass_Estudiante' => $pass_Estudiante,
             'pension_Estudiante' => $pension_Estudiante,
             'id_Representantes' => $id_Representantes,
+            
         );
 
         $this->db->set('fech_matricula_Estudiante', 'NOW()', FALSE);
