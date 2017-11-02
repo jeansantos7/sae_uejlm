@@ -43,6 +43,7 @@
         <!-- END THEME LAYOUT STYLES -->
         <!--<link rel="shortcut icon" href="favicon.ico" />-->
 
+            <script src="<?php echo base_url('public/assets/global/plugins/jquery.min.js'); ?>" type="text/javascript"></script>
 
     </head>
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
@@ -883,7 +884,6 @@
             <!-- BEGIN QUICK NAV -->
             
 
-            <script src="<?php echo base_url('public/assets/global/plugins/jquery.min.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/global/plugins/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript">
             </script>
             <script src="<?php echo base_url('public/assets/global/plugins/js.cookie.min.js'); ?>" type="text/javascript"></script>

@@ -76,7 +76,7 @@
                                         <fieldset>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Docente </label>
-                                                <select size="1"id="docenteselect" name="docenteselect" class="form-control">
+                                                <select size="1"id="docenteselect" name="docenteselect" class="form-control js-example-basic-single">
                                                     <option value="">Seleccione</option>
                                                     <?php foreach ($ListaDocentes as $key => $value) {
                                                         ?>
@@ -87,7 +87,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Materia </label>
-                                                <select size="1"id="materiaselect" name="materiaselect" class="form-control">
+                                                <select size="1"id="materiaselect" name="materiaselect" class="form-control js-example-basic-single">
                                                     <option value="">Seleccione</option>
                                                     <?php foreach ($ListaMaterias as $key => $value) {
                                                         ?>
@@ -98,7 +98,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Grado </label>
-                                                <select size="1"id="cursoselect" name="cursoselect" class="form-control">
+                                                <select size="1"id="cursoselect" name="cursoselect" class="form-control js-example-basic-single">
                                                     <option value="">Seleccione</option>
                                                     <?php foreach ($ListaCurso as $key => $value) {
                                                         ?>
@@ -190,6 +190,8 @@
     </div>
 
 </div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
 <script>
 
     function ListaMaterias(cedula,nombre) {
@@ -288,7 +290,9 @@
             }
         }
     }
-
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+})
 </script>
 
 
