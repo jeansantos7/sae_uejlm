@@ -135,7 +135,11 @@
                                             <i class="icon-lock"></i> Lock Screen </a>
                                     </li>
                                     <li>
+
                                         <a href="<?php echo base_url ('//').'login/logout_ci'; ?>"
+
+                                        <a href="<?php echo base_url("login/logout_ci/");?>">
+
                                             <i class="icon-key"></i> Log Out </a>
                                     </li>
                                 </ul>
