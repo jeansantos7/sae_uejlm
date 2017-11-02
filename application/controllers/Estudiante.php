@@ -19,7 +19,7 @@ class Estudiante extends CI_Controller {
 
     public function index() {
 
-        if ($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') == 'administracion') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Admin') {
             $data['contenido'] = "ESTUDIANTE/index";
             $data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
             $data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
