@@ -4,7 +4,7 @@
 /**
 * 
 */
-class Modelo_Materias extends CI_Model
+class Modelo_Materias extends CI_Model{
 	
 	function __construct()
 	{

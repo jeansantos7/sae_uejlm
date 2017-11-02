@@ -11,7 +11,7 @@ class Directivo extends CI_Controller {
     }
 
     public function index() {
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Profesor') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
             $data['contenido'] = "DIRECTIVO/index";
             $data['selDirectivo'] = $this->Modelo_Directivo->selDirectivo();
             $data['listarDirectivo'] = $this->Modelo_Directivo->listarDirectivo();

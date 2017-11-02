@@ -14,7 +14,6 @@ class Estudiante extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model("Modelo_Estudiante");
-        
     }
 
     public function index() {
@@ -24,7 +23,7 @@ class Estudiante extends CI_Controller {
             $data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
             $data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
             $data['listarEstudiante'] = $this->Modelo_Estudiante->listarEstudiante();
-            $data['user']=$this->session->userdata('username');
+            $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
         } else {
             redirect(base_url(''));
@@ -51,7 +50,7 @@ class Estudiante extends CI_Controller {
             $pass_Estudiante = $datos['pass_Estudiante'];
             $pension_Estudiante = $datos['pension_Estudiante'];
             $id_Representantes = $datos['id_Representantes'];
-            $tipo="estudiante";
+            $tipo = "estudiante";
 
 
 
@@ -74,9 +73,6 @@ class Estudiante extends CI_Controller {
         }
     }
 
-
-    
-
     public function delete($id_Estudiante = NULL) {
 
         if ($id_Estudiante != NULL) {
@@ -95,6 +91,8 @@ class Estudiante extends CI_Controller {
             $data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
             $data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
             $data['datosEstudiante'] = $this->Modelo_Estudiante->editEstudiante($id_Estudiante);
+            $data['user'] = $this->session->userdata('username');
+
             $this->load->view('plantilla_Secretaria', $data);
         } else {
 

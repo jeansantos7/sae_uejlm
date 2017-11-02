@@ -21,6 +21,7 @@ class Materias extends CI_Controller
 		$data['contenido'] = "Materias/index";
 		$data['listarMaterias']=$this->Modelo_Materias->listarMaterias();
 		$data['selCursos']=$this->Modelo_Materias->selCursos();
+                $data['user'] = $this->session->userdata('username');
 		$this->load->view("plantilla4", $data);
 	}
 
