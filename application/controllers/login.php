@@ -17,13 +17,13 @@ class login extends CI_Controller {
                 $data['titulo'] = 'Login con roles de usuario en codeigniter';
                 $this->load->view('login_vista', $data);
                 break;
-            case 'Secretario':
+            case 'administracion':
                 redirect(base_url() . 'Estudiante');
                 break;
-            case 'Profesor':
-                redirect(base_url() . 'directivo');
-                break;
             case 'profesor':
+                redirect(base_url() . 'Directivo');
+                break;
+            case 'secretaria':
                 redirect(base_url() . 'Docente');
             case 'estudiante':
                 redirect(base_url() . 'Pensiones');
@@ -63,6 +63,7 @@ class login extends CI_Controller {
     public function logout_ci() {
         $this->session->sess_destroy();
         $this->index();
+        
     }
 
 }

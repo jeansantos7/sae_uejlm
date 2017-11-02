@@ -3,7 +3,7 @@
 /**
  * 
  */
-class Modelo_Pensiones extends CI_Controller {
+class Modelo_Pensiones extends CI_Model {
 
     function __construct() {
         parent::__construct();

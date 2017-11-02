@@ -55,6 +55,22 @@ class Modelo_Estudiante extends CI_Model
 	}
 
 
+	public function inserUsuario($cedula_Estudiante, $user_Estudiante,$pass_Estudiante)
+	{
+		$array = array(
+			 
+			 'cedula'   =>					$cedula_Estudiante,
+			'usuario'	=>				 	$user_Estudiante, 
+			'contra'	=>				 	$pass_Estudiante,
+			
+			
+
+			);
+		$this->db->insert('usuario',$array);
+
+	}
+
+
 	public function listarEstudiante()
 	{
 
