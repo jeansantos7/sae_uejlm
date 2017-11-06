@@ -238,6 +238,8 @@ var h=false;
                                             <td style="text-align: center;">
                                                 <a href=" <?php echo base_url('Estudiante/delete/') . "/" . $value->id_Estudiante; ?>" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Eliminar</a>
                                                 <a href="<?php echo base_url('Estudiante/edit/') . "/" . $value->id_Estudiante; ?>" class="btn btn-default"><span class="glyphicon  glyphicon-edit" aria-hidden="true"></span>  Editar</a>
+                                                
+
                                             </td>
 
                                         </tr>

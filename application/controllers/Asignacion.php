@@ -17,7 +17,7 @@ class Asignacion extends CI_Controller {
         $data['ListaCurso'] = $this->Modelo_Asignacion->ListaCurso();
         $data['user'] = $this->session->userdata('username');
 
-        $this->load->view("welcome_message", $data);
+        $this->load->view("plantilla_Secretaria", $data);
     }
 
     public function setGuardar() {

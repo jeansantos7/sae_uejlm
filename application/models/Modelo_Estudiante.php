@@ -12,7 +12,7 @@ class Modelo_Estudiante extends CI_Model {
 
     public function selEstudiante() {
 
-        $query = $this->db->query("select * from Estudiante, Representante");
+        $query = $this->db->query("select * from Estudiante");
         return $query->result();
     }
 
@@ -73,6 +73,10 @@ class Modelo_Estudiante extends CI_Model {
         $query = $this->db->query("select * from Estudiante where id_Estudiante=$id_Estudiante");
         return $query->result();
     }
+
+    
+
+
 
     public function updateEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $parentesco_Estudiante, $user_Estudiante, $pass_Estudiante, $pension_Estudiante, $id_Representantes) {
         $array2 = array(

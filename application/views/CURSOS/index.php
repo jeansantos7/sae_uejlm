@@ -75,7 +75,7 @@ function myFunction() {
         
         <th> ID</th>
         <th> Nombre del Curso</th>
-        <th> Nombre Corto</th>
+        <th> Nivel</th>
         <th> Opciones</th>
       </thead>
 
@@ -84,7 +84,7 @@ function myFunction() {
          <tr>
           <td> <?php echo $value->id_Cursos; ?>   </td>
           <td> <?php echo $value->nom_Cursos; ?>   </td>
-          <td> <?php echo $value->nom_corto_Cursos;?>   </td>
+          <td> <?php echo $value->nivel_Cursos;?>   </td>
          
           <td>
             
@@ -113,8 +113,12 @@ function myFunction() {
 
   
   <div class="form-group">
-    <label for="exampleInputEmail1">Nombre Corto del Curso </label>
-    <input type="text" class="form-control" id="nom_corto_Cursos" name="nom_corto_Cursos" aria-describedby="emailHelp" placeholder="Apellidos">
+    <label for="exampleInputEmail1">Nivel del Curso</label>
+   <select class="form-control" id="nivel_Cursos" name="nivel_Cursos" >
+                                            <option> E.G .B</option>
+                                            <option>B.G.U Tecnico</option>
+                                            <option>B.G.U Ciencias</option>
+                                        </select>
   </div>
 
   <button type="submit" class="btn btn-primary">Guardar</button>

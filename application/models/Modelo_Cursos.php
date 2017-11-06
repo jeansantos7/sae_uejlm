@@ -22,12 +22,12 @@ public function listarCursos()
 	}
 
 
-	public function inserCursos($nom_Cursos, $nom_corto_Cursos)
+	public function inserCursos($nom_Cursos, $nivel_Cursos)
 	{
 
 		$array1 = array(
 			'nom_Cursos' => $nom_Cursos , 
-			'nom_corto_Cursos' => $nom_corto_Cursos
+			'nivel_Cursos' => $nivel_Cursos
 
 			);
 

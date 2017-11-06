@@ -232,6 +232,14 @@
                                     </a>
                                 </li>
 
+                                <li class="nav-item  ">
+                                    <a href="<?php echo base_url('/Matriculacion/'); ?>" class="nav-link ">
+                                        <i class="icon-user"></i>
+                                        <span class="title">Matriculación
+
+                                    </a>
+                                </li>
+
 
                             </ul>
                         </li>
@@ -259,7 +267,7 @@
                         </li>
 
                         <li class="nav-item  ">
-                            <a href="?p=" class="nav-link nav-toggle">
+                            <a href="<?php echo base_url('/Materias/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-wallet"></i>
                                 <span class="title">Asignaturas</span>
                                 <span class="arrow"></span>
@@ -267,7 +275,7 @@
 
                         </li>
                         <li class="nav-item  ">
-                            <a href="javascript:;" class="nav-link nav-toggle">
+                            <a href="<?php echo base_url('/Cursos/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-bar-chart"></i>
                                 <span class="title">Cursos</span>
                                 <span class="arrow"></span>
@@ -275,7 +283,7 @@
 
                         </li>
                         <li class="nav-item  ">
-                            <a href="javascript:;" class="nav-link nav-toggle">
+                            <a href="<?php echo base_url('/Asignacion/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-pointer"></i>
                                 <span class="title">Asignacion</span>
                                 <span class="arrow"></span>

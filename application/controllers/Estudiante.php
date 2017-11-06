@@ -85,6 +85,9 @@ class Estudiante extends CI_Controller {
 
     public function edit($id_Estudiante = NULL) {
 
+
+if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {        
+
         if ($id_Estudiante != NULL) {
             //mostrar datos
             $data['contenido'] = 'Estudiante/edit';
@@ -94,11 +97,33 @@ class Estudiante extends CI_Controller {
             $data['user'] = $this->session->userdata('username');
 
             $this->load->view('plantilla_Secretaria', $data);
-        } else {
+        } 
+
+    }else {
 
             redirect('');
         }
     }
+
+    public function matricualar($id_Estudiante = NULL)
+    {
+
+        if ($id_Estudiante != NULL) {
+            //mostrar datos
+            $data['contenido'] = 'Estudiante/matriculacion';
+             $data['datosEstudiante'] = $this->Modelo_Estudiante->editEstudiante($id_Estudiante);
+            $this->load->view('plantilla_Secretaria', $data);
+        }
+
+            else {
+
+            redirect('');
+        }
+
+
+    }
+
+
 
     public function update() {
 

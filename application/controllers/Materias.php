@@ -3,6 +3,8 @@
 /**
 * 
 */
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 class Materias extends CI_Controller
 {
 	
@@ -18,11 +20,19 @@ class Materias extends CI_Controller
 	{
 		# code...
 
+		if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion')
+		{
+
 		$data['contenido'] = "Materias/index";
 		$data['listarMaterias']=$this->Modelo_Materias->listarMaterias();
 		$data['selCursos']=$this->Modelo_Materias->selCursos();
                 $data['user'] = $this->session->userdata('username');
-		$this->load->view("plantilla4", $data);
+		$this->load->view("plantilla_Secretaria", $data);
+	}
+	else
+	{
+		 redirect(base_url(''));
+	}
 	}
 
 
