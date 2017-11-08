@@ -36,15 +36,32 @@ class Matriculacion extends CI_Controller {
         $datos = $this->input->post();
 
         if (isset($datos)) {
-            
-            $cedula_Estudiante_matricula=$datos["cedula_Estudiante_matricula"];
-            $valorpencion=$datos["valorpencion"];
-            $lectivo=$datos["lectivo"];
-            $cursoselect=$datos["cursoselect"];
-           
 
-           $this->Modelo_Matriculacion->guardar($cedula_Estudiante_matricula,$valorpencion,$lectivo,$cursoselect);
+            $cedula_Estudiante_matricula = $datos["cedula_Estudiante_matricula"];
+            $valorpencion = $datos["valorpencion"];
+            $lectivo = $datos["lectivo"];
+            $cursoselect = $datos["cursoselect"];
+
+
+            $this->Modelo_Matriculacion->guardar($cedula_Estudiante_matricula, $valorpencion, $lectivo, $cursoselect);
             //redirect('/Matriculacion');
+        }
+    }
+
+    public function datos($id_Estudiante = NULL) {
+
+        if ($id_Estudiante != NULL) {
+            //mostrar datos
+//           $data['contenido'] = 'Pensiones/historial';
+//           $data['historialEstudiante']= $this->Modelo_Pensiones->historialEstudiante();
+//           $data['datosPensiones'] = $this->Modelo_Pensiones->historialEstudiante($id_Estudiante);
+//           $this->load->view('plantilla5', $data);
+
+            $data = $this->Modelo_Matriculacion->datos($id_Estudiante);
+            echo json_encode($data, JSON_FORCE_OBJECT);
+        } else {
+            $data = array('error' => 'error');
+            echo json_encode($data, JSON_FORCE_OBJECT);
         }
     }
 

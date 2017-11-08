@@ -22,8 +22,8 @@ class login extends CI_Controller {
 
                 redirect(base_url() . 'Estudiante');
                 break;
-            case 'profesor':
-                redirect(base_url() . 'Directivo');
+            case 'Profesor':
+                redirect(base_url() . 'MateriaNotas');
                 break;
             case 'secretaria':
                 redirect(base_url() . 'Docente');
@@ -46,6 +46,7 @@ class login extends CI_Controller {
         if ($check_user == TRUE) {
             $data = array(
                 'is_logued_in' => TRUE,
+                'id_cedula' => $check_user->cedula,
                 'id_usuario' => $check_user->id,
                 'perfil' => $check_user->tipo,
                 'username' => $check_user->usuario

@@ -44,6 +44,10 @@ class Modelo_Matriculacion extends CI_Model {
 
         $this->db->insert('matricula', $array1);
     }
+    function datos($id_Estudiante) {
+        $query = $this->db->query("SELECT nom_Cursos,nom_Cursos,cedula_Estudiante,nom_Estudiante,ape_Estudiante FROM cursos,estudiante,matricula where cedula_Estudiante=cedula_estudiante_matricula and id_Cursos =id_curso and id_curso = ".$id_Estudiante);
+        return $query->result();
+    }
 
 }
 

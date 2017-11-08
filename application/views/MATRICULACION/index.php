@@ -91,26 +91,30 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($selEstudiante as $key => $value) {
-                                            
-                                            if($value->Estado==0){
-                                            ?>
+                                        <?php
+                                        foreach ($selEstudiante as $key => $value) {
 
-                                            <tr>
-                                                <td> <?php echo $value->id_Estudiante; ?>   </td>
-                                                <td> <?php echo $value->cedula_Estudiante; ?>   </td>
-                                                <td> <?php echo $value->ape_Estudiante; ?>   </td>
-                                                <td> <?php echo $value->nom_Estudiante; ?>   </td>
-                                                <td style="text-align: center;">
-                                                    <button type="button" class="btn btn-default" onclick="Matriculas(<?php echo $value->cedula_Estudiante . ",'" . $value->nom_Estudiante . "'"; ?>)" data-toggle="modal" data-target="#exampleModal">
-                                                        <span class="fa fa-history" aria-hidden="true"></span>Matricular
-                                                    </button>
+                                            if ($value->Estado == 0) {
+                                                ?>
+
+                                                <tr>
+                                                    <td> <?php echo $value->id_Estudiante; ?>   </td>
+                                                    <td> <?php echo $value->cedula_Estudiante; ?>   </td>
+                                                    <td> <?php echo $value->ape_Estudiante; ?>   </td>
+                                                    <td> <?php echo $value->nom_Estudiante; ?>   </td>
+                                                    <td style="text-align: center;">
+                                                        <button type="button" class="btn btn-default" onclick="Matriculas(<?php echo $value->cedula_Estudiante . ",'" . $value->nom_Estudiante . "'"; ?>)" data-toggle="modal" data-target="#exampleModal">
+                                                            <span class="fa fa-history" aria-hidden="true"></span>Matricular
+                                                        </button>
 
 
-                                                </td>
+                                                    </td>
 
-                                            </tr>
-                                            <?php }} ?>
+                                                </tr>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
 
                                     </tbody>
                                 </table>
@@ -118,6 +122,21 @@
 
                             <div role="tabpanel" class="tab-pane" id="profile">
 
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Curso </label>
+                                    <select size="1" id="cursoselect2" name="cursoselect2"  onchange="mostraralumnos(this.value)" class="form-control js-example-basic-single">
+                                        <option value="">Seleccione</option>
+                                        <?php foreach ($selCursos as $key => $value) {
+                                            ?>
+                                            <option value="<?php echo $value->id_Cursos; ?>"><?php echo $value->nom_Cursos; ?></option>
+
+                                        <?php } ?>
+                                    </select>
+
+                                </div>
+                                <div class="" id="datos12">
+
+                                </div>
 
                             </div>
 
@@ -150,7 +169,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Año lectivo </label>
-                                    <select size="1"id="docenteselect" name="lectivo" class="form-control js-example-basic-single">
+                                    <select size="1" id="docenteselect" name="lectivo" class="form-control js-example-basic-single">
                                         <option value="">Seleccione</option>
                                         <?php foreach ($selLectivo as $key => $value) {
                                             ?>
@@ -200,7 +219,7 @@
         function matricular() {
 
             var url = "<?php echo base_url(); ?>Matriculacion/setguardarMartricula";
-           
+
 
             $.ajax({
                 type: "POST",
@@ -212,9 +231,9 @@
                 },
                 success: function (data)
                 {
-                     alert("Exito");
-                   location.href ="";
-                     
+                    alert("Exito");
+                    location.href = "";
+
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     alert(errorThrown);
@@ -239,7 +258,45 @@
                 }
             }
         }
+        function mostraralumnos(id) {
+            var url = "<?php echo base_url('Matriculacion/datos/'); ?>" + id;
+            $.ajax({
+                type: "POST",
+                url: url,
 
+                beforeSend: function () {
+                    alert("Procesando, espere por favor...");
+                },
+                success: function (data)
+                {
+                    //alert(data);
+
+                    var html = '<table class="table table-hover table-light">' +
+                            '<thead>' +
+                            '<tr>' +
+                            '<th>Cedula</th>' +
+                            '<th>Nombre</th>' +
+                            '</tr>' +
+                            '</thead>' +
+                            '<tbody>';
+
+
+                    $.each(JSON.parse(data), function (i, item) {
+                          //alert(item.nom_Estudiante);
+                            html += "<tr><td>" + item.cedula_Estudiante + '</td>';
+                              html += "<td>" + item.nom_Estudiante + '</td>';
+                             html += "<td>" + item.ape_Estudiante + '</td></tr>';
+                    });
+                    html += '</tbody></table>';
+                    $("#datos12").html(html);
+
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
 
     </script>
 
