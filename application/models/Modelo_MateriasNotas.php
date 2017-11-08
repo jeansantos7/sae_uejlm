@@ -21,5 +21,30 @@ and id_Materias=$idmateria and id_Cursos=$idcurso;";
         $query = $this->db->query($sql);
         return $query->result();
     }
+    function InserNotas($quimestre,$materia,$curso,$profesor,$cedu,$notaParcial1,$notaParcial2,$notaParcial3,$porcenta,$notaexamen,$porcentaexamen,$promediototal) {
+        
+                    
+        
+        $array1 = array(
+            'quimestre_MateriasNotas' =>$quimestre,
+            'id_materia_MateriasNotas' => $materia,
+            'id_curso_MateriasNotas' => $curso,
+            'id_profesor_MateriasNotas' => $profesor,
+            'cedula_estudiantes_MateriasNotas' =>$cedu ,
+            'notaparcial1_MateriasNotas' => $notaParcial1,
+            'notaparcial2_MateriasNotas' => $notaParcial2,
+            'notaparcial3_MateriasNotas' => $notaParcial3,
+            'porcentaje_MateriasNotas' => $porcenta,
+            'nota_examen_MateriasNotas' => $notaexamen,
+            'nota_examen_porcentaje_MateriasNotas' =>$porcentaexamen ,
+            'promedio_MateriasNotas' => $promediototal           
+        );
+       $this->db->insert('materiasnotas', $array1);
+       echo $this->db->last_query();                 
+            
+            
+            
+           
+    }
 
 }
