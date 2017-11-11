@@ -45,35 +45,76 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta content="Preview page of Metronic Admin Theme #2 for " name="description" />
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href= "<?php echo base_url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" '); ?>" >
-        <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
-        <!-- END GLOBAL MANDATORY STYLES -->
+       <script src="<?php echo base_url('Public/assets/global/plugins/jquery.min.js'); ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('Public/assets/global/plugins/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('Public/assets/global/plugins/js.cookie.min.js'); ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('Public/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'); ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('Public/assets/global/plugins/jquery.blockui.min.js'); ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('Public/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'); ?>" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <link href="../assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="<?php echo base_url('Public/assets/global/plugins/jquery-validation/js/jquery.validate.min.js'); ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL PLUGINS -->
-        <!-- BEGIN THEME GLOBAL STYLES -->
-        <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
-        <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
-        <!-- END THEME GLOBAL STYLES -->
-        <!-- BEGIN PAGE LEVEL STYLES -->
-        <link href="../assets/pages/css/login-5.min.css" rel="stylesheet" type="text/css" />
-        <!-- END PAGE LEVEL STYLES -->
-        <!-- BEGIN THEME LAYOUT STYLES -->
-        <!-- END THEME LAYOUT STYLES -->
-        <link rel="shortcut icon" href="favicon.ico" /> </head>
-    <!-- END HEAD -->
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/moment.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="<?php echo base_url(); ?>Public/assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <!-- END THEME GLOBAL SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="<?php echo base_url(); ?>Public/assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <script src="<?php echo base_url(); ?>Public/assets/layouts/layout3/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/layouts/layout3/scripts/demo.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>Public/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+        <!-- END THEME LAYOUT SCRIPTS -->
+        <script src="<?php echo base_url(); ?>Public/assets/pages/scripts/login-5.js" type="text/javascript"></script>
+       
+        <script>
+            $(document).ready(function ()
+            {
+                $('#clickmewow').click(function ()
+                {
+                    $('#radio1003').attr('checked', 'checked');
+                });
+            })
+            // In your Javascript (external .js resource or <script> tag)
+            $(document).ready(function () {
+                $('.js-example-basic-single').select2();
+            });
+        </script>
 
     <body class=" login">
         <!-- BEGIN : LOGIN PAGE 5-1 -->
         <div class="user-login-5">
             <div class="row bs-reset">
                 <div class="col-md-6 bs-reset mt-login-5-bsfix">
-                    <div class="login-bg" style="background-image:url(../assets/pages/img/login/bg1.jpg)">
-                        <img class="login-logo" src="../assets/pages/img/login/logo.png" /> </div>
+                    <div class="login-bg" style=" <?php echo base_url(); ?> background-image:url(Public/assets/pages/img/login/bg1.jpg)">
+                        <img class="login-logo" src=" <?php echo base_url(); ?> Public/assets/pages/img/login/logo.png" /> </div>
                 </div>
                 <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
                     <div class="login-content">
@@ -158,36 +199,52 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="../assets/global/plugins/ie8.fix.min.js"></script> 
 <![endif]-->
         <!-- BEGIN CORE PLUGINS -->
-        <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-        <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
-        <script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-        <script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-        <script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-        <!-- END CORE PLUGINS -->
-        <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <script src="../assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
-        <script src="../assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
-        <script src="../assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
-        <script src="../assets/global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
-        <!-- END PAGE LEVEL PLUGINS -->
-        <!-- BEGIN THEME GLOBAL SCRIPTS -->
-        <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
-        <!-- END THEME GLOBAL SCRIPTS -->
-        <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="../assets/pages/scripts/login-5.min.js" type="text/javascript"></script>
-        <!-- END PAGE LEVEL SCRIPTS -->
-        <!-- BEGIN THEME LAYOUT SCRIPTS -->
-        <!-- END THEME LAYOUT SCRIPTS -->
-        <script>
-            $(document).ready(function()
-            {
-                $('#clickmewow').click(function()
-                {
-                    $('#radio1003').attr('checked', 'checked');
-                });
-            })
-        </script>
+        
     </body>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>Public/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>Public/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>Public/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>Public/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <link href="<?php echo base_url(); ?>Public/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>Public/assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>Public/assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>Public/assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL PLUGINS -->
+
+        <link href="<?php echo base_url(); ?>Public/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>Public/assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>Public/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css">
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <link href="<?php echo base_url(); ?>Public/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="<?php echo base_url(); ?>Public/assets/global/css/components.min.css" rel="stylesheet"  type="text/css" />
+
+        <link href="<?php echo base_url(); ?>Public/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+        <!-- END THEME GLOBAL STYLES -->
+        <link href="<?php echo base_url(); ?>assets/pages/css/profile.min.css" rel="stylesheet" type="text/css">
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <link href="<?php echo base_url(); ?>Public/assets/layouts/layout3/css/layout.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>Public/assets/layouts/layout3/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="<?php echo base_url(); ?>Public/assets/layouts/layout3/css/custom.min.css" rel="stylesheet" type="text/css" />
+        <!-- END THEME LAYOUT STYLES -->
+
+
+        <link href="<?php echo base_url(); ?>assets/pages/css/login-5.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- END HEAD -->
+        <style type="text/css">
+            @media (min-width: 1200px){
+                .container2 {
+                    width: 1270px;
+
+                }
+                .container2{
+                    padding-left: 54px;
+                }
+            }
+
+        </style>
 
 </html>

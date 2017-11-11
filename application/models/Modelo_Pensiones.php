@@ -20,6 +20,12 @@ class Modelo_Pensiones extends CI_Model {
         return $query->result();
     }
 
+    public function listarMatricula ()
+    {
+        $query = $this->db->query("select * from Matricula");
+        return $query->result();
+    }
+
     public function inserPensiones($cedula_Estudiante_Pensiones, $ape_Estudiante_Pensiones, $nom_Estudiante_Pensiones, $mes_Pensiones, $valor_Pensiones, $fech_Pensiones) {
         $array1 = array(
             'cedula_Estudiante_Pensiones' => $cedula_Estudiante_Pensiones,
