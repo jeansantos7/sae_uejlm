@@ -97,7 +97,7 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="profile">
 
-  <div class="">
+                            <div class="">
                                 <div class="col-md-3">
                                     <div class="form-body">
                                         <div class="form-group">
@@ -233,7 +233,7 @@
 
 
     }
-    
+
     function matriaestudiantesub(idmaterias) {
 
         var cadena = idmaterias,
@@ -255,22 +255,14 @@
             success: function (data, textStatus, jqXHR) {
                 var html = '<table class="table table-bordered table-hover ">' +
                         '<thead>' +
-                        '<tr><td><select  id="quimestre" name="quimestre" class="" onchange="">' +
-                        '<option value="">Seleccione</option>' +
-                        '<option value="Q1">Q1</option>' +
-                        '<option value="Q2">Q2</option>' +
-                        '</select></td></tr>' +
-                        '<tr>' +
                         '<th>ID</th>' +
                         '<th>Cedula</th>' +
                         '<th>Nombre</th>' +
-                        '<th>Parcial 1</th>' +
-                        '<th>Parcial 2</th>' +
-                        '<th>Parcial 3</th>' +
-                        '<th>80%</th>' +
-                        '<th>Examen</th>' +
-                        '<th>20%</th>' +
-                        '<th>Promedio</th>' +
+                        '<th>Nota Q1</th>' +
+                        '<th>Nota Q2</th>' +
+                        '<th>Total</th>' +
+                        '<th>Estado</th>' +
+                        '<th>Acciones</th>' +
                         '</tr>' +
                         '</thead>' +
                         '<tbody>';
@@ -283,14 +275,18 @@
                     html += "<input type='hidden' name='profesor' value='" + CIProfe + "'>";
                     html += "<input type='hidden' name='cedu" + con + "' id='' value='" + item.cedula_Estudiante + "'>" + item.cedula_Estudiante + '</td>';
                     html += "<td>" + item.nom_Estudiante + " " + item.ape_Estudiante + '</td>';
-                    html += "<td><input type='text' onchange='calculos(" + con + ")'  class='form-control' name='notaParcial1" + con + "' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' onchange='calculos(" + con + ")' class='form-control' name='notaParcial2" + con + "' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' onchange='calculos(" + con + ")' class='form-control' name='notaParcial3" + con + "' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' class='form-control' name='porcenta" + con + "' readonly='readonly' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' onchange='calculos(" + con + ")' class='form-control' name='notaexamen" + con + "' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text'  class='form-control' name='porcentaexamen" + con + "' readonly='readonly' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' class='form-control' name='promediototal" + con + "'  value='' style=' width: 52px;' readonly='readonly'></td></tr>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaQ1_materiasnotasQuimetre + "' style=' width: 52px;'></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control' name='notaq2" + con + "' value='" + item.notaQ2_materiasnotasQuimetre + "' style=' width: 52px;'></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control' name='total" + con + "' value='" + (parseFloat(item.notaQ1_materiasnotasQuimetre) + parseFloat(item.notaQ2_materiasnotasQuimetre)) + "' style=' width: 52px;'></td>";
+                    html += "<td>";
+                    if ((parseFloat(item.notaQ1_materiasnotasQuimetre) + parseFloat(item.notaQ2_materiasnotasQuimetre)) >= 14) {
+                        html += '<div class="alert alert-success"><strong>Success!</strong> The page has been added. </div>';
 
+                    } else {
+                        html += '<div class="alert alert-warning"><strong>Warning!</strong> Your monthly traffic is reaching limit. </div>';
+
+                    }
+                    html += "</td></tr>";
                     html += "<input type='hidden' name='filas' value='" + con + "'>"
                     con++;
                 });
@@ -312,24 +308,24 @@
 
 
     }
-    
+
     function calculos(id) {
         //alert(id);
-        var nota1=$("input[name=notaParcial1"+id+"]").val();
-        var nota2=$("input[name=notaParcial2"+id+"]").val();
-        var nota3=$("input[name=notaParcial3"+id+"]").val();
-        var sumanota=(parseInt(nota1) +parseInt(nota2) +parseInt(nota3) );
+        var nota1 = $("input[name=notaParcial1" + id + "]").val();
+        var nota2 = $("input[name=notaParcial2" + id + "]").val();
+        var nota3 = $("input[name=notaParcial3" + id + "]").val();
+        var sumanota = (parseInt(nota1) + parseInt(nota2) + parseInt(nota3));
         //alert(sumanota);
-        var promedio=sumanota /3;
-        var nota=promedio*0.80;
-       // alert(promedio*0.80);
+        var promedio = sumanota / 3;
+        var nota = promedio * 0.80;
+        // alert(promedio*0.80);
 
-        $("input[name=porcenta"+id+"]").val(nota);
-        var notaexamen=$("input[name=notaexamen"+id+"]").val();
-        var porcentajenota=(notaexamen*0.20);
-        $("input[name=porcentaexamen"+id+"]").val(porcentajenota);
-        
-        $("input[name=promediototal"+id+"]").val(nota+porcentajenota);
+        $("input[name=porcenta" + id + "]").val(nota);
+        var notaexamen = $("input[name=notaexamen" + id + "]").val();
+        var porcentajenota = (notaexamen * 0.20);
+        $("input[name=porcentaexamen" + id + "]").val(porcentajenota);
+
+        $("input[name=promediototal" + id + "]").val(nota + porcentajenota);
 
     }
 
