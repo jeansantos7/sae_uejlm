@@ -115,10 +115,56 @@
                                 <div class="col-md-12">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <form id="notasdatossuple" class="" name="form" method="POST" action="<?php echo base_url('MateriaNotas/NotasALumnos'); ?>">
+                                            <form id="notasdatossuple" class="" name="form" method="POST">
 
 
                                             </form>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body" id="bodyData" style="height: 200px;">
+                                                            <form id="form" name="form"  method="POST" action="">
+                                                                <div class="row">
+                                                                    <input type='hidden' name='curso' id="curso" value=''>
+                                                                    <input type='hidden' name='materia' id="materia" value=''>
+                                                                    <input type='hidden' name='profesor' id="profesor" value=''>
+                                                                    <input type='hidden' name='cedula' id='cedula' value=''>
+                                                                    
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">Supletorio </label>
+                                                                            <input type="text" class="form-control" id="suple" name="suple" aria-describedby="suple" placeholder="Nota">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">Remedial </label>
+                                                                            <input type="text" class="form-control" id="remedial" name="remedial" aria-describedby="remedial" placeholder="Nota">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">Examen de gracia </label>
+                                                                            <input type="text" class="form-control" id="examegracia" name="examegracia" aria-describedby="examegracia" placeholder="Nota">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary" onclick="subirnotaespecial()">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -280,12 +326,30 @@
                     html += "<td><input type='text' readonly='readonly' class='form-control' name='total" + con + "' value='" + (parseFloat(item.notaQ1_materiasnotasQuimetre) + parseFloat(item.notaQ2_materiasnotasQuimetre)) + "' style=' width: 52px;'></td>";
                     html += "<td>";
                     if ((parseFloat(item.notaQ1_materiasnotasQuimetre) + parseFloat(item.notaQ2_materiasnotasQuimetre)) >= 14) {
-                        html += '<div class="alert alert-success"><strong>Success!</strong> The page has been added. </div>';
+                        html += '<div class="alert alert-success"><strong>FELICIDADES!</strong> Aprobó </div>';
 
                     } else {
-                        html += '<div class="alert alert-warning"><strong>Warning!</strong> Your monthly traffic is reaching limit. </div>';
+                        html += '<div class="alert alert-warning"><strong>Alerta!</strong> A Recuperación :C </div>';
 
                     }
+                    html += "</td>";
+
+
+
+                    html += '<td>';
+                    if ((parseFloat(item.notaQ1_materiasnotasQuimetre) + parseFloat(item.notaQ2_materiasnotasQuimetre)) >= 14) {
+                        html += '<button type="button" class="btn btn-primary" disabled data-toggle="modal" data-target="#exampleModal">\n\
+                                        Ingresar Nota\n\
+                                </button>';
+
+                    } else {
+                        html += '<button type="button" class="btn btn-primary" onclick="notassup(' + item.cedula_Estudiante + ',' + con + ')" data-toggle="modal" data-target="#exampleModal1">\n\
+                                        Ingresar Nota\n\
+                                </button>';
+
+                    }
+
+
                     html += "</td></tr>";
                     html += "<input type='hidden' name='filas' value='" + con + "'>"
                     con++;
@@ -308,6 +372,43 @@
 
 
     }
+
+    function notassup(cedula, id) {
+//        alert(cedula + " " + id);
+        $("#materia").val($("input[name=materia]").val());
+        $("#curso").val($("input[name=curso]").val());
+        $("#profesor").val($("input[name=profesor]").val());
+        $("#cedula").val($("input[name=cedu"+id+"]").val());
+
+        $("#exampleModalLabel").html(cedula);
+    }
+    function subirnotaespecial() {
+
+//        alert($("input[name=materia]").val());
+//        alert($("input[name=curso]").val());
+//        alert($("input[name=profesor]").val());
+        var url="<?php echo base_url();?>MateriaNotas/NotasALumnossup";
+
+        $.ajax({
+            data: $("#form").serialize(),
+            type: 'POST',
+            url: url,
+            beforeSend: function (xhr) {
+                alert(xhr);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+                $('#exampleModal1').modal('hide');
+                
+            },
+            success: function (data, textStatus, jqXHR) {
+                alert(data);
+            }
+
+        });
+    }
+
+
 
     function calculos(id) {
         //alert(id);

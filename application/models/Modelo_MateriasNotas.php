@@ -21,6 +21,7 @@ and id_Materias=$idmateria and id_Cursos=$idcurso;";
         $query = $this->db->query($sql);
         return $query->result();
     }
+
     function ConsultaAlumnosSub($idmateria, $idcurso) {
         $sql = "SELECT * FROM estudiante,asignacion,matricula,materias,cursos,materiasnotasquimetre
 where cedula_Estudiante=cedula_estudiante_matricula
@@ -72,6 +73,39 @@ and id_Materias=$idmateria and id_Cursos=$idcurso;";
         $this->db->where('cedula_estudiante_materiasnotasQuimetre', $cedu);
 
         $this->db->update('materiasnotasquimetre', $array1);
+        //echo $this->db->last_query();
+    }
+
+    public function inserSup($cedu, $materia, $curso, $profesor, $promediototal) {
+        $array1 = array(
+            'cedu_materiasnotasquimetrerecu' => $cedu,
+            'materia_materiasnotasquimetrerecu' => $materia,
+            'curso_materiasnotasquimetrerecu' => $curso,
+            'notarec_materiasnotasquimetrerecu' => $promediototal,
+            'profe_materiasnotasquimetrerecu' => $profesor
+        );
+        $this->db->insert('notarec_materiasnotasquimetrerecu', $array1);
+
+//echo $this->db->last_query();
+    }
+
+    public function UpSup($cedu, $materia, $curso, $profesor, $promediototal) {
+        $array1 = array(
+            'notareme_materiasnotasquimetrerecu' => $promediototal
+        );
+        $this->db->where('cedu_materiasnotasquimetrerecu', $cedu);
+
+        $this->db->update('notarec_materiasnotasquimetrerecu', $array1);
+        //echo $this->db->last_query();
+    }
+
+    public function UpSup2($cedu, $materia, $curso, $profesor, $promediototal) {
+        $array1 = array(
+            'notaexa_materiasnotasquimetrerecu' => $promediototal
+        );
+        $this->db->where('cedu_materiasnotasquimetrerecu', $cedu);
+
+        $this->db->update('notarec_materiasnotasquimetrerecu', $array1);
         //echo $this->db->last_query();
     }
 

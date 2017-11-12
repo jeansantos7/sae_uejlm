@@ -33,6 +33,7 @@ class MateriaNotas extends CI_Controller {
             echo json_encode($data, JSON_FORCE_OBJECT);
         }
     }
+
     function ConsultaAlumnosSub() {
         //print_r($_POST);
         $datos = $this->input->post();
@@ -71,9 +72,9 @@ class MateriaNotas extends CI_Controller {
                 // echo "INSERT INTO cursos(`id_Cursos`) VALUES (".$cedu.");";
                 if ($quimestre == "Q1") {
                     //echo 'Insertar notas q1 promedio';
-                    $this->Modelo_MateriasNotas->InserNotasQ1($cedu,$materia,$curso,$profesor,$promediototal);
+                    $this->Modelo_MateriasNotas->InserNotasQ1($cedu, $materia, $curso, $profesor, $promediototal);
                 } elseif ($quimestre = "Q2") {
-                    $this->Modelo_MateriasNotas->UpdateNotasQ2($cedu,$promediototal);
+                    $this->Modelo_MateriasNotas->UpdateNotasQ2($cedu, $promediototal);
                 }
             }
 
@@ -81,10 +82,41 @@ class MateriaNotas extends CI_Controller {
 
             //$data = $this->Modelo_MateriasNotas->ConsultaAlumnos($datos["id_materia"],$datos["Id_Curso"]);
             // echo json_encode($data, JSON_FORCE_OBJECT);
-             redirect('/MateriaNotas');
+            redirect('/MateriaNotas');
         } else {
             $data = array('error' => 'error');
             echo json_encode($data, JSON_FORCE_OBJECT);
+        }
+    }
+
+    function NotasALumnossup() {
+        //print_r($_POST);
+        $datos = $this->input->post();
+        if ($datos) {
+            $cedu = $datos["cedula"];
+            $materia = $datos["materia"];
+            $curso = $datos["curso"];
+            $profesor = $datos["profesor"];
+
+
+            if ($datos["suple"] != null && $datos["suple"] != "" && $datos["remedial"] == null && $datos["examegracia"] == null) {
+                $this->Modelo_MateriasNotas->inserSup($cedu, $materia, $curso, $profesor, $datos["suple"]);
+                echo 'Exito';
+
+                //  echo 'Suple' . $datos["suple"];
+            } elseif ($datos["remedial"] != null && $datos["remedial"] != "" && $datos["suple"] == null && $datos["examegracia"] == null) {
+                $this->Modelo_MateriasNotas->UpSup($cedu, $materia, $curso, $profesor, $datos["remedial"]);
+                //echo 'remedial' . $datos["remedial"];
+                echo 'Exito';
+            } elseif ($datos["examegracia"] != null && $datos["examegracia"] != "" && $datos["remedial"] == null && $datos["suple"] == null) {
+                $this->Modelo_MateriasNotas->UpSup2($cedu, $materia, $curso, $profesor, $datos["examegracia"]);
+                //echo 'examegracia' . $datos["examegracia"];
+                echo 'Exito';
+            } else {
+                echo 'Solo Un Campo';
+            }
+        } else {
+            echo 'Error';
         }
     }
 
