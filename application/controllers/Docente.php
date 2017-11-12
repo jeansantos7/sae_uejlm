@@ -17,14 +17,19 @@ class Docente extends CI_Controller
 	public function index()
 	{
 
-
+if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
 
 	$data['contenido'] = "DOCENTE/index";
 	$data['selDocente'] = $this->Modelo_Docente->selDocente();
 	$data['listarDocente']=$this->Modelo_Docente->listarDocente();
-	$this->load->view("plantilla5", $data);
+	$data['user'] = $this->session->userdata('username');
+	$this->load->view("plantilla_Secretaria", $data);
 		
 	}
+	 else {
+            redirect(base_url(''));
+        }
+    }
 
 	public function insert()
 	{

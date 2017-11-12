@@ -3,7 +3,7 @@
 /**
  * 
  */
-class Modelo_Estudiante extends CI_Model {
+class Modelo_RegistroEstudiante extends CI_Model {
 
     function __construct() {
         parent::__construct();

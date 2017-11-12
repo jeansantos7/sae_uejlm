@@ -4,7 +4,7 @@
 /**
 * 
 */
-class Modelo_Secretaria extends CI_Model
+class Modelo_RegistroSecretaria extends CI_Model
 {
 	
 	function __construct()

@@ -9,20 +9,20 @@ if (!defined('BASEPATH'))
 /**
  * 
  */
-class Estudiante extends CI_Controller {
+class RegistroEstudiante extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model("Modelo_Estudiante");
+        $this->load->model("Modelo_RegistroEstudiante");
     }
 
     public function index() {
 
         if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
-            $data['contenido'] = "ESTUDIANTE/index";
-            $data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
-            $data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
-            $data['listarEstudiante'] = $this->Modelo_Estudiante->listarEstudiante();
+            $data['contenido'] = "REGISTROESTUDIANTE/index";
+            $data['selEstudiante'] = $this->Modelo_RegistroEstudiante->selEstudiante();
+            $data['selRepresentante'] = $this->Modelo_RegistroEstudiante->selRepresentante();
+            $data['listarEstudiante'] = $this->Modelo_RegistroEstudiante->listarEstudiante();
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
         } else {
@@ -90,10 +90,10 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 
         if ($id_Estudiante != NULL) {
             //mostrar datos
-            $data['contenido'] = 'Estudiante/edit';
-            $data['selEstudiante'] = $this->Modelo_Estudiante->selEstudiante();
-            $data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
-            $data['datosEstudiante'] = $this->Modelo_Estudiante->editEstudiante($id_Estudiante);
+            $data['contenido'] = 'REGISTROEstudiante/edit';
+            $data['selEstudiante'] = $this->Modelo_RegistroEstudiante->selEstudiante();
+            $data['selRepresentante'] = $this->Modelo_RegistroEstudiante->selRepresentante();
+            $data['datosEstudiante'] = $this->Modelo_RegistroEstudiante->editEstudiante($id_Estudiante);
             $data['user'] = $this->session->userdata('username');
 
             $this->load->view('plantilla_Secretaria', $data);

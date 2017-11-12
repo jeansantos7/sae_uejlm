@@ -20,12 +20,12 @@ class login extends CI_Controller {
 
             case 'administracion':
 
-                redirect(base_url() . 'Estudiante');
+                redirect(base_url() . 'RegistroEstudiante');
                 break;
             case 'Profesor':
                 redirect(base_url() . 'MateriaNotas');
                 break;
-            case 'secretaria':
+            case 'Secretario':
                 redirect(base_url() . 'Docente');
             case 'Estudiante':
                 redirect(base_url() . 'ConsultaNotas');

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>403 Forbidden</title>
+    <title>403 Forbidden</title>
 </head>
 <body>
     <?php  ?>
@@ -83,13 +83,11 @@ License: You must have a valid license purchased only from themeforest(the above
             @media (min-width: 1200px){
                 .container2 {
                     width: 1270px;
-
                 }
                 .container2{
                     padding-left: 54px;
                 }
             }
-
         </style>
 
 </head>
@@ -105,7 +103,10 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
                     <div class="login-content">
-                        <h1>Metronic Admin Login</h1>
+                     <img class="login-logo" src="<?php echo base_url(); ?>Public/assets/pages/img/login/logo.png" />
+                        <h1>Unidad Educativa Particular</h1>
+                        <h2>Juan León Mera</h2>
+
                         <p> Lorem ipsum dolor sit amet, coectetuer adipiscing elit sed diam nonummy et nibh euismod aliquam erat volutpat. Lorem ipsum dolor sit amet, coectetuer adipiscing. </p>
                         <form action="javascript:;" class="login-form" method="post">
                             <div class="alert alert-danger display-hide">
@@ -114,7 +115,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <input class="form-control form-control-solid placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Username" name="username" required/> </div>
+                                    <input class="form-control form-control-solid placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Username" name="usuario" required/> </div>
                                 <div class="col-xs-6">
                                     <input class="form-control form-control-solid placeholder-no-fix form-group" type="password" autocomplete="off" placeholder="Password" name="password" required/> </div>
                             </div>

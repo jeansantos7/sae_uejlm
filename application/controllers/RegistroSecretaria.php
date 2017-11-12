@@ -4,13 +4,13 @@
 /**
 * 
 */
-class Secretaria extends CI_Controller
+class RegistroSecretaria extends CI_Controller
 {
 	
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model("Modelo_Secretaria");
+		$this->load->model("Modelo_RegistroSecretaria");
 	}
 
 
@@ -19,9 +19,9 @@ class Secretaria extends CI_Controller
 
 
 
-	$data['contenido'] = "SECRETARIA/index";
-	$data['selSecretaria'] = $this->Modelo_Secretaria->selSecretaria();
-	$data['listarSecretaria']=$this->Modelo_Secretaria->listarSecretaria();
+	$data['contenido'] = "REGISTROSECRETARIA/index";
+	$data['selSecretaria'] = $this->Modelo_RegistroSecretaria->selSecretaria();
+	$data['listarSecretaria']=$this->Modelo_RegistroSecretaria->listarSecretaria();
 	$this->load->view("plantilla_Directivo", $data);
 		
 	}
