@@ -253,7 +253,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item  ">
-                                    <a href="elements_steps.html" class="nav-link ">
+                                    <a href="<?php echo base_url('/ActasCalificaciones/'); ?>" class="nav-link ">
                                         <i class="icon-docs"></i>
                                         <span class="title">Actas de Calificaciones</span>
                                     </a>

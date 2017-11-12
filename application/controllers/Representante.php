@@ -4,6 +4,8 @@
 /**
 * 
 */
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 class Representante extends CI_Controller
 {
 	
