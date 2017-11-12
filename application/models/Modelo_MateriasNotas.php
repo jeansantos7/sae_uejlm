@@ -84,7 +84,7 @@ and id_Materias=$idmateria and id_Cursos=$idcurso;";
             'notarec_materiasnotasquimetrerecu' => $promediototal,
             'profe_materiasnotasquimetrerecu' => $profesor
         );
-        $this->db->insert('notarec_materiasnotasquimetrerecu', $array1);
+        $this->db->insert('materiasnotasquimetrerecu', $array1);
 
 //echo $this->db->last_query();
     }
@@ -95,7 +95,7 @@ and id_Materias=$idmateria and id_Cursos=$idcurso;";
         );
         $this->db->where('cedu_materiasnotasquimetrerecu', $cedu);
 
-        $this->db->update('notarec_materiasnotasquimetrerecu', $array1);
+        $this->db->update('materiasnotasquimetrerecu', $array1);
         //echo $this->db->last_query();
     }
 
@@ -105,7 +105,7 @@ and id_Materias=$idmateria and id_Cursos=$idcurso;";
         );
         $this->db->where('cedu_materiasnotasquimetrerecu', $cedu);
 
-        $this->db->update('notarec_materiasnotasquimetrerecu', $array1);
+        $this->db->update('materiasnotasquimetrerecu', $array1);
         //echo $this->db->last_query();
     }
 

@@ -136,7 +136,7 @@
                                                                     <input type='hidden' name='materia' id="materia" value=''>
                                                                     <input type='hidden' name='profesor' id="profesor" value=''>
                                                                     <input type='hidden' name='cedula' id='cedula' value=''>
-                                                                    
+
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <label for="exampleInputEmail1">Supletorio </label>
@@ -378,7 +378,7 @@
         $("#materia").val($("input[name=materia]").val());
         $("#curso").val($("input[name=curso]").val());
         $("#profesor").val($("input[name=profesor]").val());
-        $("#cedula").val($("input[name=cedu"+id+"]").val());
+        $("#cedula").val($("input[name=cedu" + id + "]").val());
 
         $("#exampleModalLabel").html(cedula);
     }
@@ -387,7 +387,7 @@
 //        alert($("input[name=materia]").val());
 //        alert($("input[name=curso]").val());
 //        alert($("input[name=profesor]").val());
-        var url="<?php echo base_url();?>MateriaNotas/NotasALumnossup";
+        var url = "<?php echo base_url(); ?>MateriaNotas/NotasALumnossup";
 
         $.ajax({
             data: $("#form").serialize(),
@@ -398,11 +398,12 @@
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert(errorThrown);
-                $('#exampleModal1').modal('hide');
-                
+
             },
             success: function (data, textStatus, jqXHR) {
                 alert(data);
+                $('#exampleModal1').modal('hide');
+
             }
 
         });
