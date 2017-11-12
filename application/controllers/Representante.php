@@ -22,7 +22,8 @@ class Representante extends CI_Controller
 	$data['contenido'] = "REPRESENTANTE/index";
 	//$data['selRepresentante'] = $this->Modelo_Representante->selRepresentante();
 	$data['listarRepresentante']=$this->Modelo_Representante->listarRepresentante();
-	$this->load->view("plantilla", $data);
+	$data['user'] = $this->session->userdata('username');
+	$this->load->view("plantilla_Secretaria", $data);
 		
 	}
 

@@ -181,20 +181,21 @@
                     <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
                     <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
                     <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-                    <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                        <li class="nav-item start ">
-                            <a href="javascript:;" class="nav-link nav-toggle">
+              <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                        <li class="nav-item active open ">
+                             <a href="<?php echo base_url('/SECRETARIA/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-home"></i>
                                 <span class="title">Inicio</span>
                                 <span class="arrow"></span>
                             </a>
 
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active open ">
                             <a href="<?php echo base_url('/PENSIONES/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-notebook"></i>
                                 <span class="title">Pensiones</span>
-                                <span class="arrow"></span>
+                                <span class="selected"></span>
+                                <span class="arrow open"></span>
                             </a>
                             <ul class="sub-menu">
 
@@ -211,21 +212,22 @@
                             <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="icon-users"></i>
                                 <span class="title">Matriculación</span>
-                                <span class="selected"></span>
-                                <span class="arrow open"></span>
+                                
+                                <span class="arrow"></span>
 
 
 
                             </a>
+                            
                             <ul class="sub-menu ">
-                                <li class="nav-item   ">
-                                    <a href="<?php echo base_url('/Estudiante/'); ?>" class="nav-link ">
+                                <li class="nav-item active open ">
+                                    <a href="<?php echo base_url('/RegistroEstudiante/'); ?>" class="nav-link ">
                                         <i class="icon-user"></i>
                                         <span class="title">Estudiantes
                                     </a>
                                 </li>
                                 <li class="nav-item  ">
-                                    <a href="#" class="nav-link ">
+                                    <a href="<?php echo base_url('/Representante/'); ?>" class="nav-link ">
                                         <i class="icon-tag"></i>
                                         <span class="title">Representantes
 
@@ -243,7 +245,7 @@
 
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active open ">
                             <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="icon-bag"></i>
                                 <span class="title">Profesores</span>
@@ -257,7 +259,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item  ">
-                                    <a href="<?php echo base_url('/directivo/'); ?>" class="nav-link ">
+                                    <a href="<?php echo base_url('/RegistroDocente/'); ?>" class="nav-link ">
                                         <i class="icon-user"></i>
                                         <span class="title">Usuarios Profesores</span>
                                     </a>
@@ -266,7 +268,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item  ">
+                        <li class="nav-item active open ">
                             <a href="<?php echo base_url('/Materias/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-wallet"></i>
                                 <span class="title">Asignaturas</span>
@@ -274,7 +276,7 @@
                             </a>
 
                         </li>
-                        <li class="nav-item  ">
+                        <li class="nav-item active open ">
                             <a href="<?php echo base_url('/Cursos/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-bar-chart"></i>
                                 <span class="title">Cursos</span>
@@ -282,18 +284,20 @@
                             </a>
 
                         </li>
-                        <li class="nav-item  ">
+                        <li class="nav-item active open ">
                             <a href="<?php echo base_url('/Asignacion/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-pointer"></i>
                                 <span class="title">Asignacion</span>
                                 <span class="arrow"></span>
                             </a>
 
-                        </li>
+                        </li>  
+
+
+                    </ul>-->
 
 
 
-                    </ul>
                     <!-- END SIDEBAR MENU -->
                 </div>
                 <!-- END SIDEBAR -->

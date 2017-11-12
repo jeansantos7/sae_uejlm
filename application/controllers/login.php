@@ -20,15 +20,15 @@ class login extends CI_Controller {
 
             case 'administracion':
 
-                redirect(base_url() . 'RegistroEstudiante');
+                redirect(base_url() . 'Directivo');
                 break;
             case 'Profesor':
-                redirect(base_url() . 'MateriaNotas');
+                redirect(base_url() . 'Docente');
                 break;
             case 'Secretario':
-                redirect(base_url() . 'Docente');
+                redirect(base_url() . 'Secretaria');
             case 'Estudiante':
-                redirect(base_url() . 'ConsultaNotas');
+                redirect(base_url() . 'Estudiante');
                 break;
             default:
                 $data['titulo'] = 'Login con roles de usuario en codeigniter';

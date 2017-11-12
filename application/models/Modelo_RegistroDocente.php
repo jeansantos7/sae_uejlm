@@ -4,7 +4,7 @@
 /**
 * 
 */
-class Modelo_Docente extends CI_Model
+class Modelo_RegistroDocente extends CI_Model
 {
 	
 	function __construct()

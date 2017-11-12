@@ -21,7 +21,8 @@ class Cursos extends CI_Controller
 	{
 		# code...
 
-		if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+		if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion'
+			|| $this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
 
 
 		$data['contenido'] = "Cursos/index";

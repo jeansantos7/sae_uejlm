@@ -3,18 +3,18 @@
 /**
  * 
  */
-class Directivo extends CI_Controller {
+class RegistroDirectivo extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model("Modelo_Directivo");
+        $this->load->model("Modelo_RegistroDirectivo");
     }
 
     public function index() {
         if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
-            $data['contenido'] = "DIRECTIVO/index";
-            $data['selDirectivo'] = $this->Modelo_Directivo->selDirectivo();
-            $data['listarDirectivo'] = $this->Modelo_Directivo->listarDirectivo();
+            $data['contenido'] = "REGISTRODIRECTIVO/index";
+            $data['selDirectivo'] = $this->Modelo_RegistroDirectivo->selDirectivo();
+            $data['listarDirectivo'] = $this->Modelo_RegistroDirectivo->listarDirectivo();
             $this->load->view("plantilla_Directivo", $data);
         } else {
             redirect(base_url(''));
@@ -68,8 +68,8 @@ class Directivo extends CI_Controller {
 
         if ($id_Directivo != NULL) {
             //mostrar datos
-            $data['contenido'] = 'Directivo/edit';
-            $data['selDirectivo'] = $this->Modelo_Directivo->selDirectivo();
+            $data['contenido'] = 'RegistroDirectivo/edit';
+            $data['selDirectivo'] = $this->Modelo_RegistroDirectivo->selDirectivo();
             $data['datosDirectivo'] = $this->Modelo_Directivo->editDirectivo($id_Directivo);
             $this->load->view('plantilla_Directivo', $data);
         } else {
@@ -98,7 +98,7 @@ class Directivo extends CI_Controller {
 
         echo '<script languaje="javascript"> alert("este dato se actualizo"); </script>';
 
-        redirect('/Directivo');
+        redirect('/RegistroDirectivo');
     }
 
 }

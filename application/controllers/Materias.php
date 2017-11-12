@@ -20,7 +20,7 @@ class Materias extends CI_Controller
 	{
 		# code...
 
-		if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion')
+		if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario')
 		{
 
 		$data['contenido'] = "Materias/index";

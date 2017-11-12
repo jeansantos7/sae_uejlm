@@ -18,7 +18,7 @@ class RegistroEstudiante extends CI_Controller {
 
     public function index() {
 
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
             $data['contenido'] = "REGISTROESTUDIANTE/index";
             $data['selEstudiante'] = $this->Modelo_RegistroEstudiante->selEstudiante();
             $data['selRepresentante'] = $this->Modelo_RegistroEstudiante->selRepresentante();

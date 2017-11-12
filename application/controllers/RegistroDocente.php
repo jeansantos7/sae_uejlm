@@ -4,24 +4,25 @@
 /**
 * 
 */
-class Docente extends CI_Controller
+class RegistroDocente extends CI_Controller
 {
 	
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model("Modelo_Docente");
+		$this->load->model("Modelo_RegistroDocente");
 	}
 
 
 	public function index()
 	{
 
-if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario' 
+	|| $this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion' ) {
 
-	$data['contenido'] = "DOCENTE/index";
-	$data['selDocente'] = $this->Modelo_Docente->selDocente();
-	$data['listarDocente']=$this->Modelo_Docente->listarDocente();
+	$data['contenido'] = "REGISTRODOCENTE/index";
+	$data['selDocente'] = $this->Modelo_RegistroDocente->selDocente();
+	$data['listarDocente']=$this->Modelo_RegistroDocente->listarDocente();
 	$data['user'] = $this->session->userdata('username');
 	$this->load->view("plantilla_Secretaria", $data);
 		
@@ -87,9 +88,9 @@ else{
 		if( $id_Docente != NULL)
 		{
 			//mostrar datos
-			$data['contenido'] = 'Docente/edit';
-			$data['selDocente'] = $this->Modelo_Docente->selDocente();
-			$data['datosDocente'] = $this->Modelo_Docente->editDocente($id_Docente);
+			$data['contenido'] = 'REGISTRODocente/edit';
+			$data['selDocente'] = $this->Modelo_RegistroDocente->selDocente();
+			$data['datosDocente'] = $this->Modelo_RegistroDocente->editDocente($id_Docente);
 			$this->load->view('plantilla5', $data);
 		}
 		else

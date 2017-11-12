@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>403 Forbidden</title>
-</head>
-<body>
-    <?php  ?>
-    <form name="form1" method="POST" action="login/login_user">
-        <input type="text" name="usuario" value="" />
-        <input type="password" name="contra" value="" />
-        <input type="submit" value="iniciar" />
-    </form>
-</body>
 
-
-</html>
 
 
 <!DOCTYPE html>
@@ -99,40 +84,44 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="col-md-6 bs-reset mt-login-5-bsfix">
                     <div class="login-bg">
                     </div>
-                        
+                    
                 </div>
                 <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
                     <div class="login-content">
+                    <div class="col-md-6">
                      <img class="login-logo" src="<?php echo base_url(); ?>Public/assets/pages/img/login/logo.png" />
-                        <h1>Unidad Educativa Particular</h1>
-                        <h2>Juan León Mera</h2>
+                        </div>
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+                        </br>
 
-                        <p> Lorem ipsum dolor sit amet, coectetuer adipiscing elit sed diam nonummy et nibh euismod aliquam erat volutpat. Lorem ipsum dolor sit amet, coectetuer adipiscing. </p>
-                        <form action="javascript:;" class="login-form" method="post">
+                        
+                        <form name="form1" method="POST" action="login/login_user" class="login-form" method="post">
                             <div class="alert alert-danger display-hide">
                                 <button class="close" data-close="alert"></button>
                                 <span>Enter any username and password. </span>
                             </div>
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <input class="form-control form-control-solid placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Username" name="usuario" required/> </div>
+                                    <input class="form-control form-control-solid placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Usuario" name="usuario" required/> </div>
                                 <div class="col-xs-6">
-                                    <input class="form-control form-control-solid placeholder-no-fix form-group" type="password" autocomplete="off" placeholder="Password" name="password" required/> </div>
+                                    <input class="form-control form-control-solid placeholder-no-fix form-group" type="password" autocomplete="off" placeholder="Contraseña" name="contra" required/> </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="rem-password">
                                         <label class="rememberme mt-checkbox mt-checkbox-outline">
-                                            <input type="checkbox" name="remember" value="1" /> Remember me
+                                            <input type="checkbox" name="remember" value="1" /> Recordar
                                             <span></span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-sm-8 text-right">
-                                    <div class="forgot-password">
-                                        <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
-                                    </div>
-                                    <button class="btn green" type="submit">Sign In</button>
+                                    
+                                    <button class="btn green" value="iniciar" type="submit">Sign In</button>
                                 </div>
                             </div>
                         </form>
