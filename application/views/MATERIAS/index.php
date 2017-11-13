@@ -321,11 +321,11 @@
                     html += "<input type='hidden' name='profesor' value='" + CIProfe + "'>";
                     html += "<input type='hidden' name='cedu" + con + "' id='' value='" + item.cedula_Estudiante + "'>" + item.cedula_Estudiante + '</td>';
                     html += "<td>" + item.nom_Estudiante + " " + item.ape_Estudiante + '</td>';
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaQ1_materiasnotasQuimetre + "' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control' name='notaq2" + con + "' value='" + item.notaQ2_materiasnotasQuimetre + "' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control' name='total" + con + "' value='" + (parseFloat(item.notaQ1_materiasnotasQuimetre) + parseFloat(item.notaQ2_materiasnotasQuimetre)) + "' style=' width: 52px;'></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.promedioq1_MateriasNotas + "' style=' width: 52px;'></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control' name='notaq2" + con + "' value='" + item.promedioq2_MateriasNotas + "' style=' width: 52px;'></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control' name='total" + con + "' value='" + (parseFloat(item.promedioq1_MateriasNotas) + parseFloat(item.promedioq2_MateriasNotas)) + "' style=' width: 52px;'></td>";
                     html += "<td>";
-                    if ((parseFloat(item.notaQ1_materiasnotasQuimetre) + parseFloat(item.notaQ2_materiasnotasQuimetre)) >= 14) {
+                    if ((parseFloat(item.promedioq1_MateriasNotas) + parseFloat(item.promedioq2_MateriasNotas)) >= 14) {
                         html += '<div class="alert alert-success"><strong>FELICIDADES!</strong> Aprobó </div>';
 
                     } else {

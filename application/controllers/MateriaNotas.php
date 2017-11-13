@@ -33,7 +33,7 @@ class MateriaNotas extends CI_Controller {
             echo json_encode($data, JSON_FORCE_OBJECT);
         }
     }
-
+//errer
     function ConsultaAlumnosSub() {
         //print_r($_POST);
         $datos = $this->input->post();
@@ -66,15 +66,23 @@ class MateriaNotas extends CI_Controller {
                 $porcentaexamen = $datos["porcentaexamen" . $i];
                 $promediototal = $datos["promediototal" . $i];
 
-                $data = $this->Modelo_MateriasNotas->InserNotas($quimestre, $materia, $curso
-                        , $profesor, $cedu, $notaParcial1, $notaParcial2, $notaParcial3
-                        , $porcenta, $notaexamen, $porcentaexamen, $promediototal);
+//                $data = $this->Modelo_MateriasNotas->InserNotas($quimestre, $materia, $curso
+//                        , $profesor, $cedu, $notaParcial1, $notaParcial2, $notaParcial3
+//                        , $porcenta, $notaexamen, $porcentaexamen, $promediototal);
                 // echo "INSERT INTO cursos(`id_Cursos`) VALUES (".$cedu.");";
                 if ($quimestre == "Q1") {
                     //echo 'Insertar notas q1 promedio';
-                    $this->Modelo_MateriasNotas->InserNotasQ1($cedu, $materia, $curso, $profesor, $promediototal);
+                   // $this->Modelo_MateriasNotas->InserNotasQ1($cedu, $materia, $curso, $profesor, $promediototal);
+                    $data = $this->Modelo_MateriasNotas->InserNotasQ1($quimestre, $materia, $curso
+                        , $profesor, $cedu, $notaParcial1, $notaParcial2, $notaParcial3
+                        , $porcenta, $notaexamen, $porcentaexamen, $promediototal);
+                    
                 } elseif ($quimestre = "Q2") {
-                    $this->Modelo_MateriasNotas->UpdateNotasQ2($cedu, $promediototal);
+                    //$this->Modelo_MateriasNotas->UpdateNotasQ2($cedu, $promediototal);
+                    
+                    $data = $this->Modelo_MateriasNotas->InserNotasQ2($quimestre, $materia, $curso
+                        , $profesor, $cedu, $notaParcial1, $notaParcial2, $notaParcial3
+                        , $porcenta, $notaexamen, $porcentaexamen, $promediototal);
                 }
             }
 
