@@ -181,59 +181,45 @@
                     <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
                     <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
                     <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-                    <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                        <li class="nav-item start ">
-                            <a href="javascript:;" class="nav-link nav-toggle">
+              <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                        <li class="nav-item active open ">
+                             <a href="<?php echo base_url('/Estudiante/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-home"></i>
                                 <span class="title">Inicio</span>
                                 <span class="arrow"></span>
                             </a>
 
                         </li>
-                        <li class="nav-item">
-                            <a href="<?php echo base_url('/PENSIONES/'); ?>" class="nav-link nav-toggle">
+                        <li class="nav-item active open ">
+                            <a href="<?php echo base_url('/EstudianteNotas/notas'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-notebook"></i>
-                                <span class="title">Calificaciones</span>
-                                <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-
-
-
-
-                            </ul>
-                        </li>
-
-
-
-
-                        <li class="nav-item active open">
-                            <a href="javascript:;" class="nav-link nav-toggle">
-                                <i class="icon-users"></i>
-                                <span class="title">Pensiones</span>
+                                <span class="title">Notas</span>
                                 <span class="selected"></span>
                                 <span class="arrow open"></span>
-
-
-
                             </a>
-                           
                         </li>
-                       
-                        <li class="nav-item  ">
-                            <a href="<?php echo base_url('/Materias/'); ?>" class="nav-link nav-toggle">
-                                <i class="icon-wallet"></i>
-                                <span class="title">Reportes
-                                </span>
+
+
+
+
+                        
+                        <li class="nav-item active open ">
+                            <a href="<?php echo base_url('/EstudiantePensiones/pensiones')?>" class="nav-link nav-toggle">
+                                <i class="icon-bag"></i>
+                                <span class="title">Mi Pensiones</span>
                                 <span class="arrow"></span>
                             </a>
-
+                            
                         </li>
-                        
+
+                           <li class="nav-item active open ">
+                          
+
+
+                    </ul>-->
 
 
 
-                    </ul>
                     <!-- END SIDEBAR MENU -->
                 </div>
                 <!-- END SIDEBAR -->

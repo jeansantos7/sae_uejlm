@@ -15,6 +15,8 @@ class RegistroDirectivo extends CI_Controller {
             $data['contenido'] = "REGISTRODIRECTIVO/index";
             $data['selDirectivo'] = $this->Modelo_RegistroDirectivo->selDirectivo();
             $data['listarDirectivo'] = $this->Modelo_RegistroDirectivo->listarDirectivo();
+
+            // $data['cedula'] = $this->session->userdata('cedula');
              $data['user'] = $this->session->userdata('username');
 
             $this->load->view("plantilla_Directivo", $data);
@@ -68,11 +70,16 @@ class RegistroDirectivo extends CI_Controller {
 
     public function edit($id_Directivo = NULL) {
 
-        if ($id_Directivo != NULL) {
+
+             if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+
+
+       
             //mostrar datos
             $data['contenido'] = 'RegistroDirectivo/edit';
             $data['selDirectivo'] = $this->Modelo_RegistroDirectivo->selDirectivo();
-            $data['datosDirectivo'] = $this->Modelo_Directivo->editDirectivo($id_Directivo);
+            $data['datosDirectivo'] = $this->Modelo_RegistroDirectivo->editDirectivo($id_Directivo);
+             $data['user'] = $this->session->userdata('username');
             $this->load->view('plantilla_Directivo', $data);
         } else {
 
@@ -96,7 +103,7 @@ class RegistroDirectivo extends CI_Controller {
         $user_Directivo = $datos['user_Directivo'];
         $pass_Directivo = $datos['pass_Directivo'];
 
-        $this->Modelo_Directivo->updateDirectivo($cedula_Directivo, $ape_Directivo, $nom_Directivo, $telf_Directivo, $correo_Directivo, $direc_Directivo, $fech_nac_Directivo, $user_Directivo, $pass_Directivo);
+        $this->Modelo_RegistroDirectivo->updateDirectivo($cedula_Directivo, $ape_Directivo, $nom_Directivo, $telf_Directivo, $correo_Directivo, $direc_Directivo, $fech_nac_Directivo, $user_Directivo, $pass_Directivo);
 
         echo '<script languaje="javascript"> alert("este dato se actualizo"); </script>';
 

@@ -123,7 +123,7 @@ $datos=$this->input->post();
 
 	//		$this->Modelo_RegistroSecretaria->updateUsuario($cedula_Secretaria, $user_Secretaria, $pass_Secretaria, $tipo);
 
-	$this->Modelo_RegistroSecretaria->updateSecretaria(  $cedula_Secretaria, $ape_Secretaria, $nom_Secretaria, $telf_Secretaria, $correo_Secretaria, $direc_Secretaria, $fech_nac_Secretaria, $user_Secretaria, $pass_Secretaria);
+	$this->Modelo_RegistroSecretaria->updateSecretaria($cedula_Secretaria, $ape_Secretaria, $nom_Secretaria, $telf_Secretaria, $correo_Secretaria, $direc_Secretaria, $fech_nac_Secretaria, $user_Secretaria, $pass_Secretaria);
 			redirect('/RegistroSecretaria');
 
 		//	$this->Modelo_RegistroSecretaria->updateUsuario($cedula_Secretaria, $user_Secretaria, $pass_Secretaria, $tipo)

@@ -84,8 +84,8 @@
                                             <td><?php echo $value->cedula_Directivo; ?> </td>
                                             <td><?php echo $value->ape_Directivo . ' ' . $value->nom_Directivo; ?> </td>
                                             <td style="text-align: center;">
-                                                <a href=" <?php echo base_url('Directivo/delete/') . "/" . $value->id_Directivo; ?>" class="btn btn-default"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Eliminar</a>
-                                                <a href="<?php echo base_url('Directivo/edit/') . "/" . $value->id_Directivo; ?>" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  Editar</a>
+                                                <a href=" <?php echo base_url('RegistroDirectivo/delete/') . "/" . $value->id_Directivo; ?>" class="btn btn-default"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Eliminar</a>
+                                                <a href="<?php echo base_url('RegistroDirectivo/edit/') . "/" . $value->id_Directivo; ?>" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  Editar</a>
                                             </td>
 
                                         </tr>
@@ -98,7 +98,7 @@
                             <!--                            <div class="form-group" >
                                                             <select name="txtId">
                             <?php foreach ($selDirectivo as $key => $value) { ?>
-                                                                                                                                    <option value="<?php echo $value->cedula_Directivo ?>" ><?php echo $value->cedula_Directivo . ' ' . $value->nom_Directivo; ?></option>
+                                    <option value="<?php echo $value->cedula_Directivo ?>" ><?php echo $value->cedula_Directivo . ' ' . $value->nom_Directivo; ?></option>
                             <?php } ?>
                                                             </select>
                                                         </div>-->

@@ -67,7 +67,7 @@
                             <?php foreach ($datosDirectivo as $value) { ?>
 
 
-                                <form method="POST" action="<?php echo base_url('Directivo/update'); ?>">
+                                <form method="POST" action="<?php echo base_url('RegistroDirectivo/update'); ?>">
                                     <div class="form-body">
                                         <div class="col-md-6">
                                             <div class="form-group">
