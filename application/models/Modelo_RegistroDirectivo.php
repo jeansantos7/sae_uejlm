@@ -4,7 +4,7 @@
 /**
 * 
 */
-class Modelo_Directivo extends CI_Model
+class Modelo_RegistroDirectivo extends CI_Model
 {
 	function __construct()
 	{

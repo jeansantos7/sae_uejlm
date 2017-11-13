@@ -15,6 +15,8 @@ class RegistroDirectivo extends CI_Controller {
             $data['contenido'] = "REGISTRODIRECTIVO/index";
             $data['selDirectivo'] = $this->Modelo_RegistroDirectivo->selDirectivo();
             $data['listarDirectivo'] = $this->Modelo_RegistroDirectivo->listarDirectivo();
+             $data['user'] = $this->session->userdata('username');
+
             $this->load->view("plantilla_Directivo", $data);
         } else {
             redirect(base_url(''));

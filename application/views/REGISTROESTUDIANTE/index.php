@@ -236,8 +236,8 @@ var h=false;
                                             <td> <?php echo $value->ape_Estudiante; ?>   </td>
                                             <td> <?php echo $value->nom_Estudiante; ?>   </td>
                                             <td style="text-align: center;">
-                                                <a href=" <?php echo base_url('Estudiante/delete/') . "/" . $value->id_Estudiante; ?>" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Eliminar</a>
-                                                <a href="<?php echo base_url('Estudiante/edit/') . "/" . $value->id_Estudiante; ?>" class="btn btn-default"><span class="glyphicon  glyphicon-edit" aria-hidden="true"></span>  Editar</a>
+                                                <a href=" <?php echo base_url('RegistroEstudiante/delete/') . "/" . $value->id_Estudiante; ?>" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Eliminar</a>
+                                                <a href="<?php echo base_url('RegistroEstudiante/edit/') . "/" . $value->id_Estudiante; ?>" class="btn btn-default"><span class="glyphicon  glyphicon-edit" aria-hidden="true"></span>  Editar</a>
                                                 
 
                                             </td>
@@ -251,7 +251,7 @@ var h=false;
 
                         <div role="tabpanel" class="tab-pane" id="profile">
 
-                            <form method="POST" action="<?php echo base_url('Estudiante/insert'); ?>">
+                            <form method="POST" action="<?php echo base_url('RegistroEstudiante/insert'); ?>">
 
 
                          <div class="col-md-6">
