@@ -12,7 +12,7 @@ class Docente extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model("Modelo_Docente");
+		$this->load->model("Modelo_RegistroDocente");
 
 	}
 

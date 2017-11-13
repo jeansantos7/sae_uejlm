@@ -221,7 +221,7 @@
                             
                             <ul class="sub-menu ">
                                 <li class="nav-item active open ">
-                                    <a href="<?php echo base_url('/MATERIAS/'); ?>" class="nav-link ">
+                                    <a href="<?php echo base_url('/MateriaNotas/'); ?>" class="nav-link ">
                                         <i class="icon-user"></i>
                                         <span class="title">Subir Notas
                                     </a>

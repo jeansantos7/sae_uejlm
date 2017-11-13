@@ -1,0 +1,1 @@
+INSERT INTO `notarec_materiasnotasquimetrerecu` (`cedu_materiasnotasquimetrerecu`, `materia_materiasnotasquimetrerecu`, `curso_materiasnotasquimetrerecu`, `notarec_materiasnotasquimetrerecu`, `profe_materiasnotasquimetrerecu`) VALUES ('2147483647', '1', '1', '10', '0')
