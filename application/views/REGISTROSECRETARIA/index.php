@@ -256,10 +256,7 @@ var h=false;
 
                          <div class="col-md-6">
                                     
-                                    <div class="form-group">
-                                        
-                                        <input type="hidden" class="form-control" id="fech_matricula_Estudiante" name="fech_matricula_Estudiante" >
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Cedula </label>
                                         <input type="text" class="form-control" id="cedula_Secretaria" name="cedula_Secretaria" aria-describedby="emailHelp" placeholder="cedula de ciudadania">

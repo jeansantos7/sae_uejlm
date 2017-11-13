@@ -48,6 +48,7 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 			$fech_nac_Secretaria	=$datos['fech_nac_Secretaria'];
 			$user_Secretaria		=$datos['user_Secretaria'];
 			$pass_Secretaria		=$datos['pass_Secretaria'];
+			$tipo = "Secretario";
 
 			$datoexiste=$this->Modelo_RegistroSecretaria->ConsultaExiste($cedula_Secretaria);
 
@@ -58,6 +59,9 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 			}
 
 else{
+
+	$this->Modelo_RegistroSecretaria->inserUsuario($cedula_Secretaria, $user_Secretaria, $pass_Secretaria, $tipo);
+
 
 			$this->Modelo_RegistroSecretaria->inserSecretaria( $cedula_Secretaria, $ape_Secretaria, $nom_Secretaria, $telf_Secretaria, $correo_Secretaria, $direc_Secretaria, $fech_nac_Secretaria, $user_Secretaria, $pass_Secretaria);
 			redirect('/RegistroSecretaria');
@@ -115,9 +119,14 @@ $datos=$this->input->post();
 			$fech_nac_Secretaria	=$datos['fech_nac_Secretaria'];
 			$user_Secretaria		=$datos['user_Secretaria'];
 			$pass_Secretaria		=$datos['pass_Secretaria'];
+			$tipo = "Secretario";
 
-	$this->Modelo_RegistroSecretaria->updateRegistroSecretaria(  $cedula_Secretaria, $ape_Secretaria, $nom_Secretaria, $telf_Secretaria, $correo_Secretaria, $direc_Secretaria, $fech_nac_Secretaria, $user_Secretaria, $pass_Secretaria);
-			redirect('/Secretaria');
+	//		$this->Modelo_RegistroSecretaria->updateUsuario($cedula_Secretaria, $user_Secretaria, $pass_Secretaria, $tipo);
+
+	$this->Modelo_RegistroSecretaria->updateSecretaria(  $cedula_Secretaria, $ape_Secretaria, $nom_Secretaria, $telf_Secretaria, $correo_Secretaria, $direc_Secretaria, $fech_nac_Secretaria, $user_Secretaria, $pass_Secretaria);
+			redirect('/RegistroSecretaria');
+
+		//	$this->Modelo_RegistroSecretaria->updateUsuario($cedula_Secretaria, $user_Secretaria, $pass_Secretaria, $tipo)
 			
 	}
 }

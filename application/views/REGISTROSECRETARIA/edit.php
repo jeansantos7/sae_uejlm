@@ -51,7 +51,7 @@ var h=false;
 
   <form method="POST" action="<?php echo base_url('RegistroSecretaria/update'); ?>">
  
-  <input type="hidden" name="id_Estudiante" value="<?php echo $value->id_Estudiante; ?>">
+  <input type="hidden" name="id_Estudiante" value="<?php echo $value->id_Secretaria; ?>">
 
 
 
@@ -84,76 +84,53 @@ var h=false;
                                     
                                     <div class="form-group">
                                         
-                                        <input type="hidden" class="form-control" id="fech_matricula_Estudiante" name="fech_matricula_Estudiante" >
-                                    </div>
-                                    <div class="form-group">
+                                       <div class="form-group">
                                         <label for="exampleInputEmail1">Cedula </label>
-                                        <input type="text" class="form-control" id="cedula_Estudiante" name="cedula_Estudiante" aria-describedby="emailHelp" value="<?php echo $value->cedula_Secretaria; ?>">
+                                        <input type="text" class="form-control" id="cedula_Secretaria" name="cedula_Secretaria" aria-describedby="emailHelp" value="<?php echo $value->cedula_Secretaria; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Apellidos </label>
-                                        <input type="text" class="form-control" id="ape_Estudiante" name="ape_Estudiante" aria-describedby="emailHelp" value="<?php echo $value->ape_Estudiante;?>">
+                                        <input type="text" class="form-control" id="ape_Secretaria" name="ape_Secretaria" aria-describedby="emailHelp" value="<?php echo $value->ape_Secretaria; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nombres </label>
-                                        <input type="text" class="form-control" id="nom_Estudiante" name="nom_Estudiante" aria-describedby="emailHelp" value="<?php echo $value->nom_Estudiante;?>">
+                                        <input type="text" class="form-control" id="nom_Secretaria" name="nom_Secretaria" aria-describedby="emailHelp" value="<?php echo $value->nom_Secretaria; ?>">
                                     </div>
-                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Fecha de nacimiento</label>
-                                        <input type="date" class="form-control" id="fech_nac_Estudiante" name="fech_nac_Estudiante" value="<?php echo $value->matricula_Estudiante;?>">
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1"> Telefono / Celular</label>
+                                        <input type="text" class="form-control" id="telf_Secretaria" name="telf_Secretaria" value="<?php echo $value->telf_Secretaria; ?>">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1"> Correo</label>
+                                        <input type="email" class="form-control" id="correo_Secretaria" name="correo_Secretaria" value="<?php echo $value->correo_Secretaria; ?>">
+                                    </div>
+                                     
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Direccion </label>
-                                        <input type="text" class="form-control" id="dir_Estudiante" name="dir_Estudiante" aria-describedby="emailHelp" placeholder="Domicilio">
+                                        <input type="text" class="form-control" id="direc_Secretaria" name="direc_Secretaria" aria-describedby="emailHelp" value="<?php echo $value->direc_Secretaria; ?>">
+                                    </div>
+
+                                     <div class="form-group">
+                                        <label for="exampleInputPassword1">Fecha de nacimiento</label>
+                                        <input type="date" class="form-control" id="fech_nac_Secretaria" name="fech_nac_Secretaria" value="<?php echo $value->fech_nac_Secretaria; ?>"/>
                                     </div>
                                    
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Discapacitado </label>
-                                        <input type="Checkbox" onClick="javascript:h = !h;" class="btn btn-small" id="disc_Estudiante" name="disc_Estudiante" >
-
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Carnet de Discapacidad </label>
-                                        <input type="text" class="form-control" onFocus="javascript:if (!h) {
-                                                    this.blur();
-                                                }" id="carnet_Estudiante" name="carnet_Estudiante" placeholder="carnet de Discapacidad">
-                                    </div>
+                                    
+                                    
                                    
-                                    <div class="form-group">
-
-                                        <label for="exampleInputPassword1"> Parentesco familiar del Representante </label>
-
-                                        <select class="form-control" id="parentesco_Representante_Estudiante" name="parentesco_Representante_Estudiante" >
-                                            <option> Padre o Madre</option>
-                                            <option>Tio (a)</option>
-                                            <option> Abuelo (a)</option>
-                                        </select>
-                                    </div>
                                     
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Usuario </label>
-                                        <input type="text" class="form-control" id="user_Estudiante" name="user_Estudiante" placeholder="Usuario">
+                                        <input type="text" class="form-control" id="user_Secretaria" name="user_Secretaria" placeholder="Usuario" value="<?php echo $value->user_Secretaria; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="pass_Estudiante" name="pass_Estudiante" placeholder="contraseña">
+                                        <input type="password" class="form-control" id="pass_Secretaria" name="pass_Secretaria" value="<?php echo $value->pass_Secretaria; ?>">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1"> Valor de la Pension</label>
-                                        <input type="text" class="form-control" id="pension_Estudiante" name="pension_Estudiante" placeholder="valor de la pension">
-                                    </div>
+                                    
 
-                                    <div class="form-group" >
-                                        <label for="exampleInputEmail1">Representante </label>
-                                        </div>
-                                        <select name="id_Representantes" id="id_Representantes"> <?php   foreach ($selRepresentante as $key => $value) {?>
-                                            <option value="<?php echo $value->id_Representante?>" ><?php  echo $value->ape_Representante.' '. $value->nom_Representante ; ?></option>
-                                        <?php }  ?>
-                                         </select>
-                                    </div>
+                                    
                                 </div>
-
 
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-primary">Submit</button>
