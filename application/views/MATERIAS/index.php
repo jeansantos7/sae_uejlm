@@ -55,6 +55,7 @@
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Ingreso de notas </a></li>
                         <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Notas Sup</a></li>
+                        <li role="presentation"><a href="#profile2" aria-controls="profile2" role="tab" data-toggle="tab">Ver Notas</a></li>
 
                     </ul>
 
@@ -170,6 +171,31 @@
                                 </div>
                             </div>
                         </div>
+                        <div role="tabpanel" class="tab-pane" id="profile2">
+                            <div class="">
+                                <div class="col-md-3">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label for="s">Numero de Matricula </label>
+                                            <select size="1" id="s" name="s" class="form-control" onchange="matriaestudiantevista(this.value)">
+                                                <option value="">Seleccione</option>
+                                                <?php foreach ($lista_materias as $key => $value) {
+                                                    ?>
+                                                    <option value="<?php echo $value->id_Materias . ',' . $value->id_cursos; ?>"><?php echo "Materia: " . $value->nom_Materias . ' Curso: ' . $value->nom_Cursos . ' ' . $value->id_cursos; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-body">
+                                        <div class="form-group" id="notasdatos2" >
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
                     </div>
@@ -182,6 +208,102 @@
 
 </div>
 <script>
+    function matriaestudiantevista(id) {
+        var cadena = id,
+                separador = ",", // un espacio en blanco
+                limite = 2,
+                arregloDeSubCadenas = cadena.split(separador);
+        var IDmateria = arregloDeSubCadenas[0];
+        var IDCurso = arregloDeSubCadenas[1];
+        var CIProfe = "<?php echo $cedula; ?>";
+        var parametros = {
+            "id_materia": arregloDeSubCadenas[0],
+            "Id_Curso": arregloDeSubCadenas[1]
+        };
+        
+        
+         var url = "<?php echo base_url(); ?>ActasCalificaciones/DatosMaterias";
+        var IDmateria = $("#id_curso").val();
+        var IDCurso = id;
+        var CIProfe = '0';
+        var htmt = "";
+        $.ajax({
+            data: parametros,
+            url: url,
+            type: 'POST',
+            beforeSend: function (xhr) {
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            },
+            success: function (data, textStatus, jqXHR) {
+                var html = '<table class="table table-bordered table-hover ">' +
+                        '<thead>' +
+                        '<th>ID</th>' +
+                        '<th>Cedula</th>' +
+                        '<th>Nombre</th>' +
+                        '<th>NotaP1Q1</th>' +
+                        '<th>NotaP2Q1</th>' +
+                        '<th>NotaP3Q1</th>' +
+                        '<th>NotaPOQ1</th>' +
+                        '<th>NotaEQ1</th>' +
+                        '<th>NotaEPQ1</th>' +
+                        '<th>NotaPROQ1</th>' +
+                        '<th>NotaP1Q2</th>' +
+                        '<th>NotaP2Q2</th>' +
+                        '<th>NotaP3Q2</th>' +
+                        '<th>NotaPOQ2</th>' +
+                        '<th>NotaEQ2</th>' +
+                        '<th>NotaEPQ2</th>' +
+                        '<th>NotaPROQ2</th>' +
+                        '<th>TOTAL</th>' +
+                        '<th>NOTARE</th>' +
+                        '<th>NOTAREME</th>' +
+                        '<th>NOTAEXA</th>' +
+                        '</tr>' +
+                        '</thead>' +
+                        '<tbody>';
+
+                var con = 1;
+                $.each(JSON.parse(data), function (i, item) {
+                    //alert(item.nom_Estudiante);
+                    html += "<tr><td>" + con + "</td><td><input type='hidden' name='materia' value='" + IDmateria + "'>";
+                    html += "<input type='hidden' name='curso' value='" + IDCurso + "'>";
+                    html += "<input type='hidden' name='profesor' value='" + CIProfe + "'>";
+                    html += "<input type='hidden' name='cedu" + con + "' id='' value='" + item.cedula_Estudiante + "'>" + item.cedula_Estudiante + '</td>';
+                    html += "<td>" + item.nom_Estudiante + " " + item.ape_Estudiante + '</td>';
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial1q1_MateriasNotas + "' style=''></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial2q1_MateriasNotas + "' style='  '></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial3q1_MateriasNotas + "' style='  '></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.porcentajeq1_MateriasNotas + "' style='  '></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examenq1_MateriasNotas + "' style='  '></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examen_porcentajeq1_MateriasNotas + "' style='  '></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.promedioq1_MateriasNotas + "' style=''></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial1q2_MateriasNotas + "' style=''></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial2q2_MateriasNotas + "' style=''></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial3q2_MateriasNotas + "' style=''></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.porcentajeq2_MateriasNotas + "' style=''></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examenq2_MateriasNotas + "' style=''></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examen_porcentajeq2_MateriasNotas + "' style=''></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.promedioq2_MateriasNotas + "' style=''></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control' name='total" + con + "' value='" + (parseFloat(item.promedioq1_MateriasNotas) + parseFloat(item.promedioq2_MateriasNotas)) + "' style=' width: 52px;'></td>";
+
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notarec_MateriasNotas + "' style=''></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notareme_MateriasNotas + "' style=''></td>";
+                    html += "<td><input type='text' readonly='readonly' class='form-control' name='notaq2" + con + "' value='" + item.notaexa_MateriasNotas + "' style=''></td>";
+                    html += "</tr>";
+                    
+                    con++;
+                });
+                html += '</tbody></table>';
+                html += '<input type="submit" value="Enviar" name="Enviar">';
+                $("#notasdatos2").html(html);
+
+            }
+
+        });
+    }
 
     function myFunction() {
         var input, filter, table, tr, td, i;
@@ -244,6 +366,8 @@
 
                 var con = 1;
                 $.each(JSON.parse(data), function (i, item) {
+
+
                     //alert(item.nom_Estudiante);
                     html += "<tr><td>" + con + "</td><td><input type='hidden' name='materia' value='" + IDmateria + "'>";
                     html += "<input type='hidden' name='curso' value='" + IDCurso + "'>";
