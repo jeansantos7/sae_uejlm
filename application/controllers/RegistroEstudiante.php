@@ -86,7 +86,7 @@ class RegistroEstudiante extends CI_Controller {
     public function edit($id_Estudiante = NULL) {
 
 
-if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {        
+if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {        
 
         if ($id_Estudiante != NULL) {
             //mostrar datos

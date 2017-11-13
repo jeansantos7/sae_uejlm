@@ -11,6 +11,9 @@ class Asignacion extends CI_Controller {
     }
 
     public function index() {
+
+
+        if ( $this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
         $data['contenido'] = "Asignacion/index";
         $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
         $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
@@ -18,7 +21,27 @@ class Asignacion extends CI_Controller {
         $data['user'] = $this->session->userdata('username');
 
         $this->load->view("plantilla_Secretaria", $data);
+
     }
+
+
+    elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+   $data['contenido'] = "Asignacion/index";
+        $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
+        $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
+        $data['ListaCurso'] = $this->Modelo_Asignacion->ListaCurso();
+        $data['user'] = $this->session->userdata('username');
+
+        $this->load->view("plantilla_Directivo", $data);
+}
+    else {
+            redirect(base_url(''));
+        }
+
+    }
+
+
+
 
     public function setGuardar() {
         print_r($_POST);

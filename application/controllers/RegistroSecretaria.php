@@ -17,13 +17,19 @@ class RegistroSecretaria extends CI_Controller
 	public function index()
 	{
 
-
+if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion' 
+	 ) {
 
 	$data['contenido'] = "REGISTROSECRETARIA/index";
 	$data['selSecretaria'] = $this->Modelo_RegistroSecretaria->selSecretaria();
 	$data['listarSecretaria']=$this->Modelo_RegistroSecretaria->listarSecretaria();
+	 $data['user'] = $this->session->userdata('username');
 	$this->load->view("plantilla_Directivo", $data);
-		
+		}
+		else
+		{
+			 redirect(base_url(''));
+		}
 	}
 
 	public function insert()
@@ -42,12 +48,9 @@ class RegistroSecretaria extends CI_Controller
 			$fech_nac_Secretaria	=$datos['fech_nac_Secretaria'];
 			$user_Secretaria		=$datos['user_Secretaria'];
 			$pass_Secretaria		=$datos['pass_Secretaria'];
+			$tipo = "Secretario";
 
-		 
-			
-			
-
-			$datoexiste=$this->Modelo_Secretaria->ConsultaExiste($cedula_Secretaria);
+			$datoexiste=$this->Modelo_RegistroSecretaria->ConsultaExiste($cedula_Secretaria);
 
 			if ($datoexiste ==true) {
 				echo '<script languaje="javascript"> alert("este Secretaria  ya existe");
@@ -57,8 +60,11 @@ class RegistroSecretaria extends CI_Controller
 
 else{
 
-			$this->Modelo_Secretaria->inserSecretaria( $cedula_Secretaria, $ape_Secretaria, $nom_Secretaria, $telf_Secretaria, $correo_Secretaria, $direc_Secretaria, $fech_nac_Secretaria, $user_Secretaria, $pass_Secretaria);
-			redirect('/Secretaria');
+	$this->Modelo_RegistroSecretaria->inserUsuario($cedula_Secretaria, $user_Secretaria, $pass_Secretaria, $tipo);
+
+
+			$this->Modelo_RegistroSecretaria->inserSecretaria( $cedula_Secretaria, $ape_Secretaria, $nom_Secretaria, $telf_Secretaria, $correo_Secretaria, $direc_Secretaria, $fech_nac_Secretaria, $user_Secretaria, $pass_Secretaria);
+			redirect('/RegistroSecretaria');
 		}
 
 		}	
@@ -79,20 +85,19 @@ else{
 	public function edit( $id_Secretaria = NULL)
 	{
 
-		if( $id_Secretaria != NULL)
-		{
-			//mostrar datos
-			$data['contenido'] = 'Secretaria/edit';
-			$data['selSecretaria'] = $this->Modelo_Secretaria->selSecretaria();
-			$data['datosSecretaria'] = $this->Modelo_Secretaria->editSecretaria($id_Secretaria);
-			$this->load->view('plantilla_Directivo', $data);
+		if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion' 
+	 ) {
+
+	$data['contenido'] = "REGISTROSECRETARIA/edit";
+	$data['datosSecretaria'] = $this->Modelo_RegistroSecretaria->editSecretaria($id_Secretaria);
+	//$data['listarSecretaria']=$this->Modelo_RegistroSecretaria->listarSecretaria();
+	 $data['user'] = $this->session->userdata('username');
+	$this->load->view("plantilla_Directivo", $data);
 		}
 		else
 		{
-
-			redirect('');
+			 redirect(base_url(''));
 		}
-
 
 	}
 
@@ -114,9 +119,14 @@ $datos=$this->input->post();
 			$fech_nac_Secretaria	=$datos['fech_nac_Secretaria'];
 			$user_Secretaria		=$datos['user_Secretaria'];
 			$pass_Secretaria		=$datos['pass_Secretaria'];
+			$tipo = "Secretario";
 
-	$this->Modelo_Secretaria->updateSecretaria(  $cedula_Secretaria, $ape_Secretaria, $nom_Secretaria, $telf_Secretaria, $correo_Secretaria, $direc_Secretaria, $fech_nac_Secretaria, $user_Secretaria, $pass_Secretaria);
-			redirect('/Secretaria');
+	//		$this->Modelo_RegistroSecretaria->updateUsuario($cedula_Secretaria, $user_Secretaria, $pass_Secretaria, $tipo);
+
+	$this->Modelo_RegistroSecretaria->updateSecretaria($cedula_Secretaria, $ape_Secretaria, $nom_Secretaria, $telf_Secretaria, $correo_Secretaria, $direc_Secretaria, $fech_nac_Secretaria, $user_Secretaria, $pass_Secretaria);
+			redirect('/RegistroSecretaria');
+
+		//	$this->Modelo_RegistroSecretaria->updateUsuario($cedula_Secretaria, $user_Secretaria, $pass_Secretaria, $tipo)
 			
 	}
 }

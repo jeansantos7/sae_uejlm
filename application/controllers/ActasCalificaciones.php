@@ -21,7 +21,17 @@ class ActasCalificaciones extends CI_Controller {
 
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
-        } else {
+        }
+        elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+            $data['contenido'] = "ActasCalificaciones/index";
+                    
+           
+            $data['user'] = $this->session->userdata('username');
+            $this->load->view("plantilla_Directivo", $data);
+        }
+
+
+         else {
             redirect(base_url(''));
         }
     }
