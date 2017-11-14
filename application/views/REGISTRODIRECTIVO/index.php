@@ -1,206 +1,171 @@
-<h1 class="page-title">  Vista de Directivo                    
-</h1>
-
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="icon-home"></i>
-            <a href="index.html">Home</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <span>Directivo</span>
-        </li>
-    </ul>
 
 
-    <div class="page-toolbar">
-        <div class="btn-group pull-right">
-            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
-                <i class="fa fa-angle-down"></i>
-            </button>
-            <ul class="dropdown-menu pull-right" role="menu">
-                <li>
-                    <a href="#">
-                        <i class="icon-bell"></i> Action</a>
+
+<section class="full-box dashboard-contentPage">
+        <!-- NavBar -->
+        <nav class="full-box dashboard-Navbar">
+            <ul class="full-box list-unstyled text-right">
+                <li class="pull-left">
+                    <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-shield"></i> Another action</a>
+                    <a href="#!" class="btn-Notifications-area">
+                        <i class="zmdi zmdi-notifications-none"></i>
+                        <span class="badge">7</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-user"></i> Something else here</a>
+                    <a href="#!" class="btn-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </a>
                 </li>
-                <li class="divider"> </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-bag"></i> Separated link</a>
+                    <a href="#!" class="btn-modal-help">
+                        <i class="zmdi zmdi-help-outline"></i>
+                    </a>
                 </li>
             </ul>
+        </nav>
+        <!-- Content page -->
+        <div class="container-fluid">
+            <div class="page-header">
+              <h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Users <small>Admin</small></h1>
+            </div>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed, dignissimos possimus!</p>
         </div>
-    </div>
-</div>
-<!-- Nav tabs -->
-
-
-<!-- Tab panes -->
-
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
-        <div class="portlet light ">
-            <div class="portlet-title">
-                <div class="caption">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Consulta </a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Registro</a></li>
-
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+                        <li class="active"><a href="#new" data-toggle="tab">New</a></li>
+                        <li><a href="#list" data-toggle="tab">List</a></li>
                     </ul>
-                </div>
-                <div class="actions">
-                    <input type="text" class="form-control large" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in" id="new">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6 col-md-offset-1">
+                                        <form action="">
+                                    <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                              <label class="control-label">Name</label>
+                                              <input class="form-control" type="text">
+                                            </div>
+                                            
+                                            <div class="form-group label-floating">
+                                              <label class="control-label">Last Name</label>
+                                              <input class="form-control" type="text">
+                                            </div>
+                                            <div class="form-group label-floating">
+                                              <label class="control-label">Address</label>
+                                              <textarea class="form-control"></textarea>
+                                            </div>
+                                      </div>    
+                                      
+                                       <div class="col-md-6">  
+                                            <div class="form-group label-floating">
+                                              <label class="control-label">Email</label>
+                                              <input class="form-control" type="text">
+                                            </div>
+                                            <div class="form-group label-floating">
+                                              <label class="control-label">Phone</label>
+                                              <input class="form-control" type="text">
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label">Photo</label>
+                                              <div>
+                                                <input type="text" readonly="" class="form-control" placeholder="Browse...">
+                                                <input type="file" >
+                                              </div>
+                                            </div>
+                                        </div>
+                                            <p class="text-center">
+                                                <button href="#!" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Save</button>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="list">
+                            <div class="table-responsive">
+                                <table class="table table-hover text-center">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th class="text-center">Name</th>
+                                            <th class="text-center">Last Name</th>
+                                            <th class="text-center">Address</th>
+                                            <th class="text-center">Email</th>
+                                            <th class="text-center">Phone</th>
+                                            <th class="text-center">Update</th>
+                                            <th class="text-center">Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Carlos</td>
+                                            <td>Alfaro</td>
+                                            <td>El Salvador</td>
+                                            <td>carlos@gmail.com</td>
+                                            <td>+50312345678</td>
+                                            <td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
+                                            <td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Alicia</td>
+                                            <td>Melendez</td>
+                                            <td>El Salvador</td>
+                                            <td>alicia@gmail.com</td>
+                                            <td>+50312345678</td>
+                                            <td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
+                                            <td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Sarai</td>
+                                            <td>Lopez</td>
+                                            <td>El Salvador</td>
+                                            <td>sarai@gmail.com</td>
+                                            <td>+50312345678</td>
+                                            <td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
+                                            <td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Alba</td>
+                                            <td>Bonilla</td>
+                                            <td>El Salvador</td>
+                                            <td>alba@gmail.com</td>
+                                            <td>+50312345678</td>
+                                            <td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
+                                            <td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <ul class="pagination pagination-sm">
+                                    <li class="disabled"><a href="#!">«</a></li>
+                                    <li class="active"><a href="#!">1</a></li>
+                                    <li><a href="#!">2</a></li>
+                                    <li><a href="#!">3</a></li>
+                                    <li><a href="#!">4</a></li>
+                                    <li><a href="#!">5</a></li>
+                                    <li><a href="#!">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="portlet-body">
-                <div class="table-scrollable">
+        </div>
+    </section>
 
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">
-                            <table class="table table-hover table-light" id="myTable">
-                                <thead>
-                                    <tr>
-                                        <th> ID</th>
-                                        <th> Cedula</th>
-                                        <th> Apellidos y Nombres</th>
-                                        <th style="text-align: center;"> Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($listarDirectivo as $key => $value) { ?>
+ <form method="POST" action="<?php echo base_url('Directivo/insert'); ?>">
 
-                                        <tr>
-                                            <td><?php echo $value->id_Directivo; ?>  </td>
-                                            <td><?php echo $value->cedula_Directivo; ?> </td>
-                                            <td><?php echo $value->ape_Directivo . ' ' . $value->nom_Directivo; ?> </td>
-                                            <td style="text-align: center;">
-                                                <a href=" <?php echo base_url('RegistroDirectivo/delete/') . "/" . $value->id_Directivo; ?>" class="btn btn-default"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Eliminar</a>
-                                                <a href="<?php echo base_url('RegistroDirectivo/edit/') . "/" . $value->id_Directivo; ?>" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  Editar</a>
-                                            </td>
-
-                                        </tr>
-                                    <?php } ?>
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">
-                            <!--                            <div class="form-group" >
-                                                            <select name="txtId">
-                            <?php foreach ($selDirectivo as $key => $value) { ?>
-                                    <option value="<?php echo $value->cedula_Directivo ?>" ><?php echo $value->cedula_Directivo . ' ' . $value->nom_Directivo; ?></option>
-                            <?php } ?>
-                                                            </select>
-                                                        </div>-->
-
-                            <form method="POST" action="<?php echo base_url('Directivo/insert'); ?>">
-
-                                <div class="form-body">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Cedula </label>
-                                            <input type="text" class="form-control" id="cedula_Directivo" name="cedula_Directivo" aria-describedby="emailHelp" placeholder="cedula de ciudadania">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Nombres </label>
-                                            <input type="text" class="form-control" id="nom_Directivo" name="nom_Directivo" aria-describedby="emailHelp" placeholder="Nombres">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Apellidos </label>
-                                            <input type="text" class="form-control" id="ape_Directivo" name="ape_Directivo" aria-describedby="emailHelp" placeholder="Apellidos">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Fecha de nacimiento</label>
-                                            <input type="date" class="form-control" id="fech_nac_Directivo" name="fech_nac_Directivo" placeholder="contraseña">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Direccion </label>
-                                            <input type="text" class="form-control" id="direc_Directivo" name="direc_Directivo" aria-describedby="emailHelp" placeholder="Domicilio">
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Usuario </label>
-                                            <input type="text" class="form-control" id="user_Directivo" name="user_Directivo" placeholder="contraseña">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" class="form-control" id="pass_Directivo" name="pass_Directivo" placeholder="contraseña">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Telefono </label>
-                                            <input type="text" class="form-control" id="telf_Directivo" name="telf_Directivo" aria-describedby="emailHelp" placeholder="Telefono">
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Correo </label>
-                                            <input type="email" class="form-control" id="correo_Directivo" name="correo_Directivo" aria-describedby="emailHelp" placeholder="Correo">
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-                                <div class="form-actions">
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn blue">Submit</button>
-                                        <button type="button" class="btn default">Cancel</button>
-                                    </div>
-                                </div>
+                            
+                                    
 
 
                             </form>
-
-
-                        </div>
-                        
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- END SAMPLE TABLE PORTLET-->
-    </div>
-
-</div>
-<script>
-    function myFunction() {
-        var input, filter, table, tr, td, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("myTable");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[2];
-            if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
-        }
-    }
-
-
-</script>
-
-

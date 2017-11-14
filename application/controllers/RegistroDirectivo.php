@@ -19,7 +19,7 @@ class RegistroDirectivo extends CI_Controller {
             // $data['cedula'] = $this->session->userdata('cedula');
              $data['user'] = $this->session->userdata('username');
 
-            $this->load->view("plantilla_Directivo", $data);
+            $this->load->view("plantilla_Prueba", $data);
         } else {
             redirect(base_url(''));
         }
