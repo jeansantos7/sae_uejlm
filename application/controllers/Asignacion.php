@@ -44,7 +44,7 @@ class Asignacion extends CI_Controller {
 
 
     public function setGuardar() {
-        print_r($_POST);
+        //print_r($_POST);
         $datos = $this->input->post();
         if (isset($datos)) {
             $docenteselect = $datos['docenteselect'];
@@ -52,6 +52,18 @@ class Asignacion extends CI_Controller {
             $cursoselect = $datos['cursoselect'];
 
             $this->Modelo_Asignacion->inserAsignacion($docenteselect, $materiaselect, $cursoselect);
+            redirect('/Asignacion');
+        }
+    }
+    public function setGuardarTutor() {
+        print_r($_POST);
+        $datos = $this->input->post();
+        if (isset($datos)) {
+            $docenteselect = $datos['docenteselect'];
+            
+            $cursoselect = $datos['cursoselect'];
+
+            $this->Modelo_Asignacion->inserAsignacionTutor($docenteselect, $cursoselect);
             redirect('/Asignacion');
         }
     }

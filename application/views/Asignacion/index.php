@@ -53,9 +53,9 @@
             <div class="portlet-title">
                 <div class="caption">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Asignacion </a></li>
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Asignacion De Curso </a></li>
+                        <li role="presentation"><a href="#tutor" aria-controls="tutor" role="tab" data-toggle="tab">Asignar Tutor</a></li>
                         <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Consulta</a></li>
-
                     </ul>
                 </div>
                 <div class="actions">
@@ -64,7 +64,6 @@
             </div>
             <div class="portlet-body">
                 <div class="table-scrollable">
-
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="home">
                             <div class="form-body">
@@ -123,11 +122,56 @@
                                 </div>
 
                             </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tutor">
+                            <div class="form-body">
+                                <div class="col-md-4">
 
+                                </div>
+                                <div class="col-md-4">
+                                    <form id="myForm" class="form-body" method="POST" action="<?php echo base_url('Asignacion/setGuardarTutor'); ?>">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Docente </label>
+                                                <select size="1" id="docenteselect" name="docenteselect" class="form-control js-example-basic-single">
+                                                    <option value="">Seleccione</option>
+                                                    <?php foreach ($ListaDocentes as $key => $value) {
+                                                        ?>
+                                                        <option value="<?php echo $value->cedula_Docente; ?>"><?php echo $value->nom_Docente . " " . $value->ape_Docente; ?></option>
+                                                    <?php } ?>
+                                                </select>
+
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Grado </label>
+                                                <select size="1"id="cursoselect" name="cursoselect" class="form-control js-example-basic-single">
+                                                    <option value="">Seleccione</option>
+                                                    <?php foreach ($ListaCurso as $key => $value) {
+                                                        ?>
+                                                        <option value="<?php echo $value->id_Cursos; ?>"><?php echo $value->nom_Cursos; ?></option>
+
+                                                    <?php } ?>
+                                                </select>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" name="save" value="" class="btn blue">Agregar</button>
+                                                <button type="button" class="btn ">Cancelar</button>
+                                            </div>
+
+
+
+
+
+
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="profile">
-
-
                             <table class="table table-hover table-light" id="myTable">
                                 <thead>
                                     <tr>
@@ -145,7 +189,7 @@
                                             <td> <?php echo $value->ape_Docente . ' ' . $value->nom_Docente; ?>   </td>
                                             <td> <?php echo $value->correo_Docente; ?>   </td>
                                             <td>
-                                                <button type="button" class="btn btn-default" onclick="ListaMaterias(<?php echo $value->cedula_Docente.",'".$value->ape_Docente; ?>')" data-toggle="modal" data-target="#exampleModal">
+                                                <button type="button" class="btn btn-default" onclick="ListaMaterias(<?php echo $value->cedula_Docente . ",'" . $value->ape_Docente; ?>')" data-toggle="modal" data-target="#exampleModal">
                                                     <span class="fa fa-list" aria-hidden="true"></span>   Materias
                                                 </button>
                                             </td>
@@ -155,14 +199,8 @@
 
                                 </tbody>
                             </table>
-
-
-
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
         </div>
@@ -196,105 +234,105 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
 <script>
 
-    function ListaMaterias(cedula,nombre) {
-        var text="Listado De Materias "+nombre;
-        $("#exampleModalLabel").html(text);
-        var url = "<?php echo base_url('Asignacion/get/'); ?>" + cedula;
-       
+                                                function ListaMaterias(cedula, nombre) {
+                                                    var text = "Listado De Materias " + nombre;
+                                                    $("#exampleModalLabel").html(text);
+                                                    var url = "<?php echo base_url('Asignacion/get/'); ?>" + cedula;
 
 
-        $.ajax({
-            type: "POST",
-            url: url,
 
-            beforeSend: function () {
-                $("#resultado").html("Procesando, espere por favor...");
-            },
-            success: function (data)
-            {
-                var html = '<table class="table table-hover table-light"id="table">' +
-                        '<thead>' +
-                        '<tr>' +
-                        '<th>Codigo</th>' +
-                        '<th>Materia</th>' +
-                        '<th>Curso</th>' +
-                        '<th>Acciones</th>' +
-                        '</tr>' +
-                        '</thead>' +
-                        '<tbody><tr>';
+                                                    $.ajax({
+                                                        type: "POST",
+                                                        url: url,
 
-                $.each(JSON.parse(data), function (i, item) {
+                                                        beforeSend: function () {
+                                                            $("#resultado").html("Procesando, espere por favor...");
+                                                        },
+                                                        success: function (data)
+                                                        {
+                                                            var html = '<table class="table table-hover table-light"id="table">' +
+                                                                    '<thead>' +
+                                                                    '<tr>' +
+                                                                    '<th>Codigo</th>' +
+                                                                    '<th>Materia</th>' +
+                                                                    '<th>Curso</th>' +
+                                                                    '<th>Acciones</th>' +
+                                                                    '</tr>' +
+                                                                    '</thead>' +
+                                                                    '<tbody><tr>';
 
-                    html += "<td>" + item.id_materias_Asignacion + '</td>';
-                    html += "<td>" + item.nom_Materias + '</td>';
-                    html += "<td>" + item.nom_Cursos + '</td>';
-                    html += "<td>";
-                    html += "<button type='button' class='btn btn-default' onclick='eliminar(" + item.id_Asignacion + ")'><span class='fa fa-trash' aria-hidden='true'></span></button>";
-                    html += '</td></tr>';
+                                                            $.each(JSON.parse(data), function (i, item) {
 
-                    // alert(item.idPenciones);
-                })
+                                                                html += "<td>" + item.id_materias_Asignacion + '</td>';
+                                                                html += "<td>" + item.nom_Materias + '</td>';
+                                                                html += "<td>" + item.nom_Cursos + '</td>';
+                                                                html += "<td>";
+                                                                html += "<button type='button' class='btn btn-default' onclick='eliminar(" + item.id_Asignacion + ")'><span class='fa fa-trash' aria-hidden='true'></span></button>";
+                                                                html += '</td></tr>';
 
-
-                $("#mostrarhistorial").html(html);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                $("#resp").html(errorThrown);
-            }
-        });
-    }
-
-    function eliminar(id) {
-        var url = "<?php echo base_url('Asignacion/delete/'); ?>" + id;
+                                                                // alert(item.idPenciones);
+                                                            })
 
 
-        var r = confirm("Seguro que desea Eliminar esta Materia");
-        if (r == true) {
-            $.ajax({
-                type: "POST",
-                url: url,
+                                                            $("#mostrarhistorial").html(html);
+                                                        },
+                                                        error: function (jqXHR, textStatus, errorThrown) {
+                                                            $("#resp").html(errorThrown);
+                                                        }
+                                                    });
+                                                }
 
-                beforeSend: function () {
-                    $("#resultado").html("Procesando, espere por favor...");
-                },
-                success: function (data)
-                {
-                    alert("Materia Eliminada exitosamente");
-                    $('#exampleModal').modal('hide');
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown);
-                    //$('#exampleModal').modal('hide')
+                                                function eliminar(id) {
+                                                    var url = "<?php echo base_url('Asignacion/delete/'); ?>" + id;
 
 
-                }
-            });
-        }
+                                                    var r = confirm("Seguro que desea Eliminar esta Materia");
+                                                    if (r == true) {
+                                                        $.ajax({
+                                                            type: "POST",
+                                                            url: url,
 
-        //alert(id);
+                                                            beforeSend: function () {
+                                                                $("#resultado").html("Procesando, espere por favor...");
+                                                            },
+                                                            success: function (data)
+                                                            {
+                                                                alert("Materia Eliminada exitosamente");
+                                                                $('#exampleModal').modal('hide');
+                                                            },
+                                                            error: function (jqXHR, textStatus, errorThrown) {
+                                                                alert(errorThrown);
+                                                                //$('#exampleModal').modal('hide')
 
 
-    }
-    function myFunction() {
-        var input, filter, table, tr, td, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("myTable");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
-            if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
-        }
-    }
-$(document).ready(function() {
-    $('.js-example-basic-single').select2();
-})
+                                                            }
+                                                        });
+                                                    }
+
+                                                    //alert(id);
+
+
+                                                }
+                                                function myFunction() {
+                                                    var input, filter, table, tr, td, i;
+                                                    input = document.getElementById("myInput");
+                                                    filter = input.value.toUpperCase();
+                                                    table = document.getElementById("myTable");
+                                                    tr = table.getElementsByTagName("tr");
+                                                    for (i = 0; i < tr.length; i++) {
+                                                        td = tr[i].getElementsByTagName("td")[1];
+                                                        if (td) {
+                                                            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                                                tr[i].style.display = "";
+                                                            } else {
+                                                                tr[i].style.display = "none";
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                $(document).ready(function () {
+                                                    $('.js-example-basic-single').select2();
+                                                })
 </script>
 
 

@@ -90,6 +90,29 @@ class Modelo_RegistroDocente extends CI_Model {
 
         $this->db->insert('usuario', $array1);
     }
+    
+    function Estudiascurso($param) {
+         $query = $this->db->query("SELECT *
+FROM cursos,estudiante,matricula,curso_tutor
+where cedula_Estudiante=cedula_estudiante_matricula 
+and id_Cursos =id_curso
+and id_curso =curso_Curso_Tutor
+and cedula_Curso_Tutor=$param;");
+        return $query->result();
+    }
+    
+    function selmateriasnotas($param) {
+        $query = $this->db->query("SELECT * FROM materias, asignacion,matricula,estudiante,cursos,materiasnotas
+where id_curso_Asignacion=id_Cursos 
+and id_Materias=id_materias_Asignacion  
+and cedula_Estudiante=cedula_estudiante_matricula 
+and id_curso=id_Cursos 
+and cedula_estudiantes_MateriasNotas=cedula_Estudiante
+and id_materia_MateriasNotas=id_Materias
+and cedula_Estudiante=$param;");
+        return $query->result();
+        
+    }
 
 }
 

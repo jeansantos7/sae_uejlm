@@ -34,6 +34,15 @@ class Modelo_Asignacion extends CI_Model {
         );
         $this->db->insert('asignacion', $array);
     }
+    public function inserAsignacionTutor($docenteselect, $cursoselect) {
+
+        $array = array(
+            'cedula_Curso_Tutor' => $docenteselect,
+            'curso_Curso_Tutor' => $cursoselect
+            
+        );
+        $this->db->insert('curso_tutor', $array);
+    }
 
     public function MateriasLista($cedula_docente) {
 
