@@ -12,7 +12,7 @@ class Estudiante extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model("Modelo_Estudiante");
+		$this->load->model("Modelo_EstudianteNotas");
 
 	}
 

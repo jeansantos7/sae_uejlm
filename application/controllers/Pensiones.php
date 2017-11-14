@@ -3,9 +3,9 @@
 /**
  * 
  */
-
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
+
 class Pensiones extends CI_Controller {
 
     function __construct() {
@@ -19,51 +19,41 @@ class Pensiones extends CI_Controller {
         if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
 
 
-        $data['contenido'] = "Pensiones/index";
-        $data['listarEstudiante_P'] = $this->Modelo_Pensiones->listarEstudiante_P();
+            $data['contenido'] = "Pensiones/index";
+            $data['listarEstudiante_P'] = $this->Modelo_Pensiones->listarEstudiante_P();
 
-        $data['listarHistorial'] = $this->Modelo_Pensiones->listarHistorial();
+            $data['listarHistorial'] = $this->Modelo_Pensiones->listarHistorial();
 
 
-        //$data['listarHistorial']= $this->Modelo_Pensiones->listarHistorial();
-        $data['user'] = $this->session->userdata('username');
+            //$data['listarHistorial']= $this->Modelo_Pensiones->listarHistorial();
+            $data['user'] = $this->session->userdata('username');
 
-        $this->load->view("plantilla_Secretaria", $data);
+            $this->load->view("plantilla_Secretaria", $data);
+        } else {
 
+            redirect(base_url(''));
+        }
     }
 
-    else
-    {
-
-         redirect(base_url(''));
-    }
-    }
-
-    public function historialPensiones ()
-    {
+    public function historialPensiones() {
 
         if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
 
 
-        $data['contenido'] = "Pensiones/historial";
-        $data['listarEstudiante_P'] = $this->Modelo_Pensiones->listarEstudiante_P();
+            $data['contenido'] = "Pensiones/historial";
+            $data['listarEstudiante_P'] = $this->Modelo_Pensiones->listarEstudiante_P();
 
-        $data['listarHistorial'] = $this->Modelo_Pensiones->listarHistorial();
+            $data['listarHistorial'] = $this->Modelo_Pensiones->listarHistorial();
 
 
-        //$data['listarHistorial']= $this->Modelo_Pensiones->listarHistorial();
-        $data['user'] = $this->session->userdata('username');
+            //$data['listarHistorial']= $this->Modelo_Pensiones->listarHistorial();
+            $data['user'] = $this->session->userdata('username');
 
-        $this->load->view("plantilla_Directivo", $data);
+            $this->load->view("plantilla_Directivo", $data);
+        } else {
 
-    }
-
-    else
-    {
-
-         redirect(base_url(''));
-    }
-       
+            redirect(base_url(''));
+        }
     }
 
     public function pago($id_Estudiante = NULL) {
@@ -72,7 +62,9 @@ class Pensiones extends CI_Controller {
             //mostrar datos
             $data['contenido'] = 'Pensiones/pago';
             $data['datosPensiones'] = $this->Modelo_Pensiones->pagoPensiones($id_Estudiante);
-            $this->load->view('plantilla_Pensiones', $data);
+            $data['user'] = $this->session->userdata('username');
+
+            $this->load->view('welcome_message', $data);
         } else {
 
             redirect('/Pensiones');

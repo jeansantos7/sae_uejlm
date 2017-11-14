@@ -118,5 +118,7 @@ class Modelo_RegistroSecretaria extends CI_Model
 
 
 	}
+        
+        
 }
 ?>

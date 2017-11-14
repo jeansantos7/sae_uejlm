@@ -266,7 +266,8 @@
                         '<tbody>';
 
                 var con = 1;
-                $.each(JSON.parse(data), function (i, item) {
+                if(data){
+                    $.each(JSON.parse(data), function (i, item) {
                     //alert(item.nom_Estudiante);
                     html += "<tr><td>" + con + "</td><td><input type='hidden' name='materia' value='" + IDmateria + "'>";
                     html += "<input type='hidden' name='curso' value='" + IDCurso + "'>";
@@ -296,6 +297,7 @@
                     
                     con++;
                 });
+                }
                 html += '</tbody></table>';
                 html += '<input type="submit" value="Enviar" name="Enviar">';
                 $("#notasdatos2").html(html);

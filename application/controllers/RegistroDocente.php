@@ -46,7 +46,7 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 	public function insert()
 	{
 		$datos=$this->input->post();
-
+                print_r($_POST);
 		if(isset($datos))
 		{
 			//$id_Docente = $datos['id_Docente'];
@@ -64,7 +64,7 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 			
 			
 
-			$datoexiste=$this->Modelo_Docente->ConsultaExiste($cedula_Docente);
+			$datoexiste=$this->Modelo_RegistroDocente->ConsultaExiste($cedula_Docente);
 
 			if ($datoexiste ==true) {
 				echo '<script languaje="javascript"> alert("este docente  ya existe");
@@ -74,7 +74,8 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 
 else{
 
-			$this->Modelo_Docente->inserDocente( $cedula_Docente, $ape_Docente, $nom_Docente, $telf_Docente, $correo_Docente, $direc_Docente, $fech_nac_Docente, $user_Docente, $pass_Docente);
+			$this->Modelo_RegistroDocente->inserDocente( $cedula_Docente, $ape_Docente, $nom_Docente, $telf_Docente, $correo_Docente, $direc_Docente, $fech_nac_Docente, $user_Docente, $pass_Docente);
+			$this->Modelo_RegistroDocente->inserUsuario( $cedula_Docente,$user_Docente, $pass_Docente,"Profesor");
 			redirect('/Docente');
 		}
 

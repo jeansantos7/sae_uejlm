@@ -35,6 +35,7 @@ where cedula_Estudiante=cedula_estudiante_matricula
 and id_Cursos=id_curso
 and id_Cursos=id_curso_Asignacion
 and id_Materias=id_materias_Asignacion
+And id_materia_MateriasNotas=id_Materias
 and cedula_estudiantes_MateriasNotas=cedula_Estudiante
 and id_Materias=$id_materia and id_Cursos=$id_curso;");
         return $query->result();

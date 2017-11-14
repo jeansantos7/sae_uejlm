@@ -90,11 +90,11 @@ function myFunction() {
           
           <td>
             
-            <a href=" <?php echo base_url('Docente/delete/')."/".$value->id_Docente; ?>" class="btn btn-outline btn-circle btn-sm purple">
+            <a href=" <?php echo base_url('RegistroDocente/delete/')."/".$value->id_Docente; ?>" class="btn btn-outline btn-circle btn-sm purple">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Eliminar</a>
 
 
-            <a href="<?php echo base_url('Docente/edit/')."/".$value->id_Docente; ?>" class="btn btn-outline btn-circle dark btn-sm black">
+            <a href="<?php echo base_url('RegistroDocente/edit/')."/".$value->id_Docente; ?>" class="btn btn-outline btn-circle dark btn-sm black">
             
             <i class="fa fa-edit"></i> Editar </a>
           </td>
@@ -125,7 +125,7 @@ function myFunction() {
 
 
   </div>
-<form method="POST" action="<?php echo base_url('Docente/insert'); ?>">
+<form method="POST" action="<?php echo base_url('RegistroDocente/insert'); ?>">
   <div class="form-group">
     <label for="exampleInputEmail1">Cedula </label>
     <input type="text" class="form-control" id="cedula_Docente" name="cedula_Docente" aria-describedby="emailHelp" placeholder="cedula de ciudadania">
@@ -195,7 +195,7 @@ function myFunction() {
 
 
 
-<form method="post" action="<?php echo base_url('Docente/insert'); ?>">
+<form method="post" action="<?php echo base_url('RegistroDocente/insert'); ?>">
 
 
 	

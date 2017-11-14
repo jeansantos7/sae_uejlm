@@ -1,0 +1,1 @@
+SELECT id_Asignacion,id_materias_Asignacion,nom_Materias,nom_Cursos FROM asignacion,materias,cursos where id_Materias=id_materias_Asignacion and id_Cursos=id_curso_Asignacion and id_docente_Asignacion=1234

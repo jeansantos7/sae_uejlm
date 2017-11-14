@@ -1,4 +1,4 @@
-<h1 class="page-title">  Vista de Estudiantes                    
+<h1 class="page-title">  Vista de Materias                     
 </h1>
 
 <div class="page-bar">
@@ -9,7 +9,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <span>Estudiantes</span>
+            <span>Mis Materias</span>
         </li>
     </ul>
 
@@ -53,12 +53,11 @@
             <div class="portlet-title">
                 <div class="caption">
                     <ul class="nav nav-tabs" role="tablist">
-                        Valor de Pensiones del Mes
+
                     </ul>
 
                 </div>
                 <div class="actions">
-                    <input type="text" class="form-control large" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
                 </div>
             </div>
             <div class="portlet-body">
@@ -66,31 +65,23 @@
 
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="home">
-
-                            <table border="1" class="table table-bordered table-checkable">
+                            <table border="" class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Valor de Pencion</th>
-                                        <th>Valor de Pencion Pagada</th>
-                                        <th>Mes</th>
-                                        <th>Fecha</th>
-                                        <th>observaciones</th>
+                                        <th>ID</th>
+                                        <th>Materia</th>
+                                        <th>Curso</th>
+                                        <th>Hora</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                    <?php
-                                    //print_r($Materiasnotas);
-                                    $meses = array('enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre');
-                                    
-                                    foreach ($HistorilaPenciones as $key => $value) {
+                                    <?Php foreach ($MisMaterias as $key => $value) {
                                         ?>
                                         <tr>
-                                            <td> <?php echo $value->valor_matricula; ?></td>
-                                            <td> <?php echo $value->valor_pagado; ?></td>
-                                            <td> <?php echo $meses[$value->mes_pagado]; ?></td>
-                                            <td> <?php echo $value->fecha; ?></td>
-                                            <td> <?php if ($value->valor_pagado==$value->valor_matricula) {echo "--";} else {    echo 'Atencion';} ?></td>
+                                            <td><?php echo $value->id_materias_Asignacion;?></td>
+                                            <td><?php echo $value->nom_Materias;?></td>
+                                            <td><?php echo $value->nom_Cursos;?></td>
+                                            <td></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
@@ -98,8 +89,13 @@
 
 
 
-                        </div>
 
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+
+
+                        </div>
 
 
                     </div>
@@ -109,5 +105,29 @@
         </div>
         <!-- END SAMPLE TABLE PORTLET-->
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="mostrarhistorial">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
+<script>
+
+</script>
+

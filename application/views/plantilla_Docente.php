@@ -191,7 +191,7 @@
 
                         </li>
                         <li class="nav-item active open ">
-                            <a href="<?php echo base_url('/PENSIONES/'); ?>" class="nav-link nav-toggle">
+                            <a href="<?php echo base_url('/Docente/Materias'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-notebook"></i>
                                 <span class="title">Mis Materias</span>
                                 <span class="selected"></span>

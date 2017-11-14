@@ -70,6 +70,7 @@ and id_Materias=$idmateria and id_Cursos=$idcurso;";
             'promedioq2_MateriasNotas' => $promediototal
         );
         $this->db->where('cedula_estudiantes_MateriasNotas', $cedu);
+        $this->db->where('id_materia_MateriasNotas', $materia);
 //
         $this->db->update('materiasnotas', $array1);
     }
