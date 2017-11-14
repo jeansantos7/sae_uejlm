@@ -239,7 +239,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item  ">
-                                    <a href="<?php echo base_url('/ActasCalificaciones/'); ?>" class="nav-link ">
+                                    <a href="<?php echo base_url('/Docente/CursoTutor'); ?>" class="nav-link ">
                                         <i class="icon-docs"></i>
                                         <span class="title">Lista de Estudiantes</span>
                                     </a>
