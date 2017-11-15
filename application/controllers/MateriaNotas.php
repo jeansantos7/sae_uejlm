@@ -53,44 +53,54 @@ class MateriaNotas extends CI_Controller {
         if ($datos) {
 
             for ($i = 1; $i <= $_POST["filas"]; $i++) {
-                $quimestre = $datos["quimestre"];
+                $valor=$datos["valor"];
+                $quimestre = "1";
                 $materia = $datos["materia"];
                 $curso = $datos["curso"];
                 $profesor = $datos["profesor"];
                 $cedu = $datos["cedu" . $i];
-                $notaParcial1 = $datos["notaParcial1" . $i];
-                $notaParcial2 = $datos["notaParcial2" . $i];
-                $notaParcial3 = $datos["notaParcial3" . $i];
-                $porcenta = $datos["porcenta" . $i];
-                $notaexamen = $datos["notaexamen" . $i];
-                $porcentaexamen = $datos["porcentaexamen" . $i];
-                $promediototal = $datos["promediototal" . $i];
+                $notaparcial1q1 = $datos["notaparcial1q1" . $i];
+                $notaparcial2q1 = $datos["notaparcial2q1" . $i];
+                $notaparcial3q1 = $datos["notaparcial3q1" . $i];
+                $porcentaq1 = $datos["porcentaq1" . $i];
+                $notaexamenq1 = $datos["notaexamenq1" . $i];
+                $porcentaexamenq1 = $datos["porcentaexamenq1" . $i];
+                $promediototalq1 = $datos["promediototalq2" . $i];
+                $notaparcial1q2 = $datos["notaparcial1q2" . $i];
+                $notaparcial2q2 = $datos["notaparcial2q2" . $i];
+                $notaparcial3q2 = $datos["notaparcial3q2" . $i];
+                $porcentaq2 = $datos["porcentaq2" . $i];
+                $notaexamenq2 = $datos["notaexamenq2" . $i];
+                $porcentaexamenq2 = $datos["porcentaexamenq2" . $i];
+                $promediototalq2 = $datos["promediototalq2" . $i];
 
 //                $data = $this->Modelo_MateriasNotas->InserNotas($quimestre, $materia, $curso
 //                        , $profesor, $cedu, $notaParcial1, $notaParcial2, $notaParcial3
 //                        , $porcenta, $notaexamen, $porcentaexamen, $promediototal);
                 // echo "INSERT INTO cursos(`id_Cursos`) VALUES (".$cedu.");";
-                if ($quimestre == "Q1") {
+                if ($valor == null) {
                     //echo 'Insertar notas q1 promedio';
                    // $this->Modelo_MateriasNotas->InserNotasQ1($cedu, $materia, $curso, $profesor, $promediototal);
                     $data = $this->Modelo_MateriasNotas->InserNotasQ1($quimestre, $materia, $curso
-                        , $profesor, $cedu, $notaParcial1, $notaParcial2, $notaParcial3
-                        , $porcenta, $notaexamen, $porcentaexamen, $promediototal);
-                    
-                } elseif ($quimestre = "Q2") {
+                        , $profesor, $cedu, $notaparcial1q1);
+//                 echo 'insert';
+//                    print_r($datos);
+                } elseif ($valor = 1) {
                     //$this->Modelo_MateriasNotas->UpdateNotasQ2($cedu, $promediototal);
-                    
+                    //echo 'actuliza';
+                    //print_r($datos);
                     $data = $this->Modelo_MateriasNotas->InserNotasQ2($quimestre, $materia, $curso
-                        , $profesor, $cedu, $notaParcial1, $notaParcial2, $notaParcial3
-                        , $porcenta, $notaexamen, $porcentaexamen, $promediototal);
+                        , $profesor, $cedu, $notaparcial1q1, $notaparcial2q1, $notaparcial3q1
+                        , $porcentaq1, $notaexamenq1, $porcentaexamenq1, $promediototalq1,$notaparcial1q2,
+                         $notaparcial2q2,$notaparcial3q2,$porcentaq2,$notaexamenq2,$porcentaexamenq2,$promediototalq2);
                 }
             }
-
+//
 
 
             //$data = $this->Modelo_MateriasNotas->ConsultaAlumnos($datos["id_materia"],$datos["Id_Curso"]);
             // echo json_encode($data, JSON_FORCE_OBJECT);
-            redirect('/MateriaNotas');
+           redirect('/MateriaNotas');
         } else {
             $data = array('error' => 'error');
             echo json_encode($data, JSON_FORCE_OBJECT);

@@ -176,7 +176,7 @@
                                 <div class="col-md-3">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <label for="s">Numero de Matricula </label>
+                                            <label for="s">Numero de  </label>
                                             <select size="1" id="s" name="s" class="form-control" onchange="matriaestudiantevista(this.value)">
                                                 <option value="">Seleccione</option>
                                                 <?php foreach ($lista_materias as $key => $value) {
@@ -344,51 +344,70 @@
             url: url,
             type: 'POST',
             success: function (data, textStatus, jqXHR) {
-                var html = '<table class="table table-bordered table-hover ">' +
+                
+                 var html = '<table class="table table-bordered table-hover ">' +
                         '<thead>' +
-                        '<tr><td><select  id="quimestre" name="quimestre" class="" onchange="">' +
-                        '<option value="">Seleccione</option>' +
-                        '<option value="Q1">Q1</option>' +
-                        '<option value="Q2">Q2</option>' +
-                        '</select></td></tr>' +
-                        '<tr>' +
                         '<th>ID</th>' +
                         '<th>Cedula</th>' +
                         '<th>Nombre</th>' +
-                        '<th>Parcial 1</th>' +
-                        '<th>Parcial 2</th>' +
-                        '<th>Parcial 3</th>' +
-                        '<th>80%</th>' +
-                        '<th>Examen</th>' +
-                        '<th>20%</th>' +
-                        '<th>Promedio</th>' +
+                        '<th>NotaP1Q1</th>' +
+                        '<th>NotaP2Q1</th>' +
+                        '<th>NotaP3Q1</th>' +
+                        '<th>NotaPOQ1</th>' +
+                        '<th>NotaEQ1</th>' +
+                        '<th>NotaEPQ1</th>' +
+                        '<th>NotaPROQ1</th>' +
+                        '<th>NotaP1Q2</th>' +
+                        '<th>NotaP2Q2</th>' +
+                        '<th>NotaP3Q2</th>' +
+                        '<th>NotaPOQ2</th>' +
+                        '<th>NotaEQ2</th>' +
+                        '<th>NotaEPQ2</th>' +
+                        '<th>NotaPROQ2</th>' +
+                        //'<th>TOTAL</th>' +
+                        '<th>NOTARE</th>' +
+                        '<th>NOTAREME</th>' +
+                        '<th>NOTAEXA</th>' +
                         '</tr>' +
                         '</thead>' +
                         '<tbody>';
 
                 var con = 1;
-                $.each(JSON.parse(data), function (i, item) {
-
-
+                if(data){
+                    $.each(JSON.parse(data), function (i, item) {
                     //alert(item.nom_Estudiante);
                     html += "<tr><td>" + con + "</td><td><input type='hidden' name='materia' value='" + IDmateria + "'>";
                     html += "<input type='hidden' name='curso' value='" + IDCurso + "'>";
+                    html += "<input type='hidden' name='valor' value='"; if(item.quimestre_MateriasNotas!=null){ html += ""+item.quimestre_MateriasNotas+"";} html +="'>";
                     html += "<input type='hidden' name='profesor' value='" + CIProfe + "'>";
                     html += "<input type='hidden' name='cedu" + con + "' id='' value='" + item.cedula_Estudiante + "'>" + item.cedula_Estudiante + '</td>';
                     html += "<td>" + item.nom_Estudiante + " " + item.ape_Estudiante + '</td>';
-                    html += "<td><input type='text' onchange='calculos(" + con + ")'  class='form-control' name='notaParcial1" + con + "' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' onchange='calculos(" + con + ")' class='form-control' name='notaParcial2" + con + "' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' onchange='calculos(" + con + ")' class='form-control' name='notaParcial3" + con + "' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' class='form-control' name='porcenta" + con + "' readonly='readonly' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' onchange='calculos(" + con + ")' class='form-control' name='notaexamen" + con + "' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text'  class='form-control' name='porcentaexamen" + con + "' readonly='readonly' value='' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' class='form-control' name='promediototal" + con + "'  value='' style=' width: 52px;' readonly='readonly'></td></tr>";
-
+                    html += "<td><input type='text' "; if(item.notaparcial1q1_MateriasNotas!=null & item.notaparcial1q1_MateriasNotas!=""  ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial1q1" + con + "' value='"; if(item.notaparcial1q1_MateriasNotas!=null){ html += ""+item.notaparcial1q1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.notaparcial2q1_MateriasNotas!=null & item.notaparcial2q1_MateriasNotas!="") { html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial2q1" + con + "' value='"; if(item.notaparcial2q1_MateriasNotas!=null){ html += ""+item.notaparcial2q1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.notaparcial3q1_MateriasNotas!=null & item.notaparcial3q1_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial3q1" + con + "' value='"; if(item.notaparcial3q1_MateriasNotas!=null){ html += ""+item.notaparcial3q1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.porcentajeq1_MateriasNotas!=null & item.porcentajeq1_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='porcentaq1" + con + "' value='"; if(item.porcentajeq1_MateriasNotas!=null){ html += ""+item.porcentajeq1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.nota_examenq1_MateriasNotas!=null & item.nota_examenq1_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaexamenq1" + con + "' value='"; if(item.nota_examenq1_MateriasNotas!=null){ html += ""+item.nota_examenq1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.nota_examen_porcentajeq1_MateriasNotas!=null & item.nota_examen_porcentajeq1_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='porcentaexamenq1" + con + "' value='"; if(item.nota_examen_porcentajeq1_MateriasNotas!=null){ html += ""+item.nota_examen_porcentajeq1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.promedioq1_MateriasNotas!=null & item.promedioq1_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='promediototalq1" + con + "' value='"; if(item.promedioq1_MateriasNotas!=null){ html += ""+item.promedioq1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.notaparcial1q2_MateriasNotas!=null & item.notaparcial1q2_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial1q2" + con + "' value='"; if(item.notaparcial1q2_MateriasNotas!=null){ html += ""+item.notaparcial1q2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.notaparcial2q2_MateriasNotas!=null & item.notaparcial2q2_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial2q2" + con + "' value='"; if(item.notaparcial2q2_MateriasNotas!=null){ html += ""+item.notaparcial2q2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.notaparcial3q2_MateriasNotas!=null & item.notaparcial3q2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial3q2" + con + "' value='"; if(item.notaparcial3q2_MateriasNotas!=null){ html += ""+item.notaparcial3q2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.porcentajeq2_MateriasNotas!=null & item.porcentajeq2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='porcentaq2" + con + "' value='"; if(item.porcentajeq2_MateriasNotas!=null){ html += ""+item.porcentajeq2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.nota_examenq2_MateriasNotas!=null & item.nota_examenq2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaexamenq2" + con + "' value='"; if(item.nota_examenq2_MateriasNotas!=null){ html += ""+item.nota_examenq2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.nota_examen_porcentajeq2_MateriasNotas!=null & item.nota_examen_porcentajeq2_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='porcentaexamenq2" + con + "' value='"; if(item.nota_examen_porcentajeq2_MateriasNotas!=null){ html += ""+item.nota_examen_porcentajeq2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.promedioq2_MateriasNotas!=null & item.promedioq2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='promediototalq2" + con + "' value='"; if(item.promedioq2_MateriasNotas!=null){ html += ""+item.promedioq2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.notarec_MateriasNotas!=null & item.notarec_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notarec" + con + "' value='"; if(item.notarec_MateriasNotas!=null){ html += ""+item.notarec_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.notareme_MateriasNotas!=null & item.notareme_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notareme" + con + "' value='"; if(item.notareme_MateriasNotas!=null){ html += ""+item.notareme_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' "; if(item.notaexa_MateriasNotas!=null & item.notaexa_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaexa" + con + "' value='"; if(item.notaexa_MateriasNotas!=null){ html += ""+item.notaexa_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "</tr>";
                     html += "<input type='hidden' name='filas' value='" + con + "'>"
+                    
                     con++;
                 });
+                }
                 html += '</tbody></table>';
                 html += '<input type="submit" value="Enviar" name="Enviar">';
+                
                 $("#notasdatos").html(html);
             },
             beforeSend: function (xhr) {
