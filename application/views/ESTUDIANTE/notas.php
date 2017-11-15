@@ -1,74 +1,50 @@
-<h1 class="page-title">  Vista de Estudiantes                    
-</h1>
-
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="icon-home"></i>
-            <a href="index.html">Home</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <span>Estudiantes</span>
-        </li>
-    </ul>
 
 
-    <div class="page-toolbar">
-        <div class="btn-group pull-right">
-            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
-                <i class="fa fa-angle-down"></i>
-            </button>
-            <ul class="dropdown-menu pull-right" role="menu">
-                <li>
-                    <a href="#">
-                        <i class="icon-bell"></i> Action</a>
+
+<section class="full-box dashboard-contentPage">
+        <!-- NavBar -->
+        <nav class="full-box dashboard-Navbar">
+            <ul class="full-box list-unstyled text-right">
+                <li class="pull-left">
+                    <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-shield"></i> Another action</a>
+                    <a href="#!" class="btn-Notifications-area">
+                        <i class="zmdi zmdi-notifications-none"></i>
+                        <span class="badge">7</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-user"></i> Something else here</a>
+                    <a href="#!" class="btn-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </a>
                 </li>
-                <li class="divider"> </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-bag"></i> Separated link</a>
+                    <a href="#!" class="btn-modal-help">
+                        <i class="zmdi zmdi-help-outline"></i>
+                    </a>
                 </li>
             </ul>
-        </div>
-    </div>
-</div>
-<!-- Nav tabs -->
-
-
-<!-- Tab panes -->
-
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
-        <div class="portlet light ">
-            <div class="portlet-title">
-                <div class="caption">
-                    <ul class="nav nav-tabs" role="tablist">
-                        Notas
-                    </ul>
-
-                </div>
-                <div class="actions">
-                    <input type="text" class="form-control large" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
-                </div>
+        </nav>
+        <!-- Content page -->
+        <div class="container-fluid">
+            <div class="page-header">
+              <h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Estudiante <small> </small></h1>
             </div>
-            <div class="portlet-body">
-                <div class="table-scrollable">
-
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">
-
-                            <table border="1" class="table table-bordered table-checkable">
-                                <thead>
+            <p class="lead">Consulte sus Notas </p>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+                        <li class="active"><a href="#new" data-toggle="tab">Calificaciones</a></li>
+                        
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in" id="new">
+                            <div class="table-responsive">
+                                <table class="table table-hover text-center">
+                                    <thead>
                                     <tr>
                                         <th>Materia</th>
                                         <th>N1</th>
@@ -120,20 +96,37 @@
                                         </tr>
                                     <?php } ?>
                                 </tbody>
-                            </table>
+                                </table>
 
 
 
+                                <ul class="pagination pagination-sm">
+                                    <li class="disabled"><a href="#!">«</a></li>
+                                    <li class="active"><a href="#!">1</a></li>
+                                    <li><a href="#!">2</a></li>
+                                    <li><a href="#!">3</a></li>
+                                    <li><a href="#!">4</a></li>
+                                    <li><a href="#!">5</a></li>
+                                    <li><a href="#!">»</a></li>
+                                </ul>
+
+
+
+                            </div>
                         </div>
-
-
-
+                        <div class="tab-pane fade" id="list">
+                            
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
-        <!-- END SAMPLE TABLE PORTLET-->
-    </div>
+    </section>
 
-</div>
+ <form method="POST" action="<?php echo base_url('Directivo/insert'); ?>">
+
+                            
+                                    
+
+
+                            </form>
