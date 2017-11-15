@@ -382,20 +382,20 @@
                     html += "<input type='hidden' name='profesor' value='" + CIProfe + "'>";
                     html += "<input type='hidden' name='cedu" + con + "' id='' value='" + item.cedula_Estudiante + "'>" + item.cedula_Estudiante + '</td>';
                     html += "<td>" + item.nom_Estudiante + " " + item.ape_Estudiante + '</td>';
-                    html += "<td><input type='text' "; if(item.notaparcial1q1_MateriasNotas!=null & item.notaparcial1q1_MateriasNotas!=""  ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial1q1" + con + "' value='"; if(item.notaparcial1q1_MateriasNotas!=null){ html += ""+item.notaparcial1q1_MateriasNotas+"";} html +="' style=''></td>";
-                    html += "<td><input type='text' "; if(item.notaparcial2q1_MateriasNotas!=null & item.notaparcial2q1_MateriasNotas!="") { html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial2q1" + con + "' value='"; if(item.notaparcial2q1_MateriasNotas!=null){ html += ""+item.notaparcial2q1_MateriasNotas+"";} html +="' style=''></td>";
-                    html += "<td><input type='text' "; if(item.notaparcial3q1_MateriasNotas!=null & item.notaparcial3q1_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial3q1" + con + "' value='"; if(item.notaparcial3q1_MateriasNotas!=null){ html += ""+item.notaparcial3q1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' onchange='calculos(" + con + ")' "; if(item.notaparcial1q1_MateriasNotas!=null & item.notaparcial1q1_MateriasNotas!=""  ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial1q1" + con + "' value='"; if(item.notaparcial1q1_MateriasNotas!=null){ html += ""+item.notaparcial1q1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' onchange='calculos(" + con + ")' "; if(item.notaparcial2q1_MateriasNotas!=null & item.notaparcial2q1_MateriasNotas!="") { html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial2q1" + con + "' value='"; if(item.notaparcial2q1_MateriasNotas!=null){ html += ""+item.notaparcial2q1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' onchange='calculos(" + con + ")' "; if(item.notaparcial3q1_MateriasNotas!=null & item.notaparcial3q1_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial3q1" + con + "' value='"; if(item.notaparcial3q1_MateriasNotas!=null){ html += ""+item.notaparcial3q1_MateriasNotas+"";} html +="' style=''></td>";
                     html += "<td><input type='text' "; if(item.porcentajeq1_MateriasNotas!=null & item.porcentajeq1_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='porcentaq1" + con + "' value='"; if(item.porcentajeq1_MateriasNotas!=null){ html += ""+item.porcentajeq1_MateriasNotas+"";} html +="' style=''></td>";
-                    html += "<td><input type='text' "; if(item.nota_examenq1_MateriasNotas!=null & item.nota_examenq1_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaexamenq1" + con + "' value='"; if(item.nota_examenq1_MateriasNotas!=null){ html += ""+item.nota_examenq1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' onchange='calculos(" + con + ")' "; if(item.nota_examenq1_MateriasNotas!=null & item.nota_examenq1_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaexamenq1" + con + "' value='"; if(item.nota_examenq1_MateriasNotas!=null){ html += ""+item.nota_examenq1_MateriasNotas+"";} html +="' style=''></td>";
                     html += "<td><input type='text' "; if(item.nota_examen_porcentajeq1_MateriasNotas!=null & item.nota_examen_porcentajeq1_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='porcentaexamenq1" + con + "' value='"; if(item.nota_examen_porcentajeq1_MateriasNotas!=null){ html += ""+item.nota_examen_porcentajeq1_MateriasNotas+"";} html +="' style=''></td>";
-                    html += "<td><input type='text' "; if(item.promedioq1_MateriasNotas!=null & item.promedioq1_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='promediototalq1" + con + "' value='"; if(item.promedioq1_MateriasNotas!=null){ html += ""+item.promedioq1_MateriasNotas+"";} html +="' style=''></td>";
-                    html += "<td><input type='text' "; if(item.notaparcial1q2_MateriasNotas!=null & item.notaparcial1q2_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial1q2" + con + "' value='"; if(item.notaparcial1q2_MateriasNotas!=null){ html += ""+item.notaparcial1q2_MateriasNotas+"";} html +="' style=''></td>";
-                    html += "<td><input type='text' "; if(item.notaparcial2q2_MateriasNotas!=null & item.notaparcial2q2_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial2q2" + con + "' value='"; if(item.notaparcial2q2_MateriasNotas!=null){ html += ""+item.notaparcial2q2_MateriasNotas+"";} html +="' style=''></td>";
-                    html += "<td><input type='text' "; if(item.notaparcial3q2_MateriasNotas!=null & item.notaparcial3q2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial3q2" + con + "' value='"; if(item.notaparcial3q2_MateriasNotas!=null){ html += ""+item.notaparcial3q2_MateriasNotas+"";} html +="' style=''></td>";
-                    html += "<td><input type='text' "; if(item.porcentajeq2_MateriasNotas!=null & item.porcentajeq2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='porcentaq2" + con + "' value='"; if(item.porcentajeq2_MateriasNotas!=null){ html += ""+item.porcentajeq2_MateriasNotas+"";} html +="' style=''></td>";
-                    html += "<td><input type='text' "; if(item.nota_examenq2_MateriasNotas!=null & item.nota_examenq2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaexamenq2" + con + "' value='"; if(item.nota_examenq2_MateriasNotas!=null){ html += ""+item.nota_examenq2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' onchange='calculos(" + con + ")' "; if(item.promedioq1_MateriasNotas!=null & item.promedioq1_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='promediototalq1" + con + "' value='"; if(item.promedioq1_MateriasNotas!=null){ html += ""+item.promedioq1_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' onchange='calculos(" + con + ")' "; if(item.notaparcial1q2_MateriasNotas!=null & item.notaparcial1q2_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial1q2" + con + "' value='"; if(item.notaparcial1q2_MateriasNotas!=null){ html += ""+item.notaparcial1q2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' onchange='calculos(" + con + ")' "; if(item.notaparcial2q2_MateriasNotas!=null & item.notaparcial2q2_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial2q2" + con + "' value='"; if(item.notaparcial2q2_MateriasNotas!=null){ html += ""+item.notaparcial2q2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' onchange='calculos(" + con + ")' "; if(item.notaparcial3q2_MateriasNotas!=null & item.notaparcial3q2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaparcial3q2" + con + "' value='"; if(item.notaparcial3q2_MateriasNotas!=null){ html += ""+item.notaparcial3q2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text'  "; if(item.porcentajeq2_MateriasNotas!=null & item.porcentajeq2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='porcentaq2" + con + "' value='"; if(item.porcentajeq2_MateriasNotas!=null){ html += ""+item.porcentajeq2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' onchange='calculos(" + con + ")' "; if(item.nota_examenq2_MateriasNotas!=null & item.nota_examenq2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaexamenq2" + con + "' value='"; if(item.nota_examenq2_MateriasNotas!=null){ html += ""+item.nota_examenq2_MateriasNotas+"";} html +="' style=''></td>";
                     html += "<td><input type='text' "; if(item.nota_examen_porcentajeq2_MateriasNotas!=null & item.nota_examen_porcentajeq2_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='porcentaexamenq2" + con + "' value='"; if(item.nota_examen_porcentajeq2_MateriasNotas!=null){ html += ""+item.nota_examen_porcentajeq2_MateriasNotas+"";} html +="' style=''></td>";
-                    html += "<td><input type='text' "; if(item.promedioq2_MateriasNotas!=null & item.promedioq2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='promediototalq2" + con + "' value='"; if(item.promedioq2_MateriasNotas!=null){ html += ""+item.promedioq2_MateriasNotas+"";} html +="' style=''></td>";
+                    html += "<td><input type='text' onchange='calculos(" + con + ")' "; if(item.promedioq2_MateriasNotas!=null & item.promedioq2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='promediototalq2" + con + "' value='"; if(item.promedioq2_MateriasNotas!=null){ html += ""+item.promedioq2_MateriasNotas+"";} html +="' style=''></td>";
                     html += "<td><input type='text' "; if(item.notarec_MateriasNotas!=null & item.notarec_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notarec" + con + "' value='"; if(item.notarec_MateriasNotas!=null){ html += ""+item.notarec_MateriasNotas+"";} html +="' style=''></td>";
                     html += "<td><input type='text' "; if(item.notareme_MateriasNotas!=null & item.notareme_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notareme" + con + "' value='"; if(item.notareme_MateriasNotas!=null){ html += ""+item.notareme_MateriasNotas+"";} html +="' style=''></td>";
                     html += "<td><input type='text' "; if(item.notaexa_MateriasNotas!=null & item.notaexa_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaexa" + con + "' value='"; if(item.notaexa_MateriasNotas!=null){ html += ""+item.notaexa_MateriasNotas+"";} html +="' style=''></td>";
@@ -558,21 +558,34 @@
 
     function calculos(id) {
         //alert(id);
-        var nota1 = $("input[name=notaParcial1" + id + "]").val();
-        var nota2 = $("input[name=notaParcial2" + id + "]").val();
-        var nota3 = $("input[name=notaParcial3" + id + "]").val();
-        var sumanota = (parseInt(nota1) + parseInt(nota2) + parseInt(nota3));
+        var nota1q1 = $("input[name=notaparcial1q1" + id + "]").val();
+        var nota2q1 = $("input[name=notaparcial2q1" + id + "]").val();
+        var nota3q1 = $("input[name=notaparcial3q1" + id + "]").val();
+        //alert(id);
+        var nota1q2 = $("input[name=notaparcial1q2" + id + "]").val();
+        var nota2q2 = $("input[name=notaparcial2q2" + id + "]").val();
+        var nota3q2 = $("input[name=notaparcial3q2" + id + "]").val();
+        
+        var sumanotaq1 = (parseInt(nota1q1) + parseInt(nota2q1) + parseInt(nota3q1));
+        var sumanotaq2 = (parseInt(nota1q2) + parseInt(nota2q2) + parseInt(nota3q2));
         //alert(sumanota);
-        var promedio = sumanota / 3;
-        var nota = promedio * 0.80;
+        var promedio1 = sumanotaq1 / 3;
+        var promedio2 = sumanotaq2 / 3;
+        var nota1 = promedio1 * 0.80;
+        var nota2 = promedio2 * 0.80;
         // alert(promedio*0.80);
 
-        $("input[name=porcenta" + id + "]").val(nota);
-        var notaexamen = $("input[name=notaexamen" + id + "]").val();
-        var porcentajenota = (notaexamen * 0.20);
-        $("input[name=porcentaexamen" + id + "]").val(porcentajenota);
+        $("input[name=porcentaq1" + id + "]").val(nota1);
+        $("input[name=porcentaq2" + id + "]").val(nota2);
+        var notaexamen1 = $("input[name=notaexamenq1" + id + "]").val();
+        var notaexamen2 = $("input[name=notaexamenq2" + id + "]").val();
+        var porcentajenota1 = (notaexamen1 * 0.20);
+        var porcentajenota2 = (notaexamen2 * 0.20);
+        $("input[name=porcentaexamenq1" + id + "]").val(porcentajenota1);
+        $("input[name=porcentaexamenq2" + id + "]").val(porcentajenota2);
 
-        $("input[name=promediototal" + id + "]").val(nota + porcentajenota);
+        $("input[name=promediototalq1" + id + "]").val(nota1 + porcentajenota1);
+        $("input[name=promediototalq2" + id + "]").val(nota2 + porcentajenota2);
 
     }
 
