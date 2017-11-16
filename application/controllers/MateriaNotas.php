@@ -101,7 +101,7 @@ class MateriaNotas extends CI_Controller {
 
             //$data = $this->Modelo_MateriasNotas->ConsultaAlumnos($datos["id_materia"],$datos["Id_Curso"]);
             // echo json_encode($data, JSON_FORCE_OBJECT);
-           //redirect('/MateriaNotas');
+          redirect('/MateriaNotas');
         } else {
             $data = array('error' => 'error');
             echo json_encode($data, JSON_FORCE_OBJECT);

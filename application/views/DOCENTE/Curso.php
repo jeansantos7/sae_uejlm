@@ -53,11 +53,14 @@
             <div class="portlet-title">
                 <div class="caption">
                     <ul class="nav nav-tabs" role="tablist">
-
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mis Estudiantes </a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Observaciones</a></li>
                     </ul>
 
                 </div>
                 <div class="actions">
+                    <input type="text" class="form-control large" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
+
                 </div>
             </div>
             <div class="portlet-body">
@@ -65,23 +68,27 @@
 
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="home">
-                            <table border="1" class="table table-bordered">
+                            <table border="1" class="table table-bordered" id="myTable">
                                 <thead>
                                     <tr>
                                         <th>Cedula</th>
                                         <th>Nombres</th>
                                         <th>Apellidos</th>
+                                        <th>Dirrecion</th>
+                                        <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
                                     foreach ($misEstudiantes as $key => $value) {
+                                        $curso=$value->id_Cursos;
+                                        $proferos=$value->cedula_Curso_Tutor;
                                         ?>
                                         <tr>
                                             <td><?php echo $value->cedula_Estudiante; ?></td>
                                             <td><?php echo $value->nom_Estudiante; ?></td>
                                             <td><?php echo $value->ape_Estudiante; ?></td>
-                                            <td><?php echo $value->parentesco_Estudiante; ?></td>
+                                            <td><?php echo $value->dir_Estudiante; ?></td>
                                             <td><button type="button" class="btn btn-primary" onclick="notasestudiantes(<?php echo $value->cedula_Estudiante; ?>)" data-toggle="modal" data-target="#exampleModal">
                                                     Notas                                                </button></td>
                                         </tr>
@@ -97,22 +104,40 @@
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel"><div id="Nombreestu"></div> <div id="Curosestu"></div></h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body" >
+                                        <div class="modal-body" style="overflow-y: scroll;" >
                                             <div class="container-fluid">
                                                 <div class="row">
                                                     <div class="col-md-12" id="12222"></div>
-                                                    
+                                                    <form name="form12334" id="form12334" method="POST" id="observacion">
+                                                        <div class="col-md-12" >
+                                                            <input type="hidden" id="profeob" name="profeob" value="">
+                                                            <input type="hidden" id="cedulaob" name="cedulaob" value="">
+                                                            <label><h5>Incidencia</h5> </label>
+
+                                                            <select class="form-control" id="Incidencia" name="Incidencia">
+                                                                <option value="FaltaJustificada">Faltas Justificadas</option>
+                                                                <option value="FaltaInjustificada">Faltas Injustificadas </option>
+                                                                <!--<option value="At">Llamada de Atención</option>-->
+                                                            </select>
+                                                            <br>
+                                                            <label><h5>Observación</h5> </label>
+                                                            <textarea id="observ" class="form-control" name="observ" ></textarea>
+                                                        </div>
+
+
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                            <button type="button" class="btn btn-primary" onclick="guardar()">Save changes</button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -124,13 +149,27 @@
 
                         </div>
                         <div role="tabpanel" class="tab-pane" id="profile">
+                            <form name="form23" method="POST" action="<?php echo base_url();?>Docente/Obser12">
+                                <div class="form-group">
+                                    <input type="hidden" id="curso12" name="curso12" value="<?php echo $curso;?>">
+                                    <input type="hidden" id="profeob" name="profeob12" value="<?php echo $proferos;?>">
+                                    
+                                    <label><h5>Incidencia</h5> </label>
 
+                                    <select class="form-control" id="Incidencia" name="Incidencia12">
+                                        <option value="FaltaJustificada">Faltas Justificadas</option>
+                                        <option value="FaltaInjustificada">Faltas Injustificadas </option>
+                                        <!--<option value="At">Llamada de Atención</option>-->
+                                    </select>
+                                    <br>
+                                    <label><h5>Observación</h5> </label>
+                                    <textarea id="observ" class="form-control" name="observ12" ></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
 
+                            </form>                          
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
         </div>
@@ -140,6 +179,24 @@
 
 </div>
 <script>
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[2];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
     function notasestudiantes(cedula) {
         var url = "<?php echo base_url(); ?>Docente/estudiantesnotas";
         var parametros = {
@@ -216,17 +273,52 @@
                     html += "</tr>";
 
                     con++;
+                    $("#Nombreestu").html(item.ape_Estudiante);
+                    $("#Curosestu").html(item.nom_Cursos);
+
+
+
+
+                    $("#profeob").val(item.id_profesor_MateriasNotas);
+                    $("#cedulaob").val(item.cedula_Estudiante);
+
+
+
                 });
 
                 html += '</tbody></table>';
-                html += '<input type="submit" value="Enviar" name="Enviar">';
+                html += '';
                 $("#12222").html(html);
+
 
             }
 
 
 
         });
+    }
+    function guardar() {
+        var url = "<?php echo base_url(); ?>Docente/Obser";
+        $.ajax({
+            data: $("#form12334").serialize(),
+            type: 'POST',
+            url: url,
+            beforeSend: function (xhr) {
+                alert("Procesando...");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+
+            },
+            success: function (data, textStatus, jqXHR) {
+                window.location = "../Docente/CursoTutor";
+
+
+            }
+
+        });
+
+
     }
 </script>
 

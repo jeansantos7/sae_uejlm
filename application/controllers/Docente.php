@@ -56,8 +56,9 @@ class Docente extends CI_Controller {
             redirect(base_url(''));
         }
     }
+
     function estudiantesnotas() {
-        $cedula=$_POST["cedulaestudiante"];
+        $cedula = $_POST["cedulaestudiante"];
         if ($cedula != NULL) {
             $data = $this->Modelo_RegistroDocente->selmateriasnotas($cedula);
             echo json_encode($data, JSON_FORCE_OBJECT);
@@ -65,7 +66,23 @@ class Docente extends CI_Controller {
 
             redirect('');
         }
-       
+    }
+
+    function Obser() {
+        $datos = $this->input->post();
+        if (isset($datos)) {
+            //print_r($_POST);
+            $data = $this->Modelo_RegistroDocente->setObser($_POST["profeob"],$_POST["cedulaob"],$_POST["Incidencia"],$_POST["observ"]);
+        }
+    }
+    function Obser12() {
+        $datos = $this->input->post();
+        if (isset($datos)) {
+            //print_r($_POST);
+            $data = $this->Modelo_RegistroDocente->setObser12($_POST["curso12"],$_POST["profeob12"],$_POST["Incidencia12"],$_POST["observ12"]);
+                        redirect(base_url('Docente/CursoTutor'));
+
+        }
     }
 
 }
