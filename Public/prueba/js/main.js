@@ -21,9 +21,7 @@ $(document).ready(function(){
 		  	confirmButtonText: '<i class="zmdi zmdi-run"></i> Si, Salir!',
 		  	cancelButtonText: '<i class="zmdi zmdi-close-circle"></i> No, Cancelar!'
 		}).then(function () {
-			 var url = "<?php echo base_url ('//').'login/logout_ci; ?>";
-			 
-			//  var url = "<?php  echo base_url('login/logout_ci/'');?>;  
+			 window.location="Login/logout_ci";
 		});
 
 	});
