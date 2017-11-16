@@ -140,6 +140,12 @@ and cedula_Estudiante=$param;");
         $this->db->insert('observacioncurso', $array1);
     }
 
+    function Bitacora($param) {
+
+        $query = $this->db->query("SELECT * FROM bd_sae.observacioncurso where cedula_profesor_observacioncurso=$param;");
+        return $query->result();
+    }
+
 }
 
 ?>

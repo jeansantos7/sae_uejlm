@@ -55,6 +55,7 @@
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mis Estudiantes </a></li>
                         <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Observaciones</a></li>
+                        <li role="presentation"><a href="#profileOB" aria-controls="profileOB" role="tab" data-toggle="tab">Bitácora</a></li>
                     </ul>
 
                 </div>
@@ -81,8 +82,8 @@
                                 <tbody>
                                     <?php
                                     foreach ($misEstudiantes as $key => $value) {
-                                        $curso=$value->id_Cursos;
-                                        $proferos=$value->cedula_Curso_Tutor;
+                                        $curso = $value->id_Cursos;
+                                        $proferos = $value->cedula_Curso_Tutor;
                                         ?>
                                         <tr>
                                             <td><?php echo $value->cedula_Estudiante; ?></td>
@@ -149,11 +150,11 @@
 
                         </div>
                         <div role="tabpanel" class="tab-pane" id="profile">
-                            <form name="form23" method="POST" action="<?php echo base_url();?>Docente/Obser12">
+                            <form name="form23" method="POST" action="<?php echo base_url(); ?>Docente/Obser12">
                                 <div class="form-group">
-                                    <input type="hidden" id="curso12" name="curso12" value="<?php echo $curso;?>">
-                                    <input type="hidden" id="profeob" name="profeob12" value="<?php echo $proferos;?>">
-                                    
+                                    <input type="hidden" id="curso12" name="curso12" value="<?php echo $curso; ?>">
+                                    <input type="hidden" id="profeob" name="profeob12" value="<?php echo $proferos; ?>">
+
                                     <label><h5>Incidencia</h5> </label>
 
                                     <select class="form-control" id="Incidencia" name="Incidencia12">
@@ -168,6 +169,34 @@
                                 <button type="submit" class="btn btn-primary">Save changes</button>
 
                             </form>                          
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profileOB">
+                            <table border="1" class="table table-bordered" id="myTable">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Incidencia</th>
+                                        <th>Observación</th>
+                                        <th>Fecha</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($Bitacora as $key => $value) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $value->id; ?></td>
+                                            <td><?php echo $value->incidencia_observacioncurso; ?></td>
+                                            <td><?php echo $value->observ_observacioncurso; ?></td>
+                                            <td><?php echo $value->fecha_observacioncurso; ?></td>
+                                        </tr>
+                                    <?php }
+                                    ?>
+
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

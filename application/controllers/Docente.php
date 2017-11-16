@@ -34,6 +34,7 @@ class Docente extends CI_Controller {
             $data['user'] = $this->session->userdata('username');
             $cedula = $this->session->userdata('id_cedula');
             $data['misEstudiantes'] = $this->Modelo_RegistroDocente->Estudiascurso($cedula);
+            $data['Bitacora'] = $this->Modelo_RegistroDocente->Bitacora($cedula);
 
             $this->load->view("plantilla_Docente", $data);
         } else {
