@@ -1,377 +1,139 @@
- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-  <script src="<?php echo base_url('http://code.jquery.com/jquery-1.9.1.js')?>" </script>
-  <script src="<?php echo base_url('http://code.jquery.com/ui/1.10.1/jquery-ui.js')?>" </script>
- 
-<script language="JavaScript">
-var h=false;
-</script>
- <script>
-  (function( $ ) {
-    $.widget( "ui.combobox", {
-      _create: function() {
-        var input,
-          that = this,
-          wasOpen = false,
-          select = this.element.hide(),
-          selected = select.children( ":selected" ),
-          value = selected.val() ? selected.text() : "",
-          wrapper = this.wrapper = $( "<span>" )
-                .addClass( "ui-combobox" )
-            .insertAfter( select );
- 
-        function removeIfInvalid( element ) {
-          var value = $( element ).val(),
-            matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( value ) + "$", "i" ),
-            valid = false;
-          select.children( "option" ).each(function() {
-            if ( $( this ).text().match( matcher ) ) {
-              this.selected = valid = true;
-              return false;
-            }
-          });
- 
-          if ( !valid ) {
-            // remove invalid value, as it didn't match anything
-            $( element )
-              .val( "" )
-              .attr( "title", value + " didn't match any item" )
-              .tooltip( "open" );
-            select.val( "" );
-            setTimeout(function() {
-              input.tooltip( "close" ).attr( "title", "" );
-            }, 2500 );
-            input.data( "ui-autocomplete" ).term = "";
-          }
-        }
- 
-        input = $( "<input>" )
-          .appendTo( wrapper )
-          .val( value )
-          .attr( "title", "" )
-          .addClass( "ui-state-default ui-combobox-input" )
-          .autocomplete({
-            delay: 0,
-            minLength: 0,
-            source: function( request, response ) {
-              var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
-              response( select.children( "option" ).map(function() {
-                var text = $( this ).text();
-                if ( this.value && ( !request.term || matcher.test(text) ) )
-                  return {
-                    label: text.replace(
-                      new RegExp(
-                        "(?![^&;]+;)(?!<[^<>]*)(" +
-                        $.ui.autocomplete.escapeRegex(request.term) +
-                        ")(?![^<>]*>)(?![^&;]+;)", "gi"
-                      ), "<strong>$1</strong>" ),
-                    value: text,
-                    option: this
-                  };
-              }) );
-            },
-            select: function( event, ui ) {
-              ui.item.option.selected = true;
-              that._trigger( "selected", event, {
-                item: ui.item.option
-              });
-            },
-            change: function( event, ui ) {
-              if ( !ui.item ) {
-                removeIfInvalid( this );
-              }
-            }
-          })
-          .addClass( "ui-widget ui-widget-content ui-corner-left" );
- 
-        input.data( "ui-autocomplete" )._renderItem = function( ul, item ) {
-          return $( "<li>" )
-            .append( "<a>" + item.label + "</a>" )
-            .appendTo( ul );
-        };
- 
-        $( "<a>" )
-          .attr( "tabIndex", -1 )
-          .attr( "title", "Show All Items" )
-          .tooltip()
-          .appendTo( wrapper )
-          .button({
-            icons: {
-              primary: "ui-icon-triangle-1-s"
-            },
-            text: false
-          })
-          .removeClass( "ui-corner-all" )
-          .addClass( "ui-corner-right ui-combobox-toggle" )
-          .mousedown(function() {
-            wasOpen = input.autocomplete( "widget" ).is( ":visible" );
-          })
-          .click(function() {
-            input.focus();
- 
-            // close if already visible
-            if ( wasOpen ) {
-              return;
-            }
- 
-            // pass empty string as value to search for, displaying all results
-            input.autocomplete( "search", "" );
-          });
- 
-        input.tooltip({
-          tooltipClass: "ui-state-highlight"
-        });
-      },
- 
-      _destroy: function() {
-        this.wrapper.remove();
-        this.element.show();
-      }
-    });
-  })( jQuery );
- 
-  $(function() {
-    $( "#combobox" ).combobox();
-  });
-  </script>
-<h1 class="page-title">  Vista de Estudiante                      
-</h1>
+  <form method="POST" action="<?php echo base_url('RegistroEstudiante/insert'); ?>">
 
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="icon-home"></i>
-            <a href="index.html">Home</a>
-            <i class="fa fa-angle-right"></i>
+<section class="full-box dashboard-contentPage">
+    <!-- NavBar -->
+    <nav class="full-box dashboard-Navbar">
+      <ul class="full-box list-unstyled text-right">
+        <li class="pull-left">
+          <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
         </li>
         <li>
-            <span>Estudiante</span>
+          <a href="#!" class="btn-Notifications-area">
+            <i class="zmdi zmdi-notifications-none"></i>
+            <span class="badge">7</span>
+          </a>
         </li>
-    </ul>
-
-
-    <div class="page-toolbar">
-        <div class="btn-group pull-right">
-            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
-                <i class="fa fa-angle-down"></i>
-            </button>
-            <ul class="dropdown-menu pull-right" role="menu">
-                <li>
-                    <a href="#">
-                        <i class="icon-bell"></i> Action</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-shield"></i> Another action</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-user"></i> Something else here</a>
-                </li>
-                <li class="divider"> </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-bag"></i> Separated link</a>
-                </li>
-            </ul>
-        </div>
+        <li>
+          <a href="#!" class="btn-search">
+            <i class="zmdi zmdi-search"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="btn-modal-help">
+            <i class="zmdi zmdi-help-outline"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Content page -->
+    <div class="container-fluid">
+      <div class="page-header">
+        <h1 class="text-titles"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Payments <small>Payments</small></h1>
+      </div>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed, dignissimos possimus!</p>
     </div>
-</div>
-<!-- Nav tabs -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+              <li class="active"><a href="#new" data-toggle="tab">Lista de Estudiante</a></li>
+              <li><a href="#list" data-toggle="tab">Registro de Estudiante</a></li>
+          </ul>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="new">
+            <div class="table-responsive">
+                <table class="table table-hover text-center">
+                  <thead>
+                    <tr>
+                      <th class="text-center">#</th>
+                      <th class="text-center">Cedula</th>
+                      <th class="text-center">Apellidos y Nombres</th>
+                      <th class="text-center">Direccion</th>
+                      <th class="text-center">$Valor Pension</th>
+                      <th class="text-center">Representante</th>
+                      <th class="text-center">Usuario</th>
+                      <th class="text-center">Matriculado</th>
+                      <th class="text-center">Opciones</th>
+                        
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php foreach ($listarEstudiante as $key => $value) { ?>
+                    <tr>
+                      <td> <?php echo $value->id_Estudiante; ?></td>
+                      <td><?php echo $value->cedula_Estudiante; ?></td>
+                      <td><?php echo $value->ape_Estudiante.' '.$value->nom_Estudiante; ?></td>
+                      <td><?php echo $value->dir_Estudiante; ?></td>
+                      <td><?php echo $value->pension_Estudiante; ?></td>
+                      <td>Period 1</td>
+                      <td><?php echo $value->user_Estudiante; ?></td>
+                      
+                      <td> 
+                    <?php 
+                      $array_opciones = array("Si" => "1", "No" =>"0");
+                      foreach ($array_opciones as $indice => $valor) {
+                                                    if ($value->Estado == $valor) {
+                                                        echo $indice;
+                                                    }
+                                                }
 
+                    ?>
 
-<!-- Tab panes -->
-
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
-        <div class="portlet light ">
-            <div class="portlet-title">
-                <div class="caption">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Consulta </a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Registro</a></li>
-
-                    </ul>
-
-                </div>
-                <div class="actions">
-                    <input type="text" class="form-control large" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
-                </div>
+                      </td>
+                      <td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a>
+                           <a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
+                    </tr>
+                     <?php } ?>
+                  </tbody>
+                </table>
+               
+              </div>
+              
             </div>
-            <div class="portlet box blue">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="fa fa-comments"></i>Estudiantes </div>
-                                    <div class="tools">
-                                        <a href="javascript:;" class="collapse"> </a>
-                                        <a href="#portlet-config" data-toggle="modal" class="config"> </a>
-                                        <a href="javascript:;" class="reload"> </a>
-                                        <a href="javascript:;" class="remove"> </a>
-                                    </div>
-                                </div>
-            <div class="portlet-body">
-                <div class="table-scrollable">
+              <div class="tab-pane fade" id="list">
 
-                    <div class="tab-content">
-
-
-                        <div role="tabpanel" class="tab-pane active" id="home">
-                            <table class="table table-striped table-bordered table-advance table-hover" id="myTable">
-                                <thead>
-                                    <tr>
-                                        <th> ID</th>
-                                        <th> Cedula</th>
-                                        <th> Apellido</th>
-                                        <th> Nombre</th>
-
-                                        <th style="text-align: center;"> Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($listarEstudiante as $key => $value) { ?>
-
-                                        <tr>
-                                            <td> <?php echo $value->id_Estudiante; ?>   </td>
-                                            <td> <?php echo $value->cedula_Estudiante; ?>   </td>
-                                            <td> <?php echo $value->ape_Estudiante; ?>   </td>
-                                            <td> <?php echo $value->nom_Estudiante; ?>   </td>
-                                            <td style="text-align: center;">
-                                                <a href=" <?php echo base_url('RegistroEstudiante/delete/') . "/" . $value->id_Estudiante; ?>" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>  Eliminar</a>
-                                                <a href="<?php echo base_url('RegistroEstudiante/edit/') . "/" . $value->id_Estudiante; ?>" class="btn btn-default"><span class="glyphicon  glyphicon-edit" aria-hidden="true"></span>  Editar</a>
-                                                
-
-                                            </td>
-
-                                        </tr>
-                                    <?php } ?>
-
-                                </tbody>
-                            </table>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-xs-12 col-md-6 col-md-offset-1">
+                      <form action="">
+                      <div class="form-group label-floating">
+                        <label class="control-label">Student Code</label>
+                        <textarea class="form-control"></textarea>
+                      </div>
+                      <div class="form-group label-floating">
+                        <label class="control-label">Amount</label>
+                        <input class="form-control" type="text">
+                      </div>
+                      <div class="form-group label-floating">
+                        <label class="control-label">Subscription</label>
+                        <input class="form-control" type="text">
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label">Date</label>
+                        <input class="form-control" type="date">
+                      </div>
+                      <div class="form-group">
+                            <label class="control-label">Period</label>
+                            <select class="form-control">
+                              <option>Period 1</option>
+                              <option>Period 2</option>
+                              <option>Period 3</option>
+                              <option>Period 4</option>
+                              <option>Period 5</option>
+                            </select>
                         </div>
-
-                        <div role="tabpanel" class="tab-pane" id="profile">
-
-                            <form method="POST" action="<?php echo base_url('RegistroEstudiante/insert'); ?>">
-
-
-                         <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Numero de Matricula </label>
-                                        <input type="text" class="form-control" id="matricula_Estudiante" name="matricula_Estudiante" aria-describedby="emailHelp" placeholder="000">
-                                    </div>
-                                    <div class="form-group">
-                                        
-                                        <input type="hidden" class="form-control" id="fech_matricula_Estudiante" name="fech_matricula_Estudiante" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Cedula </label>
-                                        <input type="text" class="form-control" id="cedula_Estudiante" name="cedula_Estudiante" aria-describedby="emailHelp" placeholder="cedula de ciudadania">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Apellidos </label>
-                                        <input type="text" class="form-control" id="ape_Estudiante" name="ape_Estudiante" aria-describedby="emailHelp" placeholder="Apellidos">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Nombres </label>
-                                        <input type="text" class="form-control" id="nom_Estudiante" name="nom_Estudiante" aria-describedby="emailHelp" placeholder="Nombres">
-                                    </div>
-                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Fecha de nacimiento</label>
-                                        <input type="date" class="form-control" id="fech_nac_Estudiante" name="fech_nac_Estudiante" placeholder="contraseña"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Direccion </label>
-                                        <input type="text" class="form-control" id="dir_Estudiante" name="dir_Estudiante" aria-describedby="emailHelp" placeholder="Domicilio">
-                                    </div>
-                                   
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Discapacitado </label>
-                                        <input type="Checkbox" onClick="javascript:h = !h;" class="btn btn-small" id="disc_Estudiante" name="disc_Estudiante" >
-
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Carnet de Discapacidad </label>
-                                        <input type="text" class="form-control" onFocus="javascript:if (!h) {
-                                                    this.blur();
-                                                }" id="carnet_Estudiante" name="carnet_Estudiante" placeholder="carnet de Discapacidad">
-                                    </div>
-                                   
-                                    <div class="form-group">
-
-                                        <label for="exampleInputPassword1"> Parentesco familiar del Representante </label>
-
-                                        <select class="form-control" id="parentesco_Representante_Estudiante" name="parentesco_Representante_Estudiante" >
-                                            <option> Padre o Madre</option>
-                                            <option>Tio (a)</option>
-                                            <option> Abuelo (a)</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Usuario </label>
-                                        <input type="text" class="form-control" id="user_Estudiante" name="user_Estudiante" placeholder="Usuario">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="pass_Estudiante" name="pass_Estudiante" placeholder="contraseña">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1"> Valor de la Pension</label>
-                                        <input type="text" class="form-control" id="pension_Estudiante" name="pension_Estudiante" placeholder="valor de la pension">
-                                    </div>
-
-                                    <div class="form-group" >
-                                        <label for="exampleInputEmail1">Representante </label>
-                                        </br>
-                                        <select name="id_Representantes" id="combobox"> <?php   foreach ($selRepresentante as $key => $value) {?>
-                                            <option value="<?php echo $value->id_Representante?>" ><?php  echo $value->ape_Representante.' '. $value->nom_Representante ; ?></option>
-                                        <?php }  ?>
-                                         </select>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-
-                                </div>
-
-
-                            </form>
-                        </div>
-
-
-                    </div>
-
+                        <p class="text-center">
+                          <button href="#!" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Save</button>
+                        </p>
+                      </form>
+                  </div>
                 </div>
-            </div>
+              </div>
+              
+              </div>
+          </div>
         </div>
-        <!-- END SAMPLE TABLE PORTLET-->
+      </div>
     </div>
-
-
-</div>
-<script>
-
-    function myFunction() {
-        var input, filter, table, tr, td, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("myTable");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[2];
-            if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
-        }
-    }
-
-
-</script>
-
+  </section>
+  </form>

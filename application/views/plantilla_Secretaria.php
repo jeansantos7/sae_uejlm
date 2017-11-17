@@ -59,27 +59,39 @@
                     <li>
                             <a href="<?php echo base_url('/PENSIONES/'); ?>"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Pensiones</a>
                         </li>
-
-
-
-                <li>
-                    <a href="<?php echo base_url('/EstudianteNotas/notas'); ?>" class="btn-sideBar-SubMenu">
-                        <i class="zmdi zmdi-book zmdi-hc-fw"></i> Calificaciones 
+                    <li>
+                    <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-account zmdi-hc-fw"></i> Matriculacion <i class="zmdi zmdi-caret-down pull-right"></i>
                     </a>
+                    <ul class="list-unstyled full-box">
+                        <li>
+                            <a href="<?php echo base_url('/RegistroEstudiante/'); ?>"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Registrar Estudiante</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Registrar Padres de Familia</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('/Representante/'); ?>"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Registrar Representante</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('/Matriculacion/'); ?>"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Matricular</a>
+                        </li>
+
+
                     
+                       
+                    </ul>
+                    <li>
+                            <a href="<?php echo base_url('/ActasCalificaciones/'); ?>"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Actas Calificaciones</a>
+                        </li>
                 </li>
 
-                <li>
-                            <a href="<?php echo base_url('/EstudiantePensiones/pensiones')?>"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Pensiones</a>
-                        </li>
 
-                        <li>
-                            <a href="<?php echo base_url('/EstudianteNotas/obs')?>"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Observaciones</a>
-                        </li>
-
-
+                
                
             </ul>
+
+
         </div>
     </section>
 

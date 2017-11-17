@@ -11,7 +11,7 @@ class Modelo_Pensiones extends CI_Model {
     }
 
     public function listarEstudiante_P() {
-        $query = $this->db->query("select * from Estudiante");
+        $query = $this->db->query("select * from Estudiante,Matricula where cedula_Estudiante=cedula_estudiante_matricula");
         return $query->result();
     }
 

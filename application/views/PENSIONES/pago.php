@@ -52,19 +52,19 @@
                                               <label class="control-label"> Cedula </label>
                                             <input class="form-control" id="cedula_Estudiante_Pensiones" type="text"
                                             name="cedula_Estudiante_Pensiones" aria-describedby="emailHelp" 
-                                            value="<?php echo $value->cedula_Estudiante; ?>" disabled="disabled"">
+                                            value="<?php echo $value->cedula_Estudiante; ?>" >
 
                                             </div>
 
                                             <div class="form-group label-floating">
                                               <label class="control-label">Apellidos</label>
-                                              <input class="form-control" type="text" id="ape_Estudiante_Pensiones" name="ape_Estudiante_Pensiones" aria-describedby="emailHelp" value="<?php echo $value->ape_Estudiante; ?>" disabled="disabled" >
+                                              <input class="form-control" type="text" id="ape_Estudiante_Pensiones" name="ape_Estudiante_Pensiones" aria-describedby="emailHelp" value="<?php echo $value->ape_Estudiante; ?>"  >
                                             </div>
 
 
                                             <div class="form-group label-floating">
                                               <label class="control-label">Nombres</label>
-                                              <input class="form-control" type="text" id="nom_Estudiante_Pensiones" name="nom_Estudiante_Pensiones" aria-describedby="emailHelp" value="<?php echo $value->nom_Estudiante; ?>" disabled="disabled" >
+                                              <input class="form-control" type="text" id="nom_Estudiante_Pensiones" name="nom_Estudiante_Pensiones" aria-describedby="emailHelp" value="<?php echo $value->nom_Estudiante; ?>"  >
                                             </div>
                             
 
@@ -98,14 +98,14 @@
 
                                             <div class="form-group label-floating">
                                               <label class="control-label">Valor de Pension</label>
-                                              <input class="form-control" type="text" disabled="disabled" aria-describedby="emailHelp"
+                                              <input class="form-control" type="text"  aria-describedby="emailHelp"
                                                value="<?php echo $value->pension_Estudiante; ?>" name="valor_de_matricula" id="valor_de_matricula">
                                             </div>
 
                                               <div class="form-group label-floating">
                                               <label >Valor que Debe</label>
 
-                                              <input class="form-control" type="text" disabled="disabled" aria-describedby="emailHelp"
+                                              <input class="form-control" type="text"  aria-describedby="emailHelp"
                                                id="valorquedebe"  value="">
                                             </div>
 

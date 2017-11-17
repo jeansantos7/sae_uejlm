@@ -222,3 +222,53 @@ href="<?php echo base_url('/Matriculacion/'); ?>"
                                         }
 </script>
 
+
+
+  <div class="portlet-body">
+                <div class="table-scrollable">
+
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <div class="">
+                                <div class="col-md-3">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label for="s">Materia </label>
+                                            <select size="1"  name="s" class="form-control" id="id_curso" onchange="matriaestudiante(this.value)">
+                                                <option value="">Curso</option>
+                                                <?php foreach ($lista_Curso as $key => $value) {
+                                                    ?>
+                                                    <option value="<?php echo $value->id_Cursos; ?>"><?php echo $value->nom_Cursos; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-body">
+                                        <div class="form-group" id="Materias">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <div id="notasmaterias">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
