@@ -1,80 +1,54 @@
-<h1 class="page-title">  Vista de Observación                    
-</h1>
-
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="icon-home"></i>
-            <a href="index.html">Home</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <span>Observación</span>
-        </li>
-    </ul>
-
-
-    <div class="page-toolbar">
-        <div class="btn-group pull-right">
-            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
-                <i class="fa fa-angle-down"></i>
-            </button>
-            <ul class="dropdown-menu pull-right" role="menu">
+<section class="full-box dashboard-contentPage">
+    <!-- NavBar -->
+   <nav class="full-box dashboard-Navbar">
+            <ul class="full-box list-unstyled text-right">
+                <li class="pull-left">
+                    <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+                </li>
+                
                 <li>
-                    <a href="#">
-                        <i class="icon-bell"></i> Action</a>
+                    <a href="#!" class="btn-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-shield"></i> Another action</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-user"></i> Something else here</a>
-                </li>
-                <li class="divider"> </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-bag"></i> Separated link</a>
+                    <a href="#!" class="btn-modal-help">
+                        <i class="zmdi zmdi-help-outline"></i>
+
+                    </a>
                 </li>
             </ul>
-        </div>
+        </nav>
+    <!-- Content page -->
+    <div class="container-fluid">
+      <div class="page-header">
+        <h1 class="text-titles"><i class="zmdi zmdi-book zmdi-hc-fw"></i></i> Observaciones <small>Observaciones_Tutor</small></h1>
+      </div>
+      <p class="lead"> Este siempre Atento de las Novedades de su Estudiante </p>
     </div>
-</div>
-<!-- Nav tabs -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+         <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+              <li class="active"><a href="#new" data-toggle="tab">Incidencias Generales</a></li>
+              <li><a href="#list" data-toggle="tab">Incidencia Individuales</a></li>
+          </ul>
+
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="new">
+           
+              <div class="table-responsive">
 
 
-<!-- Tab panes -->
 
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
-        <div class="portlet light ">
-            <div class="portlet-title">
-                <div class="caption">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Observación </a></li>
-                        
-                    </ul>
-
-                </div>
-                <div class="actions">
-                    <input type="text" class="form-control large" id="myInput" onkeyup="myFunction()"  placeholder="" title="Type in a name">
-                </div>
-            </div>
-            <div class="portlet-body">
-                <div class="table-scrollable">
-
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">
-                            <h3>General</h3>
-                           <table border="1" class="table table-bordered" id="myTable">
+              <h3>General</h3>
+                           <table class="table table-hover text-center">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Incidencia</th>
-                                        <th>Observación</th>
-                                        <th>Fecha</th>
+                                        <th class="text-center">#</th>
+                                        <th class="text-center">Incidencia</th>
+                                        <th class="text-center">Observación</th>
+                                        <th class="text-center">Fecha</th>
                                         
                                     </tr>
                                 </thead>
@@ -94,14 +68,26 @@
 
                                 </tbody>
                             </table> 
-                            <h3>Individual</h3>
-                           <table border="1" class="table table-bordered" id="myTable">
+            </div>
+            </div>
+            
+         <div class="tab-pane fade" id="list">
+
+            <div id="myTabContent" class="tab-content">
+            
+           
+              <div class="table-responsive">
+
+
+
+               <h3>Individual</h3>
+                           <table class="table table-hover text-center">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Incidencia</th>
-                                        <th>Observación</th>
-                                        <th>Fecha</th>
+                                        <th class="text-center">#</th>
+                                        <th class="text-center">Incidencia</th>
+                                        <th class="text-center">Observación</th>
+                                        <th class="text-center">Fecha</th>
                                         
                                     </tr>
                                 </thead>
@@ -121,22 +107,14 @@
 
                                 </tbody>
                             </table> 
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">
-
-                         
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="profile2">
-                            
-                        </div>
-
-
-                    </div>
-
-                </div>
             </div>
-        </div>
-        <!-- END SAMPLE TABLE PORTLET-->
-    </div>
+            </div>
+            </div>
+        
 
-</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -21,7 +21,10 @@ $(document).ready(function(){
 		  	confirmButtonText: '<i class="zmdi zmdi-run"></i> Si, Salir!',
 		  	cancelButtonText: '<i class="zmdi zmdi-close-circle"></i> No, Cancelar!'
 		}).then(function () {
-			 window.location="Login/logout_ci";
+			 
+			  var getUrl = window.location; 
+			 var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+			 window.location=baseUrl+"/login/logout_ci";
 		});
 
 	});

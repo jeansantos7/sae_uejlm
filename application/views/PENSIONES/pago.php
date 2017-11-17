@@ -1,100 +1,83 @@
-<h1 class="page-title">  Vista de Pensiones                    
-</h1>
 
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="icon-home"></i>
-            <a href="index.html">Home</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <span>Pensiones</span>
-        </li>
-    </ul>
+                                             <?php foreach ($datosPensiones as $key => $value) { ?>
 
-
-    <div class="page-toolbar">
-        <div class="btn-group pull-right">
-            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
-                <i class="fa fa-angle-down"></i>
-            </button>
-            <ul class="dropdown-menu pull-right" role="menu">
-                <li>
-                    <a href="#">
-                        <i class="icon-bell"></i> Action</a>
+                    <form method="POST" action="<?php echo base_url('Pensiones/insert'); ?>" id="formulario" >
+<section class="full-box dashboard-contentPage">
+        <!-- NavBar -->
+        <nav class="full-box dashboard-Navbar">
+            <ul class="full-box list-unstyled text-right">
+                <li class="pull-left">
+                    <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-shield"></i> Another action</a>
+                    <a href="#!" class="btn-Notifications-area">
+                        <i class="zmdi zmdi-notifications-none"></i>
+                        <span class="badge">7</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-user"></i> Something else here</a>
+                    <a href="#!" class="btn-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </a>
                 </li>
-                <li class="divider"> </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-bag"></i> Separated link</a>
+                    <a href="#!" class="btn-modal-help">
+                        <i class="zmdi zmdi-help-outline"></i>
+                    </a>
                 </li>
             </ul>
-        </div>
-    </div>
-</div>
-<!-- Nav tabs -->
-
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
-        <div class="portlet light ">
-            <div class="portlet-title">
-                <div class="caption">
-                    <a class="btn btn-default btn-outline btn-circle btn-sm" href="javascript:history.back()" >Regresar
-                        <i class="glyphicon glyphicon-arrow-left"></i>
-                    </a>
-
-
-                </div>
-                <div class="actions">
-
-                </div>
+        </nav>
+        <!-- Content page -->
+        <div class="container-fluid">
+            <div class="page-header">
+              <h1 class="text-titles"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Payments <small>Payments</small></h1>
             </div>
-            <div class="portlet-body">
-                <div class="table-scrollable">
-                    <?php foreach ($datosPensiones as $key => $value) { ?>
-
-                    <form method="POST" action="<?php echo base_url('Directivo/insert'); ?>" id="formulario" >
-                            <input type="hidden" name="id_Estudiante" value=" <?php echo $value->id_Estudiante; ?>">
-
-
-                            <div class="form-body">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Cedula </label>
-                                        <input type="text" class="form-control" readonly="readonly" id="cedula_Estudiante_Pensiones"
-                                               name="cedula_Estudiante_Pensiones" aria-describedby="emailHelp" value="<?php echo $value->cedula_Estudiante; ?>"">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Apellidos </label>
-                                        <input type="text" class="form-control"  id="ape_Estudiante_Pensiones" name="ape_Estudiante_Pensiones" aria-describedby="emailHelp" value="<?php echo $value->ape_Estudiante; ?>"">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Nombres </label>
-                                        <input type="text" class="form-control"  id="nom_Estudiante_Pensiones" name="nom_Estudiante_Pensiones" aria-describedby="emailHelp" value="<?php echo $value->nom_Estudiante; ?>">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
+            
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                   
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in" id="new">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                       
+                                        <input type="hidden" name="id_Estudiante" value=" <?php echo $value->id_Estudiante; ?>">
+                        
 
 
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Mes a Pagar </label>
-                                        <select onchange="Valor(this.value)" name="mes_Pensiones" id="mes_Pensiones"  class="form-control">
+                                            <div class="form-group label-floating">
+                                              <label class="control-label"> Cedula </label>
+                                            <input class="form-control" id="cedula_Estudiante_Pensiones" type="text"
+                                            name="cedula_Estudiante_Pensiones" aria-describedby="emailHelp" 
+                                            value="<?php echo $value->cedula_Estudiante; ?>" disabled="disabled"">
+
+                                            </div>
+
+                                            <div class="form-group label-floating">
+                                              <label class="control-label">Apellidos</label>
+                                              <input class="form-control" type="text" id="ape_Estudiante_Pensiones" name="ape_Estudiante_Pensiones" aria-describedby="emailHelp" value="<?php echo $value->ape_Estudiante; ?>" disabled="disabled" >
+                                            </div>
+
+
+                                            <div class="form-group label-floating">
+                                              <label class="control-label">Nombres</label>
+                                              <input class="form-control" type="text" id="nom_Estudiante_Pensiones" name="nom_Estudiante_Pensiones" aria-describedby="emailHelp" value="<?php echo $value->nom_Estudiante; ?>" disabled="disabled" >
+                                            </div>
+                            
+
+                          
+                            </div>
+                    
+                             
+
+                            <div class="col-md-5">
+
+                            <div class="form-group">
+                                                <label class="control-label">Period</label>
+                                                <select onchange="Valor(this.value)" name="mes_Pensiones" id="mes_Pensiones"  class="form-control">
 
                                             <option value="0" >Enero</option>
                                             <option  value="1">Febrero</option>
@@ -109,52 +92,56 @@
                                             <option  value="10" >Noviembre</option>
                                             <option  value="11" >Diciembre</option>
                                         </select>
-                                    </div>
+                                            </div>
 
-                                    <div class="form-group" id="">
-                                        <label for="exampleInputEmail1">Valor de Pension </label>
-                                        <input type="text" class="form-control" readonly="readonly" aria-describedby="emailHelp"
+
+
+                                            <div class="form-group label-floating">
+                                              <label class="control-label">Valor de Pension</label>
+                                              <input class="form-control" type="text" disabled="disabled" aria-describedby="emailHelp"
                                                value="<?php echo $value->pension_Estudiante; ?>" name="valor_de_matricula" id="valor_de_matricula">
+                                            </div>
+
+                                              <div class="form-group label-floating">
+                                              <label >Valor que Debe</label>
+
+                                              <input class="form-control" type="text" disabled="disabled" aria-describedby="emailHelp"
+                                               id="valorquedebe"  value="">
+                                            </div>
 
 
-                    <!--            <input type="hidden" name="valor_de_matricula" id="valor_de_matricula" value=""-->
-                                    </div>
-                                    <div class="form-group" id="">
-                                        <label for="exampleInputEmail1">Valor que Debe </label>
-                                        <input type="text" class="form-control" disabled aria-describedby="emailHelp" id="valorquedebe"  value="">
+                                             <div class="form-group label-floating">
+                                              <label >Ingrese valor a Pagar</label>
 
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Ingrese valor a Pagar </label>
-                                        <input type="text" class="form-control" id="valor_Pensiones" name="valor_Pensiones" aria-describedby="emailHelp"   value="">
-                                    </div>
-                                    <div class="form-group">
-
-                                        <input type="hidden" class="form-control"  id="fech_Pensiones" name="fech_Pensiones" aria-describedby="emailHelp" >
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="form-actions">
+                                              <input class="form-control" type="text"  aria-describedby="emailHelp"
+                                              id="valor_Pensiones" name="valor_Pensiones" aria-describedby="emailHelp"   value="">
+                                            </div>
+                                            
+                                              <input type="hidden" class="form-control"  id="fech_Pensiones" name="fech_Pensiones" aria-describedby="emailHelp" >
+                                            
+                                            
+                                         <div class="form-actions">
                                 <div class="col-md-12">
                                     <button type="button" class="btn btn-primary" id="btn-ingresar">Guardar Pago</button>
                                     <button type="button" class="btn default">Cancel</button>
                                 </div>
                             </div>
 
-
-                        </form>
-
+                                          
 
 
-                    <?php } ?>
                 </div>
+                                        
+
+                                        </form>
+                                         <?php } ?>
+                                    </div>
+                             
             </div>
         </div>
-        <!-- END SAMPLE TABLE PORTLET-->
-    </div>
+    </section>
 
-</div>
+
 <script src="<?php echo base_url('public/js/jquery.js'); ?>"></script>
 <script>
                                         $(document).on('ready', function () {
@@ -231,4 +218,3 @@
                                             });
                                         }
 </script>
-

@@ -25,7 +25,7 @@ class Matriculacion extends CI_Controller {
             $data['selRepresentante'] = $this->Modelo_Matriculacion->selRepresentante();
             $data['selLectivo'] = $this->Modelo_Matriculacion->selLectivo();
             $data['user'] = $this->session->userdata('username');
-            $this->load->view("plantilla_Secretaria", $data);
+            $this->load->view("plantilla_Directivo", $data);
         } else {
             redirect(base_url(''));
         }

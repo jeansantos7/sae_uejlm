@@ -24,7 +24,7 @@ class Directivo extends CI_Controller
 		//$data['listarMaterias']=$this->Modelo_Materias->listarMaterias();
 		//$data['selCursos']=$this->Modelo_Materias->selCursos();
                 $data['user'] = $this->session->userdata('username');
-		$this->load->view("plantilla_Prueba", $data);
+		$this->load->view("plantilla_Directivo", $data);
 	}
 	else
 	{

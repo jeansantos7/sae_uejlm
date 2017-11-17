@@ -16,7 +16,7 @@ class Pensiones extends CI_Controller {
     public function index() {
 
 
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
 
 
             $data['contenido'] = "Pensiones/index";
@@ -58,18 +58,23 @@ class Pensiones extends CI_Controller {
 
     public function pago($id_Estudiante = NULL) {
 
+   if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+
         if ($id_Estudiante != NULL) {
+
             //mostrar datos
             $data['contenido'] = 'Pensiones/pago';
             $data['datosPensiones'] = $this->Modelo_Pensiones->pagoPensiones($id_Estudiante);
             $data['user'] = $this->session->userdata('username');
-
-            $this->load->view('welcome_message', $data);
+            $this->load->view("plantilla_Secretaria", $data);
+            //$this->load->view('welcome_message', $data);
         } else {
 
             redirect('/Pensiones');
         }
     }
+}
+
 
     public function insert() {
 

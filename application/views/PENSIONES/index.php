@@ -1,74 +1,50 @@
-<h1 class="page-title">  Vista de Pensiones                    
-</h1>
 
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="icon-home"></i>
-            <a href="index.html">Home</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <span>Pensiones</span>
-        </li>
-    </ul>
-
-
-    <div class="page-toolbar">
-        <div class="btn-group pull-right">
-            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
-                <i class="fa fa-angle-down"></i>
-            </button>
-            <ul class="dropdown-menu pull-right" role="menu">
+<section class="full-box dashboard-contentPage">
+    <!-- NavBar -->
+   <nav class="full-box dashboard-Navbar">
+            <ul class="full-box list-unstyled text-right">
+                <li class="pull-left">
+                    <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+                </li>
+                
                 <li>
-                    <a href="#">
-                        <i class="icon-bell"></i> Action</a>
+                    <a href="#!" class="btn-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-shield"></i> Another action</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-user"></i> Something else here</a>
-                </li>
-                <li class="divider"> </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-bag"></i> Separated link</a>
+                    <a href="#!" class="btn-modal-help">
+                        <i class="zmdi zmdi-help-outline"></i>
+
+                    </a>
                 </li>
             </ul>
-        </div>
+        </nav>
+    <!-- Content page -->
+    <div class="container-fluid">
+      <div class="page-header">
+        <h1 class="text-titles"><i class="zmdi zmdi-book zmdi-hc-fw"></i></i> Cobro de Pensiones <small>Registro de pensiones</small></h1>
+      </div>
+      <p class="lead">  </p>
     </div>
-</div>
-<!-- Nav tabs -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+         <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+              <li class="active"><a href="#new" data-toggle="tab"> Consulta</a></li>
+              <li><a href="#list" data-toggle="tab">Historial de Pago</a></li>
+
+          </ul>
+
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="new">
+           
+              <div class="table-responsive">
 
 
-<!-- Tab panes -->
 
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
-        <div class="portlet light ">
-            <div class="portlet-title">
-                <div class="caption">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Consulta </a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Historial de Pago</a></li>
-
-                    </ul>
-
-                </div>
-                <div class="actions">
-                    <input type="text" class="form-control large" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
-                </div>
-            </div>
-            <div class="portlet-body">
-                <div class="table-scrollable">
-
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">
-                            <table class="table table-hover table-light" id="myTable">
+              <h3>General</h3>
+                           <table class="table table-hover table-light" id="myTable">
                                 <thead>
                                     <tr>
                                         <th> Cedula</th>
@@ -97,9 +73,19 @@
 
                                 </tbody>
                             </table>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">
-                            <table class="table table-hover table-light" id="myTable">
+            </div>
+            </div>
+            
+         <div class="tab-pane fade" id="list">
+
+            <div id="myTabContent" class="tab-content">
+            
+           
+              <div class="table-responsive">
+
+
+
+               <table class="table table-hover table-light" id="myTable">
                                 <thead>
                                     <tr>
                                         <th> Cedula Estudiante</th>
@@ -132,18 +118,21 @@
                                 </tbody>
                             </table>
 
-                        </div>
+                            
 
-
-                    </div>
-
-                </div>
             </div>
+            </div>
+            </div>
+        
+
+
+          </div>
         </div>
-        <!-- END SAMPLE TABLE PORTLET-->
+      </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  </section>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -161,10 +150,10 @@
                 </div>
             </div>
         </div>
-    </div>
+      </div>
 
-</div>
-<script>
+
+  <script>
     function historial(cedula) {
         var url = "<?php echo base_url('Pensiones/historial/'); ?>" + cedula;
         var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];

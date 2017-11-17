@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="<?php echo base_url(); ?>Public/prueba/css/main.css">
 </head>
-<body class="cover" style="background-image: url(Public/prueba/assets/img/bg2.jpg);">
+<body class="cover" style="background-image: url(Public/prueba/assets/img/fondo.jpg);">
     <form name="form1" method="POST" action="login/login_user" autocomplete="off" class="full-box logInForm">
         <p class="text-center text-muted"><i class="zmdi zmdi-account-circle zmdi-hc-5x"></i></p>
         <p class="text-center text-muted text-uppercase">Inicia sesión con tu cuenta</p>
         <div class="form-group label-floating">
-          <label class="control-label" for="UserEmail">E-mail</label>
+          <label class="control-label" for="UserEmail">Usuario</label>
           <input class="form-control" id="usuario" name="usuario" type="text">
-          <p class="help-block">Escribe tú E-mail</p>
+          <p class="help-block">Escribe tú Usuario</p>
         </div>
         <div class="form-group label-floating">
           <label class="control-label" for="UserPass">Contraseña</label>
-          <input class="form-control" id="contra" name="contra" type="text">
+          <input class="form-control" id="contra" name="contra" type="password">
           <p class="help-block">Escribe tú contraseña</p>
         </div>
         <div class="form-group text-center">
