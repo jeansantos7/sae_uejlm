@@ -75,7 +75,7 @@
                          value=" <?php echo $value->fech_nac_Estudiante; ?>">
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label">Direccion</label>
+                        <label class="control-label">Dirección</label>
                         <input class="form-control" type="text"
                         id="dir_Estudiante" name="dir_Estudiante"
                          value=" <?php echo $value->dir_Estudiante; ?>">
