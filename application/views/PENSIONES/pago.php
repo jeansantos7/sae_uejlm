@@ -30,7 +30,7 @@
         <!-- Content page -->
         <div class="container-fluid">
             <div class="page-header">
-              <h1 class="text-titles"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Payments <small>Payments</small></h1>
+              <h1 class="text-titles"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Cobro de Pensiones <small>Registro de pensiones</small></h1>
             </div>
             
         </div>
@@ -76,7 +76,7 @@
                             <div class="col-md-5">
 
                             <div class="form-group">
-                                                <label class="control-label">Period</label>
+                                                <label class="control-label">Mes</label>
                                                 <select onchange="Valor(this.value)" name="mes_Pensiones" id="mes_Pensiones"  class="form-control">
 
                                             <option value="0" >Enero</option>

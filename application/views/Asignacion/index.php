@@ -1,6 +1,50 @@
 
+<section class="full-box dashboard-contentPage">
+    <!-- NavBar -->
+   <nav class="full-box dashboard-Navbar">
+            <ul class="full-box list-unstyled text-right">
+                <li class="pull-left">
+                    <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+                </li>
+                
+                <li>
+                    <a href="#!" class="btn-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="btn-modal-help">
+                        <i class="zmdi zmdi-help-outline"></i>
 
-                                    <form id="myForm" class="form-body" method="POST" action="<?php echo base_url('Asignacion/setGuardar'); ?>">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <!-- Content page -->
+    <div class="container-fluid">
+      <div class="page-header">
+        <h1 class="text-titles"><i class="zmdi zmdi-book zmdi-hc-fw"></i></i> Asignacion <small> Materias- Tutorias</small></h1>
+      </div>
+      <p class="lead">  </p>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+         <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+              <li class="active"><a href="#new" data-toggle="tab"> Asignacion de Materias</a></li>
+              <li><a href="#list" data-toggle="tab">Asignacion de Tutorias</a></li>
+              <li><a href="#por" data-toggle="tab">Docentes</a></li>
+
+          </ul>
+
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="new">
+           
+              <div class="table-responsive">
+
+
+
+              <form id="myForm" class="form-body" method="POST" action="<?php echo base_url('Asignacion/setGuardar'); ?>">
                                         <fieldset>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Docente </label>
@@ -22,8 +66,7 @@
                                                         <option value="<?php echo $value->id_Materias; ?>"><?php echo $value->nom_Materias; ?></option>
                                                     <?php } ?>
                                                 </select>
-
-                                            </div>
+                                                </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Grado </label>
                                                 <select size="1"id="cursoselect" name="cursoselect" class="form-control js-example-basic-single">
@@ -41,23 +84,21 @@
                                                 <button type="button" class="btn ">Cancelar</button>
                                             </div>
 
-
-
-
-
-
                                         </fieldset>
                                     </form>
-                                </div>
+            </div>
+            </div>
+            
+         <div class="tab-pane fade" id="list">
 
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="tutor">
-                            <div class="form-body">
-                                <div class="col-md-4">
+            <div id="myTabContent" class="tab-content">
+            
+           
+              <div class="table-responsive">
 
-                                </div>
-                                <div class="col-md-4">
+
+
+               <div class="col-md-4">
                                     <form id="myForm" class="form-body" method="POST" action="<?php echo base_url('Asignacion/setGuardarTutor'); ?>">
                                         <fieldset>
                                             <div class="form-group">
@@ -90,18 +131,31 @@
                                             </div>
 
 
-
-
-
-
                                         </fieldset>
                                     </form>
-                                </div>
 
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">
-                            <table class="table table-hover table-light" id="myTable">
+                            
+
+            </div>
+
+            </div>
+            </div>
+
+        
+
+
+          </div>
+
+            <div class="tab-pane fade" id="por">
+
+            <div id="myTabContent" class="tab-content">
+            
+           
+              <div class="table-responsive">
+
+
+
+               <table class="table table-hover table-light" id="myTable">
                                 <thead>
                                     <tr>
                                         <th> Cedula</th>
@@ -128,19 +182,24 @@
 
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
+            </div>
+
+        
+
+
+          </div>
         </div>
-        <!-- END SAMPLE TABLE PORTLET-->
+      </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  </section>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -154,12 +213,10 @@
                 </div>
             </div>
         </div>
-    </div>
-
-</div>
+      </div>
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
 <script>
 

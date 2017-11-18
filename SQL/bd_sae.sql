@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2017 a las 20:05:45
+-- Tiempo de generación: 18-11-2017 a las 16:23:14
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -38,12 +38,10 @@ CREATE TABLE `asignacion` (
 --
 
 INSERT INTO `asignacion` (`id_Asignacion`, `id_docente_Asignacion`, `id_materias_Asignacion`, `id_curso_Asignacion`) VALUES
-(2, NULL, NULL, NULL),
-(9, '0', '1', '1'),
-(10, '0', '4', '5'),
-(11, '12', '2', '1'),
-(13, '0', '5', '1'),
-(14, '0', '5', '5');
+(1, '1234', '1', '1'),
+(2, '1234', '1', '2'),
+(5, '1234', '2', '2'),
+(6, '1234', '2', '10');
 
 -- --------------------------------------------------------
 
@@ -71,7 +69,28 @@ INSERT INTO `cursos` (`id_Cursos`, `nom_Cursos`, `nivel_Cursos`) VALUES
 (7, 'Segundo C', ''),
 (8, 'Segundo D', ''),
 (9, '1ero', ''),
-(10, '2do', 'B.G.U Ciencias');
+(10, '2do', 'B.G.U Ciencias'),
+(11, 'Tercero', 'B.G.U Ciencias');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `curso_tutor`
+--
+
+CREATE TABLE `curso_tutor` (
+  `id` int(11) NOT NULL,
+  `cedula_Curso_Tutor` varchar(45) DEFAULT NULL,
+  `curso_Curso_Tutor` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `curso_tutor`
+--
+
+INSERT INTO `curso_tutor` (`id`, `cedula_Curso_Tutor`, `curso_Curso_Tutor`) VALUES
+(1, '1234', '2'),
+(2, '1234', '5');
 
 -- --------------------------------------------------------
 
@@ -124,8 +143,7 @@ CREATE TABLE `docente` (
 --
 
 INSERT INTO `docente` (`id_Docente`, `cedula_Docente`, `ape_Docente`, `nom_Docente`, `telf_Docente`, `correo_Docente`, `direc_Docente`, `fech_nac_Docente`, `user_Docente`, `pass_Docente`) VALUES
-(1, 0, 'ape', 'nom', '123', 'a@a.com', 'd', '0000-00-00', 'as12', 'as12'),
-(2, 12, 'qwe', 'we', '321', 'sas@qw.com', 'de', '1212-12-12', 'qwe123', 'asd12');
+(1, 1234, 'Paz', 'Luis', '09', 'legend@leg.com', 'av1', '0000-00-00', 'ass', 'ass');
 
 -- --------------------------------------------------------
 
@@ -135,31 +153,27 @@ INSERT INTO `docente` (`id_Docente`, `cedula_Docente`, `ape_Docente`, `nom_Docen
 
 CREATE TABLE `estudiante` (
   `id_Estudiante` int(11) NOT NULL,
-  `matricula_Estudiante` varchar(45) DEFAULT NULL,
   `fech_matricula_Estudiante` datetime DEFAULT NULL,
   `cedula_Estudiante` int(10) DEFAULT NULL,
   `ape_Estudiante` varchar(45) DEFAULT NULL,
   `nom_Estudiante` varchar(45) DEFAULT NULL,
-  `fech_nac_Estudiante` varchar(45) DEFAULT NULL,
+  `fech_nac_Estudiante` date NOT NULL,
   `dir_Estudiante` varchar(45) DEFAULT NULL,
   `carnet_Estudiante` int(20) DEFAULT NULL,
-  `parentesco_Estudiante` varchar(45) DEFAULT NULL,
   `pension_Estudiante` int(11) NOT NULL,
   `user_Estudiante` varchar(45) DEFAULT NULL,
   `pass_Estudiante` varchar(45) DEFAULT NULL,
-  `Representante_id_Representante` int(11) NOT NULL
+  `Estado` varchar(45) DEFAULT '0',
+  `Estadonotas` varchar(45) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `estudiante`
 --
 
-INSERT INTO `estudiante` (`id_Estudiante`, `matricula_Estudiante`, `fech_matricula_Estudiante`, `cedula_Estudiante`, `ape_Estudiante`, `nom_Estudiante`, `fech_nac_Estudiante`, `dir_Estudiante`, `carnet_Estudiante`, `parentesco_Estudiante`, `pension_Estudiante`, `user_Estudiante`, `pass_Estudiante`, `Representante_id_Representante`) VALUES
-(2, '1234', '2017-10-05 00:00:00', 123454444, 'ass', 'ass', 'ass', 'asss|', NULL, 'asas', 90, 'ass', 'ass', 2),
-(3, '111111', '2017-10-28 20:38:34', 122222, 'oas', 'APS', NULL, 'AS', 1234, 'Padre o Madre', 12, 'ASS', 'ass', 12345),
-(4, '1233', '2017-11-02 11:33:47', 123445, '123445', '123445', NULL, '123445', 123445, 'Padre o Madre', 123445, '123445', '', 0),
-(5, '12121212', '2017-11-02 11:42:36', 12121212, '12121212', '12121212', NULL, '12121212', 12121212, 'Padre o Madre', 12345, '12121212', '12121212', 0),
-(6, '1234512345', '2017-11-02 11:44:38', 1234512345, '1234512345', '1234512345', NULL, '1234512345', 1234512345, 'Padre o Madre', 1234512345, '1234512345', '1234512345', 0);
+INSERT INTO `estudiante` (`id_Estudiante`, `fech_matricula_Estudiante`, `cedula_Estudiante`, `ape_Estudiante`, `nom_Estudiante`, `fech_nac_Estudiante`, `dir_Estudiante`, `carnet_Estudiante`, `pension_Estudiante`, `user_Estudiante`, `pass_Estudiante`, `Estado`, `Estadonotas`) VALUES
+(1, NULL, 1234567890, ' ESTU APEeee', ' ESTU NOMeee', '0000-00-00', ' avo', 1, 100, ' ESTU001', ' ESTU001', '1', '0'),
+(2, NULL, 987654321, 'ESTU APE2', 'ESTU NOM2', '0000-00-00', 'AVI', 1, 90, 'ESTU002', 'ESTU002', '1', '0');
 
 -- --------------------------------------------------------
 
@@ -180,27 +194,11 @@ CREATE TABLE `historial_pagos` (
 --
 
 INSERT INTO `historial_pagos` (`idhistorial_pagos`, `id_estudiante`, `id_mes`, `valor_del_pago`, `fecha`) VALUES
-(1, '123456789', '1', '40', '2017-10-28 00:49:50'),
-(2, '123456789', '4', '40', '2017-10-28 00:52:50'),
-(3, '123456789', '5', '20', '2017-10-28 00:53:10'),
-(4, '123456789', '5', '20', '2017-10-28 00:53:17'),
-(5, '123456789', '3', '40', '2017-10-28 00:54:01'),
-(6, '123454444', '1', '90', '2017-10-28 00:56:00'),
-(7, '123454444', '2', '90', '2017-10-28 01:50:20'),
-(8, '123456789', '2', '5', '2017-10-28 09:25:06'),
-(9, '123456789', '2', '1', '2017-10-28 09:25:35'),
-(10, '123454444', '3', '91', '2017-10-28 09:28:02'),
-(11, '123454444', '4', '23', '2017-10-28 14:31:29'),
-(12, '122222', '1', '12', '2017-10-28 20:38:50'),
-(13, '122222', '2', '12', '2017-10-28 20:39:05'),
-(14, '123456789', '0', '40', '2017-10-28 20:41:04'),
-(15, '122222', '0', '12', '2017-10-28 20:41:14'),
-(16, '122222', '0', '12', '2017-10-28 21:06:30'),
-(17, '123456789', '0', '40', '2017-10-28 21:07:47'),
-(18, '123454444', '0', '89', '2017-11-02 15:39:25'),
-(19, '123454444', '0', '1', '2017-11-02 15:39:35'),
-(20, '122222', '0', '12', '2017-11-02 15:39:46'),
-(21, '123454444', '1', '91', '2017-11-02 15:40:10');
+(1, '1234567890', '0', '10', '2017-11-17 08:45:49'),
+(2, '1234567890', '0', '22', '2017-11-17 10:20:57'),
+(3, '1234567890', '0', '1', '2017-11-17 10:21:50'),
+(4, '1234567890', '0', '2', '2017-11-17 10:24:18'),
+(5, '1234567890', '0', '3', '2017-11-17 11:27:10');
 
 -- --------------------------------------------------------
 
@@ -246,6 +244,161 @@ INSERT INTO `materias` (`id_Materias`, `nom_Materias`, `nom_corto_Materias`) VAL
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `materiasnotas`
+--
+
+CREATE TABLE `materiasnotas` (
+  `id` int(11) NOT NULL,
+  `quimestre_MateriasNotas` varchar(45) DEFAULT NULL,
+  `id_materia_MateriasNotas` varchar(45) DEFAULT NULL,
+  `id_curso_MateriasNotas` varchar(45) DEFAULT NULL,
+  `id_profesor_MateriasNotas` varchar(45) DEFAULT NULL,
+  `cedula_estudiantes_MateriasNotas` varchar(45) DEFAULT NULL,
+  `notaparcial1q1_MateriasNotas` varchar(45) DEFAULT NULL,
+  `notaparcial2q1_MateriasNotas` varchar(45) DEFAULT NULL,
+  `notaparcial3q1_MateriasNotas` varchar(45) DEFAULT NULL,
+  `porcentajeq1_MateriasNotas` varchar(45) DEFAULT NULL,
+  `nota_examenq1_MateriasNotas` varchar(45) DEFAULT NULL,
+  `nota_examen_porcentajeq1_MateriasNotas` varchar(45) DEFAULT NULL,
+  `promedioq1_MateriasNotas` varchar(45) DEFAULT NULL,
+  `notaparcial1q2_MateriasNotas` varchar(45) DEFAULT NULL,
+  `notaparcial2q2_MateriasNotas` varchar(45) DEFAULT NULL,
+  `notaparcial3q2_MateriasNotas` varchar(45) DEFAULT NULL,
+  `porcentajeq2_MateriasNotas` varchar(45) DEFAULT NULL,
+  `nota_examenq2_MateriasNotas` varchar(45) DEFAULT NULL,
+  `nota_examen_porcentajeq2_MateriasNotas` varchar(45) DEFAULT NULL,
+  `promedioq2_MateriasNotas` varchar(45) DEFAULT NULL,
+  `notarec_MateriasNotas` varchar(45) DEFAULT NULL,
+  `notareme_MateriasNotas` varchar(45) DEFAULT NULL,
+  `notaexa_MateriasNotas` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `materiasnotas`
+--
+
+INSERT INTO `materiasnotas` (`id`, `quimestre_MateriasNotas`, `id_materia_MateriasNotas`, `id_curso_MateriasNotas`, `id_profesor_MateriasNotas`, `cedula_estudiantes_MateriasNotas`, `notaparcial1q1_MateriasNotas`, `notaparcial2q1_MateriasNotas`, `notaparcial3q1_MateriasNotas`, `porcentajeq1_MateriasNotas`, `nota_examenq1_MateriasNotas`, `nota_examen_porcentajeq1_MateriasNotas`, `promedioq1_MateriasNotas`, `notaparcial1q2_MateriasNotas`, `notaparcial2q2_MateriasNotas`, `notaparcial3q2_MateriasNotas`, `porcentajeq2_MateriasNotas`, `nota_examenq2_MateriasNotas`, `nota_examen_porcentajeq2_MateriasNotas`, `promedioq2_MateriasNotas`, `notarec_MateriasNotas`, `notareme_MateriasNotas`, `notaexa_MateriasNotas`) VALUES
+(1, '1', '1', '2', '1234', '987654321', '10', '10', '10', '8', '2', '0.4', '8.4', '', '', '', 'NaN', '', '0', 'NaN', NULL, NULL, NULL),
+(2, '1', '1', '2', '1234', '121212', '10', '10', '1', '5.6000000000000005', '3', '0.6000000000000001', '6.200000000000001', '', '', '', 'NaN', '', '0', 'NaN', NULL, NULL, NULL),
+(3, '1', '1', '1', '1234', '1234567890', '5', '7.4', '3', '4', '9', '1.8', '5.8', '0', '0', '0', '0', '', '0', '0', '9', NULL, NULL),
+(4, '1', '2', '2', '1234', '987654321', '9', '1', '', 'NaN', '', '0', 'NaN', '', '', '', 'NaN', '', '0', 'NaN', NULL, NULL, NULL),
+(5, '1', '2', '2', '1234', '121212', '9', '1', '', 'NaN', '', '0', 'NaN', '', '', '', 'NaN', '', '0', 'NaN', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `materiasnotasquimetre`
+--
+
+CREATE TABLE `materiasnotasquimetre` (
+  `id` int(11) NOT NULL,
+  `cedula_estudiante_materiasnotasQuimetre` varchar(45) DEFAULT NULL,
+  `id_materia_materiasnotasQuimetre` varchar(45) DEFAULT NULL,
+  `id_curso_materiasnotasQuimetre` varchar(45) DEFAULT NULL,
+  `id_profesor_materiasnotasQuimetre` varchar(45) DEFAULT NULL,
+  `notaQ1_materiasnotasQuimetre` varchar(45) DEFAULT NULL,
+  `notaQ2_materiasnotasQuimetre` varchar(45) DEFAULT NULL,
+  `total_materiasnotasQuimetre` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `materiasnotasquimetrerecu`
+--
+
+CREATE TABLE `materiasnotasquimetrerecu` (
+  `id` int(11) NOT NULL,
+  `cedu_materiasnotasquimetrerecu` varchar(45) DEFAULT NULL,
+  `materia_materiasnotasquimetrerecu` varchar(45) DEFAULT NULL,
+  `curso_materiasnotasquimetrerecu` varchar(45) DEFAULT NULL,
+  `profe_materiasnotasquimetrerecu` varchar(45) DEFAULT NULL,
+  `notarec_materiasnotasquimetrerecu` varchar(45) DEFAULT NULL,
+  `notareme_materiasnotasquimetrerecu` varchar(45) DEFAULT NULL,
+  `notaexa_materiasnotasquimetrerecu` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `matricula`
+--
+
+CREATE TABLE `matricula` (
+  `idMatricula` int(11) NOT NULL,
+  `cedula_estudiante_matricula` varchar(45) DEFAULT NULL,
+  `lectivo` varchar(45) DEFAULT NULL,
+  `id_curso` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `matricula`
+--
+
+INSERT INTO `matricula` (`idMatricula`, `cedula_estudiante_matricula`, `lectivo`, `id_curso`) VALUES
+(1, '1234567890', '1', '1'),
+(2, '987654321', '1', '2');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `observacion`
+--
+
+CREATE TABLE `observacion` (
+  `id` int(11) NOT NULL,
+  `cedula_estu_observacion` varchar(45) DEFAULT NULL,
+  `cedula_profe_observacion` varchar(45) DEFAULT NULL,
+  `descr_observacion` longtext,
+  `fecha` datetime DEFAULT CURRENT_TIMESTAMP,
+  `Incidencia_observacion` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `observacion`
+--
+
+INSERT INTO `observacion` (`id`, `cedula_estu_observacion`, `cedula_profe_observacion`, `descr_observacion`, `fecha`, `Incidencia_observacion`) VALUES
+(1, '121212', '1234', 'ppo\r\n', '2017-11-15 17:39:07', NULL),
+(2, '987654321', '1234', 'pouo', '2017-11-15 17:57:18', NULL),
+(3, '987654321', '1234', 'asASsAS', '2017-11-15 20:06:55', 'FaltaJustificada'),
+(4, '', '', '', '2017-11-15 20:32:58', 'FaltaJustificada'),
+(5, '987654321', '1234', 'holi', '2017-11-15 21:19:50', 'FaltaInjustificada'),
+(6, '987654321', '1234', 'holi', '2017-11-15 21:19:50', 'FaltaInjustificada'),
+(7, '987654321', '1234', 'holi', '2017-11-15 21:19:51', 'FaltaInjustificada');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `observacioncurso`
+--
+
+CREATE TABLE `observacioncurso` (
+  `id` int(11) NOT NULL,
+  `id_curso_observacioncurso` varchar(45) DEFAULT NULL,
+  `cedula_profesor_observacioncurso` varchar(45) DEFAULT NULL,
+  `incidencia_observacioncurso` varchar(45) DEFAULT NULL,
+  `observ_observacioncurso` longtext,
+  `fecha_observacioncurso` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `observacioncurso`
+--
+
+INSERT INTO `observacioncurso` (`id`, `id_curso_observacioncurso`, `cedula_profesor_observacioncurso`, `incidencia_observacioncurso`, `observ_observacioncurso`, `fecha_observacioncurso`) VALUES
+(1, '2', '1234', 'FaltaJustificada', 'as', '0000-00-00 00:00:00'),
+(2, '2', '1234', 'FaltaJustificada', 'as', '2017-11-15 20:48:00'),
+(3, '2', '1234', 'FaltaJustificada', 'as', '2017-11-15 20:48:39'),
+(4, '2', '1234', 'FaltaJustificada', 'as', '2017-11-15 20:48:44'),
+(5, '2', '1234', 'FaltaJustificada', 'as', '2017-11-15 20:49:04'),
+(6, '2', '1234', 'FaltaInjustificada', 'asasasasas', '2017-11-15 20:49:42'),
+(7, '2', '1234', 'FaltaJustificada', 'holi general', '2017-11-15 21:20:09'),
+(8, '2', '1234', 'FaltaJustificada', 'holi general', '2017-11-15 21:20:10');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `pensiones`
 --
 
@@ -264,10 +417,7 @@ CREATE TABLE `pensiones` (
 --
 
 INSERT INTO `pensiones` (`idPenciones`, `id_estudiantes`, `valor_matricula`, `valor_pagado`, `mes_pagado`, `fecha`, `estado`) VALUES
-(1, '123456789', '40', '40', '0', NULL, NULL),
-(2, '123454444', '90', '90', '0', NULL, NULL),
-(3, '122222', '12', '12', '0', NULL, NULL),
-(4, '123454444', '90', '91', '1', NULL, NULL);
+(1, '1234567890', '100', '38', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -305,12 +455,33 @@ CREATE TABLE `secretaria` (
   `pass_Secretaria` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `secretaria`
+-- Estructura de tabla para la tabla `tabla_prueba`
 --
 
-INSERT INTO `secretaria` (`id_Secretaria`, `cedula_Secretaria`, `ape_Secretaria`, `nom_Secretaria`, `telf_Secretaria`, `correo_Secretaria`, `direc_Secretaria`, `fech_nac_Secretaria`, `user_Secretaria`, `pass_Secretaria`) VALUES
-(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'as', 'as');
+CREATE TABLE `tabla_prueba` (
+  `columna` varchar(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tabla_prueba`
+--
+
+INSERT INTO `tabla_prueba` (`columna`) VALUES
+('a1'),
+('a2'),
+('a3'),
+('a4'),
+('a5'),
+('a6'),
+('a7'),
+('a8'),
+('a9'),
+('a10'),
+('a11'),
+('a12');
 
 -- --------------------------------------------------------
 
@@ -331,12 +502,15 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `cedula`, `usuario`, `Contra`, `tipo`) VALUES
-(1, NULL, 'adonis', 'adonis', 'Secretario'),
-(2, NULL, 'ass', 'ass', 'administracion'),
-(3, NULL, 'qw', 'qw', 'Estudiante'),
-(4, NULL, '12', '12', 'Profesor'),
-(5, NULL, '3', '3', 'Padre'),
-(6, '1234512345', '1234512345', '1234512345', 'Estudiante');
+(1, '0', 'adonis', 'adonis', 'Secretario'),
+(2, '1', 'ass1', 'ass1', 'administracion'),
+(3, '2', 'qw', 'qw', 'Estudiante'),
+(4, '1234', '12', '12', 'Profesor'),
+(9, '1234567890', 'ESTU001', 'ESTU001', 'Estudiante'),
+(10, '987654321', 'ESTU002', 'ESTU002', 'Estudiante'),
+(11, '121212', 'ESTU003', 'ESTU003', 'Estudiante'),
+(12, '2231323', 'jean', '1234', 'estudiante'),
+(13, '1313131313', 'jean', '1234', 'estudiante');
 
 --
 -- Índices para tablas volcadas
@@ -355,6 +529,12 @@ ALTER TABLE `cursos`
   ADD PRIMARY KEY (`id_Cursos`);
 
 --
+-- Indices de la tabla `curso_tutor`
+--
+ALTER TABLE `curso_tutor`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `directivo`
 --
 ALTER TABLE `directivo`
@@ -370,8 +550,7 @@ ALTER TABLE `docente`
 -- Indices de la tabla `estudiante`
 --
 ALTER TABLE `estudiante`
-  ADD PRIMARY KEY (`id_Estudiante`),
-  ADD KEY `fk_Estudiante_Representante_idx` (`Representante_id_Representante`);
+  ADD PRIMARY KEY (`id_Estudiante`);
 
 --
 -- Indices de la tabla `historial_pagos`
@@ -390,6 +569,42 @@ ALTER TABLE `lectivo`
 --
 ALTER TABLE `materias`
   ADD PRIMARY KEY (`id_Materias`);
+
+--
+-- Indices de la tabla `materiasnotas`
+--
+ALTER TABLE `materiasnotas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `materiasnotasquimetre`
+--
+ALTER TABLE `materiasnotasquimetre`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `materiasnotasquimetrerecu`
+--
+ALTER TABLE `materiasnotasquimetrerecu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `matricula`
+--
+ALTER TABLE `matricula`
+  ADD PRIMARY KEY (`idMatricula`);
+
+--
+-- Indices de la tabla `observacion`
+--
+ALTER TABLE `observacion`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `observacioncurso`
+--
+ALTER TABLE `observacioncurso`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `pensiones`
@@ -423,12 +638,17 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `asignacion`
 --
 ALTER TABLE `asignacion`
-  MODIFY `id_Asignacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_Asignacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `id_Cursos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_Cursos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT de la tabla `curso_tutor`
+--
+ALTER TABLE `curso_tutor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `directivo`
 --
@@ -438,7 +658,7 @@ ALTER TABLE `directivo`
 -- AUTO_INCREMENT de la tabla `docente`
 --
 ALTER TABLE `docente`
-  MODIFY `id_Docente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_Docente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `estudiante`
 --
@@ -448,7 +668,7 @@ ALTER TABLE `estudiante`
 -- AUTO_INCREMENT de la tabla `historial_pagos`
 --
 ALTER TABLE `historial_pagos`
-  MODIFY `idhistorial_pagos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idhistorial_pagos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `lectivo`
 --
@@ -460,20 +680,50 @@ ALTER TABLE `lectivo`
 ALTER TABLE `materias`
   MODIFY `id_Materias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT de la tabla `materiasnotas`
+--
+ALTER TABLE `materiasnotas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT de la tabla `materiasnotasquimetre`
+--
+ALTER TABLE `materiasnotasquimetre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `materiasnotasquimetrerecu`
+--
+ALTER TABLE `materiasnotasquimetrerecu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `matricula`
+--
+ALTER TABLE `matricula`
+  MODIFY `idMatricula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT de la tabla `observacion`
+--
+ALTER TABLE `observacion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT de la tabla `observacioncurso`
+--
+ALTER TABLE `observacioncurso`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
 -- AUTO_INCREMENT de la tabla `pensiones`
 --
 ALTER TABLE `pensiones`
-  MODIFY `idPenciones` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idPenciones` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `secretaria`
 --
 ALTER TABLE `secretaria`
-  MODIFY `id_Secretaria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_Secretaria` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

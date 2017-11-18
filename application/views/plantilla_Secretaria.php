@@ -19,6 +19,7 @@
         <div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
         <div class="full-box dashboard-sideBar-ct">
 
+
             <!--SideBar Title -->
             <div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
                 Unidad Educativa Particular Juan Leon Mera <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
@@ -51,7 +52,7 @@
                 
 
                 <li>
-                    <a href="<?php echo base_url('/ESTUDIANTE/'); ?>">
+                    <a href="<?php echo base_url('/SECRETARIA/'); ?>">
                         <i class="zmdi zmdi-case zmdi-hc-fw"></i> Inicio
                     </a>
                 </li>
@@ -99,7 +100,7 @@
                         </li>
 
                          <li>
-                            <a href="<?php echo base_url('/ActasCalificaciones/'); ?>"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Acta Completa</a>
+                            <a href="<?php echo base_url('/ActasCalificaciones/'); ?>"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Cuadro General</a>
                         </li>
                     
                        
@@ -130,9 +131,7 @@
 
     <!-- Notifications area -->
     <!-- NavBar -->
-        <nav class="full-box dashboard-Navbar">
-            
-        </nav>
+       
     
 
     <!-- Dialog help -->

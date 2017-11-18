@@ -21,7 +21,7 @@ class Modelo_RegistroEstudiante extends CI_Model {
         return $query->result();
     }
 
-    public function inserEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $parentesco_Estudiante, $user_Estudiante, $pass_Estudiante, $pension_Estudiante, $id_Representantes) {
+    public function inserEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $user_Estudiante, $pass_Estudiante) {
         $array1 = array(
             //	'id_Estudiante' => $id_Estudiante,
 
@@ -33,11 +33,10 @@ class Modelo_RegistroEstudiante extends CI_Model {
             'nom_Estudiante' => $nom_Estudiante,
             'dir_Estudiante' => $dir_Estudiante,
             'carnet_Estudiante' => $carnet_Estudiante,
-            'parentesco_Estudiante' => $parentesco_Estudiante,
+           
             'user_Estudiante' => $user_Estudiante,
             'pass_Estudiante' => $pass_Estudiante,
-            'pension_Estudiante' => $pension_Estudiante,
-            'id_Representantes' => $id_Representantes,
+            
             
         );
 
@@ -69,6 +68,12 @@ class Modelo_RegistroEstudiante extends CI_Model {
         $this->db->delete('Estudiante');
     }
 
+    public function deleteMatricula($cedula_Estudiante)
+    {
+        $this->db->where('cedula_estudiante_matricula', $cedula_Estudiante);
+        $this->db->delete('matricula');
+    }
+
     public function editEstudiante($id_Estudiante) {
         $query = $this->db->query("select * from Estudiante where id_Estudiante=$id_Estudiante");
         return $query->result();
@@ -78,7 +83,7 @@ class Modelo_RegistroEstudiante extends CI_Model {
 
 
 
-    public function updateEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $parentesco_Estudiante, $user_Estudiante, $pass_Estudiante, $pension_Estudiante, $id_Representantes) {
+    public function updateEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $user_Estudiante, $pass_Estudiante) {
         $array2 = array(
             
             //	'fech_matricula_Estudiante'=> 			$fech_matricula_Estudiante,
@@ -88,11 +93,10 @@ class Modelo_RegistroEstudiante extends CI_Model {
             'fech_nac_Estudiante' => $fech_nac_Estudiante,
             'dir_Estudiante' => $dir_Estudiante,
             'carnet_Estudiante' => $carnet_Estudiante,
-            'parentesco_Estudiante' => $parentesco_Estudiante,
+            
             'user_Estudiante' => $user_Estudiante,
             'pass_Estudiante' => $pass_Estudiante,
-            'pension_Estudiante' => $pension_Estudiante,
-            'id_Representantes' => $id_Representantes,
+            
         );
 
         $this->db->where('cedula_Estudiante', $cedula_Estudiante);

@@ -1,76 +1,49 @@
-<!-- aqui estara el crud de de usuario-->
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[2];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
 
+<section class="full-box dashboard-contentPage">
+    <!-- NavBar -->
+   <nav class="full-box dashboard-Navbar">
+            <ul class="full-box list-unstyled text-right">
+                <li class="pull-left">
+                    <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+                </li>
+                
+                <li>
+                    <a href="#!" class="btn-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="btn-modal-help">
+                        <i class="zmdi zmdi-help-outline"></i>
 
-</script>
-<style>
-* {
-  box-sizing: border-box;
-}
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <!-- Content page -->
+    <div class="container-fluid">
+      <div class="page-header">
+        <h1 class="text-titles"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i></i> Registro de Cursos <small></small></h1>
+      </div>
+      <p class="lead">  </p>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+         <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+              <li class="active"><a href="#new" data-toggle="tab"> Cursos</a></li>
+              <li><a href="#list" data-toggle="tab">Registro de Curso</a></li>
 
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
+          </ul>
 
-
-
-#myTable th, #myTable td {
-  text-align: left;
-  padding: 12px;
-}
-
-#myTable tr {
-  border-bottom: 1px solid #ddd;
-}
-
-#myTable tr.header, #myTable tr:hover {
-  background-color: #f1f1f1;
-}
-</style>
-
-
-<h1> Registro de Cursos	</h1>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="new">
+           
+              <div class="table-responsive">
 
 
 
- <div>
-
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Lista de Cursos </a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Registrar Cursos</a></li>
-    
-  </ul>
-<input type="text" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
-
-  <table class="table table-striped" id="myTable">
+             <table class="table table-striped" id="myTable">
       <thead>
         
         <th> ID</th>
@@ -87,10 +60,10 @@ function myFunction() {
           <td> <?php echo $value->nivel_Cursos;?>   </td>
          
           <td>
-            
-            <a href=" "><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Eliminar</a>
+           <a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a>
+           <a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>
 
-            <a href=""><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Editar</a>
+            
           </td>
       <?php  } ?>
       </tr>
@@ -98,13 +71,18 @@ function myFunction() {
 
   </table>
 
-    </div>
-    <div role="tabpanel" class="tab-pane" id="profile">
-      
-<div class="form-group" >
- 
-  </div>
-<form method="POST" action="<?php echo base_url('Cursos/insert'); ?>">
+            </div>
+            </div>
+            
+         <div class="tab-pane fade" id="list">
+
+            <div id="myTabContent" class="tab-content">
+            
+           
+              <div class="table-responsive">
+
+<div class="col-md-6">
+              <form method="POST" action="<?php echo base_url('Cursos/insert'); ?>">
   <div class="form-group">
     <label for="exampleInputEmail1">Nombre del Curso </label>
     <input type="text" class="form-control" id="nom_Cursos" name="nom_Cursos" aria-describedby="emailHelp" placeholder="cedula de ciudadania">
@@ -121,20 +99,118 @@ function myFunction() {
                                         </select>
   </div>
 
-  <button type="submit" class="btn btn-primary">Guardar</button>
+  <button type="submit" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i>>Guardar</button>
 </form>
-
-
-
-
-    </div>
-   
-  </div>
 
 </div>
 
 
 
+                            
+
+            </div>
+            </div>
+            </div>
+        
 
 
-<form method="post" action="<?php echo base_url('Cursos/inser'); ?>">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="mostrarhistorial">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+  <script>
+    function historial(cedula) {
+        var url = "<?php echo base_url('Pensiones/historial/'); ?>" + cedula;
+        var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+
+        $.ajax({
+            type: "POST",
+            url: url,
+
+            beforeSend: function () {
+                $("#resultado").html("Procesando, espere por favor...");
+            },
+            success: function (data)
+            {
+                var html = '<table class="table table-hover table-light">' +
+                        '<thead>' +
+                        '<tr>' +
+                        '<th>Cedula</th>' +
+                        '<th>Matricula</th>' +
+                        '<th>Valor Pagado</th>' +
+                        '<th>Mes</th>' +
+                        '<th>Estado</th>' +
+                        '</tr>' +
+                        '</thead>' +
+                        '<tbody>';
+
+                $.each(JSON.parse(data), function (i, item) {
+
+                    html += "<td>" + item.id_estudiantes + '</td>';
+                    html += "<td>" + item.valor_matricula + '</td>';
+                    html += "<td>" + item.valor_pagado + '</td>';
+                    html += "<td>" + meses[item.mes_pagado] + '</td>';
+                    html += "<td>";
+                    if (item.valor_pagado == item.valor_matricula) {
+                        html += "<div class='badge badge-success'><strong>Pagado!</strong></div>";
+                    } else {
+                        html += "<div class='badge badge-danger'><strong>Atrasado/debe!</strong></div>";
+                    }
+                    html += '</td></tr>';
+
+                    // alert(item.idPenciones);
+                })
+
+
+                $("#mostrarhistorial").html(html);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $("#resp").html(errorThrown);
+            }
+        });
+    }
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+
+</script>
+

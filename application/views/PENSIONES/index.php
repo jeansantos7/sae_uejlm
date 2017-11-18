@@ -23,7 +23,7 @@
     <!-- Content page -->
     <div class="container-fluid">
       <div class="page-header">
-        <h1 class="text-titles"><i class="zmdi zmdi-book zmdi-hc-fw"></i></i> Cobro de Pensiones <small>Registro de pensiones</small></h1>
+        <h1 class="text-titles"><i class="zmdi zmdi-money zmdi-hc-fw"></i></i> Cobro de Pensiones <small>Registro de pensiones</small></h1>
       </div>
       <p class="lead">  </p>
     </div>

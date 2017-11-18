@@ -103,7 +103,7 @@ else{
 			$data['contenido'] = 'REGISTRODocente/edit';
 			$data['selDocente'] = $this->Modelo_RegistroDocente->selDocente();
 			$data['datosDocente'] = $this->Modelo_RegistroDocente->editDocente($id_Docente);
-			$this->load->view('plantilla5', $data);
+			$this->load->view('plantilla_Secretaria', $data);
 		}
 		else
 		{

@@ -37,25 +37,25 @@ class RegistroEstudiante extends CI_Controller {
             //$id_Estudiante = $datos['id_Estudiante'];
 
 
-            $matricula_Estudiante = $datos['matricula_Estudiante'];
-            $fech_matricula_Estudiante = $datos['fech_matricula_Estudiante'];
+            
+           // $fech_matricula_Estudiante = $datos['fech_matricula_Estudiante'];
             $cedula_Estudiante = $datos['cedula_Estudiante'];
             $ape_Estudiante = $datos['ape_Estudiante'];
             $nom_Estudiante = $datos['nom_Estudiante'];
             $fech_nac_Estudiante = $datos['fech_nac_Estudiante'];
             $dir_Estudiante = $datos['dir_Estudiante'];
             $carnet_Estudiante = $datos['carnet_Estudiante'];
-            $parentesco_Estudiante = $datos['parentesco_Representante_Estudiante'];
+           // $parentesco_Estudiante = $datos['parentesco_Representante_Estudiante'];
             $user_Estudiante = $datos['user_Estudiante'];
             $pass_Estudiante = $datos['pass_Estudiante'];
-            $pension_Estudiante = $datos['pension_Estudiante'];
-            $id_Representantes = $datos['id_Representantes'];
+           // $pension_Estudiante = $datos['pension_Estudiante'];
+           // $id_Representantes = $datos['id_Representantes'];
             $tipo = "estudiante";
 
 
 
 
-            $datoexiste = $this->Modelo_Estudiante->ConsultaExiste($cedula_Estudiante);
+            $datoexiste = $this->Modelo_RegistroEstudiante->ConsultaExiste($cedula_Estudiante);
 
             if ($datoexiste == true) {
                 echo '<script languaje="javascript"> alert("este Estudiante  ya existe");
@@ -63,23 +63,26 @@ class RegistroEstudiante extends CI_Controller {
 				</script>';
             } else {
 
-                $this->Modelo_Estudiante->inserEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $parentesco_Estudiante, $user_Estudiante, $pass_Estudiante, $pension_Estudiante, $id_Representantes);
+                $this->Modelo_RegistroEstudiante->inserEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante,  $user_Estudiante, $pass_Estudiante);
 
-                $this->Modelo_Estudiante->inserUsuario($cedula_Estudiante, $user_Estudiante, $pass_Estudiante, $tipo);
+                $this->Modelo_RegistroEstudiante->inserUsuario($cedula_Estudiante, $user_Estudiante, $pass_Estudiante, $tipo);
 
 
-                redirect('/Estudiante');
+                redirect('/RegistroEstudiante');
             }
         }
     }
 
-    public function delete($id_Estudiante = NULL) {
+    public function delete($id_Estudiante = NULL, $cedula_Estudiante) {
 
         if ($id_Estudiante != NULL) {
-            $this->Modelo_Estudiante->deleteEstudiante($id_Estudiante);
+            $this->Modelo_RegistroEstudiante->deleteEstudiante($id_Estudiante);
+          //  $this->Modelo_RegistroEstudiante->deleteMatricula($cedula_Estudiante);
             echo '<script languaje="javascript"> alert("el dato fue eliminado");
 			</script>';
-            redirect('/Estudiante');
+            redirect('/RegistroEstudiante');
+
+
         }
     }
 
@@ -90,9 +93,9 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 
         if ($id_Estudiante != NULL) {
             //mostrar datos
-            $data['contenido'] = 'REGISTROEstudiante/edit';
-            $data['selEstudiante'] = $this->Modelo_RegistroEstudiante->selEstudiante();
-            $data['selRepresentante'] = $this->Modelo_RegistroEstudiante->selRepresentante();
+            $data['contenido'] = 'RegistroEstudiante/edit';
+          //  $data['selEstudiante'] = $this->Modelo_RegistroEstudiante->selEstudiante();
+            //$data['selRepresentante'] = $this->Modelo_RegistroEstudiante->selRepresentante();
             $data['datosEstudiante'] = $this->Modelo_RegistroEstudiante->editEstudiante($id_Estudiante);
             $data['user'] = $this->session->userdata('username');
 
@@ -131,25 +134,23 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
         $datos = $this->input->post();
 
         //$id_Estudiante = $datos['id_Estudiante'];
-        $matricula_Estudiante = $datos['matricula_Estudiante'];
-        $fech_matricula_Estudiante = $datos['fech_matricula_Estudiante'];
+       
+       
         $cedula_Estudiante = $datos['cedula_Estudiante'];
         $ape_Estudiante = $datos['ape_Estudiante'];
         $nom_Estudiante = $datos['nom_Estudiante'];
         $fech_nac_Estudiante = $datos['fech_nac_Estudiante'];
         $dir_Estudiante = $datos['dir_Estudiante'];
         $carnet_Estudiante = $datos['carnet_Estudiante'];
-        $parentesco_Estudiante = $datos['parentesco_Estudiante'];
         $user_Estudiante = $datos['user_Estudiante'];
         $pass_Estudiante = $datos['pass_Estudiante'];
-        $pension_Estudiante = $datos['pension_Estudiante'];
-        $id_Representantes = $datos['id_Representantes'];
+       
 
-        $this->Modelo_Estudiante->updateEstudiante($matricula_Estudiante, $fech_matricula_Estudiante, $cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $parentesco_Estudiante, $user_Estudiante, $pass_Estudiante, $pension_Estudiante, $id_Representantes);
+        $this->Modelo_RegistroEstudiante->updateEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $user_Estudiante, $pass_Estudiante);
 
         echo '<script languaje="javascript"> alert("este dato se actualizo"); </script>';
 
-        redirect('/Estudiante');
+        redirect('/RegistroEstudiante');
     }
 
 }
