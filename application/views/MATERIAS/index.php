@@ -1,7 +1,7 @@
 <h1 class="page-title">  Vista de Materias                    
 </h1>
 
-<div class="page-bar">
+<div class="  page-bar">
     <ul class="page-breadcrumb">
         <li>
             <i class="icon-home"></i>
