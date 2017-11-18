@@ -81,16 +81,47 @@
                     
                        
                     </ul>
+
+                     <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-balance zmdi-hc-fw"></i> Cuadros de Calificacions <i class="zmdi zmdi-caret-down pull-right"></i>
+                    </a>
+                    <ul class="list-unstyled full-box">
+                       
                     <li>
-                            <a href="<?php echo base_url('/ActasCalificaciones/'); ?>"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Actas Calificaciones</a>
+                     <a href="<?php echo base_url('/ActasCalificaciones/q1'); ?>"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Primer Quimestre</a>
                         </li>
-                </li>
+                       
+                        <li>
+                            <a href="<?php echo base_url('/ActasCalificaciones/q2'); ?>"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Segundo Quimestre</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('/ActasCalificaciones/extra'); ?>"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Supletorios</a>
+                        </li>
+
+                         <li>
+                            <a href="<?php echo base_url('/ActasCalificaciones/'); ?>"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Acta Completa</a>
+                        </li>
+                    
+                       
+                    </ul>
+
+                    <li>
+                            <a href="<?php echo base_url('/RegistroDocente/'); ?>"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Docentes</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo base_url('/Cursos/'); ?>"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Cursos</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('/Materias/'); ?>"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Materias</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('/Asignacion/'); ?>"><i class="zmdi zmdi-shield-security zmdi-hc-fw"></i> Asignacion</a>
+                        </li>
 
 
-                
-               
-            </ul>
-
+            <li>
+                           
 
         </div>
     </section>

@@ -15,7 +15,7 @@ class MateriaNotas extends CI_Controller {
             $data['user'] = $this->session->userdata('username');
             $data['cedula'] = $this->session->userdata('id_cedula');
             $data['lista_materias'] = $this->Modelo_MateriasNotas->lista_materias($this->session->userdata('id_cedula'));
-            $this->load->view("welcome_message", $data);
+            $this->load->view("plantilla", $data);
         } else {
             redirect(base_url(''));
         }

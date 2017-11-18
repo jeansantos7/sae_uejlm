@@ -134,24 +134,10 @@
                         '<th>ID</th>' +
                         '<th>Cedula</th>' +
                         '<th>Nombre</th>' +
-                        '<th>NotaP1Q1</th>' +
-                        '<th>NotaP2Q1</th>' +
-                        '<th>NotaP3Q1</th>' +
-                        '<th>NotaPOQ1</th>' +
-                        '<th>NotaEQ1</th>' +
-                        '<th>NotaEPQ1</th>' +
-                        '<th>NotaPROQ1</th>' +
-                        '<th>NotaP1Q2</th>' +
-                        '<th>NotaP2Q2</th>' +
-                        '<th>NotaP3Q2</th>' +
-                        '<th>NotaPOQ2</th>' +
-                        '<th>NotaEQ2</th>' +
-                        '<th>NotaEPQ2</th>' +
-                        '<th>NotaPROQ2</th>' +
                         '<th>TOTAL</th>' +
-                        '<th>NOTARE</th>' +
-                        '<th>NOTAREME</th>' +
-                        '<th>NOTAEXA</th>' +
+                        '<th>SUPLETORIO</th>' +
+                        '<th>REMEDIAL</th>' +
+                        '<th>EXAMEN DE GRACIA</th>' +
                         '</tr>' +
                         '</thead>' +
                         '<tbody>';
@@ -163,20 +149,7 @@
                     html += "<input type='hidden' name='profesor' value='" + CIProfe + "'>";
                     html += "<input type='hidden' name='cedu" + con + "' id='' value='" + item.cedula_Estudiante + "'>" + item.cedula_Estudiante + '</td>';
                     html += "<td>" + item.nom_Estudiante + " " + item.ape_Estudiante + '</td>';
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial1q1_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial2q1_MateriasNotas + "' style='  '></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial3q1_MateriasNotas + "' style='  '></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.porcentajeq1_MateriasNotas + "' style='  '></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examenq1_MateriasNotas + "' style='  '></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examen_porcentajeq1_MateriasNotas + "' style='  '></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.promedioq1_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial1q2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial2q2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial3q2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.porcentajeq2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examenq2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examen_porcentajeq2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.promedioq2_MateriasNotas + "' style=''></td>";
+                   
                     html += "<td><input type='text' readonly='readonly' class='form-control' name='total" + con + "' value='" + (parseFloat(item.promedioq1_MateriasNotas) + parseFloat(item.promedioq2_MateriasNotas)) + "' style=' width: 52px;'></td>";
                     html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notarec_MateriasNotas + "' style=''></td>";
                     html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notareme_MateriasNotas + "' style=''></td>";

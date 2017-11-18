@@ -26,9 +26,9 @@
         <!-- Content page -->
         <div class="container-fluid">
             <div class="page-header">
-              <h1 class="text-titles"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Payments <small>Payments</small></h1>
+              <h1 class="text-titles"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Cuadro Calificaciones <small>Primer Quimestre</small></h1>
             </div>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed, dignissimos possimus!</p>
+            
         </div>
         <div class="container-fluid">
             <div class="row">
@@ -141,17 +141,7 @@
                         '<th>NotaEQ1</th>' +
                         '<th>NotaEPQ1</th>' +
                         '<th>NotaPROQ1</th>' +
-                        '<th>NotaP1Q2</th>' +
-                        '<th>NotaP2Q2</th>' +
-                        '<th>NotaP3Q2</th>' +
-                        '<th>NotaPOQ2</th>' +
-                        '<th>NotaEQ2</th>' +
-                        '<th>NotaEPQ2</th>' +
-                        '<th>NotaPROQ2</th>' +
-                        '<th>TOTAL</th>' +
-                        '<th>NOTARE</th>' +
-                        '<th>NOTAREME</th>' +
-                        '<th>NOTAEXA</th>' +
+                        
                         '</tr>' +
                         '</thead>' +
                         '<tbody>';
@@ -170,17 +160,8 @@
                     html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examenq1_MateriasNotas + "' style='  '></td>";
                     html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examen_porcentajeq1_MateriasNotas + "' style='  '></td>";
                     html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.promedioq1_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial1q2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial2q2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notaparcial3q2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.porcentajeq2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examenq2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examen_porcentajeq2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.promedioq2_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control' name='total" + con + "' value='" + (parseFloat(item.promedioq1_MateriasNotas) + parseFloat(item.promedioq2_MateriasNotas)) + "' style=' width: 52px;'></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notarec_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.notareme_MateriasNotas + "' style=''></td>";
-                    html += "<td><input type='text' readonly='readonly' class='form-control' name='notaq2" + con + "' value='" + item.notaexa_MateriasNotas + "' style=''></td>";
+                
+                    
                     html += "</tr>";
                     
                     con++;
