@@ -147,6 +147,9 @@ $this->load->view($contenido);
                         <script src="<?php echo base_url(); ?>Public/prueba/js/main.js"></script>
                         <script src="<?php echo base_url(); ?>Public/js/jquery.validate.js" type="text/javascript"></script>
                         <script src="<?php echo base_url(); ?>Public/js/additional-methods.js" type="text/javascript"></script>
+
+                        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
                         <script>
                             $.material.init();

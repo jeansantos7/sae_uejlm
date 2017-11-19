@@ -164,13 +164,13 @@
                             <fieldset>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Valor De Pencion </label>
-                                    <input type="tex" class="form-control" name="valorpencion" value="">
+                                    <input type="tex" class="form-control" name="valorpencion" value="100">
                                     <input type="hidden" id="cedula_Estudiante_matricula" class="form-control" name="cedula_Estudiante_matricula" value="">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Año lectivo </label>
                                     <select size="1" id="docenteselect" name="lectivo" class="form-control js-example-basic-single">
-                                        <option value="">Seleccione</option>
+                                        <option value="1">Seleccione</option>
                                         <?php foreach ($selLectivo as $key => $value) {
                                             ?>
                                             <option value="<?php echo $value->idLectivo; ?>"><?php echo $value->descripcion; ?></option>
@@ -182,7 +182,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Curso </label>
                                     <select size="1"id="cursoselect" name="cursoselect" class="form-control js-example-basic-single">
-                                        <option value="">Seleccione</option>
+                                        <option value="4">Seleccione</option>
                                         <?php foreach ($selCursos as $key => $value) {
                                             ?>
                                             <option value="<?php echo $value->id_Cursos; ?>"><?php echo $value->nom_Cursos; ?></option>
