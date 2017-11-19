@@ -22,6 +22,8 @@ class Directivo extends CI_Controller {
         }
     }
 
+    
+    
     public function Fin() {
         if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
 
