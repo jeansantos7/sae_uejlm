@@ -12,6 +12,7 @@ class Pdf_model extends CI_Model
     {
         $query = $this->db->get('estudiante');
         return $query->result();
+        
     }
 }
 /* End of file pdf_model.php */
