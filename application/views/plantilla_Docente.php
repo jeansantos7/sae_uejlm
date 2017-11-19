@@ -49,7 +49,7 @@
 
 
                 <li>
-                    <a href="<?php echo base_url('/EstudianteNotas/notas'); ?>" class="btn-sideBar-SubMenu">
+                    <a href="<?php echo base_url('/MateriaNotas/index'); ?>" class="btn-sideBar-SubMenu">
                         <i class="zmdi zmdi-book zmdi-hc-fw"></i> Calificaciones 
                     </a>
                     

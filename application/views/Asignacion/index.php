@@ -165,7 +165,7 @@
 
                     </div>
 
-                    <div class="tab-pane fade" id="por">
+                    
 
                         <div id="myTabContent" class="tab-content">
 
@@ -237,7 +237,7 @@
 
 <script>
 
-<<<<<<< HEAD
+
                                                 function ListaMaterias(cedula, nombre) {
                                                     var text = "Listado De Materias " + nombre;
                                                     $("#exampleModalLabel").html(text);
