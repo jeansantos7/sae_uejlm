@@ -44,6 +44,7 @@ and id_Cursos=id_curso
 and id_Cursos=id_curso_Asignacion
 and id_Materias=id_materias_Asignacion
 and cedula_estudiantes_MateriasNotas=cedula_Estudiante
+and id_materia_MateriasNotas=id_Materias
 and id_Materias=$idmateria and id_Cursos=$idcurso;";
         $query = $this->db->query($sql);
         return $query->result();

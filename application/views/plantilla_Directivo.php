@@ -28,13 +28,13 @@
         <link href="<?php echo base_url('public/assets/global/plugins/fullcalendar/fullcalendar.min.css'); ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/jqvmap.css'); ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('public/assets/global/plugins/jstree/dist/themes/default/style.min.css'); ?>" rel="stylesheet" type="text/css" />
-              <!-- END PAGE LEVEL PLUGINS -->
-              <!-- BEGIN THEME GLOBAL STYLES -->
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
 
 
-              <!-- END THEME GLOBAL STYLES -->
-              <!-- BEGIN THEME LAYOUT STYLES -->
-              <link href="<?php echo base_url('public/assets/layouts/layout2/css/layout.min.css'); ?>" rel="stylesheet" type="text/css" />
+        <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <link href="<?php echo base_url('public/assets/layouts/layout2/css/layout.min.css'); ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('public/assets/layouts/layout2/css/themes/blue.min.css'); ?>" rel="stylesheet" type="text/css" id="style_color" />
         <link href="<?php echo base_url('public/assets/layouts/layout2/css/custom.min.css'); ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('public/assets/global/css/components.min.css'); ?>" rel="stylesheet" id="style_components" type="text/css" />
@@ -72,7 +72,7 @@
                 <div class="page-top">
                     <!-- BEGIN HEADER SEARCH BOX -->
                     <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-                                       <!-- END HEADER SEARCH BOX -->
+                    <!-- END HEADER SEARCH BOX -->
                     <!-- BEGIN TOP NAVIGATION MENU -->
                     <div class="top-menu">
                         <ul class="nav navbar-nav pull-right">
@@ -95,7 +95,7 @@
                             <li class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                     <img alt="" class="img-circle" src="<?php echo base_url('public/assets/layouts/layout2/img/avatar3_small.jpg'); ?>" />
-                                    <span class="username username-hide-on-mobile"> <?php echo $user;?> </span>
+                                    <span class="username username-hide-on-mobile"> <?php echo $user; ?> </span>
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
@@ -126,11 +126,11 @@
                                     </li>
                                     <li>
 
-                                        <a href="<?php echo base_url ('//').'login/logout_ci'; ?>"
+                                        <a href="<?php echo base_url('//') . 'login/logout_ci'; ?>"
 
-                                        <a href="<?php echo base_url("login/logout_ci/");?>">
+                                           <a href="<?php echo base_url("login/logout_ci/"); ?>">
 
-                                            <i class="icon-key"></i> Log Out </a>
+                                                <i class="icon-key"></i> Log Out </a>
                                     </li>
                                 </ul>
                             </li>
@@ -141,8 +141,8 @@
                                 <span class="sr-only">Toggle Quick Sidebar</span>
                                 <i class="icon-logout"></i>
                             </li>
-                            
-                           
+
+
                             <!-- END QUICK SIDEBAR TOGGLER -->
                         </ul>
                     </div>
@@ -171,27 +171,27 @@
                     <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
                     <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
                     <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-              <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                    <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                         <li class="nav-item active open ">
-                             <a href="<?php echo base_url('/DIRECTIVO/'); ?>" class="nav-link nav-toggle">
+                            <a href="<?php echo base_url('/DIRECTIVO/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-home"></i>
                                 <span class="title">Inicio</span>
                                 <span class="arrow"></span>
                             </a>
 
                         </li>
-                        
-                         <li class="nav-item active open">
+
+                        <li class="nav-item active open">
                             <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="icon-users"></i>
                                 <span class="title">Pensiones</span>
-                                
+
                                 <span class="arrow"></span>
 
 
 
                             </a>
-                            
+
                             <ul class="sub-menu ">
                                 <li class="nav-item active open ">
                                     <a href="<?php echo base_url('/Pensiones/historialPensiones'); ?>" class="nav-link ">
@@ -199,22 +199,22 @@
                                         <span class="title">Historial
                                     </a>
                                 </li>
-                               
+
 
 
                             </ul>
                         </li>
-                            <li class="nav-item active open">
+                        <li class="nav-item active open">
                             <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="icon-users"></i>
                                 <span class="title">Notas</span>
-                                
+
                                 <span class="arrow"></span>
 
 
 
                             </a>
-                            
+
                             <ul class="sub-menu ">
                                 <li class="nav-item active open ">
                                     <a href="<?php echo base_url('/ActasCalificaciones/'); ?>" class="nav-link ">
@@ -222,7 +222,7 @@
                                         <span class="title">Actas de Calificaciones
                                     </a>
                                 </li>
-                               
+
 
 
                             </ul>
@@ -232,13 +232,13 @@
                             <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="icon-users"></i>
                                 <span class="title">Usuarios</span>
-                                
+
                                 <span class="arrow"></span>
 
 
 
                             </a>
-                            
+
                             <ul class="sub-menu ">
                                 <li class="nav-item active open ">
                                     <a href="<?php echo base_url('/RegistroDocente/'); ?>" class="nav-link ">
@@ -265,7 +265,7 @@
 
                             </ul>
                         </li>
-                         <li class="nav-item active open ">
+                        <li class="nav-item active open ">
                             <a href="<?php echo base_url('/Materias/'); ?>" class="nav-link nav-toggle">
                                 <i class="icon-wallet"></i>
                                 <span class="title">Asignaturas</span>
@@ -298,8 +298,8 @@
                             </a>
 
                         </li>
-                       
-                      
+
+
 
 
                     </ul>-->
@@ -901,7 +901,7 @@
             </div>
             <!-- END FOOTER -->
             <!-- BEGIN QUICK NAV -->
-            
+
 
             <script src="<?php echo base_url('public/assets/global/plugins/jquery.min.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/global/plugins/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript">
@@ -937,12 +937,16 @@
             <script src="<?php echo base_url('public/assets/layouts/global/scripts/quick-nav.min.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/global/plugins/jstree/dist/jstree.min.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/pages/scripts/ui-tree.js'); ?>" type="text/javascript"></script>
-<script src="<?php echo base_url('public/assets/global/plugins/uniform/jquery.uniform.min.js'); ?>" type="text/javascript"></script>
+            <script src="<?php echo base_url('public/assets/global/plugins/uniform/jquery.uniform.min.js'); ?>" type="text/javascript"></script>
 
 
 
 
-
+            <script>
+                $(document).ready(function () {
+                    $('.js-example-basic-single').select2();
+                });
+            </script>
 
     </body>
 </html> 
