@@ -16,6 +16,7 @@ class Directivo extends CI_Controller {
             redirect(base_url(''));
         }
     }
+
     
     
     public function Fin() {
