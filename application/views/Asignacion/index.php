@@ -48,7 +48,8 @@
                                         <fieldset>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Docente </label>
-                                                <select size="1" id="docenteselect" name="docenteselect" class="form-control js-example-basic-single">
+                                                <select size="1" id="docenteselect" name="docenteselect" 
+                                                class="form-control js-example-basic-single">
                                                     <option value="">Seleccione</option>
                                                     <?php foreach ($ListaDocentes as $key => $value) {
                                                         ?>
@@ -103,7 +104,8 @@
                                         <fieldset>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Docente </label>
-                                                <select size="1" id="docenteselect" name="docenteselect" class="form-control js-example-basic-single">
+                                                <select size="1" id="docenteselect" name="docenteselect" 
+                                                class="form-control js-example-basic-single">
                                                     <option value="">Seleccione</option>
                                                     <?php foreach ($ListaDocentes as $key => $value) {
                                                         ?>
@@ -316,6 +318,7 @@
                                                         }
                                                     }
                                                 }
+
                                                 $(document).ready(function () {
                                                     $('.js-example-basic-single').select2();
                                                 })

@@ -42,7 +42,8 @@
             <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade active in" id="new">
                     <div class="table-responsive">
-                        <table class="table table-hover text-center">
+                    <input type="text" class="form-control large" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
+                        <table id="myTable" class="table table-hover text-center">
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
@@ -138,7 +139,9 @@
                                         <label class="control-label">Carnet de Discapacidad</label>
                                         <input class="form-control" type="text"
                                                id="carnet_Estudiante" name="carnet_Estudiante"
-                                               onFocus="">       </div>
+                                               onFocus="javascript:if (!h) {
+                                                    this.blur();
+                                                }">       </div>
 
 
 
@@ -177,7 +180,9 @@
 </section>
 
 
-
+<script language="JavaScript">
+var h=false;
+</script>
 
 <script>
     var h = false;
@@ -186,7 +191,7 @@
         var handleLogin = function () {
             $.validator.addMethod("alfanumOespacio", function (value, element) {
                 return /^[ a-z0-9áéíóúüñ]*$/i.test(value);
-            }, "Ingrese sólo letras, números o espacios.");
+            }, "Dato.");
             $.validator.addMethod("espacio", function (value, element) {
                 return !/\s/i.test(value);
             }, "Ingrese sólo letras, números o espacios.");
@@ -218,10 +223,8 @@
                     dir_Estudiante: {
 
                         required: true
-                    },
-                    disc_Estudiante: {
-
-                        required: true
+                    
+                   
                     },
                     user_Estudiante: {
                         espacio: true,
@@ -250,9 +253,8 @@
                     },
                     dir_Estudiante: {
                         required: "Se requiere nombre de Fechas."
-                    },
-                    disc_Estudiante: {
-                        required: "Se requiere nombre de Fechas."
+                    
+                   
                     },
                     user_Estudiante: {
                         required: "Se requiere nombre de Fechas."
@@ -339,4 +341,33 @@
         });
 
     }
+</script>
+
+<script>
+
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[2];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+
+</script>
+<script type="text/javascript">
+  
+  $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
 </script>

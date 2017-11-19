@@ -11,6 +11,7 @@ $this->load->view($contenido);
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="<?php echo base_url(); ?>Public/prueba/css/main.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js">
 
     </head>
     <body>
@@ -146,6 +147,7 @@ $this->load->view($contenido);
                         <script src="<?php echo base_url(); ?>Public/prueba/js/main.js"></script>
                         <script src="<?php echo base_url(); ?>Public/js/jquery.validate.js" type="text/javascript"></script>
                         <script src="<?php echo base_url(); ?>Public/js/additional-methods.js" type="text/javascript"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
                         <script>
                             $.material.init();
                         </script>
