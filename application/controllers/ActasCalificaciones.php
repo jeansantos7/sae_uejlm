@@ -21,26 +21,20 @@ class ActasCalificaciones extends CI_Controller {
 
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
-        }
-        elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
             $data['contenido'] = "ActasCalificaciones/index";
-                    
-           
+
+
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Directivo", $data);
-        }
-
-
-         else {
+        } else {
             redirect(base_url(''));
         }
     }
 
+    public function q1() {
 
-    public function q1()
-    {
-
-if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
             $data['contenido'] = "ActasCalificaciones/q1";
             $data['lista_Curso'] = $this->Modelo_ActasCalificaciones->ListaCurso();
             //$data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
@@ -49,25 +43,20 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
-        }
-        elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
             $data['contenido'] = "ActasCalificaciones/p1q1";
-                    
-           
+
+
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Directivo", $data);
-        }
-
-
-         else {
+        } else {
             redirect(base_url(''));
         }
     }
 
-public function q2()
-    {
+    public function q2() {
 
-if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
             $data['contenido'] = "ActasCalificaciones/q2";
             $data['lista_Curso'] = $this->Modelo_ActasCalificaciones->ListaCurso();
             //$data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
@@ -76,25 +65,20 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
-        }
-        elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
             $data['contenido'] = "ActasCalificaciones/p1q2";
-                    
-           
+
+
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Directivo", $data);
-        }
-
-
-         else {
+        } else {
             redirect(base_url(''));
         }
     }
 
-    public function extra()
-    {
+    public function extra() {
 
-if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
             $data['contenido'] = "ActasCalificaciones/extra";
             $data['lista_Curso'] = $this->Modelo_ActasCalificaciones->ListaCurso();
             //$data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
@@ -103,22 +87,16 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
-        }
-        elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
             $data['contenido'] = "ActasCalificaciones/extra";
-                    
-           
+
+
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Directivo", $data);
-        }
-
-
-         else {
+        } else {
             redirect(base_url(''));
         }
     }
-    
-
 
     function ListaMateriasXCurso() {
         //print_r($_POST);
