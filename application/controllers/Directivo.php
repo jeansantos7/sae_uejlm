@@ -1,17 +1,12 @@
 <?php
-
 class Directivo extends CI_Controller {
-
     function __construct() {
         parent::__construct();
         $this->load->model("Modelo_Directivo");
     }
-
     public function index() {
         # code...
-
         if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
-
             $data['contenido'] = "Directivo/index";
             //$data['listarMaterias']=$this->Modelo_Materias->listarMaterias();
             //$data['selCursos']=$this->Modelo_Materias->selCursos();
@@ -26,7 +21,6 @@ class Directivo extends CI_Controller {
     
     public function Fin() {
         if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
-
             $data['contenido'] = "Directivo/Fin";
             //$data['listarMaterias']=$this->Modelo_Materias->listarMaterias();
             //$data['selCursos']=$this->Modelo_Materias->selCursos();
@@ -41,7 +35,5 @@ class Directivo extends CI_Controller {
             redirect(base_url(''));
         }
     }
-
 }
-
 ?>
