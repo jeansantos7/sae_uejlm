@@ -39,6 +39,7 @@
         <link href="<?php echo base_url('public/assets/layouts/layout2/css/custom.min.css'); ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('public/assets/global/css/components.min.css'); ?>" rel="stylesheet" id="style_components" type="text/css" />
         <link href="<?php echo base_url('public/assets/global/plugins/uniform/css/uniform.default.css'); ?>" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 
         <!-- END THEME LAYOUT STYLES -->
         <!--<link rel="shortcut icon" href="favicon.ico" />-->
@@ -922,6 +923,10 @@
             <script src="<?php echo base_url('public/assets/global/plugins/jquery.sparkline.min.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js'); ?>" type="text/javascript"></script>
 
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+
             <script src="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js'); ?>" type="text/javascript"></script>
@@ -938,6 +943,7 @@
             <script src="<?php echo base_url('public/assets/global/plugins/jstree/dist/jstree.min.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/pages/scripts/ui-tree.js'); ?>" type="text/javascript"></script>
             <script src="<?php echo base_url('public/assets/global/plugins/uniform/jquery.uniform.min.js'); ?>" type="text/javascript"></script>
+            <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
 
 
 
@@ -945,6 +951,9 @@
             <script>
                 $(document).ready(function () {
                     $('.js-example-basic-single').select2();
+                });
+                $(document).ready(function () {
+                    $('#myTable').DataTable();
                 });
             </script>
 

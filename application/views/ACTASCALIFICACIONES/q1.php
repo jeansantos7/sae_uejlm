@@ -1,85 +1,50 @@
-<section class="full-box dashboard-contentPage">
-        <!-- NavBar -->
-        <nav class="full-box dashboard-Navbar">
-            <ul class="full-box list-unstyled text-right">
-                <li class="pull-left">
-                    <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
-                </li>
-                <li>
-                    <a href="#!" class="btn-Notifications-area">
-                        <i class="zmdi zmdi-notifications-none"></i>
-                        <span class="badge">7</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#!" class="btn-search">
-                        <i class="zmdi zmdi-search"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#!" class="btn-modal-help">
-                        <i class="zmdi zmdi-help-outline"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- Content page -->
-        <div class="container-fluid">
-            <div class="page-header">
-              <h1 class="text-titles"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Cuadro Calificaciones <small>Primer Quimestre</small></h1>
+<!-- Content page -->
+<div class="container-fluid">
+    <div class="page-header">
+        <h1 class="text-titles">System <small>Tiles</small></h1>
+    </div>
+</div>
+<div class="full-box text-center" style="padding: 30px 10px;">
+    <ul class="nav nav-tabs" style="margin-bottom: 15px; height: 42px;">
+        <li class="active"><a href="#new" data-toggle="tab"></a></li>
+        <li><a href="#list" data-toggle="tab"> <div class="ripple-container"></div></a></li>
+
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="new">
+            <div class="col-md-6">
+                <label for="s">Materia </label>
+                <select size="1"  name="s" class="form-control" id="id_curso" onchange="matriaestudiante(this.value)">
+                    <option value="">Curso</option>
+                    <?php foreach ($lista_Curso as $key => $value) {
+                        ?>
+                        <option value="<?php echo $value->id_Cursos; ?>"><?php echo $value->nom_Cursos; ?></option>
+                    <?php } ?>
+                </select>
             </div>
-            
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12">
-                    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-                        <li class="active"><a href="#new" data-toggle="tab">New</a></li>
-                        <li><a href="#list" data-toggle="tab">List</a></li>
-                    </ul>
-                    <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade active in" id="new">
-                        <div class="col-md-6">
-                        <label for="s">Materia </label>
-                                            <select size="1"  name="s" class="form-control" id="id_curso" onchange="matriaestudiante(this.value)">
-                                                <option value="">Curso</option>
-                                                <?php foreach ($lista_Curso as $key => $value) {
-                                                    ?>
-                                                    <option value="<?php echo $value->id_Cursos; ?>"><?php echo $value->nom_Cursos; ?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-body">
-                                        <div class="form-group" id="Materias">
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-body">
-                                        <div class="form-group">
-                                            <div id="notasmaterias">
+            <div class="col-md-3">
+                <div class="form-body" id="Materias">
+                    
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-body">
+                    <div class="form-group">
+                        <div id="notasmaterias">
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="tab-pane fade " id="list">
 
 
-
-    <script>
+        </div>
+    </div>
+</div>
+<script>
     function matriaestudiante(id) {
         $("#notasmaterias").html("");
         var url = "<?php echo base_url(); ?>ActasCalificaciones/ListaMateriasXCurso";
@@ -127,9 +92,9 @@
                 alert(errorThrown);
             },
             success: function (data, textStatus, jqXHR) {
-                var html = 
-                ' <div class="table-responsive">' +
-                '<table class="table table-bordered table-hover ">' +
+                var html =
+                        ' <div class="table-responsive">' +
+                        '<table class="table table-bordered table-hover ">' +
                         '<thead>' +
                         '<th>ID</th>' +
                         '<th>Cedula</th>' +
@@ -141,7 +106,6 @@
                         '<th>NotaEQ1</th>' +
                         '<th>NotaEPQ1</th>' +
                         '<th>NotaPROQ1</th>' +
-                        
                         '</tr>' +
                         '</thead>' +
                         '<tbody>';
@@ -160,10 +124,10 @@
                     html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examenq1_MateriasNotas + "' style='  '></td>";
                     html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.nota_examen_porcentajeq1_MateriasNotas + "' style='  '></td>";
                     html += "<td><input type='text' readonly='readonly' class='form-control'  name='notaq1" + con + "' value='" + item.promedioq1_MateriasNotas + "' style=''></td>";
-                
-                    
+
+
                     html += "</tr>";
-                    
+
                     con++;
                 });
                 html += '</tbody></table>';

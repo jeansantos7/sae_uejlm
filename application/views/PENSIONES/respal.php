@@ -6,150 +6,241 @@
 </div>
 <div class="full-box text-center" style="padding: 30px 10px;">
     <ul class="nav nav-tabs" style="margin-bottom: 15px; height: 42px;">
-        <li class="active"><a href="#new" data-toggle="tab"> Asignacion de Materias</a></li>
-        <li><a href="#list" data-toggle="tab">Asignacion de Tutorias</a></li>
-        <li><a href="#por" data-toggle="tab">Docentes</a></li>
+        <li class="active"><a href="#new" data-toggle="tab"></a></li>
+        <li><a href="#list" data-toggle="tab"> <div class="ripple-container"></div></a></li>
 
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade active in" id="new">
-            <form id="myForm" class="form-body" method="POST" action="<?php echo base_url('Asignacion/setGuardar'); ?>">
-                <div class="row">
-                    <div class="col-lg-3">
 
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Docente </label>
-                            <select size="1" id="docenteselect" name="docenteselect"   class="form-control js-example-basic-single">
-                                <option value="">Seleccione</option>
-                                <?php foreach ($ListaDocentes as $key => $value) {
-                                    ?>
-                                    <option value="<?php echo $value->cedula_Docente; ?>"><?php echo $value->nom_Docente . " " . $value->ape_Docente; ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>    
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Grado </label>
-                            <select size="1"id="cursoselect" name="cursoselect" class="form-control js-example-basic-single">
-                                <option value="">Seleccione</option>
-                                <?php foreach ($ListaCurso as $key => $value) {
-                                    ?>
-                                    <option value="<?php echo $value->id_Cursos; ?>"><?php echo $value->nom_Cursos; ?></option>
-
-                                <?php } ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Materia </label>
-                            <select size="1"id="materiaselect" name="materiaselect" class="form-control js-example-basic-single">
-                                <option value="">Seleccione</option>
-                                <?php foreach ($ListaMaterias as $key => $value) {
-                                    ?>
-                                    <option value="<?php echo $value->id_Materias; ?>"><?php echo $value->nom_Materias; ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" name="save" value="" class="btn blue">Agregar</button>
-                            <button type="button" class="btn ">Cancelar</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-
-                    </div>
-                </div>
-            </form>
         </div>
         <div class="tab-pane fade " id="list">
-            <form id="myForm" class="form-body" method="POST" action="<?php echo base_url('Asignacion/setGuardarTutor'); ?>">
-                <div class="row">
-                    <div class="col-lg-3">
 
-                    </div>
-                    <div class="col-lg-6">
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Docente </label>
-                                <select size="1" id="docenteselect" name="docenteselect" 
-                                        class="form-control js-example-basic-single">
-                                    <option value="">Seleccione</option>
-                                    <?php foreach ($ListaDocentes as $key => $value) {
-                                        ?>
-                                        <option value="<?php echo $value->cedula_Docente; ?>"><?php echo $value->nom_Docente . " " . $value->ape_Docente; ?></option>
-                                    <?php } ?>
-                                </select>
-
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Grado </label>
-                                <select size="1"id="cursoselect" name="cursoselect" class="form-control js-example-basic-single">
-                                    <option value="">Seleccione</option>
-                                    <?php foreach ($ListaCurso as $key => $value) {
-                                        ?>
-                                        <option value="<?php echo $value->id_Cursos; ?>"><?php echo $value->nom_Cursos; ?></option>
-
-                                    <?php } ?>
-                                </select>
-
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" name="save" value="" class="btn blue">Agregar</button>
-                                <button type="button" class="btn ">Cancelar</button>
-                            </div>
-
-
-                        </fieldset>
-                    </div>
-                    <div class="col-lg-3">
-
-                    </div>
-                </div>
-
-
-
-            </form>
-
-        </div>
-        <div class="tab-pane fade " id="por">
-            <div class="row">
-                <div class="col-lg-12">
-                    <table class="table table-hover table-light" id="myTable">
-                        <thead>
-                            <tr>
-                                <th> Cedula</th>
-                                <th> Apellidos y Nombres</th>
-                                <th>Correo</th>
-                                <th> Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($ListaDocentes as $key => $value) { ?>
-
-                                <tr>
-                                    <td> <?php echo $value->cedula_Docente; ?>   </td>
-                                    <td> <?php echo $value->ape_Docente . ' ' . $value->nom_Docente; ?>   </td>
-                                    <td> <?php echo $value->correo_Docente; ?>   </td>
-                                    <td>
-                                        <button type="button" class="btn btn-default" onclick="ListaMaterias(<?php echo $value->cedula_Docente . ",'" . $value->ape_Docente; ?>')" data-toggle="modal" data-target="#exampleModal">
-                                            <span class="fa fa-list" aria-hidden="true"></span>   Materias
-                                        </button>
-                                    </td>
-
-                                </tr>
-                            <?php } ?>
-
-                        </tbody>
-                    </table> 
-                </div>
-            </div>
 
         </div>
     </div>
-
-
+    
+    
 </div>
+
+
+
+
+
+
+<script src="<?php echo base_url('public/assets/global/plugins/jquery.min.js'); ?>" type="text/javascript"></script>
+
+
+<section class="full-box dashboard-contentPage">
+    <!-- NavBar -->
+    <nav class="full-box dashboard-Navbar">
+        <ul class="full-box list-unstyled text-right">
+            <li class="pull-left">
+                <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+            </li>
+
+            <li>
+                <a href="#!" class="btn-search">
+                    <i class="zmdi zmdi-search"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#!" class="btn-modal-help">
+                    <i class="zmdi zmdi-help-outline"></i>
+
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Content page -->
+    <div class="container-fluid">
+        <div class="page-header">
+            <h1 class="text-titles"><i class="zmdi zmdi-book zmdi-hc-fw"></i></i> Asignacion <small> Materias- Tutorias</small></h1>
+        </div>
+        <p class="lead">  </p>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+                    <li class="active"><a href="#new" data-toggle="tab"> Asignacion de Materias</a></li>
+                    <li><a href="#list" data-toggle="tab">Asignacion de Tutorias</a></li>
+                    <li><a href="#por" data-toggle="tab">Docentes</a></li>
+
+                </ul>
+
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="new">
+
+                        <div class="table-responsive">
+
+
+
+              <form id="myForm" class="form-body" method="POST" action="<?php echo base_url('Asignacion/setGuardar'); ?>">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Docente </label>
+                                                <select size="1" id="docenteselect" name="docenteselect" 
+                                                class="form-control js-example-basic-single">
+                                                    <option value="">Seleccione</option>
+                                                    <?php foreach ($ListaDocentes as $key => $value) {
+                                                        ?>
+                                                        <option value="<?php echo $value->cedula_Docente; ?>"><?php echo $value->nom_Docente . " " . $value->ape_Docente; ?></option>
+                                                    <?php } ?>
+                                                </select>
+
+
+                            <form id="myForm" class="form-body" method="POST" action="<?php echo base_url('Asignacion/setGuardar'); ?>">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Docente </label>
+                                        <select size="1" id="docenteselect" name="docenteselect" class="js-example-basic-single">
+                                            <option value="">Seleccione</option>
+                                            <?php foreach ($ListaDocentes as $key => $value) {
+                                                ?>
+                                                <option value="<?php echo $value->cedula_Docente; ?>"><?php echo $value->nom_Docente . " " . $value->ape_Docente; ?></option>
+                                            <?php } ?>
+                                        </select>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Materia </label>
+                                        <select size="1"id="materiaselect" name="materiaselect" class="form-control js-example-basic-single">
+                                            <option value="">Seleccione</option>
+                                            <?php foreach ($ListaMaterias as $key => $value) {
+                                                ?>
+                                                <option value="<?php echo $value->id_Materias; ?>"><?php echo $value->nom_Materias; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Grado </label>
+                                        <select size="1"id="cursoselect" name="cursoselect" class="form-control js-example-basic-single">
+                                            <option value="">Seleccione</option>
+                                            <?php foreach ($ListaCurso as $key => $value) {
+                                                ?>
+                                                <option value="<?php echo $value->id_Cursos; ?>"><?php echo $value->nom_Cursos; ?></option>
+
+                                            <?php } ?>
+                                        </select>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" name="save" value="" class="btn blue">Agregar</button>
+                                        <button type="button" class="btn ">Cancelar</button>
+                                    </div>
+
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="list">
+
+                        <div id="myTabContent" class="tab-content">
+
+
+                            <div class="table-responsive">
+
+
+
+                                <div class="col-md-4">
+                                    <form id="myForm" class="form-body" method="POST" action="<?php echo base_url('Asignacion/setGuardarTutor'); ?>">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Docente </label>
+                                                <select size="1" id="docenteselect" name="docenteselect" 
+                                                class="form-control js-example-basic-single">
+                                                    <option value="">Seleccione</option>
+                                                    <?php foreach ($ListaDocentes as $key => $value) {
+                                                        ?>
+                                                        <option value="<?php echo $value->cedula_Docente; ?>"><?php echo $value->nom_Docente . " " . $value->ape_Docente; ?></option>
+                                                    <?php } ?>
+                                                </select>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Grado </label>
+                                                <select size="1"id="cursoselect" name="cursoselect" class="form-control js-example-basic-single">
+                                                    <option value="">Seleccione</option>
+                                                    <?php foreach ($ListaCurso as $key => $value) {
+                                                        ?>
+                                                        <option value="<?php echo $value->id_Cursos; ?>"><?php echo $value->nom_Cursos; ?></option>
+
+                                                    <?php } ?>
+                                                </select>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" name="save" value="" class="btn blue">Agregar</button>
+                                                <button type="button" class="btn ">Cancelar</button>
+                                            </div>
+
+
+                                        </fieldset>
+                                    </form>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    
+
+                        <div id="myTabContent" class="tab-content">
+
+
+                            <div class="table-responsive">
+
+
+
+                                <table class="table table-hover table-light" id="myTable">
+                                    <thead>
+                                        <tr>
+                                            <th> Cedula</th>
+                                            <th> Apellidos y Nombres</th>
+                                            <th>Correo</th>
+                                            <th> Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($ListaDocentes as $key => $value) { ?>
+
+                                            <tr>
+                                                <td> <?php echo $value->cedula_Docente; ?>   </td>
+                                                <td> <?php echo $value->ape_Docente . ' ' . $value->nom_Docente; ?>   </td>
+                                                <td> <?php echo $value->correo_Docente; ?>   </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-default" onclick="ListaMaterias(<?php echo $value->cedula_Docente . ",'" . $value->ape_Docente; ?>')" data-toggle="modal" data-target="#exampleModal">
+                                                        <span class="fa fa-list" aria-hidden="true"></span>   Materias
+                                                    </button>
+                                                </td>
+
+                                            </tr>
+                                        <?php } ?>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -377,7 +468,6 @@
     });
 
 </script>
-
 
 
 
