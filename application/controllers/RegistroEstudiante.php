@@ -24,7 +24,7 @@ class RegistroEstudiante extends CI_Controller {
             $data['selRepresentante'] = $this->Modelo_RegistroEstudiante->selRepresentante();
             $data['listarEstudiante'] = $this->Modelo_RegistroEstudiante->listarEstudiante();
             $data['user'] = $this->session->userdata('username');
-            $this->load->view("plantilla_Secretaria", $data);
+            $this->load->view("plantilla_Directivo", $data);
         } else {
             redirect(base_url(''));
         }

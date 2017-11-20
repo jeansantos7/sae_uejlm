@@ -13,6 +13,17 @@
 
         <!-- Bootstrap CSS -->
         <!-- Bootstrap CSS -->
+
+        <script src="<?php echo base_url(); ?>Public/prueba/js/jquery-3.1.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>Public/prueba/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>Public/prueba/js/material.min.js"></script>
+    <script src="<?php echo base_url(); ?>Public/prueba/js/ripples.min.js"></script>
+    <script src="<?php echo base_url(); ?>Public/prueba/js/sweetalert2.min.js"></script>
+    <script src="<?php echo base_url(); ?>Public/prueba/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="<?php echo base_url(); ?>Public/prueba/js/main.js"></script>
+    <script>
+        $.material.init();
+    </script>
         <link href="<?php echo base_url('public/assets/global/css/plugins.min.css'); ?>" rel="stylesheet" type="text/css" />
 
 
