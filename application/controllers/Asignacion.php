@@ -30,6 +30,7 @@ class Asignacion extends CI_Controller {
         $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
         $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
         $data['ListaCurso'] = $this->Modelo_Asignacion->ListaCurso();
+        
         $data['user'] = $this->session->userdata('username');
 
         $this->load->view("plantilla_Directivo", $data);
