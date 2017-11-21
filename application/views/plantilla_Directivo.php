@@ -51,6 +51,9 @@
                         <ul class="list-unstyled full-box">
 
                             <li>
+                                <a href="<?php echo base_url('/MateriaNotas/index'); ?>"><i class="zmdi zmdi-font zmdi-hc-fw"></i>Subir Notas</a>
+                            </li>
+                            <li>
                                 <a href="<?php echo base_url('/ActasCalificaciones/q1'); ?>"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Primer Quimestre</a>
                             </li>
 
@@ -91,7 +94,7 @@
                         <a href="<?php echo base_url('/VistaPensiones/'); ?>"><i class="zmdi zmdi-shield-security zmdi-hc-fw"></i> Pensiones</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('/NotasDirectivo/'); ?>"><i class="zmdi zmdi-shield-security zmdi-hc-fw"></i> Pensiones</a>
+                        <a href="<?php echo base_url('/VistaObservaciones/'); ?>"><i class="zmdi zmdi-shield-security zmdi-hc-fw"></i> Observaciones</a>
                     </li>
 
 

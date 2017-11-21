@@ -77,9 +77,9 @@
 
                                 <div class="col-xs-12 col-md-4 col-md-offset-1">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">Cedula</label>
+                                        <label class="control-label"></label>
                                         <input class="form-control" type="text"
-                                               id="cedula_Estudiante" name="cedula_Estudiante">
+                                               id="cedula_Estudiante" name="cedula_Estudiante" placeholder="Cedula">
                                     </div>
                                     <div class="form-group label-floating">
                                         <label class="control-label">Apellidos</label>
@@ -132,7 +132,7 @@
                                     <div class="form-group label-floating">
                                         <label class="control-label">Contraseña</label>
                                         <input class="form-control" type="text"
-                                               id="pass_Estudiante" name="pass_Estudiante">
+                                               id="pass_Estudiante" name="pass_Estudiante" placeholder="">
                                     </div>
 
 

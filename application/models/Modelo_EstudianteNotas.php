@@ -31,6 +31,14 @@ and id_curso_observacioncurso=id_Cursos
 and cedula_Estudiante=$param;");
         return $query->result();
     }
+    function BitacoraDirec($param) {
+
+        $query = $this->db->query("SELECT * FROM observacioncurso,cursos,docente
+where id_curso_observacioncurso=id_Cursos
+and cedula_profesor_observacioncurso=cedula_Docente
+order by fecha_observacioncurso DESC;");
+        return $query->result();
+    }
     function BitacoraIndi($param) {
 
         $query = $this->db->query("SELECT * FROM matricula,estudiante,cursos,observacion
@@ -38,6 +46,14 @@ where cedula_Estudiante=cedula_estudiante_matricula
 and id_curso=id_Cursos 
 and cedula_estu_observacion=cedula_Estudiante
 and cedula_Estudiante=$param;");
+        return $query->result();
+    }
+    function BitacoraIndiDirec($param) {
+
+        $query = $this->db->query("SELECT * FROM matricula,estudiante,cursos,observacion
+where cedula_Estudiante=cedula_estudiante_matricula 
+and id_curso=id_Cursos 
+and cedula_estu_observacion=cedula_Estudiante;");
         return $query->result();
     }
 
