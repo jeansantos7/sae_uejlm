@@ -9,6 +9,7 @@
         <li class="active"><a href="#new" data-toggle="tab"> Asignacion de Materias</a></li>
         <li><a href="#list" data-toggle="tab">Asignacion de Tutorias</a></li>
         <li><a href="#por" data-toggle="tab">Docentes</a></li>
+        <li><a href="#por2" data-toggle="tab">Tutor Curso Docentes</a></li>
 
     </ul>
     <div class="tab-content">
@@ -146,6 +147,38 @@
             </div>
 
         </div>
+        <div class="tab-pane fade " id="por2">
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table table-hover table-light" id="myTable2">
+                        <thead>
+                            <tr>
+                                <th> Cedula</th>
+                                <th> Apellidos y Nombres</th>
+                                <th>Correo</th>
+                                <th> Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($CursoTutor as $key => $value) { ?>
+
+                                <tr>
+                                    <td> <?php echo $value->cedula_Docente; ?>   </td>
+                                    <td> <?php echo $value->ape_Docente . ' ' . $value->nom_Docente; ?>   </td>
+                                    <td> <?php echo $value->correo_Docente; ?>   </td>
+                                    <td>
+                                        <?php echo $value->nom_Cursos; ?> 
+                                    </td>
+
+                                </tr>
+                            <?php } ?>
+
+                        </tbody>
+                    </table> 
+                </div>
+            </div>
+
+        </div>
     </div>
 
 
@@ -174,107 +207,6 @@
 
 <script>
 
-
-                                                function ListaMaterias(cedula, nombre) {
-                                                    var text = "Listado De Materias " + nombre;
-                                                    $("#exampleModalLabel").html(text);
-                                                    var url = "<?php echo base_url('Asignacion/get/'); ?>" + cedula;
-
-
-
-                                                    $.ajax({
-                                                        type: "POST",
-                                                        url: url,
-
-                                                        beforeSend: function () {
-                                                            $("#resultado").html("Procesando, espere por favor...");
-                                                        },
-                                                        success: function (data)
-                                                        {
-                                                            var html = '<table class="table table-hover table-light"id="table">' +
-                                                                    '<thead>' +
-                                                                    '<tr>' +
-                                                                    '<th>Codigo</th>' +
-                                                                    '<th>Materia</th>' +
-                                                                    '<th>Curso</th>' +
-                                                                    '<th>Acciones</th>' +
-                                                                    '</tr>' +
-                                                                    '</thead>' +
-                                                                    '<tbody><tr>';
-
-                                                            $.each(JSON.parse(data), function (i, item) {
-
-                                                                html += "<td>" + item.id_materias_Asignacion + '</td>';
-                                                                html += "<td>" + item.nom_Materias + '</td>';
-                                                                html += "<td>" + item.nom_Cursos + '</td>';
-                                                                html += "<td>";
-                                                                html += "<button type='button' class='btn btn-default' onclick='eliminar(" + item.id_Asignacion + ")'><span class='fa fa-trash' aria-hidden='true'></span></button>";
-                                                                html += '</td></tr>';
-
-                                                                // alert(item.idPenciones);
-                                                            })
-
-
-                                                            $("#mostrarhistorial").html(html);
-                                                        },
-                                                        error: function (jqXHR, textStatus, errorThrown) {
-                                                            $("#resp").html(errorThrown);
-                                                        }
-                                                    });
-                                                }
-
-                                                function eliminar(id) {
-                                                    var url = "<?php echo base_url('Asignacion/delete/'); ?>" + id;
-
-
-                                                    var r = confirm("Seguro que desea Eliminar esta Materia");
-                                                    if (r == true) {
-                                                        $.ajax({
-                                                            type: "POST",
-                                                            url: url,
-
-                                                            beforeSend: function () {
-                                                                $("#resultado").html("Procesando, espere por favor...");
-                                                            },
-                                                            success: function (data)
-                                                            {
-                                                                alert("Materia Eliminada exitosamente");
-                                                                $('#exampleModal').modal('hide');
-                                                            },
-                                                            error: function (jqXHR, textStatus, errorThrown) {
-                                                                alert(errorThrown);
-                                                                //$('#exampleModal').modal('hide')
-
-
-                                                            }
-                                                        });
-                                                    }
-
-                                                    //alert(id);
-
-
-                                                }
-                                                function myFunction() {
-                                                    var input, filter, table, tr, td, i;
-                                                    input = document.getElementById("myInput");
-                                                    filter = input.value.toUpperCase();
-                                                    table = document.getElementById("myTable");
-                                                    tr = table.getElementsByTagName("tr");
-                                                    for (i = 0; i < tr.length; i++) {
-                                                        td = tr[i].getElementsByTagName("td")[1];
-                                                        if (td) {
-                                                            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                                                                tr[i].style.display = "";
-                                                            } else {
-                                                                tr[i].style.display = "none";
-                                                            }
-                                                        }
-                                                    }
-                                                }
-
-                                                $(document).ready(function () {
-                                                    $('.js-example-basic-single').select2();
-                                                })
 
     function ListaMaterias(cedula, nombre) {
         var text = "Listado De Materias " + nombre;
@@ -372,10 +304,106 @@
             }
         }
     }
-    $(document).ready(function () {
-        $('.js-example-basic-single').select2();
-    });
 
+    
+
+    function ListaMaterias(cedula, nombre) {
+        var text = "Listado De Materias " + nombre;
+        $("#exampleModalLabel").html(text);
+        var url = "<?php echo base_url('Asignacion/get/'); ?>" + cedula;
+
+
+
+        $.ajax({
+            type: "POST",
+            url: url,
+
+            beforeSend: function () {
+                $("#resultado").html("Procesando, espere por favor...");
+            },
+            success: function (data)
+            {
+                var html = '<table class="table table-hover table-light"id="table">' +
+                        '<thead>' +
+                        '<tr>' +
+                        '<th>Codigo</th>' +
+                        '<th>Materia</th>' +
+                        '<th>Curso</th>' +
+                        '<th>Acciones</th>' +
+                        '</tr>' +
+                        '</thead>' +
+                        '<tbody><tr>';
+
+                $.each(JSON.parse(data), function (i, item) {
+
+                    html += "<td>" + item.id_materias_Asignacion + '</td>';
+                    html += "<td>" + item.nom_Materias + '</td>';
+                    html += "<td>" + item.nom_Cursos + '</td>';
+                    html += "<td>";
+                    html += "<button type='button' class='btn btn-default' onclick='eliminar(" + item.id_Asignacion + ")'><span class='fa fa-trash' aria-hidden='true'></span></button>";
+                    html += '</td></tr>';
+
+                    // alert(item.idPenciones);
+                })
+
+
+                $("#mostrarhistorial").html(html);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $("#resp").html(errorThrown);
+            }
+        });
+    }
+
+    function eliminar(id) {
+        var url = "<?php echo base_url('Asignacion/delete/'); ?>" + id;
+
+
+        var r = confirm("Seguro que desea Eliminar esta Materia");
+        if (r == true) {
+            $.ajax({
+                type: "POST",
+                url: url,
+
+                beforeSend: function () {
+                    $("#resultado").html("Procesando, espere por favor...");
+                },
+                success: function (data)
+                {
+                    alert("Materia Eliminada exitosamente");
+                    $('#exampleModal').modal('hide');
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(errorThrown);
+                    //$('#exampleModal').modal('hide')
+
+
+                }
+            });
+        }
+
+        //alert(id);
+
+
+    }
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+   
 </script>
 
 

@@ -38,13 +38,13 @@
                 </div>
                 <!-- SideBar Menu -->
                 <ul class="list-unstyled full-box dashboard-sideBar-Menu">
-                    
+
                     <li>
                         <a href="<?php echo base_url(); ?>">
                             <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Inicio
                         </a>
                     </li>
-                     <li>
+                    <li>
                         <a href="#!" class="btn-sideBar-SubMenu">
                             <i class="zmdi zmdi-balance zmdi-hc-fw"></i> Cuadros de Calificacions <i class="zmdi zmdi-caret-down pull-right"></i>
                         </a>
@@ -93,7 +93,7 @@
                     <li>
                         <a href="<?php echo base_url('/NotasDirectivo/'); ?>"><i class="zmdi zmdi-shield-security zmdi-hc-fw"></i> Pensiones</a>
                     </li>
-                    
+
 
 
                 </ul>
@@ -124,7 +124,7 @@
                             <i class="zmdi zmdi-help-outline"></i>
                         </a>
                     </li>
-                    
+
                 </ul>
             </nav>
 
@@ -217,9 +217,14 @@
         <script src="<?php echo base_url(); ?>Public/prueba/js/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="<?php echo base_url(); ?>Public/prueba/js/main.js"></script>
         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
-        
+
         <script src="<?php echo base_url('public/prueba/js/jquery.validate.js'); ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('public/prueba/js/additional-methods.js'); ?>" type="text/javascript"></script>
-        <script></script>
+        <script> $(document).ready(function () {
+                $('#myTable').DataTable();
+                $('#myTable2').DataTable();
+                
+
+            });</script>
     </body>
 </html>

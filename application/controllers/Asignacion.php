@@ -13,36 +13,29 @@ class Asignacion extends CI_Controller {
     public function index() {
 
 
-        if ( $this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
-        $data['contenido'] = "Asignacion/index";
-        $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
-        $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
-        $data['ListaCurso'] = $this->Modelo_Asignacion->ListaCurso();
-        $data['user'] = $this->session->userdata('username');
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+            $data['contenido'] = "Asignacion/index";
+            $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
+            $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
+            $data['ListaCurso'] = $this->Modelo_Asignacion->ListaCurso();
+            $data['user'] = $this->session->userdata('username');
+            $data['CursoTutor'] = $this->Modelo_Asignacion->CursoTutor();
 
-        $this->load->view("plantilla_Secretaria", $data);
+            $this->load->view("plantilla_Secretaria", $data);
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+            $data['contenido'] = "Asignacion/index";
+            $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
+            $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
+            $data['ListaCurso'] = $this->Modelo_Asignacion->ListaCurso();
+            $data['CursoTutor'] = $this->Modelo_Asignacion->CursoTutor();
 
-    }
+            $data['user'] = $this->session->userdata('username');
 
-
-    elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
-   $data['contenido'] = "Asignacion/index";
-        $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
-        $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
-        $data['ListaCurso'] = $this->Modelo_Asignacion->ListaCurso();
-        
-        $data['user'] = $this->session->userdata('username');
-
-        $this->load->view("plantilla_Directivo", $data);
-}
-    else {
+            $this->load->view("plantilla_Directivo", $data);
+        } else {
             redirect(base_url(''));
         }
-
     }
-
-
-
 
     public function setGuardar() {
         //print_r($_POST);
@@ -56,12 +49,13 @@ class Asignacion extends CI_Controller {
             redirect('/Asignacion');
         }
     }
+
     public function setGuardarTutor() {
         print_r($_POST);
         $datos = $this->input->post();
         if (isset($datos)) {
             $docenteselect = $datos['docenteselect'];
-            
+
             $cursoselect = $datos['cursoselect'];
 
             $this->Modelo_Asignacion->inserAsignacionTutor($docenteselect, $cursoselect);
@@ -69,7 +63,7 @@ class Asignacion extends CI_Controller {
         }
     }
 
-    public function get($cedula_docente= NULL) {
+    public function get($cedula_docente = NULL) {
 
 
         if ($cedula_docente != NULL) {
@@ -80,6 +74,7 @@ class Asignacion extends CI_Controller {
             redirect('');
         }
     }
+
     function delete($id) {
         if ($id != NULL) {
             $data = $this->Modelo_Asignacion->materiaborrar($id);

@@ -16,6 +16,14 @@ class MateriaNotas extends CI_Controller {
             $data['cedula'] = $this->session->userdata('id_cedula');
             $data['lista_materias'] = $this->Modelo_MateriasNotas->lista_materias($this->session->userdata('id_cedula'));
             $this->load->view("plantilla", $data);
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+            $data['contenido'] = "MATERIAS/indexd";
+//            $data['listarEstudiante_P'] = $this->Modelo_Pensiones->listarEstudiante_P();
+            //          $data['listarHistorial'] = $this->Modelo_Pensiones->listarHistorial();
+            $data['user'] = $this->session->userdata('username');
+            $data['cedula'] = $this->session->userdata('id_cedula');
+            $data['lista_materias'] = $this->Modelo_MateriasNotas->lista_materiasDirectivo();
+            $this->load->view("plantilla", $data);
         } else {
             redirect(base_url(''));
         }
@@ -33,6 +41,7 @@ class MateriaNotas extends CI_Controller {
             echo json_encode($data, JSON_FORCE_OBJECT);
         }
     }
+
 //errer
     function ConsultaAlumnosSub() {
         //print_r($_POST);
@@ -48,12 +57,12 @@ class MateriaNotas extends CI_Controller {
     }
 
     function NotasALumnos() {
-         //print_r($_POST);
+        //print_r($_POST);
         $datos = $this->input->post();
         if ($datos) {
 
             for ($i = 1; $i <= $_POST["filas"]; $i++) {
-                $valor=$datos["valor"];
+                $valor = $datos["valor"];
                 $quimestre = "1";
                 $materia = $datos["materia"];
                 $curso = $datos["curso"];
@@ -73,7 +82,7 @@ class MateriaNotas extends CI_Controller {
                 $notaexamenq2 = $datos["notaexamenq2" . $i];
                 $porcentaexamenq2 = $datos["porcentaexamenq2" . $i];
                 $promediototalq2 = $datos["promediototalq2" . $i];
-                
+
 
 //                $data = $this->Modelo_MateriasNotas->InserNotas($quimestre, $materia, $curso
 //                        , $profesor, $cedu, $notaParcial1, $notaParcial2, $notaParcial3
@@ -81,27 +90,24 @@ class MateriaNotas extends CI_Controller {
                 // echo "INSERT INTO cursos(`id_Cursos`) VALUES (".$cedu.");";
                 if ($valor == null) {
                     //echo 'Insertar notas q1 promedio';
-                   // $this->Modelo_MateriasNotas->InserNotasQ1($cedu, $materia, $curso, $profesor, $promediototal);
+                    // $this->Modelo_MateriasNotas->InserNotasQ1($cedu, $materia, $curso, $profesor, $promediototal);
                     $data = $this->Modelo_MateriasNotas->InserNotasQ1($quimestre, $materia, $curso
-                        , $profesor, $cedu, $notaparcial1q1);
+                            , $profesor, $cedu, $notaparcial1q1);
 //                 echo 'insert';
 //                    print_r($datos);
                 } elseif ($valor = 1) {
                     //$this->Modelo_MateriasNotas->UpdateNotasQ2($cedu, $promediototal);
                     //echo 'actuliza';
-                   // print_r($datos);
+                    // print_r($datos);
                     $data = $this->Modelo_MateriasNotas->InserNotasQ2($quimestre, $materia, $curso
-                        , $profesor, $cedu, $notaparcial1q1, $notaparcial2q1, $notaparcial3q1
-                        , $porcentaq1, $notaexamenq1, $porcentaexamenq1, $promediototalq1,$notaparcial1q2,
-                         $notaparcial2q2,$notaparcial3q2,$porcentaq2,$notaexamenq2,$porcentaexamenq2,$promediototalq2);
+                            , $profesor, $cedu, $notaparcial1q1, $notaparcial2q1, $notaparcial3q1
+                            , $porcentaq1, $notaexamenq1, $porcentaexamenq1, $promediototalq1, $notaparcial1q2, $notaparcial2q2, $notaparcial3q2, $porcentaq2, $notaexamenq2, $porcentaexamenq2, $promediototalq2);
                 }
             }
 //
-
-
             //$data = $this->Modelo_MateriasNotas->ConsultaAlumnos($datos["id_materia"],$datos["Id_Curso"]);
             // echo json_encode($data, JSON_FORCE_OBJECT);
-          redirect('/MateriaNotas');
+            redirect('/MateriaNotas');
         } else {
             $data = array('error' => 'error');
             echo json_encode($data, JSON_FORCE_OBJECT);
