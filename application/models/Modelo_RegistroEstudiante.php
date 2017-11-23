@@ -12,16 +12,16 @@ class Modelo_RegistroEstudiante extends CI_Model {
 
     public function selEstudiante() {
 
-        $query = $this->db->query("select * from Estudiante");
+        $query = $this->db->query("SELECT * FROM Estudiante");
         return $query->result();
     }
 
     public function selRepresentante() {
-        $query = $this->db->query("select * from  Representante");
+        $query = $this->db->query("SELECT * FROM representante");
         return $query->result();
     }
 
-    public function inserEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $user_Estudiante, $pass_Estudiante) {
+    public function inserEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $sexo, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $idRepresentante, $idMadre, $idPadre, $user_Estudiante, $pass_Estudiante) {
         $array1 = array(
             //	'id_Estudiante' => $id_Estudiante,
 
@@ -31,11 +31,14 @@ class Modelo_RegistroEstudiante extends CI_Model {
             'cedula_Estudiante' => $cedula_Estudiante,
             'ape_Estudiante' => $ape_Estudiante,
             'nom_Estudiante' => $nom_Estudiante,
+            'sexo' => $sexo,
             'dir_Estudiante' => $dir_Estudiante,
             'carnet_Estudiante' => $carnet_Estudiante,
-           
-            'user_Estudiante' => $user_Estudiante,
-            'pass_Estudiante' => $pass_Estudiante,
+           'idRepresentante' => $idRepresentante,
+           'idMadre' => $idMadre,
+           'idPadre' =>$idPadre,
+           'user_Estudiante' => $user_Estudiante,
+            'pass_Estudiante' => $pass_Estudiante
             
             
         );
@@ -54,6 +57,9 @@ class Modelo_RegistroEstudiante extends CI_Model {
             'contra' => $pass_Estudiante,
             'tipo' => $tipo
         );
+
+
+        
         $this->db->insert('usuario', $array);
     }
 
@@ -83,16 +89,20 @@ class Modelo_RegistroEstudiante extends CI_Model {
 
 
 
-    public function updateEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $user_Estudiante, $pass_Estudiante) {
+    public function updateEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $sexo, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $idRepresentante, $idMadre, $idPadre,  $user_Estudiante, $pass_Estudiante) {
         $array2 = array(
             
             //	'fech_matricula_Estudiante'=> 			$fech_matricula_Estudiante,
             'cedula_Estudiante' => $cedula_Estudiante,
             'ape_Estudiante' => $ape_Estudiante,
             'nom_Estudiante' => $nom_Estudiante,
+            'sexo' => $sexo,
             'fech_nac_Estudiante' => $fech_nac_Estudiante,
             'dir_Estudiante' => $dir_Estudiante,
             'carnet_Estudiante' => $carnet_Estudiante,
+            'idRepresentante' => $idRepresentante,
+           'idMadre' => $idMadre,
+           'idPadre' =>$idPadre,
             
             'user_Estudiante' => $user_Estudiante,
             'pass_Estudiante' => $pass_Estudiante,

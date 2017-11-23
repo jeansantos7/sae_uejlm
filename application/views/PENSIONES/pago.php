@@ -31,7 +31,7 @@
                     <input class="form-control" type="text" id="nom_Estudiante_Pensiones" name="nom_Estudiante_Pensiones" aria-describedby="emailHelp" value="<?php echo $value->nom_Estudiante; ?>"  >
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-xs-12 col-md-4 col-md-offset-1">
                 <div class="form-group">
                     <label class="control-label">Mes</label>
                     <select onchange="Valor(this.value)" name="mes_Pensiones" id="mes_Pensiones"  class="form-control">
@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group label-floating">
                     <label >Valor que Debe</label>
-                    <input class="form-control" type="text"  aria-describedby="emailHelp"
+                    <input class="form-control" type="text"   aria-describedby="emailHelp"
                            id="valorquedebe"  value="">
                 </div>
                 <div class="form-group label-floating">

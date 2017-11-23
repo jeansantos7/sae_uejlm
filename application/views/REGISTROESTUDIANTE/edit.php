@@ -2,33 +2,13 @@
 <?php  foreach ($datosEstudiante as $value) {?>
 
   
- <script src="<?php echo base_url('http://code.jquery.com/jquery-1.9.1.js')?>" </script>
-  <script src="<?php echo base_url('http://code.jquery.com/ui/1.10.1/jquery-ui.js')?>" </script>
  
-  <form method="POST" action="<?php echo base_url('RegistroEstudiante/update'); ?>">
+  
   <input type="hidden" name="id_Docente" value=" <?php echo $value->id_Estudiante; ?>">
 
-<section class="full-box dashboard-contentPage">
-    <!-- NavBar -->
-    <nav class="full-box dashboard-Navbar">
-            <ul class="full-box list-unstyled text-right">
-                <li class="pull-left">
-                    <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
-                </li>
-                
-                <li>
-                    <a href="#!" class="btn-search">
-                        <i class="zmdi zmdi-search"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#!" class="btn-modal-help">
-                        <i class="zmdi zmdi-help-outline"></i>
 
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <!-- NavBar -->
+   
     <!-- Content page -->
    
       <div class="page-header">
@@ -43,7 +23,7 @@
           </ul>
           <div id="myTabContent" class="tab-content">
             
-            
+            <form method="POST" action="<?php echo base_url('RegistroEstudiante/update'); ?>">
              
 
               <div class="container-fluid">

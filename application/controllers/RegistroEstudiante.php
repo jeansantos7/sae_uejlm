@@ -42,9 +42,13 @@ class RegistroEstudiante extends CI_Controller {
             $cedula_Estudiante = $datos['cedula_Estudiante'];
             $ape_Estudiante = $datos['ape_Estudiante'];
             $nom_Estudiante = $datos['nom_Estudiante'];
+            $sexo=$datos['sexo'];
             $fech_nac_Estudiante = $datos['fech_nac_Estudiante'];
             $dir_Estudiante = $datos['dir_Estudiante'];
             $carnet_Estudiante = $datos['carnet_Estudiante'];
+            $idRepresentante=$datos['idRepresentante'];
+            $idMadre=$datos['idMadre'];
+             $idPadre=$datos['idPadre'];
            // $parentesco_Estudiante = $datos['parentesco_Representante_Estudiante'];
             $user_Estudiante = $datos['user_Estudiante'];
             $pass_Estudiante = $datos['pass_Estudiante'];
@@ -63,7 +67,7 @@ class RegistroEstudiante extends CI_Controller {
 				</script>';
             } else {
 
-                $this->Modelo_RegistroEstudiante->inserEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante,  $user_Estudiante, $pass_Estudiante);
+                $this->Modelo_RegistroEstudiante->inserEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $sexo, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante,$idRepresentante, $idMadre, $idPadre,  $user_Estudiante, $pass_Estudiante);
 
                 $this->Modelo_RegistroEstudiante->inserUsuario($cedula_Estudiante, $user_Estudiante, $pass_Estudiante, $tipo);
 
@@ -139,14 +143,19 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
         $cedula_Estudiante = $datos['cedula_Estudiante'];
         $ape_Estudiante = $datos['ape_Estudiante'];
         $nom_Estudiante = $datos['nom_Estudiante'];
+        $sexo=$datos['sexo'];
         $fech_nac_Estudiante = $datos['fech_nac_Estudiante'];
         $dir_Estudiante = $datos['dir_Estudiante'];
         $carnet_Estudiante = $datos['carnet_Estudiante'];
+        $idRepresentante=$datos['idRepresentante'];
+        $idMadre=$datos['idMadre'];
+        $idPadre=$datos['idPadre'];
         $user_Estudiante = $datos['user_Estudiante'];
         $pass_Estudiante = $datos['pass_Estudiante'];
        
 
-        $this->Modelo_RegistroEstudiante->updateEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $user_Estudiante, $pass_Estudiante);
+        $this->Modelo_RegistroEstudiante->updateEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $sexo, 
+            $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $idRepresentante,$idMadre, $idPadre ,$user_Estudiante, $pass_Estudiante);
 
         echo '<script languaje="javascript"> alert("este dato se actualizo"); </script>';
 

@@ -1,7 +1,7 @@
 <!-- Content page -->
 <div class="container-fluid">
     <div class="page-header">
-        <h1 class="text-titles">System <small>Tiles</small></h1>
+        <h1 class="text-titles">Registro de Pensiones <small> </small></h1>
     </div>
 </div>
 <div class="full-box text-center" style="padding: 30px 10px;">
@@ -23,13 +23,13 @@
 
 
 
-                            <h3>General</h3>
+                            
                             <table class="table table-hover table-light" id="myTable">
                                 <thead>
                                     <tr>
                                         <th> Cedula</th>
                                         <th> Apellidos y Nombres</th>
-                                        <th>Valor de la pension</th>
+                                        <th>Valor de la pensión</th>
                                         <th> Opciones</th>
                                     </tr>
                                 </thead>
@@ -62,7 +62,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Historial de Pago</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -71,8 +71,8 @@
                                         ...
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" <?php base_url('Pensiones') ?> class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        
                                     </div>
                                 </div>
                             </div>

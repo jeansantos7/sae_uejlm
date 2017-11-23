@@ -3,7 +3,7 @@
 <!-- Content page -->
 <div class="container-fluid">
     <div class="page-header">
-        <h1 class="text-titles"> <i class="zmdi zmdi-face zmdi-hc-fw"> </i> Registro de Estudiantes <small></small></h1>
+        <h1 class="text-titles"> Registro de Padres <small></small></h1>
     </div>
 </div>
 <div class="full-box text-center" style="padding: 30px 22px;">
@@ -21,19 +21,17 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th class="text-center">Cedula</th>
-                                    <th class="text-center">Apellidos y Nombres</th>
+                                    <th class="text-center">Cedula Madre</th>
+                                    <th class="text-center">Apellidos y Nombres de la Madre</th>
+                                    <th class="text-center">Ocupación</th>
                                     <th class="text-center">Direccion</th>
-                                    <th class="text-center">$Valor Pension</th>
-                                    <th class="text-center">Representante</th>
-                                    <th class="text-center">Usuario</th>
-                                    <th class="text-center">Matriculado</th>
+                                    <th class="text-center">ocu_</th>
                                     <th class="text-center">Opciones</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($listarEstudiante as $key => $value) { ?>
+                                <?php foreach ($listarPadres as $key => $value) { ?>
                                     <tr>
                                         <td> <?php echo $value->id_Estudiante; ?></td>
                                         <td><?php echo $value->cedula_Estudiante; ?></td>
@@ -44,15 +42,8 @@
                                         <td><?php echo $value->user_Estudiante; ?></td>
 
                                         <td> 
-                                            <?php
-                                            $array_opciones = array("Si" => "1", "No" => "0");
-                                            foreach ($array_opciones as $indice => $valor) {
-                                                if ($value->Estado == $valor) {
-                                                    echo $indice;
-                                                }
-                                            }
-                                            ?>
-
+                                            
+                            
                                         </td>
                                         <td>
                                             <!--<a  class="btn btn-success btn-raised btn-xs" onclick="alert2(<?php echo $value->id_Estudiante; ?>)"><i class="zmdi zmdi-refresh"></i></a>-->
@@ -77,6 +68,53 @@
 
                                 <div class="col-xs-12 col-md-4 col-md-offset-1">
                                    
+                                        <h1 class="text-titles"> Datos de la Madre <small></small></h1>
+                                        
+                                        <input class="form-control" type="text"
+                                               id="ced_Madre" name="ced_Madre" placeholder="Cedula" maxlength="10">
+                                               </br>
+                                   
+                                    
+                                       
+                                        <input class="form-control" type="text"
+                                               id="ape_Estudiante" name="ape_Estudiante" placeholder="Apellidos">
+                                   </br>
+                                    
+                                       
+                                        <input class="form-control" type="text"
+                                               id="nom_Estudiante" name="nom_Estudiante" placeholder="Nombres">
+                                    </br>
+                                  
+                                    
+                                      <input class="form-control" type="text"
+                                               id="dir_Estudiante" name="dir_Estudiante" placeholder="Direccion">
+                                                    </br>
+                                    
+                                        
+                                        <input class="form-control" type="text"
+                                               id="dir_Estudiante" name="dir_Estudiante" placeholder="Direccion">
+                                                    </br>
+
+                                    
+                                    
+                                        <label >Discapacitado</label>
+                                        <input  type="checkbox" onClick="javascript:h = !h;"
+                                                id="disc_Estudiante" name="disc_Estudiante">
+                                    </br>
+
+
+                                    
+                                       
+                                        <input class="form-control" type="text"  placeholder="Carnet de Discapacidad"
+                                               id="carnet_Estudiante" name="carnet_Estudiante"
+                                               onFocus="javascript:if (!h) {
+                                                           this.blur();
+                                                       }">       </div>
+
+                         
+                         <div class="col-xs-12 col-md-4 col-md-offset-1">
+                                   
+                                        <h1 class="text-titles"> Datos del Padre <small></small></h1>
                                         
                                         <input class="form-control" type="text"
                                                id="cedula_Estudiante" name="cedula_Estudiante" placeholder="Cedula" maxlength="10">
@@ -126,61 +164,13 @@
                                                            this.blur();
                                                        }">       </div>
 
-                         
-
                                
-                                <div class="col-xs-12 col-md-4 col-md-offset-1">
-
-                                   
-                            <label for="exampleInputEmail1">Representante </label>
-                            <select size="1" id="idRepresentante" name="idRepresentante"   
-                            class="form-control js-example-basic-single">
-                                <option value="">Seleccione</option>
-                                <?php foreach ($selRepresentante as $key => $value) {
-                                    ?>
-                                    <option value="<?php echo $value->id_Representante; ?>">
-                                    <?php echo $value->nom_Representante . " " . $value->ape_Representante; ?></option>
-                                <?php } ?>
-                            </select>
-
-                         <label for="exampleInputEmail1">Madre de Familia </label>
-                            <select size="1" id="idMadre" name="idMadre"   class="form-control js-example-basic-single">
-                                <option value="">Seleccione</option>
-                                <?php foreach ($selPadresFamilia as $key => $value) {
-                                    ?>
-                                    <option value="<?php echo $value->ced_Madre; ?>">
-                                    <?php echo $value->nom_Madre . " " . $value->ape_Madre; ?></option>
-                                <?php } ?>
-                            </select>
-
-
-                            <label for="exampleInputEmail1">Padre de Familia </label>
-                            <select size="1" id="idPadre" name="idPadre"   class="form-control js-example-basic-single">
-                                <option value="">Seleccione</option>
-                                <?php foreach ($selPadresFamilia as $key => $value) {
-                                    ?>
-                                    <option value="<?php echo $value->ced_Padre; ?>">
-                                    <?php echo $value->nom_Padre . " " . $value->ape_Padre; ?></option>
-                                <?php } ?>
-                            </select>
-
-                                  </br>
-                                       
-                                        <input class="form-control" type="text"
-                                               id="user_Estudiante" name="user_Estudiante" placeholder="Usuario">
-                                    </br>
-                                   
-                                        <input class="form-control" type="text"
-                                               id="pass_Estudiante" name="pass_Estudiante" placeholder="Contraseña">
-                                    </br>
-
-
+                              
                                     <p class="text-center">
                                         <button type="submit" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> </button>   
                                     </p>
 
                                    
-
                                 </div>
                             </form>
 

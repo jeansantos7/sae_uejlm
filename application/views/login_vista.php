@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>Public/prueba/css/main.css">
 </head>
 <body class="cover" style="background-image: url(Public/prueba/assets/img/fondo.jpg);">
-    <form name="form1" method="POST" action="login/login_user" autocomplete="off" class="full-box logInForm">
+    <form name="form1" method="POST" action="login/login_user" autocomplete="on" class="full-box logInForm">
         <p class="text-center text-muted"><i class="zmdi zmdi-account-circle zmdi-hc-5x"></i></p>
         <p class="text-center text-muted text-uppercase">Inicia sesión con tu cuenta</p>
         <div class="form-group label-floating">
