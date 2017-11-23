@@ -79,18 +79,21 @@
                                    
                                         
                                         <input class="form-control" type="text"
-                                               id="cedula_Estudiante" name="cedula_Estudiante" placeholder="Cedula" maxlength="10">
+                                               id="cedula_Estudiante" name="cedula_Estudiante" placeholder="Cedula" maxlength="10"
+                                               onkeypress="return soloNumeros(event)">
                                                </br>
                                    
                                     
                                        
                                         <input class="form-control" type="text"
-                                               id="ape_Estudiante" name="ape_Estudiante" placeholder="Apellidos">
+                                               id="ape_Estudiante" name="ape_Estudiante" placeholder="Apellidos"
+                                               onkeypress="return soloLetras(event)">
                                    </br>
                                     
                                        
                                         <input class="form-control" type="text"
-                                               id="nom_Estudiante" name="nom_Estudiante" placeholder="Nombres">
+                                               id="nom_Estudiante" name="nom_Estudiante" placeholder="Nombres"
+                                               onkeypress="return soloLetras(event)">
                                     </br>
                                   
                                     <select onchange="Valor(this.value)" name="sexo" id="seo"  class="form-control">
@@ -124,7 +127,8 @@
                                                id="carnet_Estudiante" name="carnet_Estudiante"
                                                onFocus="javascript:if (!h) {
                                                            this.blur();
-                                                       }">       </div>
+                                                       }"
+                                                       onkeypress="return soloNumeros(event)">       </div>
 
                          
 
@@ -196,3 +200,42 @@
 
 </div>
 
+<script>
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
+     function soloNumeros(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " 1234567890";
+       especiales = "";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+</script>

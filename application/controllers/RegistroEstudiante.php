@@ -98,8 +98,9 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
         if ($id_Estudiante != NULL) {
             //mostrar datos
             $data['contenido'] = 'RegistroEstudiante/edit';
-          //  $data['selEstudiante'] = $this->Modelo_RegistroEstudiante->selEstudiante();
-            //$data['selRepresentante'] = $this->Modelo_RegistroEstudiante->selRepresentante();
+           $data['selEstudiante'] = $this->Modelo_RegistroEstudiante->selEstudiante();
+            $data['selRepresentante'] = $this->Modelo_RegistroEstudiante->selRepresentante();
+       //     $data['listarEstudiante'] = $this->Modelo_RegistroEstudiante->listarEstudiante();
             $data['datosEstudiante'] = $this->Modelo_RegistroEstudiante->editEstudiante($id_Estudiante);
             $data['user'] = $this->session->userdata('username');
 

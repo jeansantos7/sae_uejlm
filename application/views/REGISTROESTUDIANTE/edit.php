@@ -40,13 +40,15 @@
                         <label class="control-label">Apellidos</label>
                         <input class="form-control" type="text"
                         id="ape_Estudiante" name="ape_Estudiante"
-                         value=" <?php echo $value->ape_Estudiante; ?>">
+                         value=" <?php echo $value->ape_Estudiante; ?>"
+                         onkeypress="return soloLetras(event)">
                       </div>
                       <div class="form-group label-floating">
                         <label class="control-label">Nombres</label>
                         <input class="form-control" type="text"
                         id="nom_Estudiante" name="nom_Estudiante"
-                         value=" <?php echo $value->nom_Estudiante; ?>">
+                         value=" <?php echo $value->nom_Estudiante; ?>"
+                         onkeypress="return soloLetras(event)">
                       </div>
                       <div class="form-group">
                         <label class="control-label">Fecha de nacimiento</label>
@@ -78,12 +80,24 @@
                             value=" <?php echo $value->carnet_Estudiante; ?>">
                       </div>
 
-
+    
                       
                         
                       
                   </div>
                   <div class="col-xs-12 col-md-4 col-md-offset-1">
+
+                  <label for="exampleInputEmail1">Representante </label>
+                            <select size="1" id="idRepresentante" name="idRepresentante"   
+                            class="form-control js-example-basic-single">
+                                <option value="">Seleccione</option>
+                                <?php foreach ($selRepresentante as $key => $value) {
+                                    ?>
+                                    <option value="<?php echo $value->id_Representante; ?>">
+                                    <?php echo $value->nom_Representante . " " . $value->ape_Representante; ?></option>
+                                <?php } ?>
+                            </select>
+
                       
                       <div class="form-group label-floating">
                         <label class="control-label">Usuario</label>
@@ -127,6 +141,25 @@ var h=false;
 ?>
 
 
+<script>
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
 
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+</script>
 
 
