@@ -34,7 +34,8 @@
                         <label class="control-label">Cedula</label>
                         <input class="form-control" type="text"
                         id="cedula_Estudiante" name="cedula_Estudiante"
-                        value=" <?php echo $value->cedula_Estudiante; ?>">
+                        value=" <?php echo $value->cedula_Estudiante; ?>"
+                        onkeypress="return soloNumeros(event)">
                       </div>
                       <div class="form-group label-floating">
                         <label class="control-label">Apellidos</label>
@@ -77,7 +78,8 @@
                         onFocus="javascript:if (!h) {
                                                     this.blur();
                                                 }" 
-                            value=" <?php echo $value->carnet_Estudiante; ?>">
+                            value=" <?php echo $value->carnet_Estudiante; ?>"
+                            onkeypress="return soloNumeros(event)">
                       </div>
 
     
@@ -89,12 +91,13 @@
 
                   <label for="exampleInputEmail1">Representante </label>
                             <select size="1" id="idRepresentante" name="idRepresentante"   
-                            class="form-control js-example-basic-single">
-                                <option value="">Seleccione</option>
-                                <?php foreach ($selRepresentante as $key => $value) {
+                            class="form-control js-example-basic-single"  >
+                                <option value="<?php echo $value->idRepresentante; ?>">
+                                Seleccione</option>
+                                <?php foreach ($selRepresentante as $key => $dato) {
                                     ?>
-                                    <option value="<?php echo $value->id_Representante; ?>">
-                                    <?php echo $value->nom_Representante . " " . $value->ape_Representante; ?></option>
+                                    <option dato="<?php echo $dato->id_Representante; ?>">
+                                    <?php echo $dato->nom_Representante . " " . $dato->ape_Representante; ?></option>
                                 <?php } ?>
                             </select>
 
@@ -160,6 +163,27 @@ var h=false;
             return false;
         }
     }
+
+
+     function soloNumeros(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " 1234567890";
+       especiales = "";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
 </script>
 
 
