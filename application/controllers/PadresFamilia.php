@@ -62,16 +62,16 @@ class PadresFamilia extends CI_Controller {
            // $datoexiste = $this->Modelo_PadresFamilia->ConsultaExiste($cedula_Estudiante);
 
 
-                $this->Modelo_RegistroEstudiante->inserEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $sexo, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante,$idRepresentante, $idMadre, $idPadre,  $user_Estudiante, $pass_Estudiante);
+                $this->Modelo_PadresFamilia->inserPadresFamilia($ced_Madre, $ced_Padre, $ape_Madre, $ape_Padre, $nom_Madre, $nom_Padre, $telf_Madre, $telf_Padre, $dir_Madre, $dir_Padre, $ocup_Madre, $ocu_Padre);
 
                
 
-                redirect('/RegistroEstudiante');
+                redirect('/PadresFamilia/padres');
             }
         }
-    }
+    
 
-    public function delete($id_Estudiante = NULL, $cedula_Estudiante) {
+    public function delete($id_PadresFamilia) {
 
         if ($id_Estudiante != NULL) {
             $this->Modelo_RegistroEstudiante->deleteEstudiante($id_Estudiante);

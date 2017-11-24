@@ -55,7 +55,7 @@
                                 <a href="<?php echo base_url('/RegistroEstudiante/'); ?>"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Registrar Estudiante</a>
                             </li>
                             <li>
-                                <a href=""><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Registrar Padres de Familia</a>
+                                <a href="<?php echo base_url('/PadresFamilia/padres'); ?>"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Registrar Padres de Familia</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url('/Representante/'); ?>"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Registrar Representante</a>
@@ -67,7 +67,7 @@
                     </li>
                     <li>
                         <a href="#!" class="btn-sideBar-SubMenu">
-                            <i class="zmdi zmdi-balance zmdi-hc-fw"></i> Cuadros de Calificacions <i class="zmdi zmdi-caret-down pull-right"></i>
+                            <i class="zmdi zmdi-balance zmdi-hc-fw"></i> Cuadros de Calificaciones <i class="zmdi zmdi-caret-down pull-right"></i>
                         </a>
                         <ul class="list-unstyled full-box">
 

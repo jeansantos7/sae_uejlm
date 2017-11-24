@@ -107,7 +107,8 @@
 
                     <div class="container-fluid">
                         <div class="row">
-                            <form method="POST" id="form1" class="login-form" action="<?php echo base_url('PadesFamilia/insert'); ?>">
+                            <form method="POST" id="form1" class="login-form"
+                             action="<?php echo base_url('PadesFamilia/insert'); ?>">
                                 <div id="mensaje"></div>
 
                                 <div class="col-xs-12 col-md-4 col-md-offset-1">

@@ -13,7 +13,7 @@ class Asignacion extends CI_Controller {
     public function index() {
 
 
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Profesor') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Directivo') {
             $data['contenido'] = "Asignacion/index";
             $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
             $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
@@ -21,8 +21,8 @@ class Asignacion extends CI_Controller {
             $data['user'] = $this->session->userdata('username');
             $data['CursoTutor'] = $this->Modelo_Asignacion->CursoTutor();
 
-            $this->load->view("plantilla_Docente", $data);
-        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+            $this->load->view("plantilla_Directivo", $data);
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretaria') {
             $data['contenido'] = "Asignacion/index";
             $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
             $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
