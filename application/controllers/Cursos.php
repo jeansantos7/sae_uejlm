@@ -21,7 +21,7 @@ class Cursos extends CI_Controller
 	{
 		# code...
 
-		if ( $this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+		if ( $this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretaria') {
 
 
 		$data['contenido'] = "Cursos/index";
@@ -29,7 +29,7 @@ class Cursos extends CI_Controller
 		$data['user'] = $this->session->userdata('username');
 		$this->load->view("plantilla_Secretaria", $data);
 	}
-elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Directivo') {
 	$data['contenido'] = "Cursos/index";
 		$data['listarCursos']=$this->Modelo_Cursos->listarCursos();
 		$data['user'] = $this->session->userdata('username');

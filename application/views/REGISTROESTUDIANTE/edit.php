@@ -14,7 +14,7 @@
       <div class="page-header">
         <h1 class="text-titles"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Registro de Estudiantes <small>Datos Estudiantiles</small></h1>
       </div>
-      <p class="lead"> Misión Y Vision</p>
+      
     </div>
     <div class="container-fluid">
       <div class="row">
@@ -34,21 +34,21 @@
                         <label class="control-label">Cedula</label>
                         <input class="form-control" type="text"
                         id="cedula_Estudiante" name="cedula_Estudiante"
-                        value=" <?php echo $value->cedula_Estudiante; ?>"
+                        value="<?php echo $value->cedula_Estudiante; ?>"
                         onkeypress="return soloNumeros(event)">
                       </div>
                       <div class="form-group label-floating">
                         <label class="control-label">Apellidos</label>
                         <input class="form-control" type="text"
                         id="ape_Estudiante" name="ape_Estudiante"
-                         value=" <?php echo $value->ape_Estudiante; ?>"
+                         value="<?php echo $value->ape_Estudiante; ?>"
                          onkeypress="return soloLetras(event)">
                       </div>
                       <div class="form-group label-floating">
                         <label class="control-label">Nombres</label>
                         <input class="form-control" type="text"
                         id="nom_Estudiante" name="nom_Estudiante"
-                         value=" <?php echo $value->nom_Estudiante; ?>"
+                         value="<?php echo $value->nom_Estudiante; ?>"
                          onkeypress="return soloLetras(event)">
                       </div>
                       <div class="form-group">
@@ -57,11 +57,18 @@
                         id="fech_nac_Estudiante" name="fech_nac_Estudiante"
                          value=" <?php echo $value->fech_nac_Estudiante; ?>">
                       </div>
+                      <label class="control-label"> Sexo</label>
+                       <select onchange="Valor(this.value)" name="sexo" id="seo"  class="form-control" >
+                                        <option ><?php echo $value->sexo; ?></option>
+                                        <option value="Mujer" >Mujer</option>
+                                        <option  value="Hombre">Hombre</option>
+                                        
+                                    </select>
                       <div class="form-group label-floating">
                         <label class="control-label">Dirección</label>
                         <input class="form-control" type="text"
                         id="dir_Estudiante" name="dir_Estudiante"
-                         value=" <?php echo $value->dir_Estudiante; ?>">
+                         value="<?php echo $value->dir_Estudiante; ?>">
                       </div>
                       <div class="form-group">
                         <label class="control-label">Discapacitado</label>
@@ -78,7 +85,7 @@
                         onFocus="javascript:if (!h) {
                                                     this.blur();
                                                 }" 
-                            value=" <?php echo $value->carnet_Estudiante; ?>"
+                            value="<?php echo $value->carnet_Estudiante; ?>"
                             onkeypress="return soloNumeros(event)">
                       </div>
 
@@ -90,33 +97,68 @@
                   <div class="col-xs-12 col-md-4 col-md-offset-1">
 
                   <label for="exampleInputEmail1">Representante </label>
-                           <select size="1" id="idRepresentante" name="idRepresentante"   
-                            class="form-control js-example-basic-single">
-                                <option value="<?php echo $value->idRepresentante; ?>"><?php echo $value->idRepresentante; ?></option>
-                                <?php foreach ($selRepresentante as $key => $valueq) {
-                                    ?>
-                                    <option value="<?php echo $valueq->id_Representante; ?>">
-                                    <?php echo $valueq->nom_Representante . " " . $valueq->ape_Representante; ?></option>
-                                <?php } ?>
-                            </select>
+                           
+                    
+                    
+                     <?php 
+                      $lista1 = array();
+                     foreach ($selRepresentante as $key => $valueq) {
+                                    $lista1 [$valueq->cedula_Representante] = $valueq->ape_Representante.' '.$valueq->nom_Representante;
+                                    
+                                } 
+                                echo form_dropdown('idRepresentante',$lista1,$value->idRepresentante, 'class="form-control"');
+
+                                ?>
+
+
+
+                  <label for="exampleInputEmail1">Madre Familia </label>
+                           
+                    
+                    
+                     <?php 
+                      $lista1 = array();
+                     foreach ($selPadresFamilia as $key => $valueq1) {
+                                    $lista2 [$valueq1->ced_Madre] = $valueq1->ape_Madre.' '.$valueq1->nom_Madre;
+                                    
+                                } 
+                                echo form_dropdown('idMadre',$lista2,$value->idMadre, 'class="form-control"');
+
+                                ?>
+                            
+                             <label for="exampleInputEmail1">Padre Familia </label>
+                           
+                    
+                    
+                     <?php 
+                      $lista1 = array();
+                     foreach ($selPadresFamilia as $key => $valueq2) {
+                                    $lista3 [$valueq2->ced_Padre] = $valueq2->ape_Padre.' '.$valueq2->nom_Padre;
+                                    
+                                } 
+                                echo form_dropdown('idPadre',$lista3,$value->idPadre, 'class="form-control"');
+
+                                ?>
 
                       
                       <div class="form-group label-floating">
                         <label class="control-label">Usuario</label>
                         <input class="form-control" type="text"
                         id="user_Estudiante" name="user_Estudiante"
-                         value=" <?php echo $value->user_Estudiante; ?>">
+                         value="<?php echo $value->user_Estudiante; ?>">
                       </div>
                       <div class="form-group label-floating">
                         <label class="control-label">Contraseña</label>
                         <input class="form-control" type="text"
                         id="pass_Estudiante" name="pass_Estudiante"
-                         value=" <?php echo $value->pass_Estudiante; ?>">
+                         value="<?php echo $value->pass_Estudiante; ?>">
                       </div>
                       
                      
                         <p class="text-center">
-                          <button type="submit" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> </button>   
+                          <button type="submit"  class="btn btn-info btn-raised btn-sm"> <i class="zmdi zmdi-floppy"></i>  Actualizar Registro </button>   
+                          <button type="button"  class="btn btn- btn-raised btn-sm" id="btn-cancelar" >
+                        <i class="zmdi zmdi-close"><a href="<?php echo base_url('/RegistroEstudiante/'); ?>"> </i> Cancelar</button>
                         </p>
                       </form>
                   </div>

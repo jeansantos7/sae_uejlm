@@ -21,6 +21,11 @@ class Modelo_RegistroEstudiante extends CI_Model {
         return $query->result();
     }
 
+    public function selPadresFamilia() {
+        $query = $this->db->query("SELECT * FROM padresfamilia");
+        return $query->result();
+    }
+
     public function inserEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $sexo, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $idRepresentante, $idMadre, $idPadre, $user_Estudiante, $pass_Estudiante) {
         $array1 = array(
             //	'id_Estudiante' => $id_Estudiante,
@@ -78,6 +83,8 @@ class Modelo_RegistroEstudiante extends CI_Model {
     {
         $this->db->where('cedula_estudiante_matricula', $cedula_Estudiante);
         $this->db->delete('matricula');
+
+
     }
 
     public function editEstudiante($id_Estudiante) {
@@ -92,7 +99,7 @@ class Modelo_RegistroEstudiante extends CI_Model {
     public function updateEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $sexo, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $idRepresentante, $idMadre, $idPadre,  $user_Estudiante, $pass_Estudiante) {
         $array2 = array(
             
-            //	'fech_matricula_Estudiante'=> 			$fech_matricula_Estudiante,
+            //'id_Estudiante' => $id_Estudiante,
             'cedula_Estudiante' => $cedula_Estudiante,
             'ape_Estudiante' => $ape_Estudiante,
             'nom_Estudiante' => $nom_Estudiante,
@@ -103,8 +110,7 @@ class Modelo_RegistroEstudiante extends CI_Model {
             'idRepresentante' => $idRepresentante,
            'idMadre' => $idMadre,
            'idPadre' =>$idPadre,
-            
-            'user_Estudiante' => $user_Estudiante,
+           'user_Estudiante' => $user_Estudiante,
             'pass_Estudiante' => $pass_Estudiante,
             
         );

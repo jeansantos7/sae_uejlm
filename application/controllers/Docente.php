@@ -13,7 +13,7 @@ class Docente extends CI_Controller {
     public function index() {
         # code...
 
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Profesor') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Docente') {
 
             $data['contenido'] = "Docente/index";
             //$data['listarMaterias']=$this->Modelo_Materias->listarMaterias();

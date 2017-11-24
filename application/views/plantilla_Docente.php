@@ -53,7 +53,7 @@
                     </li>
 
                     <li>
-                        <a href="<?php echo base_url('/Cursos/'); ?>"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Mi Curso</a>
+                        <a href="<?php echo base_url('/Docente/CursoTutor/'); ?>"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Mi Curso</a>
                     </li>
                    
 

@@ -16,7 +16,7 @@ class Pensiones extends CI_Controller {
     public function index() {
 
 
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretaria') {
 
 
             $data['contenido'] = "Pensiones/index";
@@ -58,7 +58,7 @@ class Pensiones extends CI_Controller {
 
     public function pago($id_Estudiante = NULL) {
 
-   if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+   if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretaria') {
 
         if ($id_Estudiante != NULL) {
 

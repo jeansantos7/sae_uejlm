@@ -98,8 +98,8 @@
                                   
                                     <select onchange="Valor(this.value)" name="sexo" id="seo"  class="form-control">
                                         <option >Sexo</option>
-                                        <option value="0" >Mujer</option>
-                                        <option  value="1">Hombre</option>
+                                        <option value="Mujer" >Mujer</option>
+                                        <option  value="Hombre">Hombre</option>
                                         
                                     </select>
                                                         <label class="control-label">Fecha de nacimiento</label>
@@ -142,7 +142,7 @@
                                 <option value="">Seleccione</option>
                                 <?php foreach ($selRepresentante as $key => $value) {
                                     ?>
-                                    <option value="<?php echo $value->nom_Representante; ?>">
+                                    <option value="<?php echo $value->id_Representante; ?>">
                                     <?php echo $value->nom_Representante . " " . $value->ape_Representante; ?></option>
                                 <?php } ?>
                             </select>
@@ -179,9 +179,14 @@
                                     </br>
 
 
-                                    <p class="text-center">
-                                        <button type="submit" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> </button>   
-                                    </p>
+                                    <div class="col-md-12">
+                        <button type="button" class="btn btn-info btn-raised btn-sm" id="btn-ingresar" >
+                        <i class="zmdi zmdi-floppy"> </i> Guardar Registro</button>
+                        
+                        <button type="button"  class="btn btn- btn-raised btn-sm" id="btn-cancelar" >
+                        <i class="zmdi zmdi-close"><a href="<?php echo base_url('/RegistroEstudiante/'); ?>"> </i> Cancelar</button>
+
+                    </div>
 
                                    
 
@@ -201,6 +206,8 @@
 </div>
 
 <script>
+$('#myTable').DataTable();
+
     function soloLetras(e){
        key = e.keyCode || e.which;
        tecla = String.fromCharCode(key).toLowerCase();
@@ -238,4 +245,23 @@
             return false;
         }
     }
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+
 </script>

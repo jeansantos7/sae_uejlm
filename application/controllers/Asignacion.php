@@ -13,25 +13,25 @@ class Asignacion extends CI_Controller {
     public function index() {
 
 
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Profesor') {
             $data['contenido'] = "Asignacion/index";
             $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
             $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
             $data['ListaCurso'] = $this->Modelo_Asignacion->ListaCurso();
             $data['user'] = $this->session->userdata('username');
             $data['CursoTutor'] = $this->Modelo_Asignacion->CursoTutor();
+
+            $this->load->view("plantilla_Docente", $data);
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+            $data['contenido'] = "Asignacion/index";
+            $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
+            $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
+            $data['ListaCurso'] = $this->Modelo_Asignacion->ListaCurso();
+            $data['CursoTutor'] = $this->Modelo_Asignacion->CursoTutor();
+
+            $data['user'] = $this->session->userdata('username');
 
             $this->load->view("plantilla_Secretaria", $data);
-        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
-            $data['contenido'] = "Asignacion/index";
-            $data['ListaDocentes'] = $this->Modelo_Asignacion->ListaDocentes();
-            $data['ListaMaterias'] = $this->Modelo_Asignacion->ListaMaterias();
-            $data['ListaCurso'] = $this->Modelo_Asignacion->ListaCurso();
-            $data['CursoTutor'] = $this->Modelo_Asignacion->CursoTutor();
-
-            $data['user'] = $this->session->userdata('username');
-
-            $this->load->view("plantilla_Directivo", $data);
         } else {
             redirect(base_url(''));
         }

@@ -12,7 +12,7 @@ class RegistroDocente extends CI_Controller {
 
     public function index() {
 
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario'
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretaria'
         ) {
 
             $data['contenido'] = "REGISTRODOCENTE/index";
@@ -20,7 +20,7 @@ class RegistroDocente extends CI_Controller {
             $data['listarDocente'] = $this->Modelo_RegistroDocente->listarDocente();
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
-        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Directivo') {
             $data['contenido'] = "REGISTRODOCENTE/index";
             $data['selDocente'] = $this->Modelo_RegistroDocente->selDocente();
             $data['listarDocente'] = $this->Modelo_RegistroDocente->listarDocente();

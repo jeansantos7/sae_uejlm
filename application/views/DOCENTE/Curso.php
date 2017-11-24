@@ -1,81 +1,32 @@
-<h1 class="page-title">  Vista de Mis Estudiantes                    
-</h1>
-
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="icon-home"></i>
-            <a href="index.html">Home</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <span>Mis Estudiantes</span>
-        </li>
-    </ul>
 
 
-    <div class="page-toolbar">
-        <div class="btn-group pull-right">
-            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
-                <i class="fa fa-angle-down"></i>
-            </button>
-            <ul class="dropdown-menu pull-right" role="menu">
-                <li>
-                    <a href="#">
-                        <i class="icon-bell"></i> Action</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-shield"></i> Another action</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-user"></i> Something else here</a>
-                </li>
-                <li class="divider"> </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-bag"></i> Separated link</a>
-                </li>
-            </ul>
-        </div>
+<!-- Content page -->
+<div class="container-fluid">
+    <div class="page-header">
+        <h1 class="text-titles"> <i class="zmdi zmdi-graduation-cap zmdi-hc-fw"> </i>  Mi Curso <small></small></h1>
     </div>
 </div>
-<!-- Nav tabs -->
+<div class="full-box text-center" style="padding: 30px 22px;">
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+        <li class="active"><a href="#new" data-toggle="tab">Lista de Estudiante</a></li>
+        <li><a href="#profile" data-toggle="tab">Observaciones Generales</a></li>
+        <li><a href="#profileOB" data-toggle="tab">Resumen de Observaciones</a></li>
 
+    </ul>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="new">
+                    <div class="table-responsive">
 
-<!-- Tab panes -->
-
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
-        <div class="portlet light ">
-            <div class="portlet-title">
-                <div class="caption">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mis Estudiantes </a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Observaciones</a></li>
-                        <li role="presentation"><a href="#profileOB" aria-controls="profileOB" role="tab" data-toggle="tab">Bitácora</a></li>
-                    </ul>
-
-                </div>
-                <div class="actions">
-                    <input type="text" class="form-control large" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
-
-                </div>
-            </div>
-            <div class="portlet-body">
-                <div class="table-scrollable">
-
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">
-                            <table border="1" class="table table-bordered" id="myTable">
+                        
+                <table border="1" class="table table-bordered" id="myTable">
                                 <thead>
                                     <tr>
                                         <th>Cedula</th>
                                         <th>Nombres</th>
                                         <th>Apellidos</th>
-                                        <th>Dirrecion</th>
+                                        <th>Dirreción</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
@@ -123,6 +74,7 @@
                                                             <select class="form-control" id="Incidencia" name="Incidencia">
                                                                 <option value="FaltaJustificada">Faltas Justificadas</option>
                                                                 <option value="FaltaInjustificada">Faltas Injustificadas </option>
+                                                                <option value="Atraso"> Atraso </option>
                                                                 <!--<option value="At">Llamada de Atención</option>-->
                                                             </select>
                                                             <br>
@@ -145,12 +97,15 @@
                             </div>
 
 
+                    </div>
 
+                </div>
+                <div class="tab-pane fade" id="profile">
 
-
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">
-                            <form name="form23" method="POST" action="<?php echo base_url(); ?>Docente/Obser12">
+                    <div class="container-fluid">
+                        <div class="row">
+                        <div class="col-xs-12 col-md-4 col-md-offset-1">
+                           <form name="form23" method="POST" action="<?php echo base_url(); ?>Docente/Obser12">
                                 <div class="form-group">
                                     <input type="hidden" id="curso12" name="curso12" value="<?php echo $curso; ?>">
                                     <input type="hidden" id="profeob" name="profeob12" value="<?php echo $proferos; ?>">
@@ -168,9 +123,15 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary">Save changes</button>
 
-                            </form>                          
+                            </form>  
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="profileOB">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                 <div role="tabpanel" class="tab-pane" id="profileOB">
                             <table border="1" class="table table-bordered" id="myTable">
                                 <thead>
                                     <tr>
@@ -197,16 +158,27 @@
 
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                </div>
+                 </div>
             </div>
         </div>
-        <!-- END SAMPLE TABLE PORTLET-->
     </div>
 
 
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
     function myFunction() {
         var input, filter, table, tr, td, i;

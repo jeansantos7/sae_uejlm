@@ -18,15 +18,16 @@ class login extends CI_Controller {
                 $this->load->view('login_vista', $data);
                 break;
 
-            case 'administracion':
+            case 'Directivo':
 
                 redirect(base_url() . 'Directivo');
                 break;
-            case 'Profesor':
+            case 'Docente':
                 redirect(base_url() . 'Docente');
                 break;
-            case 'Secretario':
+            case 'Secretaria':
                 redirect(base_url() . 'Secretaria');
+                break;
             case 'Estudiante':
                 redirect(base_url() . 'Estudiante');
                 break;

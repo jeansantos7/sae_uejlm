@@ -9,21 +9,21 @@ if (!defined('BASEPATH'))
 /**
  * 
  */
-class RegistroEstudiante extends CI_Controller {
+class PadresFamilia extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model("Modelo_RegistroEstudiante");
+        $this->load->model("Modelo_PadresFamilia");
     }
 
-    public function index() {
+    public function padres() {
 
         if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretaria') {
-            $data['contenido'] = "REGISTROESTUDIANTE/index";
-            $data['selEstudiante'] = $this->Modelo_RegistroEstudiante->selEstudiante();
-            $data['selRepresentante'] = $this->Modelo_RegistroEstudiante->selRepresentante();
-              $data['selPadresFamilia'] = $this->Modelo_RegistroEstudiante->selPadresFamilia();
-            $data['listarEstudiante'] = $this->Modelo_RegistroEstudiante->listarEstudiante();
+            $data['contenido'] = "PADRESFAMILIA/index";
+          
+          
+              $data['selPadresFamilia'] = $this->Modelo_PadresFamilia->selPadresFamilia();
+          
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
         } else {
@@ -40,38 +40,31 @@ class RegistroEstudiante extends CI_Controller {
 
             
            // $fech_matricula_Estudiante = $datos['fech_matricula_Estudiante'];
-            $cedula_Estudiante = $datos['cedula_Estudiante'];
-            $ape_Estudiante = $datos['ape_Estudiante'];
-            $nom_Estudiante = $datos['nom_Estudiante'];
-            $sexo=$datos['sexo'];
-            $fech_nac_Estudiante = $datos['fech_nac_Estudiante'];
-            $dir_Estudiante = $datos['dir_Estudiante'];
-            $carnet_Estudiante = $datos['carnet_Estudiante'];
-            $idRepresentante=$datos['idRepresentante'];
-            $idMadre=$datos['idMadre'];
-             $idPadre=$datos['idPadre'];
-           // $parentesco_Estudiante = $datos['parentesco_Representante_Estudiante'];
-            $user_Estudiante = $datos['user_Estudiante'];
-            $pass_Estudiante = $datos['pass_Estudiante'];
-           // $pension_Estudiante = $datos['pension_Estudiante'];
-           // $id_Representantes = $datos['id_Representantes'];
-            $tipo = "Estudiante";
+          //  $cedula_Estudiante = $datos['cedula_Estudiante'];
+           $ced_Madre =$datos['ced_Madre'];
+           $ced_Padre =$datos['ced_Padre'];
+           $ape_Madre =$datos['ape_Madre'];
+           $ape_Padre =$datos['ape_Padre'];
+           $nom_Madre =$datos['nom_Madre'];
+           $nom_Padre =$datos['nom_Padre'];
+           $telf_Madre =$datos['telf_Madre'];
+           $telf_Padre =$datos['telf_Padre'];
+           $dir_Madre =$datos['dir_Madre'];
+           $dir_Padre =$datos['dir_Padre'];
+           $ocup_Madre =$datos['ocup_Madre'];
+           $ocup_Padre =$datos['ocup_Padre'];
 
 
 
 
-            $datoexiste = $this->Modelo_RegistroEstudiante->ConsultaExiste($cedula_Estudiante);
 
-            if ($datoexiste == true) {
-                echo '<script languaje="javascript"> alert("este Estudiante  ya existe");
-				location.href="../Estudiante";
-				</script>';
-            } else {
+
+           // $datoexiste = $this->Modelo_PadresFamilia->ConsultaExiste($cedula_Estudiante);
+
 
                 $this->Modelo_RegistroEstudiante->inserEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $sexo, $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante,$idRepresentante, $idMadre, $idPadre,  $user_Estudiante, $pass_Estudiante);
 
-                $this->Modelo_RegistroEstudiante->inserUsuario($cedula_Estudiante, $user_Estudiante, $pass_Estudiante, $tipo);
-
+               
 
                 redirect('/RegistroEstudiante');
             }

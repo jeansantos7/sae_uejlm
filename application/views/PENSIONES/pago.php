@@ -62,13 +62,17 @@
                 <div class="form-group label-floating">
                     <label >Ingrese valor a Pagar</label>
                     <input class="form-control" type="text"  aria-describedby="emailHelp"
-                           id="valor_Pensiones" name="valor_Pensiones" aria-describedby="emailHelp"   value="">
+                           id="valor_Pensiones" name="valor_Pensiones" aria-describedby="emailHelp"   value="" onkeypress="return filterFloat(event,this);">
                 </div>
                 <input type="hidden" class="form-control"  id="fech_Pensiones" name="fech_Pensiones" aria-describedby="emailHelp" >
                 <div class="form-actions">
                     <div class="col-md-12">
-                        <button type="button" class="btn btn-primary" id="btn-ingresar">Guardar Pago</button>
-                        <button type="button" class="btn default">Cancel</button>
+                        <button type="button" class="btn btn-info btn-raised btn-sm" id="btn-ingresar" >
+                        <i class="zmdi zmdi-floppy"> </i> Guardar Pago</button>
+                        
+                        <button type="button"  class="btn btn- btn-raised btn-sm" id="btn-cancelar" >
+                        <i class="zmdi zmdi-close"><a href="<?php echo base_url('/PENSIONES/'); ?>"> </i> Cancelar</button>
+
                     </div>
                 </div>
             </div>
@@ -78,7 +82,9 @@
 
 
 </div>
-<script src="<?php echo base_url('public/js/jquery.js'); ?>"></script>
+<script src="<?php echo base_url('public/js/jquery.js'); ?>">
+    
+</script>
 <script>
                     $(document).on('ready', function () {
 
@@ -153,4 +159,39 @@
                             }
                         });
                     }
+
+                    function filterFloat(evt,input){
+    // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
+    var key = window.Event ? evt.which : evt.keyCode;    
+    var chark = String.fromCharCode(key);
+    var tempValue = input.value+chark;
+    if(key >= 48 && key <= 57){
+        if(filter(tempValue)=== false){
+            return false;
+        }else{       
+            return true;
+        }
+    }else{
+          if(key == 8 || key == 13 || key == 0) {     
+              return true;              
+          }else if(key == 46){
+                if(filter(tempValue)=== false){
+                    return false;
+                }else{       
+                    return true;
+                }
+          }else{
+              return false;
+          }
+    }
+}
+function filter(__val__){
+    var preg = /^([0-9]+\.?[0-9]{0,2})$/; 
+    if(preg.test(__val__) === true){
+        return true;
+    }else{
+       return false;
+    }
+    
+}
 </script>

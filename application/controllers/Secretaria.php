@@ -20,7 +20,7 @@ class Secretaria extends CI_Controller
 	 public function index() {
 
 
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretaria') {
 
 
         $data['contenido'] = "SECRETARIA/index";
