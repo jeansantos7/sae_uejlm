@@ -14,7 +14,7 @@
       <div class="page-header">
         <h1 class="text-titles"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Registro de Estudiantes <small>Datos Estudiantiles</small></h1>
       </div>
-      <p class="lead"> Mision Y Vision</p>
+      <p class="lead"> Misión Y Vision</p>
     </div>
     <div class="container-fluid">
       <div class="row">
