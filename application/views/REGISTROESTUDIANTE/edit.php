@@ -90,14 +90,13 @@
                   <div class="col-xs-12 col-md-4 col-md-offset-1">
 
                   <label for="exampleInputEmail1">Representante </label>
-                            <select size="1" id="idRepresentante" name="idRepresentante"   
-                            class="form-control js-example-basic-single"  >
-                                <option value="<?php echo $value->idRepresentante; ?>">
-                                Seleccione</option>
-                                <?php foreach ($selRepresentante as $key => $dato) {
+                           <select size="1" id="idRepresentante" name="idRepresentante"   
+                            class="form-control js-example-basic-single">
+                                <option value="<?php echo $value->idRepresentante; ?>"><?php echo $value->idRepresentante; ?></option>
+                                <?php foreach ($selRepresentante as $key => $valueq) {
                                     ?>
-                                    <option dato="<?php echo $dato->id_Representante; ?>">
-                                    <?php echo $dato->nom_Representante . " " . $dato->ape_Representante; ?></option>
+                                    <option value="<?php echo $valueq->id_Representante; ?>">
+                                    <?php echo $valueq->nom_Representante . " " . $valueq->ape_Representante; ?></option>
                                 <?php } ?>
                             </select>
 

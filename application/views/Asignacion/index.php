@@ -1,7 +1,7 @@
 <!-- Content page -->
 <div class="container-fluid">
     <div class="page-header">
-        <h1 class="text-titles">System <small>Tiles</small></h1>
+        <h1 class="text-titles"> <i class="zmdi zmdi-shield-security zmdi-hc-fw"> </i> Asignación<small></small></h1>
     </div>
 </div>
 <div class="full-box text-center" style="padding: 30px 10px;">
@@ -17,10 +17,13 @@
             <form id="myForm" class="form-body" method="POST" action="<?php echo base_url('Asignacion/setGuardar'); ?>">
                 <div class="row">
                     <div class="col-lg-3">
-
+    
+    </br>
+    </br>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
+                        <h1 class="text-titles"> <small>Asignacion de Materias</small></h1>
                             <label for="exampleInputEmail1">Docente </label>
                             <select size="1" id="docenteselect" name="docenteselect"   class="form-control js-example-basic-single">
                                 <option value="">Seleccione</option>
@@ -52,8 +55,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <button type="submit" name="save" value="" class="btn blue">Agregar</button>
-                            <button type="button" class="btn ">Cancelar</button>
+                            <button type="submit" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Guardar</button>
+                           
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -69,6 +72,7 @@
 
                     </div>
                     <div class="col-lg-6">
+                    <h1 class="text-titles"> <small>Asignacion de Tutorias</small></h1>
                         <fieldset>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Docente </label>
@@ -96,8 +100,7 @@
 
                             </div>
                             <div class="form-group">
-                                <button type="submit" name="save" value="" class="btn blue">Agregar</button>
-                                <button type="button" class="btn ">Cancelar</button>
+                               <button type="submit" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Guardar</button>
                             </div>
 
 

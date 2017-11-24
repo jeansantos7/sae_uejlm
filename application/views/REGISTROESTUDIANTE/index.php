@@ -142,7 +142,7 @@
                                 <option value="">Seleccione</option>
                                 <?php foreach ($selRepresentante as $key => $value) {
                                     ?>
-                                    <option value="<?php echo $value->id_Representante; ?>">
+                                    <option value="<?php echo $value->nom_Representante; ?>">
                                     <?php echo $value->nom_Representante . " " . $value->ape_Representante; ?></option>
                                 <?php } ?>
                             </select>

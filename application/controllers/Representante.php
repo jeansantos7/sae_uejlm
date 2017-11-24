@@ -22,7 +22,7 @@ class Representante extends CI_Controller
 
  if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
 	$data['contenido'] = "REPRESENTANTE/index";
-	//$data['selRepresentante'] = $this->Modelo_Representante->selRepresentante();
+	$data['selRepresentante'] = $this->Modelo_Representante->selRepresentante();
 	$data['listarRepresentante']=$this->Modelo_Representante->listarRepresentante();
 	$data['user'] = $this->session->userdata('username');
 	$this->load->view("plantilla_Secretaria", $data);

@@ -1,69 +1,23 @@
-<h1 class="page-title">  Vista de Materias                     
-</h1>
-
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="icon-home"></i>
-            <a href="index.html">Home</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <span>Mis Materias</span>
-        </li>
-    </ul>
 
 
-    <div class="page-toolbar">
-        <div class="btn-group pull-right">
-            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
-                <i class="fa fa-angle-down"></i>
-            </button>
-            <ul class="dropdown-menu pull-right" role="menu">
-                <li>
-                    <a href="#">
-                        <i class="icon-bell"></i> Action</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-shield"></i> Another action</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-user"></i> Something else here</a>
-                </li>
-                <li class="divider"> </li>
-                <li>
-                    <a href="#">
-                        <i class="icon-bag"></i> Separated link</a>
-                </li>
-            </ul>
-        </div>
+<!-- Content page -->
+<div class="container-fluid">
+    <div class="page-header">
+        <h1 class="text-titles"> <i class="zmdi zmdi-book zmdi-hc-fw"> </i> Mis Materias Asiganadas <small></small></h1>
     </div>
 </div>
-<!-- Nav tabs -->
+<div class="full-box text-center" style="padding: 30px 22px;">
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+        <li class="active"><a href="#new" data-toggle="tab">Lista de Materias</a></li>
+        <li><a href="#list" data-toggle="tab"></a></li>
+    </ul>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="new">
+                    <div class="table-responsive">
 
-
-<!-- Tab panes -->
-
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
-        <div class="portlet light ">
-            <div class="portlet-title">
-                <div class="caption">
-                    <ul class="nav nav-tabs" role="tablist">
-
-                    </ul>
-
-                </div>
-                <div class="actions">
-                </div>
-            </div>
-            <div class="portlet-body">
-                <div class="table-scrollable">
-
-                    <div class="tab-content">
+                        <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="home">
                             <table border="" class="table table-bordered">
                                 <thead>
@@ -71,7 +25,7 @@
                                         <th>ID</th>
                                         <th>Materia</th>
                                         <th>Curso</th>
-                                        <th>Hora</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -92,42 +46,76 @@
 
 
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">
 
+                    </div>
+
+                </div>
+   
 
                         </div>
-
-
                     </div>
 
                 </div>
             </div>
         </div>
-        <!-- END SAMPLE TABLE PORTLET-->
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="mostrarhistorial">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
 
 </div>
-<script>
 
+<script>
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
+     function soloNumeros(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " 1234567890";
+       especiales = "";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

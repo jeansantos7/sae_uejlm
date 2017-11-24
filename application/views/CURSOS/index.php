@@ -1,7 +1,7 @@
 <!-- Content page -->
 <div class="container-fluid">
     <div class="page-header">
-        <h1 class="text-titles">System <small>Tiles</small></h1>
+         <h1 class="text-titles"> <i class="zmdi zmdi-graduation-cap zmdi-hc-fw"> </i> Registro de Cursos <small></small></h1>
     </div>
 </div>
 <div class="full-box text-center" style="padding: 30px 10px;">
@@ -46,7 +46,7 @@
                 <div class="col-lg-3">
 
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <form method="POST" action="<?php echo base_url('Cursos/insert'); ?>">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nombre del Curso </label>
@@ -64,7 +64,7 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i>>Guardar</button>
+                        <button type="submit" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Guardar</button>
                     </form>
                 </div>
                 <div class="col-lg-3">

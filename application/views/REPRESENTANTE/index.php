@@ -1,96 +1,231 @@
+
+
 <!-- Content page -->
 <div class="container-fluid">
     <div class="page-header">
-        <h1 class="text-titles">System <small>Tiles</small></h1>
+        <h1 class="text-titles"> <i class="zmdi zmdi-male-alt zmdi-hc-fw"> </i> Registro de Representante <small></small></h1>
     </div>
 </div>
-<div class="full-box text-center" style="padding: 30px 10px;">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12">
-                <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-                    <li class="active"><a href="#new" data-toggle="tab"> Consulta</a></li>
-                    <li><a href="#list" data-toggle="tab">Registro</a></li>
+<div class="full-box text-center" style="padding: 30px 22px;">
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+        <li class="active"><a href="#new" data-toggle="tab">Lista de Representantes</a></li>
+        <li><a href="#list" data-toggle="tab">Registro de Representantes</a></li>
+    </ul>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="new">
+                    <div class="table-responsive">
 
-                </ul>
-
-                <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade" id="new">
-                        <table class="table table-striped" id="myTable">
+                        <table id="myTable" class="table table-striped" cellspacing="0" width="100%">
                             <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th class="text-center">Cedula</th>
+                                    <th class="text-center">Apellidos y Nombres</th>
+                                
+                                    <th class="text-center">Telefono</th>
+                                    <th class="text-center">Direccion</th>
+                                   
+                                    <th class="text-center">Opciones</th>
 
-                            <th> ID</th>
-                            <th> Cedula</th>
-                            <th> Apellido</th>
-                            <th> Ocupacion</th>
-                            <th> Opciones</th>
-                            </thead>
-
-                            <tbody>
-                                <?php foreach ($listarRepresentante as $key => $value) { ?>
-                                    <tr>
-                                        <td> <?php echo $value->id_Representante; ?>   </td>
-                                        <td> <?php echo $value->cedula_Representante; ?>   </td>
-                                        <td> <?php echo $value->ape_Representante . ' ' . $value->nom_Representante; ?>   </td>
-                                        <td> <?php echo $value->ocu_Representante; ?>   </td>
-                                        <td>
-
-                                            <a href=" <?php echo base_url('Representante/delete/') . "/" . $value->id_Representante; ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Eliminar</a>
-
-                                            <a href="<?php echo base_url('Representante/edit/') . "/" . $value->id_Representante; ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Editar</a>
-                                        </td>
-                                    <?php } ?>
                                 </tr>
-                            </tbody>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($selRepresentante as $key => $value) { ?>
+                                    <tr>
+                                        <td> <?php echo $value->id_Representante; ?></td>
+                                        <td><?php echo $value->cedula_Representante; ?></td>
+                                        <td><?php echo $value->ape_Representante. ' ' . $value->nom_Representante; ?></td>
+                                        <td><?php echo $value->telf_Representante; ?></td>
+                                        <td><?php echo $value->dir_Representante; ?></td>
+                                        <td>Period 1</td>
+                                        
 
+                                       
+                                        </td>
+                                        <td>
+                                            <!--<a  class="btn btn-success btn-raised btn-xs" onclick="alert2(<?php echo $value->id_Representante; ?>)"><i class="zmdi zmdi-refresh"></i></a>-->
+                                            <a href="<?php echo base_url('Representante/edit/') . "/" . $value->id_Representante; ?> " class="btn btn-success btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-refresh"></i></a>
+    <!--                                            <a href="<?php echo base_url('Representante/delete/') . "/" . $value->id_Representante; ?>" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>-->
+                                            <a  onclick="alert2(<?php echo $value->id_Representante; ?>)" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
                         </table>
+
                     </div>
 
-                    <div class="tab-pane fade active in" id="list">
-                        <div class="form-group" >
-                            <label for="exampleInputEmail1">dato </label>
-                            <select name="txtId">
-                                <?php foreach ($listarRepresentante as $key => $value) { ?>
-                                    <option value="<?php echo $value->cedula_Representante ?>" ><?php echo $value->cedula_Representante . ' ' . $value->nom_Representante; ?></option>
+                </div>
+                <div class="tab-pane fade" id="list">
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <form method="POST" id="form1" class="login-form" action="<?php echo base_url('RegistroEstudiante/insert'); ?>">
+                                <div id="mensaje"></div>
+
+                                <div class="col-xs-12 col-md-4 col-md-offset-1">
+                                   
+                                        
+                                        <input class="form-control" type="text"
+                                               id="cedula_Representante" name="cedula_Representante" placeholder="Cedula" maxlength="10"
+                                               onkeypress="return soloNumeros(event)">
+                                               </br>
+                                   
+                                    
+                                       
+                                        <input class="form-control" type="text"
+                                               id="ape_Estudiante" name="ape_Estudiante" placeholder="Apellidos"
+                                               onkeypress="return soloLetras(event)">
+                                   </br>
+                                    
+                                       
+                                        <input class="form-control" type="text"
+                                               id="nom_Estudiante" name="nom_Estudiante" placeholder="Nombres"
+                                               onkeypress="return soloLetras(event)">
+                                    </br>
+                                  
+                                    <select onchange="Valor(this.value)" name="sexo" id="seo"  class="form-control">
+                                        <option >Sexo</option>
+                                        <option value="0" >Mujer</option>
+                                        <option  value="1">Hombre</option>
+                                        
+                                    </select>
+                                                        <label class="control-label">Fecha de nacimiento</label>
+                                        <input class="form-control" type="date"
+                                               id="fech_nac_Estudiante" name="fech_nac_Estudiante">
+                                               </br>
+                                    
+                                    
+                                        
+                                        <input class="form-control" type="text"
+                                               id="dir_Estudiante" name="dir_Estudiante" placeholder="Direccion">
+                                                    </br>
+
+                                    
+                                    
+                                        <label >Discapacitado</label>
+                                        <input  type="checkbox" onClick="javascript:h = !h;"
+                                                id="disc_Estudiante" name="disc_Estudiante">
+                                    </br>
+
+
+                                    
+                                       
+                                        <input class="form-control" type="text"  placeholder="Carnet de Discapacidad"
+                                               id="carnet_Estudiante" name="carnet_Estudiante"
+                                               onFocus="javascript:if (!h) {
+                                                           this.blur();
+                                                       }"
+                                                       onkeypress="return soloNumeros(event)">       </div>
+
+                         
+
+                               
+                                <div class="col-xs-12 col-md-4 col-md-offset-1">
+
+                                   
+                            <label for="exampleInputEmail1">Representante </label>
+                            <select size="1" id="idRepresentante" name="idRepresentante"   
+                            class="form-control js-example-basic-single">
+                                <option value="">Seleccione</option>
+                                <?php foreach ($selRepresentante as $key => $value) {
+                                    ?>
+                                    <option value="<?php echo $value->nom_Representante; ?>">
+                                    <?php echo $value->nom_Representante . " " . $value->ape_Representante; ?></option>
                                 <?php } ?>
                             </select>
-                        </div>
-                        <form method="POST" action="<?php echo base_url('Representante/insert'); ?>">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                       
-                                        <input type="text" class="form-control" id="cedula_Representante" name="cedula_Representante" placeholder="Cedula">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="ape_Representante" name="ape_Representante" placeholder="Apellidos">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="nom_Representante" name="nom_Representante" placeholder="Nombres">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="telf_Representante" name="telf_Representante" placeholder="Telefono o Celular">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="correo_Representante" name="correo_Representante" placeholder="Cedula">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="dir_Representante" name="dir_Representante" placeholder="Direccion">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="ocu_Representante" name="ocu_Representante" placeholder="Ocupacion">
-                                    </div>
-                                </div>
-                            </div>
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+                         <label for="exampleInputEmail1">Madre de Familia </label>
+                            <select size="1" id="idMadre" name="idMadre"   class="form-control js-example-basic-single">
+                                <option value="">Seleccione</option>
+                                <?php foreach ($selPadresFamilia as $key => $value) {
+                                    ?>
+                                    <option value="<?php echo $value->ced_Madre; ?>">
+                                    <?php echo $value->nom_Madre . " " . $value->ape_Madre; ?></option>
+                                <?php } ?>
+                            </select>
+
+
+                            <label for="exampleInputEmail1">Padre de Familia </label>
+                            <select size="1" id="idPadre" name="idPadre"   class="form-control js-example-basic-single">
+                                <option value="">Seleccione</option>
+                                <?php foreach ($selPadresFamilia as $key => $value) {
+                                    ?>
+                                    <option value="<?php echo $value->ced_Padre; ?>">
+                                    <?php echo $value->nom_Padre . " " . $value->ape_Padre; ?></option>
+                                <?php } ?>
+                            </select>
+
+                                  </br>
+                                       
+                                        <input class="form-control" type="text"
+                                               id="user_Estudiante" name="user_Estudiante" placeholder="Usuario">
+                                    </br>
+                                   
+                                        <input class="form-control" type="text"
+                                               id="pass_Estudiante" name="pass_Estudiante" placeholder="Contraseña">
+                                    </br>
+
+
+                                    <p class="text-center">
+                                        <button type="submit" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> </button>   
+                                    </p>
+
+                                   
+
+                                </div>
+                            </form>
+
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+
+
+
 </div>
 
+<script>
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
+     function soloNumeros(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " 1234567890";
+       especiales = "";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+</script>

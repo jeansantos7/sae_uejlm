@@ -2,16 +2,7 @@
 </h1>
 
 <div class="  page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <i class="icon-home"></i>
-            <a href="index.html">Home</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <li>
-            <span>Materias</span>
-        </li>
-    </ul>
+   
 
 
     <div class="page-toolbar">
@@ -54,15 +45,13 @@
                 <div class="caption">
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Ingreso de notas </a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Notas Sup</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Notas de Recuperaciónx  </a></li>
                         <li role="presentation"><a href="#profile2" aria-controls="profile2" role="tab" data-toggle="tab">Ver Notas</a></li>
 
                     </ul>
 
                 </div>
-                <div class="actions">
-                    <input type="text" class="form-control large" id="myInput" onkeyup="myFunction()"  placeholder="Buscar por Nombres y Apellidos" title="Type in a name">
-                </div>
+                
             </div>
             <div class="portlet-body">
                 <div class="table-scrollable">
@@ -70,12 +59,13 @@
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="home">
                             <div class="">
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <label for="s">Numero de Matricula </label>
+                                        <h1><small> Ingreso de Calificaciones</small></h1>
+                                            <label for="s"></label>
                                             <select size="1" id="s" name="s" class="form-control" onchange="matriaestudiante(this.value)">
-                                                <option value="">Seleccione</option>
+                                                <option value="">Seleccione su Materia</option>
                                                 <?php foreach ($lista_materias as $key => $value) {
                                                     ?>
                                                     <option value="<?php echo $value->id_Materias . ',' . $value->id_cursos; ?>"><?php echo "Materia: " . $value->nom_Materias . ' Curso: ' . $value->nom_Cursos . ' ' . $value->id_cursos; ?></option>
@@ -238,14 +228,14 @@
                 alert(errorThrown);
             },
             success: function (data, textStatus, jqXHR) {
-                var html = '<table class="table table-bordered table-hover ">' +
+                var html = '<table class="table table-bordered table-hover" id="myTable1">' +
                         '<thead>' +
                         '<th>ID</th>' +
                         '<th>Cedula</th>' +
-                        '<th>Nombre</th>' +
-                        '<th>NotaP1Q1</th>' +
-                        '<th>NotaP2Q1</th>' +
-                        '<th>NotaP3Q1</th>' +
+                        '<th>Nombres y Apellidos</th>' +
+                        '<th>Parcia l _Q1</th>' +
+                        '<th>Parcia 2 _Q1</th>' +
+                        '<th>Parcia  _Q1</th>' +
                         '<th>NotaPOQ1</th>' +
                         '<th>NotaEQ1</th>' +
                         '<th>NotaEPQ1</th>' +
@@ -300,7 +290,9 @@
                 }
                 html += '</tbody></table>';
                 html += '<input type="submit" value="Enviar" name="Enviar">';
+                 
                 $("#notasdatos2").html(html);
+                $('#myTable1').DataTable();
 
             }
 
@@ -345,7 +337,9 @@
             type: 'POST',
             success: function (data, textStatus, jqXHR) {
                 
-                 var html = '<table class="table table-bordered table-hover ">' +
+                 var html = '<div class="table-responsive">'+
+                 '<table class="table table-bordered table-hover" id="myTable">' +
+                 
                         '<thead>' +
                         '<th>ID</th>' +
                         '<th>Cedula</th>' +
@@ -370,7 +364,8 @@
                         '<th>NOTAEXA</th>' +
                         '</tr>' +
                         '</thead>' +
-                        '<tbody>';
+                        '<tbody>'+
+                        '</div>';
 
                 var con = 1;
                 if(data){
@@ -409,9 +404,14 @@
                 html += '<input type="submit" value="Enviar" name="Enviar">';
                 
                 $("#notasdatos").html(html);
+
+
+
+                $('#myTable').DataTable();
+            
             },
             beforeSend: function (xhr) {
-                alert("Procesando, espere por favor...");
+             //   alert("Procesando, espere por favor...");
 
             },
             error: function (jqXHR, textStatus, errorThrown) {

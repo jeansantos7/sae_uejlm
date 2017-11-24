@@ -1,7 +1,7 @@
 <!-- Content page -->
 <div class="container-fluid">
     <div class="page-header">
-        <h1 class="text-titles">System <small>Tiles</small></h1>
+          <h1 class="text-titles"> <i class="zmdi zmdi-money zmdi-hc-fw"> </i> Registro de Pensiones <small></small></h1>
     </div>
 </div>
 <div class="full-box text-center" style="padding: 30px 10px; ">
@@ -57,7 +57,7 @@
                 <div class="form-group label-floating">
                     <label >Valor que Debe</label>
                     <input class="form-control" type="text"   aria-describedby="emailHelp"
-                           id="valorquedebe"  value="">
+                           id="valorquedebe"  value="" readonly="readonly">
                 </div>
                 <div class="form-group label-floating">
                     <label >Ingrese valor a Pagar</label>

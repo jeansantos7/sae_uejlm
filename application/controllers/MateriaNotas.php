@@ -15,7 +15,7 @@ class MateriaNotas extends CI_Controller {
             $data['user'] = $this->session->userdata('username');
             $data['cedula'] = $this->session->userdata('id_cedula');
             $data['lista_materias'] = $this->Modelo_MateriasNotas->lista_materias($this->session->userdata('id_cedula'));
-            $this->load->view("plantilla", $data);
+            $this->load->view("plantilla_Docente", $data);
         } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
             $data['contenido'] = "MATERIAS/indexd";
 //            $data['listarEstudiante_P'] = $this->Modelo_Pensiones->listarEstudiante_P();
