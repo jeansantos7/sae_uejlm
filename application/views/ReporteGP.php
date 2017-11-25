@@ -1,5 +1,5 @@
 <?php ?>
-<form name="form1" method="POST" action="<?php echo base_url(); ?>ReportesGP/Ado" >
+<form name="form1" method="POST" action="<?php echo base_url(); ?>ReportesGP2/index2" >
     
     Notas X Materias
     curso
