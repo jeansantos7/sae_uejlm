@@ -34,7 +34,7 @@
                             </select>
                         </div>    
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Grado </label>
+                            <label for="exampleInputEmail1">Curso</label>
                             <select size="1"id="cursoselect" name="cursoselect" class="form-control js-example-basic-single">
                                 <option value="">Seleccione</option>
                                 <?php foreach ($ListaCurso as $key => $value) {
@@ -50,7 +50,7 @@
                                 <option value="">Seleccione</option>
                                 <?php foreach ($ListaMaterias as $key => $value) {
                                     ?>
-                                    <option value="<?php echo $value->id_Materias; ?>"><?php echo $value->nom_Materias; ?></option>
+                                    <option value="<?php echo $value->id_Materias; ?>"><?php echo $value->nom_Materias.' /'.$value->nom_corto_Materias; ?></option>
                                 <?php } ?>
                             </select>
                         </div>

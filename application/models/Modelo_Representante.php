@@ -20,7 +20,7 @@ class Modelo_Representante extends CI_Model
 
 	}
 
-	public function inserRepresentante($id_Representante, $cedula_Representante, $ape_Representante, $nom_Representante, $telf_Representante, $correo_Representante, $dir_Representante, $ocu_Representante)
+	public function inserRepresentante($id_Representante, $cedula_Representante, $ape_Representante, $nom_Representante, $telf_Representante,  $dir_Representante, $ocu_Representante)
 	{
 		 $array1 = array(
 		 //	'id_Representante' => $id_Representante,
@@ -30,7 +30,7 @@ class Modelo_Representante extends CI_Model
 			'ape_Representante' => $ape_Representante,
 			'nom_Representante' =>$nom_Representante,
 			'telf_Representante' =>$telf_Representante,
-			'correo_Representante' =>$correo_Representante,
+			
 			'dir_Representante' => $dir_Representante,
 			'ocu_Representante' => $ocu_Representante
 
@@ -63,7 +63,7 @@ class Modelo_Representante extends CI_Model
 		return $query->result();
 	}
 
-	public function updateRepresentante($id_Representante, $cedula_Representante, $ape_Representante, $nom_Representante, $telf_Representante, $correo_Representante, $dir_Representante, $ocu_Representante)
+	public function updateRepresentante($id_Representante, $cedula_Representante, $ape_Representante, $nom_Representante, $telf_Representante, $dir_Representante, $ocu_Representante)
 	{
 		 $array2 = array(
 

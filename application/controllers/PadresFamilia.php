@@ -73,12 +73,12 @@ class PadresFamilia extends CI_Controller {
 
     public function delete($id_PadresFamilia) {
 
-        if ($id_Estudiante != NULL) {
-            $this->Modelo_RegistroEstudiante->deleteEstudiante($id_Estudiante);
+        if ($id_PadresFamilia != NULL) {
+            $this->Modelo_PadresFamilia->deletePadresFamilia($id_PadresFamilia);
           //  $this->Modelo_RegistroEstudiante->deleteMatricula($cedula_Estudiante);
             echo '<script languaje="javascript"> alert("el dato fue eliminado");
 			</script>';
-            redirect('/RegistroEstudiante');
+            redirect('/PadresFamilia/padres');
 
 
         }
@@ -107,25 +107,7 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
         }
     }
 
-    public function matricualar($id_Estudiante = NULL)
-    {
-
-        if ($id_Estudiante != NULL) {
-            //mostrar datos
-            $data['contenido'] = 'Estudiante/matriculacion';
-             $data['datosEstudiante'] = $this->Modelo_Estudiante->editEstudiante($id_Estudiante);
-            $this->load->view('plantilla_Secretaria', $data);
-        }
-
-            else {
-
-            redirect('');
-        }
-
-
-    }
-
-
+  
 
     public function update() {
 

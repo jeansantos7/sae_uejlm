@@ -45,10 +45,12 @@
                                        
                                         </td>
                                         <td>
-                                            <!--<a  class="btn btn-success btn-raised btn-xs" onclick="alert2(<?php echo $value->id_Representante; ?>)"><i class="zmdi zmdi-refresh"></i></a>-->
+                                            
                                             <a href="<?php echo base_url('Representante/edit/') . "/" . $value->id_Representante; ?> " class="btn btn-success btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-refresh"></i></a>
-    <!--                                            <a href="<?php echo base_url('Representante/delete/') . "/" . $value->id_Representante; ?>" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>-->
-                                            <a  onclick="alert2(<?php echo $value->id_Representante; ?>)" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>
+
+                                             <a href="<?php echo base_url('Representante/delete/') . "/" . $value->id_Representante; ?> " class="btn btn-danger btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-delete"></i></a>
+                                           
+                                           
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -62,7 +64,7 @@
 
                     <div class="container-fluid">
                         <div class="row">
-                            <form method="POST" id="form1" class="login-form" action="<?php echo base_url('RegistroEstudiante/insert'); ?>">
+                            <form method="POST" id="form1" class="login-form" action="<?php echo base_url('Representante/insert'); ?>">
                                 <div id="mensaje"></div>
 
                                 <div class="col-xs-12 col-md-4 col-md-offset-1">
@@ -76,113 +78,53 @@
                                     
                                        
                                         <input class="form-control" type="text"
-                                               id="ape_Estudiante" name="ape_Estudiante" placeholder="Apellidos"
+                                               id="ape_Representante" name="ape_Representante" placeholder="Apellidos"
                                                onkeypress="return soloLetras(event)">
                                    </br>
                                     
                                        
                                         <input class="form-control" type="text"
-                                               id="nom_Estudiante" name="nom_Estudiante" placeholder="Nombres"
+                                               id="nom_Representante" name="nom_Representante" placeholder="Nombres"
                                                onkeypress="return soloLetras(event)">
                                     </br>
                                   
-                                    <select onchange="Valor(this.value)" name="sexo" id="seo"  class="form-control">
-                                        <option >Sexo</option>
-                                        <option value="0" >Mujer</option>
-                                        <option  value="1">Hombre</option>
-                                        
-                                    </select>
-                                                        <label class="control-label">Fecha de nacimiento</label>
-                                        <input class="form-control" type="date"
-                                               id="fech_nac_Estudiante" name="fech_nac_Estudiante">
-                                               </br>
-                                    
-                                    
-                                        
+                                   
+                                                       
                                         <input class="form-control" type="text"
-                                               id="dir_Estudiante" name="dir_Estudiante" placeholder="Direccion">
+                                               id="telf_Representante" name="telf_Representantes" placeholder="Telefono">
                                                     </br>
 
                                     
-                                    
-                                        <label >Discapacitado</label>
-                                        <input  type="checkbox" onClick="javascript:h = !h;"
-                                                id="disc_Estudiante" name="disc_Estudiante">
-                                    </br>
-
+                                    <input class="form-control" type="text"
+                                               id="dir_Representante" name="dir_Estudiante" placeholder="Direccion">
 
                                     
-                                       
-                                        <input class="form-control" type="text"  placeholder="Carnet de Discapacidad"
-                                               id="carnet_Estudiante" name="carnet_Estudiante"
-                                               onFocus="javascript:if (!h) {
-                                                           this.blur();
-                                                       }"
-                                                       onkeypress="return soloNumeros(event)">       </div>
+                                       </br>
+                        
+                         <input class="form-control" type="text"
+                                               id="ocu_Representante" name="ocu_Representante" placeholder="Ocupación">
 
-                         
+                                    
+                                       </br>
 
                                
-                                <div class="col-xs-12 col-md-4 col-md-offset-1">
-
-                                   
-                            <label for="exampleInputEmail1">Representante </label>
-                            <select size="1" id="idRepresentante" name="idRepresentante"   
-                            class="form-control js-example-basic-single">
-                                <option value="">Seleccione</option>
-                                <?php foreach ($selRepresentante as $key => $value) {
-                                    ?>
-                                    <option value="<?php echo $value->nom_Representante; ?>">
-                                    <?php echo $value->nom_Representante . " " . $value->ape_Representante; ?></option>
-                                <?php } ?>
-                            </select>
-
-                         <label for="exampleInputEmail1">Madre de Familia </label>
-                            <select size="1" id="idMadre" name="idMadre"   class="form-control js-example-basic-single">
-                                <option value="">Seleccione</option>
-                                <?php foreach ($selPadresFamilia as $key => $value) {
-                                    ?>
-                                    <option value="<?php echo $value->ced_Madre; ?>">
-                                    <?php echo $value->nom_Madre . " " . $value->ape_Madre; ?></option>
-                                <?php } ?>
-                            </select>
-
-
-                            <label for="exampleInputEmail1">Padre de Familia </label>
-                            <select size="1" id="idPadre" name="idPadre"   class="form-control js-example-basic-single">
-                                <option value="">Seleccione</option>
-                                <?php foreach ($selPadresFamilia as $key => $value) {
-                                    ?>
-                                    <option value="<?php echo $value->ced_Padre; ?>">
-                                    <?php echo $value->nom_Padre . " " . $value->ape_Padre; ?></option>
-                                <?php } ?>
-                            </select>
-
-                                  </br>
-                                       
-                                        <input class="form-control" type="text"
-                                               id="user_Estudiante" name="user_Estudiante" placeholder="Usuario">
-                                    </br>
-                                   
-                                        <input class="form-control" type="text"
-                                               id="pass_Estudiante" name="pass_Estudiante" placeholder="Contraseña">
-                                    </br>
-
-
-                                    <p class="text-center">
-                                        <button type="submit" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> </button>   
-                                    </p>
-
-                                   
-
-                                </div>
-                            </form>
+                            
 
                         </div>
+
+                          <div class="col-md-12">
+                        <button type="button" class="btn btn-info btn-raised btn-sm" id="btn-ingresar" >
+                        <i class="zmdi zmdi-floppy"> </i> Guardar Registro</button>
+                        
+                        <button type="button"  class="btn btn- btn-raised btn-sm" id="btn-cancelar" >
+                        <i class="zmdi zmdi-close"><a href="<?php echo base_url('/RegistroEstudiante/'); ?>"> </i> Cancelar</button>
+
+                    </div>
                     </div>
 
                 </div>
             </div>
+            </form>
         </div>
     </div>
 

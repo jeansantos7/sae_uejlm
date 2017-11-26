@@ -4,7 +4,7 @@
   
  
   
-  <input type="hidden" name="id_Docente" value=" <?php echo $value->id_Estudiante; ?>">
+  <input type="hidden" name="id_Estudiante" value=" <?php echo $value->id_Estudiante; ?>">
 
 
     <!-- NavBar -->
@@ -161,6 +161,9 @@
                         <i class="zmdi zmdi-close"><a href="<?php echo base_url('/RegistroEstudiante/'); ?>"> </i> Cancelar</button>
                         </p>
                       </form>
+                      <?php }
+
+?>
                   </div>
 
                 </div>
@@ -180,9 +183,7 @@
 var h=false;
 </script>
 
-<?php }
 
-?>
 
 
 <script>

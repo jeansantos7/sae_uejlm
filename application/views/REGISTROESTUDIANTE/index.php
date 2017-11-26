@@ -55,10 +55,10 @@
 
                                         </td>
                                         <td>
-                                            <!--<a  class="btn btn-success btn-raised btn-xs" onclick="alert2(<?php echo $value->id_Estudiante; ?>)"><i class="zmdi zmdi-refresh"></i></a>-->
-                                            <a href="<?php echo base_url('RegistroEstudiante/edit/') . "/" . $value->id_Estudiante; ?> " class="btn btn-success btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-refresh"></i></a>
-    <!--                                            <a href="<?php echo base_url('RegistroEstudiante/delete/') . "/" . $value->id_Estudiante; ?>" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>-->
-                                            <a  onclick="alert2(<?php echo $value->id_Estudiante; ?>)" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>
+                                            
+                                            <a href="<?php echo base_url('RegistroEstudiante/edit/') . "/" . $value->id_Estudiante; ?> " class="btn btn-success btn-raised btn-xs  btn-prueba"><i class="glyphicon glyphicon-edit"></i></a>
+  
+                                            <a  onclick="alert2(<?php echo $value->id_Estudiante; ?>)" class="btn btn-danger btn-raised btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
                                         </td>
                                     </tr>
                                 <?php } ?>

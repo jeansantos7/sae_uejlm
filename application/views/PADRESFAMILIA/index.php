@@ -9,7 +9,7 @@
 <div class="full-box text-center" style="padding: 30px 22px;">
     <ul class="nav nav-tabs" style="margin-bottom: 15px;">
         <li class="active"><a href="#new" data-toggle="tab">Lista de datos de Madres de Familia</a></li>
-        <li><a href="#list" data-toggle="tab">Lista de Datos de Madres</a></li>
+       
          <li><a href="#list2" data-toggle="tab">Registro de Datos</a></li>
     </ul>
     <div class="row">
@@ -43,10 +43,11 @@
                                         
 
                                         <td>
-                                            <!--<a  class="btn btn-success btn-raised btn-xs" onclick="alert2(<?php echo $value->id_Estudiante; ?>)"><i class="zmdi zmdi-refresh"></i></a>-->
-                                            <a href="<?php echo base_url('RegistroEstudiante/edit/') . "/" . $value->id_Estudiante; ?> " class="btn btn-success btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-refresh"></i></a>
-    <!--                                            <a href="<?php echo base_url('RegistroEstudiante/delete/') . "/" . $value->id_Estudiante; ?>" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>-->
-                                            <a  onclick="alert2(<?php echo $value->id_Estudiante; ?>)" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>
+                                            
+                                            <a href="<?php echo base_url('PadresFamilia/edit/') . "/" . $value->id_PadresFamilia; ?> " class="btn btn-success btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-refresh"></i></a>
+                                         
+                                            <a href="<?php echo base_url('PadresFamilia/delete/') . "/" . $value->id_PadresFamilia; ?> " class="btn btn-danger btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-delete"></i></a>
+                                           
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -58,50 +59,7 @@
                 </div>
                 
                 
-                    <div class="tab-pane fade" id="list">
-
-                    <div class="table-responsive">
-
-                        <table id="myTable1" class="table table-striped" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">#</th>
-                                    <th class="text-center">Cedula </th>
-                                    <th class="text-center">Apellidos y Nombres</th>
-                                    <th class="text-center">Telefono</th>
-                                    <th class="text-center">Direccón</th>
-                                    <th class="text-center">Ocupación</th>
-                                    <th class="text-center">Opciones</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($selPadresFamilia as $key => $value) { ?>
-                                    <tr>
-                                        <td> <?php echo $value->id_PadresFamilia; ?></td>
-                                        <td><?php echo $value->ced_Padre; ?></td>
-                                        <td><?php echo $value->ape_Padre . ' ' . $value->nom_Padre; ?></td>
-                                        <td><?php echo $value->telf_Padre; ?></td>
-                                        <td><?php echo $value->dir_Padre; ?></td>
-                                        <td><?php echo $value->ocu_Padre; ?></td>
-                                        
-
-                                        <td>
-                                            <!--<a  class="btn btn-success btn-raised btn-xs" onclick="alert2(<?php echo $value->id_Estudiante; ?>)"><i class="zmdi zmdi-refresh"></i></a>-->
-                                            <a href="<?php echo base_url('RegistroEstudiante/edit/') . "/" . $value->id_Estudiante; ?> " class="btn btn-success btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-refresh"></i></a>
-    <!--                                            <a href="<?php echo base_url('RegistroEstudiante/delete/') . "/" . $value->id_Estudiante; ?>" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>-->
-                                            <a  onclick="alert2(<?php echo $value->id_Estudiante; ?>)" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-
-                    </div>
                 
-                          
-
-                </div>
 
                 <div class="tab-pane fade" id="list2">
 
@@ -219,6 +177,8 @@
 
 <script>
 $('#myTable').DataTable();
+$('#myTable2').DataTable();
+
 
     function soloLetras(e){
        key = e.keyCode || e.which;

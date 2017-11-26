@@ -8,7 +8,7 @@ class MateriaNotas extends CI_Controller {
     }
 
     function index() {
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Profesor') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Docente') {
             $data['contenido'] = "MATERIAS/index";
 //            $data['listarEstudiante_P'] = $this->Modelo_Pensiones->listarEstudiante_P();
             //          $data['listarHistorial'] = $this->Modelo_Pensiones->listarHistorial();
@@ -16,7 +16,7 @@ class MateriaNotas extends CI_Controller {
             $data['cedula'] = $this->session->userdata('id_cedula');
             $data['lista_materias'] = $this->Modelo_MateriasNotas->lista_materias($this->session->userdata('id_cedula'));
             $this->load->view("plantilla_Docente", $data);
-        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Directivo') {
             $data['contenido'] = "MATERIAS/indexd";
 //            $data['listarEstudiante_P'] = $this->Modelo_Pensiones->listarEstudiante_P();
             //          $data['listarHistorial'] = $this->Modelo_Pensiones->listarHistorial();

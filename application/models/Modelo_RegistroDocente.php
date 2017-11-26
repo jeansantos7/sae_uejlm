@@ -34,6 +34,17 @@ class Modelo_RegistroDocente extends CI_Model {
         $this->db->insert('Docente', $array1);
     }
 
+     public function inserUsuario($cedula_Docente, $user_Estudiante, $pass_Estudiante, $tipo) {
+        $array = array(
+            'cedula' => $cedula_Estudiante,
+            'usuario' => $user_Estudiante,
+            'contra' => $pass_Estudiante,
+            'tipo' => $tipo
+        );
+
+          $this->db->insert('usuario', $array);
+    }
+
     public function listarDocente() {
 
         $query = $this->db->query("select * from Docente");
@@ -78,7 +89,7 @@ class Modelo_RegistroDocente extends CI_Model {
         return $query->result();
     }
 
-    function inserUsuario($cedula_Docente, $user_Docente, $pass_Docente, $Profesor) {
+    function inserUsuarioDocente($cedula_Docente, $user_Docente, $pass_Docente, $Profesor) {
         $array1 = array(
             //	'id_Docente' => $id_Docente,
             'cedula' => $cedula_Docente,

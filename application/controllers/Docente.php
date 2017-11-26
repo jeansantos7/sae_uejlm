@@ -26,7 +26,7 @@ class Docente extends CI_Controller {
     }
 
     function CursoTutor() {
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Profesor') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Docente') {
 
             $data['contenido'] = "Docente/curso";
             //$data['listarMaterias']=$this->Modelo_Materias->listarMaterias();
@@ -43,7 +43,7 @@ class Docente extends CI_Controller {
     }
 
     function Materias() {
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Profesor') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Docente') {
 
             $data['contenido'] = "Docente/Materias";
             //$data['listarMaterias']=$this->Modelo_Materias->listarMaterias();

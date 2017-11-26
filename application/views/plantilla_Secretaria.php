@@ -97,7 +97,7 @@
                         <a href="<?php echo base_url('/Cursos/'); ?>"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Cursos</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('/Materias/'); ?>"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Materias</a>
+                        <a href="<?php echo base_url('/Materias/materias'); ?>"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Materias</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('/Asignacion/'); ?>"><i class="zmdi zmdi-shield-security zmdi-hc-fw"></i> Asignacion</a>

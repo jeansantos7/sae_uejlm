@@ -41,10 +41,11 @@
                                             <td> <?php echo $value->ape_Estudiante . ' ' . $value->nom_Estudiante; ?>   </td>
                                             <td> <?php echo $value->pension_Estudiante; ?>   </td>
                                             <td>
-                                                <a href="<?php echo base_url('Pensiones/pago/') . "/" . $value->cedula_Estudiante; ?>" class="btn btn-default"><span class="fa fa-money" aria-hidden="true"></span>  Pago</a>
-                                                <!--<a href="<?php echo base_url('Pensiones/historial/') . "/" . $value->cedula_Estudiante; ?>" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Historial de Pago</a>-->
-                                                <button type="button" class="btn btn-default" onclick="historial(<?php echo $value->cedula_Estudiante; ?>)" data-toggle="modal" data-target="#exampleModal">
-                                                    <span class="fa fa-history" aria-hidden="true"></span>   Historial de Pago
+                                                <a href="<?php echo base_url('Pensiones/pago/') . "/" . $value->cedula_Estudiante; ?>" class="btn btn-success btn-raised btn-xs  btn-prueba">  <i class="glyphicon glyphicon-edit"></i> Pago</a>
+                                             
+                                                <button type="button" class="btn btn-info btn-raised btn-xs  btn-prueba" onclick="historial(<?php echo $value->cedula_Estudiante; ?>)" data-toggle="modal" data-target="#exampleModal">
+                                                    <i class="glyphicon glyphicon-trash"></i>
+                                                     Historial de Pago
                                                 </button>
                                             </td>
 

@@ -45,6 +45,7 @@ class RegistroDocente extends CI_Controller {
             $fech_nac_Docente = $datos['fech_nac_Docente'];
             $user_Docente = $datos['user_Docente'];
             $pass_Docente = $datos['pass_Docente'];
+            $tipo = "Docente";
 
 
 
@@ -59,7 +60,7 @@ class RegistroDocente extends CI_Controller {
             } else {
 
                 $this->Modelo_RegistroDocente->inserDocente($cedula_Docente, $ape_Docente, $nom_Docente, $telf_Docente, $correo_Docente, $direc_Docente, $fech_nac_Docente, $user_Docente, $pass_Docente);
-                $this->Modelo_RegistroDocente->inserUsuario($cedula_Docente, $user_Docente, $pass_Docente, "Profesor");
+                $this->Modelo_RegistroDocente->inserUsuarioDocente($cedula_Docente, $user_Docente, $pass_Docente, $tipo);
                 redirect('/Docente');
             }
         }
