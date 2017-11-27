@@ -32,12 +32,12 @@
                     <ul class="full-box list-unstyled text-center">
                         <li>
                             <a href="#!">
-                                <i class="zmdi zmdi-settings"></i>
+                                <i class="zmdi zmdi-close-circle"></i>
                             </a>
                         </li>
                         <li>
                             <a href="#!" class="btn-exit-system">
-                                <i class="zmdi zmdi-power"></i>
+                                <i class="zmdi zmdi-close"></i>
                             </a>
                         </li>
                     </ul>
