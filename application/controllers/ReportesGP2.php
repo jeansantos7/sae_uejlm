@@ -1,11 +1,8 @@
 <?php
-
 class ReportesGP2 extends CI_Controller {
-
     function __construct() {
         parent::__construct();
     }
-
     public function index2() {
         $this->load->model('Modelo_ReportesGP');
         $this->load->library('pdf');
@@ -32,11 +29,9 @@ class ReportesGP2 extends CI_Controller {
              */
             $this->pdf->SetFillColor(232, 232, 232);
             $this->pdf->SetFont('Arial', 'B', 9);
-
             $w = array(8, 80, 56, 70, 8, 25);
             $this->pdf->Cell($w[0], 10, 'No.', 1, 0, 'C', 1);
             $this->pdf->Cell($w[1], 10, 'Alumnas', 1, 0, 'C', 1);
-
             $this->pdf->Cell($w[2], 5, utf8_decode('Quimestre 1'), 1, 0, 'C', 1);
             $this->pdf->Cell($w[2], 5, utf8_decode('Quimestre 2'), 1, 0, 'C', 1);
             $this->pdf->Cell($w[5], 5, utf8_decode('Promedio'), 1, 0, 'C', 1);
@@ -44,10 +39,8 @@ class ReportesGP2 extends CI_Controller {
             $this->pdf->Cell($w[5], 5, utf8_decode('Remedial'), 1, 0, 'C', 1);
             $this->pdf->Cell($w[5], 5, utf8_decode('Examen'), 1, 0, 'C', 1);
             $this->pdf->Ln();
-
             $this->pdf->Cell($w[0], 5, '');
             $this->pdf->Cell($w[1], 5, '');
-            
             $this->pdf->SetFont('Arial', '', 9);
             $this->pdf->Cell($w[4], 5, 'P1', 1, 0, 'C', 1);
             $this->pdf->Cell($w[4], 5, 'P2', 1, 0, 'C', 1);
@@ -74,8 +67,6 @@ class ReportesGP2 extends CI_Controller {
             $this->pdf->SetFont('Arial', 'B', 9);
             $this->pdf->Cell($w[4], 5, 'PT', 1, 0, 'C', 1);
             $this->pdf->SetFont('Arial', '', 9);
-           
-
             #Estudios Sociales
             $this->pdf->SetFont('Arial', 'B', 9);
             $this->pdf->Cell($w[5], 5, 'P1', 1, 0, 'C', 1);
@@ -111,39 +102,31 @@ class ReportesGP2 extends CI_Controller {
                 $this->pdf->Cell($w[4], 4, sprintf("%.1F", $value->nota_examen_porcentajeq2_MateriasNotas), 1, 0, 'C');
                 $this->pdf->SetFont('Arial', 'B', 9);
                 $this->pdf->Cell($w[4], 4, sprintf("%.1F", $value->promedioq2_MateriasNotas), 1, 0, 'C');
-                $this->pdf->Cell($w[5], 4, sprintf("%.1F", $value->promedioq2_MateriasNotas+$value->promedioq1_MateriasNotas), 1, 0, 'C');
+                $this->pdf->Cell($w[5], 4, sprintf("%.1F", $value->promedioq2_MateriasNotas + $value->promedioq1_MateriasNotas), 1, 0, 'C');
                 $this->pdf->Cell($w[5], 4, sprintf("%.1F", $value->notarec_MateriasNotas), 1, 0, 'C');
                 $this->pdf->Cell($w[5], 4, sprintf("%.1F", $value->notareme_MateriasNotas), 1, 0, 'C');
                 $this->pdf->Cell($w[5], 4, sprintf("%.1F", $value->notaexa_MateriasNotas), 1, 0, 'C');
-                
-
                 $this->pdf->Ln();
             }
             $this->pdf->Output("Lista de alumnos.pdf", 'I');
         }
     }
-
     function index() {
         $data['contenido'] = "REGISTRODIRECTIVO/index";
-
-
         $this->load->view("ReporteGP", $data);
     }
     public function reporteNotas() {
-      $this->load->library('pdf');
+        $this->load->library('pdf');
         $pdf = new PDF();
-
         $this->pdf->AliasNbPages();
         $this->pdf->AddPage();
-       ///
-
-
-       if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Estudiante') {
-           $this->load->model("Modelo_EstudianteNotas");
+        ///
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Estudiante') {
+            $this->load->model("Modelo_EstudianteNotas");
             $cedula = $this->session->userdata('id_cedula');
             $alumnos = $this->Modelo_EstudianteNotas->selmateriasnotas($cedula);
             foreach ($alumnos as $key => $value) {
-               $nombre = $value->ape_Estudiante . " " . $value->nom_Estudiante;
+                $nombre = $value->ape_Estudiante . " " . $value->nom_Estudiante;
                 $curso = $value->nom_Cursos;
             }
             $this->pdf->SetFont('Arial', 'B', 10);
@@ -152,14 +135,11 @@ class ReportesGP2 extends CI_Controller {
             $this->pdf->Cell(80, 6, utf8_decode('Curso: ' . $curso), 0, 0, "L");
             //$this->pdf->Cell(40, 6, 'Paralelo:', 0);
             $this->pdf->Ln(8);
-
             $this->pdf->SetFillColor(232, 232, 232);
             $this->pdf->SetFont('Arial', 'B', 9);
-
             $w = array(8, 110, 56, 70, 8, 25);
             $this->pdf->Cell($w[0], 10, 'No.', 1, 0, 'C', 1);
             $this->pdf->Cell($w[1], 10, 'Materias', 1, 0, 'C', 1);
-
             $this->pdf->Cell($w[2], 5, utf8_decode('Quimestre 1'), 1, 0, 'C', 1);
             $this->pdf->Cell($w[2], 5, utf8_decode('Quimestre 2'), 1, 0, 'C', 1);
             $this->pdf->Cell($w[5], 5, utf8_decode('Promedio'), 1, 0, 'C', 1);
@@ -167,7 +147,6 @@ class ReportesGP2 extends CI_Controller {
             $this->pdf->Cell($w[5], 5, utf8_decode('Remedial'), 1, 0, 'C', 1);
             $this->pdf->Cell($w[5], 5, utf8_decode('Examen'), 1, 0, 'C', 1);
             $this->pdf->Ln();
-
             $this->pdf->Cell($w[0], 5, '');
             $this->pdf->Cell($w[1], 5, '');
 //Quimestre1
@@ -240,12 +219,14 @@ class ReportesGP2 extends CI_Controller {
                 $this->pdf->Ln();
             }
         }
-
-
-
-
-
         ////
         $this->pdf->Output("Lista de alumnos.pdf", 'I');
+    }
+    function ass() {
+        $this->load->library('pdf2');
+        $pdf2 = new PDF2();
+        $this->pdf2->AliasNbPages();
+        $this->pdf2->AddPage();
+         $this->pdf2->Output("Lista de alumnos.pdf", 'I');
     }
 }
