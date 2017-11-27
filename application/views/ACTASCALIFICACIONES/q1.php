@@ -1,4 +1,4 @@
-<!-- Content page -->
+
 <div class="container-fluid">
     <div class="page-header">
         <h1 class="text-titles">Cuadros de Calificacion<small>Primer Quimestre</small></h1>
