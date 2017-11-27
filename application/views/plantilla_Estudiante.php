@@ -38,7 +38,7 @@
                     </li>
                     <li>
                         <a href="#!" class="btn-exit-system">
-                            <i class="zmdi zmdi-power"></i>
+                            <i class="zmdi zmdi-close"></i>
                         </a>
                     </li>
                 </ul>
