@@ -226,8 +226,16 @@
         <script src="<?php echo base_url('public/prueba/js/jquery.validate.js'); ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('public/prueba/js/additional-methods.js'); ?>" type="text/javascript"></script>
         <script> $(document).ready(function () {
-                $('#myTable').DataTable();
-                $('#myTable2').DataTable();
+                $('#myTable').DataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                    }
+                });
+                $('#myTable2').DataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                    }
+                });
                 
 
             });</script>

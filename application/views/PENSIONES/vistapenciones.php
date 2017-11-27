@@ -43,26 +43,25 @@
 
         </div>
     </div>
-    
+
     <script>
-        function  valor(a){
-            
+        function  valor(a) {
+
             $.ajax({
-               data: ,
-               url: "",
-               type: 'POST',
-               beforeSend: function (xhr) {
-                        
-                    },
+                data:,
+                url: "",
+                type: 'POST',
+                beforeSend: function (xhr) {
+
+                },
                 success: function (data, textStatus, jqXHR) {
-                        
-                    },
-                 error: function (jqXHR, textStatus, errorThrown) {
-                        
-                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+
+                }
             });
         }
-        
+
     </script>
-    
-    
+

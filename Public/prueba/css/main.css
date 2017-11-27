@@ -92,7 +92,7 @@ body, html{
 .dashboard-sideBar{
 	left: 0;
 	z-index: 2;
-	background-image: url('../assets/img/sideBar-font.jpg');
+	background-image: url('');
 	border-right: 1px solid rgba(255, 255, 255, .4);
 	overflow: hidden;
 }
@@ -105,7 +105,7 @@ body, html{
 }
 .dashboard-sideBar-title,
 .dashboard-sideBar-title > i{
-	height: 50px;
+	height: 58px;
 	line-height: 50px;
 	color: #fff;
 	font-size: 20px;

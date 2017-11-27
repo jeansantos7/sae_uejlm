@@ -13,9 +13,15 @@
         <section class="full-box cover dashboard-sideBar">
             <div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
             <div class="full-box dashboard-sideBar-ct">
+                <figure class="full-box">
+                    <img width="106" style="float: left;margin-top: -19px; margin-left: 75px;" src="<?php echo base_url(); ?>Public/SAE_JLM.png" alt="UserIcon" full-box dashboard-sideBar-UserInfo>
+
+                </figure>
                 <!--SideBar Title -->
                 <div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
-                    <h6>Unidad Educativa Particular Juan Leon Mera</h6> <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+                    <h6></h6>
+
+                    <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
                 </div>
                 <!-- SideBar User info -->
                 <div class="full-box dashboard-sideBar-UserInfo">
@@ -224,13 +230,17 @@
         <script src="<?php echo base_url(); ?>Public/prueba/js/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="<?php echo base_url(); ?>Public/prueba/js/main.js"></script>
         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
-        
+
         <script src="<?php echo base_url('public/prueba/js/jquery.validate.js'); ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('public/prueba/js/additional-methods.js'); ?>" type="text/javascript"></script>
         <script>
-            
+
             $(document).ready(function () {
-                $('#myTable').DataTable();
+                $('#myTable').DataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                    }
+                });
             });
 
             var h = false;
@@ -265,11 +275,9 @@
                                 required: true
                             },
                             fech_nac_Estudiante: {
-
                                 required: true
                             },
                             dir_Estudiante: {
-
                                 required: true
 
 
@@ -285,7 +293,6 @@
 
 
                         },
-
                         messages: {
                             cedula_Estudiante: {
                                 required: "Se requiere nombre de usuario."
@@ -311,26 +318,21 @@
                                 required: "Se requiere nombre de Fechas."
                             }
                         },
-
                         invalidHandler: function (event, validator) { //display error alert on form submit   
                             $('.alert-danger', $('.login-form')).show();
                             $('#mensaje').html("Campos Vacios ");
                         },
-
                         highlight: function (element) { // hightlight error inputs
                             $(element)
                                     .closest('.form-group').addClass('has-error'); // set error class to the control group
                         },
-
                         success: function (label) {
                             label.closest('.form-group').removeClass('has-error');
                             label.remove();
                         },
-
                         errorPlacement: function (error, element) {
                             error.insertAfter(element.closest('.input-icon'));
                         },
-
                         submitHandler: function (form) {
                             form.submit(); // form validation success, call ajax form submit
                             //ajaxpost();
