@@ -107,8 +107,8 @@
                         <div class="col-xs-12 col-md-4 col-md-offset-1">
                            <form name="form23" method="POST" action="<?php echo base_url(); ?>Docente/Obser12">
                                 <div class="form-group">
-                                    <input type="hidden" id="curso12" name="curso12" value="<?php echo $curso; ?>"
-                                    <input type="hidden" id="profeob" name="profeob12" value="<?php echo $proferos; ?>">
+                                    <input type="hidden" id="curso12" name="curso12" value="<?php echo $curso; ?>">
+                                <input type="hidden" id="profeob12" name="profeob12" value="<?php echo $proferos; ?>">
 
                                     <label><h5>Incidencia</h5> </label>
 

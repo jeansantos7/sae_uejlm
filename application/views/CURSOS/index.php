@@ -50,7 +50,7 @@
                     <form method="POST" action="<?php echo base_url('Cursos/insert'); ?>">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nombre del Curso </label>
-                            <input type="text" class="form-control" id="nom_Cursos" name="nom_Cursos" aria-describedby="emailHelp" placeholder="cedula de ciudadania">
+                            <input type="text" class="form-control" id="nom_Cursos" name="nom_Cursos" aria-describedby="emailHelp" >
                         </div>
 
 

@@ -61,7 +61,7 @@ class RegistroDocente extends CI_Controller {
 
                 $this->Modelo_RegistroDocente->inserDocente($cedula_Docente, $ape_Docente, $nom_Docente, $telf_Docente, $correo_Docente, $direc_Docente, $fech_nac_Docente, $user_Docente, $pass_Docente);
                 $this->Modelo_RegistroDocente->inserUsuarioDocente($cedula_Docente, $user_Docente, $pass_Docente, $tipo);
-                redirect('/Docente');
+                redirect('/RegistroDocente');
             }
         }
     }
@@ -69,7 +69,7 @@ class RegistroDocente extends CI_Controller {
     public function delete($id_Docente = NULL) {
 
         if ($id_Docente != NULL) {
-            $this->Modelo_Docente->deleteDocente($id_Docente);
+            $this->Modelo_RegistroDocente->deleteDocente($id_Docente);
             echo '<script languaje="javascript"> alert("el dato fue eliminado");
 			</script>';
             redirect('/Docente');

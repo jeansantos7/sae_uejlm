@@ -30,10 +30,10 @@
 					Admin
 				</div>
 				<div class="full-box tile-icon text-center">
-					<i class="zmdi zmdi-account"></i>
+					<i class="zmdi zmdi-case zmdi-hc-fw center"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">7</p>
+					<p class="full-box"></p>
 					<small>Register</small>
 				</div>
 			</article>

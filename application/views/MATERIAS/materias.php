@@ -50,12 +50,12 @@
                     <form method="POST" action="<?php echo base_url('Materias/insert'); ?>">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nombre de la Materias  </label>
-                            <input type="text" class="form-control" id="nom_Materias" name="nom_Materias" aria-describedby="emailHelp" placeholder="cedula de ciudadania">
+                            <input type="text" class="form-control" id="nom_Materias" name="nom_Materias" aria-describedby="emailHelp" >
                         </div>
                         
                        <div class="form-group">
                             <label for="exampleInputEmail1">Nombre corto de  la Materias  </label>
-                            <input type="text" class="form-control" id="nom_corto_Materias" name="nom_corto_Materias" aria-describedby="emailHelp" placeholder="cedula de ciudadania">
+                            <input type="text" class="form-control" id="nom_corto_Materias" name="nom_corto_Materias" aria-describedby="emailHelp" >
                         </div>
 
 

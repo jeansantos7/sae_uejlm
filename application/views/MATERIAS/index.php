@@ -9,12 +9,15 @@
 <div class="row">
     <div class="col-md-12">
         <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="page-header">
+        <h1 class="text-titles"> <i class="zmdi zmdi-card zmdi-hc-fw"> </i> Registro de Calificaciones  <small> Notas Anuales</small></h1>
+    </div>
         <div class="portlet light ">
             <div class="portlet-title">
                 <div class="caption">
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Ingreso de notas </a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Notas de Recuperaciónx  </a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Notas de Recuperación  </a></li>
                         <li role="presentation"><a href="#profile2" aria-controls="profile2" role="tab" data-toggle="tab">Ver Notas</a></li>
 
                     </ul>
@@ -58,12 +61,12 @@
                         <div role="tabpanel" class="tab-pane" id="profile">
 
                             <div class="">
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <label for="s">Numero de Matricula </label>
+                                            <h1><small> Ingreso de Calificaciones</small></h1>
                                             <select size="1" id="s" name="s" class="form-control" onchange="matriaestudiantesub(this.value)">
-                                                <option value="">Seleccione</option>
+                                                <option value="">Seleccione su Materia</option>
                                                 <?php foreach ($lista_materias as $key => $value) {
                                                     ?>
                                                     <option value="<?php echo $value->id_Materias . ',' . $value->id_cursos; ?>"><?php echo "Materia: " . $value->nom_Materias . ' Curso: ' . $value->nom_Cursos . ' ' . $value->id_cursos; ?></option>
@@ -132,12 +135,12 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="profile2">
                             <div class="">
-                                <div class="col-md-3">
+                                <div class="col-md-5">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <label for="s">Numero de  </label>
+                                            <h1><small> Consulta de Calificaciones</small></h1>
                                             <select size="1" id="s" name="s" class="form-control" onchange="matriaestudiantevista(this.value)">
-                                                <option value="">Seleccione</option>
+                                                <option value="">Seleccione su Materia</option>
                                                 <?php foreach ($lista_materias as $key => $value) {
                                                     ?>
                                                     <option value="<?php echo $value->id_Materias . ',' . $value->id_cursos; ?>"><?php echo "Materia: " . $value->nom_Materias . ' Curso: ' . $value->nom_Cursos . ' ' . $value->id_cursos; ?></option>
