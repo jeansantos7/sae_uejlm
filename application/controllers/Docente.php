@@ -71,18 +71,17 @@ class Docente extends CI_Controller {
 
     function Obser() {
         $datos = $this->input->post();
-         //print_r($_POST);
         if (isset($datos)) {
-           
+            //print_r($_POST);
             $data = $this->Modelo_RegistroDocente->setObser($_POST["profeob"],$_POST["cedulaob"],$_POST["Incidencia"],$_POST["observ"]);
         }
     }
     function Obser12() {
         $datos = $this->input->post();
         if (isset($datos)) {
-           // print_r($_POST);
+            //print_r($_POST);
             $data = $this->Modelo_RegistroDocente->setObser12($_POST["curso12"],$_POST["profeob12"],$_POST["Incidencia12"],$_POST["observ12"]);
-           redirect(base_url('Docente/CursoTutor'));
+                        redirect(base_url('Docente/CursoTutor'));
 
         }
     }

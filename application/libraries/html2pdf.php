@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
-class html2pdf {
+class Html2pdf {
 
     var $html;
     var $path;
@@ -14,7 +14,7 @@ class html2pdf {
      * @access	public
      * @param	array	initialization parameters
      */	
-    function __construct($params = array())
+    function Html2pdf($params = array())
     {
         $this->CI =& get_instance();
         

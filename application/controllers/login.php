@@ -53,7 +53,7 @@ class login extends CI_Controller {
                 'username' => $check_user->usuario
             );
             $this->session->set_userdata($data);
-            //print_r($data);
+            print_r($data);
             $this->index();
         }
     }

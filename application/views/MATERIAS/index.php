@@ -362,9 +362,9 @@
                     html += "<td><input type='text' onchange='calculos(" + con + ")' "; if(item.promedioq2_MateriasNotas!=null & item.promedioq2_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='promediototalq2" + con + "' value='"; if(item.promedioq2_MateriasNotas!=null){ html += ""+item.promedioq2_MateriasNotas+"";} html +="' style=''></td>";
                     html += "<td><input type='text' "; if(item.notarec_MateriasNotas!=null & item.notarec_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notarec" + con + "' value='"; if(item.notarec_MateriasNotas!=null){ html += ""+item.notarec_MateriasNotas+"";} html +="' style=''></td>";
                     html += "<td><input type='text' "; if(item.notareme_MateriasNotas!=null & item.notareme_MateriasNotas!="" ){ html += "readonly='readonly'";} html +=" class='form-control'  name='notareme" + con + "' value='"; if(item.notareme_MateriasNotas!=null){ html += ""+item.notareme_MateriasNotas+"";} html +="' style=''></td>";
-                    html += "<td><input type='text' "; if(item.notaexa_MateriasNotas!=null & item.notaexa_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaexa" + con + "' value='"; if(item.notaexa_MateriasNotas!=null){ html += ""+item.notaexa_MateriasNotas+"";} html +="' style=''><input type='hidden' name='filas' value='" + con + "'></td>";
+                    html += "<td><input type='text' "; if(item.notaexa_MateriasNotas!=null & item.notaexa_MateriasNotas!=""){ html += "readonly='readonly'";} html +=" class='form-control'  name='notaexa" + con + "' value='"; if(item.notaexa_MateriasNotas!=null){ html += ""+item.notaexa_MateriasNotas+"";} html +="' style=''></td>";
                     html += "</tr>";
-                    html += "";
+                    html += "<input type='hidden' name='filas' value='" + con + "'>"
                     
                     con++;
                 });
