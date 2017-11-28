@@ -6,8 +6,10 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="<?php echo base_url(); ?>Public/prueba/css/main.css">
         <link href="<?php echo base_url(); ?>Public/prueba/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container-fluid">
 
-    </head>
+    </head> 
     <body>
         <!-- SideBar -->
         <section class="full-box cover dashboard-sideBar">
@@ -54,7 +56,7 @@
                     </li>
                     <li>
                         <a href="#!" class="btn-sideBar-SubMenu">
-                            <i class="zmdi zmdi-account zmdi-hc-fw"></i> Matriculacion <i class="zmdi zmdi-caret-down pull-right"></i>
+                            <i class="zmdi zmdi-account zmdi-hc-fw"></i> Matriculación <i class="zmdi zmdi-caret-down pull-right"></i>
                         </a>
                         <ul class="list-unstyled full-box">
                             <li>
@@ -120,7 +122,7 @@
             <nav class="full-box dashboard-Navbar">
                 <ul class="full-box list-unstyled text-right">
                     <li class="pull-left">
-                        <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+                        <a href="#!" class="btn-menu-dashboard"><i class="fa fa-hand-o-left"></i></a>
                     </li>
                     <li>
                         <a href="#!" class="btn-Notifications-area">

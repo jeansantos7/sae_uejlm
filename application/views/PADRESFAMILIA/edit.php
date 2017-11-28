@@ -1,3 +1,7 @@
+<?php  foreach ($datosPadresFamilia as $value) {?>
+
+
+
 
 
 <!-- Content page -->
@@ -8,65 +12,23 @@
 </div>
 <div class="full-box text-center" style="padding: 30px 22px;">
     <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-        <li class="active"><a href="#new" data-toggle="tab">Lista de Madres y Padres de Familia</a></li>
        
-         <li><a href="#list2" data-toggle="tab">Registro de Datos</a></li>
+       
+         <li class="active"><a href="#list2" data-toggle="tab">Registro de Datos</a></li>
     </ul>
     <div class="row">
         <div class="col-lg-12">
             <div id="myTabContent" class="tab-content">
-                <div class="tab-pane fade active in" id="new">
-                    <div class="table-responsive">
-
-                        <table id="myTable" class="table table-striped" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">#</th>
-                                    <th class="text-center">Cédula</th>
-                                    <th class="text-center">Apellidos y Nombres</th>
-                                    <th class="text-center">Telefono</th>
-                                    <th class="text-center">Dirección</th>
-                                    <th class="text-center">Ocupación</th>
-                                    <th class="text-center">Opciones</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($selPadresFamilia as $key => $value) { ?>
-                                    <tr>
-                                        <td> <?php echo $value->id_PadresFamilia; ?></td>
-                                        <td><?php echo $value->ced_Madre; ?></td>
-                                        <td><?php echo $value->ape_Madre . ' ' . $value->nom_Madre; ?></td>
-                                        <td><?php echo $value->telf_Madre; ?></td>
-                                        <td><?php echo $value->dir_Madre; ?></td>
-                                        <td><?php echo $value->ocu_Madre; ?></td>
-                                        
-
-                                        <td>
-                                            
-                                            <a href="<?php echo base_url('PadresFamilia/edit/') . "/" . $value->id_PadresFamilia; ?> " class="btn btn-success btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-refresh"></i></a>
-                                         
-                                            <a href="<?php echo base_url('PadresFamilia/delete/') . "/" . $value->id_PadresFamilia; ?> " class="btn btn-danger btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-delete"></i></a>
-                                           
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-
-                    </div>
-
-                </div>
+               
                 
                 
                 
 
-                <div class="tab-pane fade" id="list2">
+                
 
                     <div class="container-fluid">
                         <div class="row">
-                            <form method="POST" id="form1" class="login-form"
-                             action="<?php echo base_url('PadresFamilia/insert'); ?>">
+              <form method="POST" id="form1" class="login-form" action="<?php echo base_url('PadresFamilia/update'); ?>">
                                 <div id="mensaje"></div>
 
                                 <div class="col-xs-12 col-md-4 col-md-offset-1">
@@ -75,20 +37,20 @@
                                         <small> Madre de Familia</small>
                                         <input class="form-control" type="text"
                                                id="ced_Madre" name="ced_Madre" placeholder="Cédula" maxlength="10"
-                                               onkeypress="return soloNumeros(event)">
+                                               onkeypress="return soloNumeros(event)" value="<?php echo $value->ced_Madre; ?>">
                                                </br>
                                    
                                     
                                        
                                         <input class="form-control" type="text"
                                                id="ape_Madre" name="ape_Madre" placeholder="Apellidos"
-                                               onkeypress="return soloLetras(event)">
+                                               onkeypress="return soloLetras(event)" value="<?php echo $value->ape_Madre; ?>">
                                    </br>
                                     
                                        
                                         <input class="form-control" type="text"
                                                id="nom_Madre" name="nom_Madre" placeholder="Nombres"
-                                               onkeypress="return soloLetras(event)">
+                                               onkeypress="return soloLetras(event)" value="<?php echo $value->nom_Madre; ?>">
                                     </br>
                                   
                                   
@@ -148,25 +110,21 @@
                                     
                                     
 
-                                    <div class="col-md-12">
-                          <button type="submit" class="btn btn-info btn-raised btn-sm" id="btn-ingresar" >
-                        <i class="zmdi zmdi-floppy"> </i> Guardar Registro</button>
-                        
+                                    <div class="col-md-8">
+                        <button type="submit"  class="btn btn-info btn-raised btn-sm"> <i class="zmdi zmdi-floppy"></i>  Actualizar Registro </button>
                         <button type="button"  class="btn btn- btn-raised btn-sm" id="btn-cancelar" >
-                        <i class="zmdi zmdi-close"><a href="<?php echo base_url('/RegistroEstudiante/'); ?>"> </i> Cancelar</button>
+                        <i class="zmdi zmdi-close"><a href="<?php echo base_url('/PadresFamilia/Padres'); ?>"> </i> Cancelar</button>
 
-                    </div>
-
-                                   
-
-                                </div>
+                    
                             </form>
+         <?php }
 
+?>
                         </div>
                     </div>
 
 
-                </div>
+               
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 <!-- Content page -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container-fluid">
     <div class="page-header">
         <h1 class="text-titles"> <i class="zmdi zmdi-money zmdi-hc-fw"> </i> Registro de Pensiones <small></small></h1>
@@ -24,7 +25,7 @@
 
 
                             
-                            <table class="table table-hover table-light" id="myTable">
+                            <table class="table table-hover table-light" id="myTable" style="text-align: left;">
                                 <thead>
                                     <tr>
                                         <th> Cedula</th>
@@ -41,10 +42,10 @@
                                             <td> <?php echo $value->ape_Estudiante . ' ' . $value->nom_Estudiante; ?>   </td>
                                             <td> <?php echo $value->pension_Estudiante; ?>   </td>
                                             <td>
-                                                <a href="<?php echo base_url('Pensiones/pago/') . "/" . $value->cedula_Estudiante; ?>" class="btn btn-success btn-raised btn-xs  btn-prueba">  <i class="glyphicon glyphicon-edit"></i> Pago</a>
+                                                <a href="<?php echo base_url('Pensiones/pago/') . "/" . $value->cedula_Estudiante; ?>" class="btn btn-success btn-raised btn-xs  btn-prueba">  <i class="fa fa-money" style="font-size:20px"></i>- PAGO</a>
                                              
                                                 <button type="button" class="btn btn-info btn-raised btn-xs  btn-prueba" onclick="historial(<?php echo $value->cedula_Estudiante; ?>)" data-toggle="modal" data-target="#exampleModal">
-                                                    <i class="glyphicon glyphicon-trash"></i>
+                                                    <i class="fa fa-list-alt" style="font-size:20px"></i>
                                                      Historial de Pago
                                                 </button>
                                             </td>
@@ -90,7 +91,7 @@
 
 
 
-                                <table class="table table-hover table-light" id="myTable">
+                                <table class="table table-hover table-light" id="myTable" style="text-align: left;">
                                     <thead>
                                         <tr>
                                             <th> Cedula Estudiante</th>

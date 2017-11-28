@@ -81,7 +81,7 @@ class Docente extends CI_Controller {
         if (isset($datos)) {
             //print_r($_POST);
             $data = $this->Modelo_RegistroDocente->setObser12($_POST["curso12"],$_POST["profeob12"],$_POST["Incidencia12"],$_POST["observ12"]);
-                        redirect(base_url('Docente/CursoTutor'));
+                        redirect(base_url('/Docente/CursoTutor'));
 
         }
     }

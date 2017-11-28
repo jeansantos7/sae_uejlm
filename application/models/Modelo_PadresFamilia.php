@@ -19,7 +19,7 @@ class Modelo_PadresFamilia extends CI_Model {
         return $query->result();
     }
 
-    public function inserPadresFamilia($ced_Madre, $ced_Padre, $ape_Madre, $ape_Padre, $nom_Madre, $nom_Padre,         $telf_Madre, $telf_Padre, $dir_Madre, $dir_Padre, $ocup_Madre, $ocu_Padre) {
+    public function inserPadresFamilia($ced_Madre, $ced_Padre, $ape_Madre, $ape_Padre, $nom_Madre, $nom_Padre,         $telf_Madre, $telf_Padre, $dir_Madre, $dir_Padre, $ocu_Madre, $ocu_Padre) {
         $array1 = array(
             //	'id_Estudiante' => $id_Estudiante,
 
@@ -36,7 +36,7 @@ class Modelo_PadresFamilia extends CI_Model {
                   'telf_Padre' =>$telf_Padre ,
                    'dir_Madre' =>$dir_Madre,
                     'dir_Padre' =>$dir_Padre  ,
-                     'ocup_Madre' => $ocup_Madre,
+                     'ocu_Madre' => $ocu_Madre,
                       'ocu_Padre' => $ocu_Padre
 
             

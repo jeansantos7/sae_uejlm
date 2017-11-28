@@ -35,6 +35,11 @@ public function listarCursos()
 
 	}
 
+	public function deleteCursos($id_Cursos) {
+        $this->db->where('id_Cursos', $id_Cursos);
+        $this->db->delete('cursos');
+    }
+
 
 }
 

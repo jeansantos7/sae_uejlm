@@ -6,8 +6,8 @@
 </div>
 <div class="full-box text-center" style="padding: 30px 10px;">
     <ul class="nav nav-tabs" style="margin-bottom: 15px; height: 42px;">
-        <li class="active"><a href="#new" data-toggle="tab"> Asignacion de Materias</a></li>
-        <li><a href="#list" data-toggle="tab">Asignacion de Tutorias</a></li>
+        <li class="active"><a href="#new" data-toggle="tab"> Asignación de Materias</a></li>
+        <li><a href="#list" data-toggle="tab">Asignación de Tutorias</a></li>
         <li><a href="#por" data-toggle="tab">Docentes</a></li>
         <li><a href="#por2" data-toggle="tab">Tutor Curso Docentes</a></li>
 
@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                        <h1 class="text-titles"> <small>Asignacion de Materias</small></h1>
+                        <h1 class="text-titles"> <small>Asignación de Materias</small></h1>
                             <label for="exampleInputEmail1">Docente </label>
                             <select size="1" id="docenteselect" name="docenteselect"   class="form-control js-example-basic-single">
                                 <option value="">Seleccione</option>
@@ -72,7 +72,7 @@
 
                     </div>
                     <div class="col-lg-6">
-                    <h1 class="text-titles"> <small>Asignacion de Tutorias</small></h1>
+                    <h1 class="text-titles"> <small>Asignación de Tutorias</small></h1>
                         <fieldset>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Docente </label>
@@ -173,7 +173,11 @@
                                         <?php echo $value->nom_Cursos; ?> 
                                     </td>
                                     <td>
-                                        <a href="<?php echo base_url("Asignacion/deleteTutor/".$value->cedula_Docente);?>" class="btn btn-default">Eiminar Curso</a>
+
+
+                                     <a href="<?php echo base_url('Asignacion/deleteTutor/') . "/" . $value->cedula_Docente; ?> " class="btn btn-danger btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-delete"></i> Eliminar Curso</a>
+
+                                       
                                     </td>
                                     
 
@@ -204,8 +208,8 @@
                 ...
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerar</button>
+                <button type="button" class="btn btn-primary">Guardar</button>
             </div>
         </div>
     </div>

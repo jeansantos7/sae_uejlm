@@ -112,12 +112,16 @@
 
                         </div>
 
-                          <div class="col-md-12">
-                        <button type="button" class="btn btn-info btn-raised btn-sm" id="btn-ingresar" >
+                                      <div class="col-md-12">
+                          <button type="submit" class="btn btn-info btn-raised btn-sm" id="btn-ingresar" >
                         <i class="zmdi zmdi-floppy"> </i> Guardar Registro</button>
                         
                         <button type="button"  class="btn btn- btn-raised btn-sm" id="btn-cancelar" >
                         <i class="zmdi zmdi-close"><a href="<?php echo base_url('/RegistroEstudiante/'); ?>"> </i> Cancelar</button>
+
+                    </div>
+
+                        
 
                     </div>
                     </div>

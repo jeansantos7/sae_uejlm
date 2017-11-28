@@ -51,8 +51,8 @@ class PadresFamilia extends CI_Controller {
            $telf_Padre =$datos['telf_Padre'];
            $dir_Madre =$datos['dir_Madre'];
            $dir_Padre =$datos['dir_Padre'];
-           $ocup_Madre =$datos['ocup_Madre'];
-           $ocup_Padre =$datos['ocup_Padre'];
+           $ocu_Madre =$datos['ocu_Madre'];
+           $ocu_Padre =$datos['ocu_Padre'];
 
 
 
@@ -62,7 +62,7 @@ class PadresFamilia extends CI_Controller {
            // $datoexiste = $this->Modelo_PadresFamilia->ConsultaExiste($cedula_Estudiante);
 
 
-                $this->Modelo_PadresFamilia->inserPadresFamilia($ced_Madre, $ced_Padre, $ape_Madre, $ape_Padre, $nom_Madre, $nom_Padre, $telf_Madre, $telf_Padre, $dir_Madre, $dir_Padre, $ocup_Madre, $ocu_Padre);
+                $this->Modelo_PadresFamilia->inserPadresFamilia($ced_Madre, $ced_Padre, $ape_Madre, $ape_Padre, $nom_Madre, $nom_Padre, $telf_Madre, $telf_Padre, $dir_Madre, $dir_Padre, $ocu_Madre, $ocu_Padre);
 
                
 
@@ -84,18 +84,18 @@ class PadresFamilia extends CI_Controller {
         }
     }
 
-    public function edit($id_Estudiante = NULL) {
+    public function edit($id_PadresFamilia = NULL) {
 
 
 if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretaria') {        
 
-        if ($id_Estudiante != NULL) {
+        if ($id_PadresFamilia != NULL) {
             //mostrar datos
-            $data['contenido'] = 'RegistroEstudiante/edit';
-           $data['selEstudiante'] = $this->Modelo_PadresFamilia->selEstudiante();
-            $data['selRepresentante'] = $this->Modelo_PadresFamilia->selRepresentante();
+            $data['contenido'] = 'PADRESFAMILIA/edit';
+          // $data['selEstudiante'] = $this->Modelo_PadresFamilia->selEstudiante();
+           // $data['selRepresentante'] = $this->Modelo_PadresFamilia->selRepresentante();
             $data['selPadresFamilia'] = $this->Modelo_PadresFamilia->selPadresFamilia();
-            $data['datosEstudiante'] = $this->Modelo_PadresFamilia->editEstudiante($id_Estudiante);
+            $data['datosPadresFamilia'] = $this->Modelo_PadresFamilia->editPadresFamilia($id_PadresFamilia);
             $data['user'] = $this->session->userdata('username');
 
             $this->load->view('plantilla_Secretaria', $data);
@@ -109,35 +109,34 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 
   
 
-    public function update() {
+    public function update($id_PadresFamilia = NULL) {
 
 
         $datos = $this->input->post();
 
-        //$id_Estudiante = $datos['id_Estudiante'];
+        $id_PadresFamilia = $datos['id_PadresFamilia'];
        
        
-        $cedula_Estudiante = $datos['cedula_Estudiante'];
-        $ape_Estudiante = $datos['ape_Estudiante'];
-        $nom_Estudiante = $datos['nom_Estudiante'];
-        $sexo=$datos['sexo'];
-        $fech_nac_Estudiante = $datos['fech_nac_Estudiante'];
-        $dir_Estudiante = $datos['dir_Estudiante'];
-        $carnet_Estudiante = $datos['carnet_Estudiante'];
-        $idRepresentante=$datos['idRepresentante'];
-        $idMadre=$datos['idMadre'];
-        $idPadre=$datos['idPadre'];
-        $user_Estudiante = $datos['user_Estudiante'];
-        $pass_Estudiante = $datos['pass_Estudiante'];
-       
+         $ced_Madre =$datos['ced_Madre'];
+           $ced_Padre =$datos['ced_Padre'];
+           $ape_Madre =$datos['ape_Madre'];
+           $ape_Padre =$datos['ape_Padre'];
+           $nom_Madre =$datos['nom_Madre'];
+           $nom_Padre =$datos['nom_Padre'];
+           $telf_Madre =$datos['telf_Madre'];
+           $telf_Padre =$datos['telf_Padre'];
+           $dir_Madre =$datos['dir_Madre'];
+           $dir_Padre =$datos['dir_Padre'];
+           $ocu_Madre =$datos['ocu_Madre'];
+           $ocu_Padre =$datos['ocu_Padre'];
 
-        $this->Modelo_RegistroEstudiante->updateEstudiante($cedula_Estudiante, $ape_Estudiante, $nom_Estudiante, $sexo, 
-            $fech_nac_Estudiante, $dir_Estudiante, $carnet_Estudiante, $idRepresentante,$idMadre, $idPadre ,$user_Estudiante, $pass_Estudiante);
 
-        echo '<script languaje="javascript"> alert("este dato se actualizo"); </script>';
+       $this->Modelo_PadresFamilia->updatePadresFamilia($ced_Madre, $ced_Padre, $ape_Madre, $ape_Padre, $nom_Madre, $nom_Padre, $telf_Madre, $telf_Padre, $dir_Madre, $dir_Padre, $ocu_Madre, $ocu_Padre);
 
-        redirect('/RegistroEstudiante');
-    }
+               
+
+                redirect('/PadresFamilia/padres');
+            }
 
 }
 ?> 

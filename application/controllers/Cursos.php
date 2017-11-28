@@ -59,7 +59,18 @@ elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata(
 	}
 
 	
+ public function delete($id_Cursos = NULL) {
 
+        if ($id_Cursos != NULL) {
+            $this->Modelo_Cursos->deleteCursos($id_Cursos);
+          //  $this->Modelo_RegistroEstudiante->deleteMatricula($cedula_Estudiante);
+            echo '<script languaje="javascript"> alert("el dato fue eliminado");
+            </script>';
+            redirect('/Cursos');
+
+
+        }
+    }
 
 	
 }

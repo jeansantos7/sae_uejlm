@@ -29,8 +29,10 @@
                             <td> <?php echo $value->nivel_Cursos; ?>   </td>
 
                             <td>
-                                <a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a>
-                                <a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a>
+                               <a href="" class="btn btn-success btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-refresh"></i></a>
+                                         
+                                            <a href="<?php echo base_url('Cursos/delete/') . "/" . $value->id_Cursos; ?> " class="btn btn-danger btn-raised btn-xs  btn-prueba"><i class="zmdi zmdi-delete"></i></a>
+                                           
 
 
                             </td>

@@ -6,7 +6,7 @@
 </div>
 <div class="full-box text-center" style="padding: 30px 10px;">
     <ul class="nav nav-tabs" style="margin-bottom: 15px; height: 42px;">
-        <li class="active"><a href="#new" data-toggle="tab">Consultar</a></li>
+        <li class="active"><a href="#new" data-toggle="tab">Lista de Docentes</a></li>
         <li><a href="#list" data-toggle="tab">Registro<div class="ripple-container"></div></a></li>
 
     </ul>
@@ -22,8 +22,9 @@
                         <thead>
 
                         <th> ID</th>
-                        <th> Cedula</th>
+                        <th> Cédula</th>
                         <th> Apellidos y Nombres</th>
+                        <th> Usuario</th>
                         <th> Opciones</th>
                         </thead>
 
@@ -33,6 +34,7 @@
                                     <td> <?php echo $value->id_Docente; ?>   </td>
                                     <td> <?php echo $value->cedula_Docente; ?>   </td>
                                     <td> <?php echo $value->ape_Docente . ' ' . $value->nom_Docente; ?>   </td>
+                                    <td> <?php echo $value->user_Docente; ?></td>
 
                                     <td>
 
@@ -60,32 +62,32 @@
                                    
                                         
                                         <input class="form-control" type="text"
-                                               id="cedula_Docente" name="cedula_Docente" placeholder="Cedula" maxlength="10"
-                                               onkeypress="return soloNumeros(event)">
+                                               id="cedula_Docente" name="cedula_Docente" placeholder="Cédula" maxlength="10"
+                                               onkeypress="return soloNumeros(event)" tyle="text-transform:uppercase;">
                                                </br>
                                    
                                     
                                        
                                         <input class="form-control" type="text"
                                                id="ape_Docente" name="ape_Docente" placeholder="Apellidos"
-                                               onkeypress="return soloLetras(event)">
+                                               onkeypress="return soloLetras(event)" style="text-transform:uppercase;">
                                    </br>
                                     
                                        
                                         <input class="form-control" type="text"
-                                               id="nom_Estudiante" name="nom_Estudiante" placeholder="Nombres"
-                                               onkeypress="return soloLetras(event)">
+                                               id="nom_Docente" name="nom_Docente" placeholder="Nombres"
+                                               onkeypress="return soloLetras(event)" style="text-transform:uppercase;">
                                     </br>
 
                                      <input class="form-control" type="text"
-                                               id="telf_Docente" name="telf_Docente" placeholder="Telefono"
-                                               onkeypress="return soloNumeros(event)">
+                                               id="telf_Docente" name="telf_Docente" placeholder="Teléfono"
+                                               onkeypress="return soloNumeros(event)" tyle="text-transform:uppercase;" >
                                     </br>
 
 
                                     <input class="form-control" type="text"
                                                id="correo_Docente" name="correo_Docente" placeholder="Correo"
-                                               onkeypress="return soloNumeros(event)">
+                                          tyle="text-transform:uppercase;"    >
                                     </br>
 
 
@@ -98,7 +100,7 @@
 
                             <input class="form-control" type="text"
                                 id="direc_Docente" name="direc_Docente" placeholder="Dirección"
-                                onkeypress="return soloLetras(event)">
+                                onkeypress="return soloLetras(event)" style="text-transform:uppercase;">
                                     </br>
 
 
@@ -107,6 +109,13 @@
                                                id="fech_nac_Docente" name="fech_nac_Docente">
                                                </br>
                                     
+                        <input class="form-control" type="text"
+                                               id="user_Docente" name="user_Docente" placeholder="Usuario" style="text-transform:uppercase;">
+                                    </br>
+                                   
+                                        <input class="form-control" type="text"
+                                               id="pass_Docente" name="pass_Docente" placeholder="Contraseña" tyle="text-transform:uppercase;">
+                                    </br>
 
 
                         <button type="submit" class="btn btn-info btn-raised btn-sm" id="btn-ingresar" >

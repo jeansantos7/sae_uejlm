@@ -4,60 +4,65 @@
   
  
   
-  <input type="hidden" name="id_Estudiante" value=" <?php echo $value->id_Estudiante; ?>">
+  
+  
 
-
-    <!-- NavBar -->
-   
-    <!-- Content page -->
-   
-      <div class="page-header">
-        <h1 class="text-titles"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Registro de Estudiantes <small>Datos Estudiantiles</small></h1>
-      </div>
-      
+<!-- Content page -->
+<div class="container-fluid">
+    <div class="page-header">
+        <h1 class="text-titles"> <i class="zmdi zmdi-face zmdi-hc-fw"> </i> Registro de Estudiantes <small></small></h1>
     </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
-         
-          </ul>
-          <div id="myTabContent" class="tab-content">
-            
-            <form method="POST" action="<?php echo base_url('RegistroEstudiante/update'); ?>">
-             
+</div>
+<div class="full-box text-center" style="padding: 30px 22px;">
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+       
+        <li class="active"><a href="#list" data-toggle="tab">Registro de Estudiante</a></li>
+    </ul>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="myTabContent" class="tab-content">
+                
+                
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <form method="POST" action="<?php echo base_url('RegistroEstudiante/update'); ?>">
+             <input type="hidden" name="id_Estudiante" value=" <?php echo $value->id_Estudiante; ?>">
+
+
 
               <div class="container-fluid">
                 <div class="row">
                 <div class="col-xs-12 col-md-4 col-md-offset-1">
                       <form action="">
                       <div class="form-group label-floating">
-                        <label class="control-label">Cedula</label>
+                        <label >Cédula</label>
                         <input class="form-control" type="text"
                         id="cedula_Estudiante" name="cedula_Estudiante"
                         value="<?php echo $value->cedula_Estudiante; ?>"
                         onkeypress="return soloNumeros(event)">
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label">Apellidos</label>
+                        <label class="">Apellidos</label>
                         <input class="form-control" type="text"
                         id="ape_Estudiante" name="ape_Estudiante"
                          value="<?php echo $value->ape_Estudiante; ?>"
-                         onkeypress="return soloLetras(event)">
+                         onkeypress="return soloLetras(event)" style="text-transform:uppercase;">
                       </div>
                       <div class="form-group label-floating">
-                        <label class="control-label">Nombres</label>
+                        <label class="">Nombres</label>
                         <input class="form-control" type="text"
                         id="nom_Estudiante" name="nom_Estudiante"
                          value="<?php echo $value->nom_Estudiante; ?>"
-                         onkeypress="return soloLetras(event)">
+                         onkeypress="return soloLetras(event)" style="text-transform:uppercase;">
                       </div>
                       <div class="form-group">
-                        <label class="control-label">Fecha de nacimiento</label>
+                        <label class="">Fecha de nacimiento</label>
                         <input class="form-control" type="date"
                         id="fech_nac_Estudiante" name="fech_nac_Estudiante"
-                         value=" <?php echo $value->fech_nac_Estudiante; ?>">
+                         value=" <?php echo $value->fech_nac_Estudiante; ?>" style="text-transform:uppercase;">
                       </div>
-                      <label class="control-label"> Sexo</label>
+                      <label class=""> Sexo</label>
                        <select onchange="Valor(this.value)" name="sexo" id="seo"  class="form-control" >
                                         <option ><?php echo $value->sexo; ?></option>
                                         <option value="Mujer" >Mujer</option>
@@ -65,13 +70,13 @@
                                         
                                     </select>
                       <div class="form-group label-floating">
-                        <label class="control-label">Dirección</label>
+                        <label class="">Dirección</label>
                         <input class="form-control" type="text"
                         id="dir_Estudiante" name="dir_Estudiante"
-                         value="<?php echo $value->dir_Estudiante; ?>">
+                         value="<?php echo $value->dir_Estudiante; ?>" style="text-transform:uppercase;">
                       </div>
                       <div class="form-group">
-                        <label class="control-label">Discapacitado</label>
+                        <label class="">Discapacitado</label>
                         <input  type="checkbox" onClick="javascript:h = !h;"
                         id="disc_Estudiante" name="disc_Estudiante">
                       </div>
@@ -79,7 +84,7 @@
 
                       
                       <div class="form-group label-floating">
-                        <label class="control-label">Carnet de Discapacidad</label>
+                        <label class="">Carnet de Discapacidad</label>
                         <input class="form-control" type="text"
                         id="carnet_Estudiante" name="carnet_Estudiante"
                         onFocus="javascript:if (!h) {
@@ -142,13 +147,13 @@
 
                       
                       <div class="form-group label-floating">
-                        <label class="control-label">Usuario</label>
+                        <label class="">Usuario</label>
                         <input class="form-control" type="text"
                         id="user_Estudiante" name="user_Estudiante"
-                         value="<?php echo $value->user_Estudiante; ?>">
+                         value="<?php echo $value->user_Estudiante; ?>" style="text-transform:uppercase;">
                       </div>
-                      <div class="form-group label-floating">
-                        <label class="control-label">Contraseña</label>
+                      <div class="">
+                        <label class="">Contraseña</label>
                         <input class="form-control" type="text"
                         id="pass_Estudiante" name="pass_Estudiante"
                          value="<?php echo $value->pass_Estudiante; ?>">
@@ -161,38 +166,30 @@
                         <i class="zmdi zmdi-close"><a href="<?php echo base_url('/RegistroEstudiante/'); ?>"> </i> Cancelar</button>
                         </p>
                       </form>
+                    
                       <?php }
 
 ?>
-                  </div>
 
-                </div>
-              </div>
-              
-              </div>
-          </div>
+                        </div>
+                    </div>
+
+               
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-  </form>
-
-   
-
-   <script language="JavaScript">
-var h=false;
-</script>
 
 
 
+</div>
 
 <script>
+$('#myTable').DataTable();
     function soloLetras(e){
        key = e.keyCode || e.which;
        tecla = String.fromCharCode(key).toLowerCase();
        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
        especiales = "8-37-39-46";
-
        tecla_especial = false
        for(var i in especiales){
             if(key == especiales[i]){
@@ -200,19 +197,15 @@ var h=false;
                 break;
             }
         }
-
         if(letras.indexOf(tecla)==-1 && !tecla_especial){
             return false;
         }
     }
-
-
      function soloNumeros(e){
        key = e.keyCode || e.which;
        tecla = String.fromCharCode(key).toLowerCase();
        letras = " 1234567890";
        especiales = "";
-
        tecla_especial = false
        for(var i in especiales){
             if(key == especiales[i]){
@@ -220,12 +213,25 @@ var h=false;
                 break;
             }
         }
-
         if(letras.indexOf(tecla)==-1 && !tecla_especial){
             return false;
         }
     }
-
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
 </script>
-
-

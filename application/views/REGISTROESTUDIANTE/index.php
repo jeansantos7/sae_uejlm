@@ -21,10 +21,10 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th class="text-center">Cedula</th>
+                                    <th class="text-center">Cédula</th>
                                     <th class="text-center">Apellidos y Nombres</th>
-                                    <th class="text-center">Direccion</th>
-                                    <th class="text-center">$Valor Pension</th>
+                                    <th class="text-center">Dirección</th>
+                                    <th class="text-center">Valor Pensión $</th>
                                     <th class="text-center">Representante</th>
                                     <th class="text-center">Usuario</th>
                                     <th class="text-center">Matriculado</th>
@@ -77,9 +77,9 @@
 
                                 <div class="col-xs-12 col-md-4 col-md-offset-1">
                                    
-                                        
+                                         <label >Cédula</label>
                                         <input class="form-control" type="text"
-                                               id="cedula_Estudiante" name="cedula_Estudiante" placeholder="Cedula" maxlength="10"
+                                               id="cedula_Estudiante" name="cedula_Estudiante" placeholder="Cédula" maxlength="10"
                                                onkeypress="return soloNumeros(event)">
                                                </br>
                                    
@@ -87,13 +87,13 @@
                                        
                                         <input class="form-control" type="text"
                                                id="ape_Estudiante" name="ape_Estudiante" placeholder="Apellidos"
-                                               onkeypress="return soloLetras(event)">
+                                               onkeypress="return soloLetras(event)" style="text-transform:uppercase;">
                                    </br>
                                     
                                        
                                         <input class="form-control" type="text"
                                                id="nom_Estudiante" name="nom_Estudiante" placeholder="Nombres"
-                                               onkeypress="return soloLetras(event)">
+                                               onkeypress="return soloLetras(event)" style="text-transform:uppercase;">
                                     </br>
                                   
                                     <select onchange="Valor(this.value)" name="sexo" id="seo"  class="form-control">
@@ -110,7 +110,7 @@
                                     
                                         
                                         <input class="form-control" type="text"
-                                               id="dir_Estudiante" name="dir_Estudiante" placeholder="Direccion">
+                                               id="dir_Estudiante" name="dir_Estudiante" placeholder="Direccion" style="text-transform:uppercase;">
                                                     </br>
 
                                     
@@ -171,7 +171,7 @@
                                   </br>
                                        
                                         <input class="form-control" type="text"
-                                               id="user_Estudiante" name="user_Estudiante" placeholder="Usuario">
+                                               id="user_Estudiante" name="user_Estudiante" placeholder="Usuario" style="text-transform:uppercase;">
                                     </br>
                                    
                                         <input class="form-control" type="text"
