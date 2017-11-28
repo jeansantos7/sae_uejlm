@@ -116,7 +116,7 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 
         //$id_PadresFamilia = $datos['id_PadresFamilia'];
        
-       
+        print_r($_POST);
          $ced_Madre =$datos['ced_Madre'];
            $ced_Padre =$datos['ced_Padre'];
            $ape_Madre =$datos['ape_Madre'];

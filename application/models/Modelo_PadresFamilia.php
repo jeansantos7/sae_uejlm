@@ -71,7 +71,7 @@ class Modelo_PadresFamilia extends CI_Model {
 
 
 
-    public function updatePadresFamilia ($ced_Madre, $ced_Padre, $ape_Madre, $ape_Padre, $nom_Madre, $nom_Padre, $telf_Madre, $telf_Padre, $dir_Madre, $dir_Padre, $ocup_Madre, $ocu_Padre) {
+    public function updatePadresFamilia ($ced_Madre, $ced_Padre, $ape_Madre, $ape_Padre, $nom_Madre, $nom_Padre, $telf_Madre, $telf_Padre, $dir_Madre, $dir_Padre, $ocu_Madre, $ocu_Padre) {
         $array2 = array(
             
             //'id_Estudiante' => $id_Estudiante,
@@ -92,6 +92,7 @@ class Modelo_PadresFamilia extends CI_Model {
 
         $this->db->where('ced_Madre', $ced_Madre);
         $this->db->update('padresfamilia', $array2);
+        //echo $this->db->last_query();
     }
 
   

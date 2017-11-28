@@ -21,41 +21,41 @@
         
              
             
-        <div class="tab-pane fade" id="list">
+        <div class="tab-pane fade active in" id="list">
            
                 <div class="row">
-                 <form method="POST" action="<?php echo base_url('RegistroDocente/insert'); ?>">
+                 <form method="POST" action="<?php echo base_url('RegistroDocente/update'); ?>">
 
                   <div class="col-xs-12 col-md-4 col-md-offset-1">
                                    
                                         
                                         <input class="form-control" type="text"
                                                id="cedula_Docente" name="cedula_Docente" placeholder="Cedula" maxlength="10"
-                                               onkeypress="return soloNumeros(event)">
+                                               onkeypress="return soloNumeros(event)" value="<?php  echo $value->cedula_Docente;?>">
                                                </br>
                                    
                                     
                                        
                                         <input class="form-control" type="text"
                                                id="ape_Docente" name="ape_Docente" placeholder="Apellidos"
-                                               onkeypress="return soloLetras(event)">
+                                               onkeypress="return soloLetras(event)" value="<?php  echo $value->ape_Docente;?>">
                                    </br>
                                     
                                        
                                         <input class="form-control" type="text"
                                                id="nom_Docente" name="nom_Docente" placeholder="Nombres"
-                                               onkeypress="return soloLetras(event)">
+                                               onkeypress="return soloLetras(event)" value="<?php  echo $value->nom_Docente;?>">
                                     </br>
 
                                      <input class="form-control" type="text"
                                                id="telf_Docente" name="telf_Docente" placeholder="Telefono"
-                                               onkeypress="return soloNumeros(event)">
+                                               onkeypress="return soloNumeros(event)" value="<?php  echo $value->telf_Docente;?>">
                                     </br>
 
 
                                     <input class="form-control" type="text"
                                                id="correo_Docente" name="correo_Docente" placeholder="Correo"
-                                               onkeypress="return soloNumeros(event)">
+                                               onkeypress="return soloNumeros(event)" value="<?php  echo $value->correo_Docente;?>">
                                     </br>
 
 
@@ -68,13 +68,13 @@
 
                             <input class="form-control" type="text"
                                 id="direc_Docente" name="direc_Docente" placeholder="Dirección"
-                                onkeypress="return soloLetras(event)">
+                                onkeypress="return soloLetras(event)" value="<?php  echo $value->direc_Docente;?>">
                                     </br>
 
 
                         <label class="control-label">Fecha de nacimiento</label>
                             <input class="form-control" type="date"
-                                               id="fech_nac_Docente" name="fech_nac_Docente">
+                                               id="fech_nac_Docente" name="fech_nac_Docente" value="<?php  echo $value->fech_nac_Docente;?>">
                                                </br>
                                     
 
