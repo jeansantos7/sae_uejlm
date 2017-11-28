@@ -17,7 +17,7 @@ class RegistroSecretaria extends CI_Controller
 	public function index()
 	{
 
-if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion' 
+if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Directivo' 
 	 ) {
 
 	$data['contenido'] = "REGISTROSECRETARIA/index";
@@ -38,16 +38,17 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 
 		if(isset($datos))
 		{
+                    print_r($_POST);
 			//$id_Secretaria = $datos['id_Secretaria'];
-			$cedula_Secretaria 	=$datos['cedula_Secretaria'];
-			$ape_Secretaria		=$datos['ape_Secretaria'];
-			$nom_Secretaria		=$datos['nom_Secretaria'];
-			$telf_Secretaria		=$datos['telf_Secretaria'];
-			$correo_Secretaria		=$datos['correo_Secretaria'];
-			$direc_Secretaria		=$datos['direc_Secretaria'];
-			$fech_nac_Secretaria	=$datos['fech_nac_Secretaria'];
-			$user_Secretaria		=$datos['user_Secretaria'];
-			$pass_Secretaria		=$datos['pass_Secretaria'];
+			$cedula_Secretaria 	=$datos['cedula_Directivo'];
+			$ape_Secretaria		=$datos['ape_Directivo'];
+			$nom_Secretaria		=$datos['nom_Directivo'];
+			$telf_Secretaria		=$datos['telf_Directivo'];
+			$correo_Secretaria		=$datos['correo_Directivo'];
+			$direc_Secretaria		=$datos['direc_Directivo'];
+			$fech_nac_Secretaria	=$datos['fech_nac_Directivo'];
+			$user_Secretaria		=$datos['user_Directivo'];
+			$pass_Secretaria		=$datos['pass_Directivo'];
 			$tipo = "Secretario";
 
 			$datoexiste=$this->Modelo_RegistroSecretaria->ConsultaExiste($cedula_Secretaria);
@@ -85,7 +86,7 @@ else{
 	public function edit( $id_Secretaria = NULL)
 	{
 
-		if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion' 
+		if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Directivo' 
 	 ) {
 
 	$data['contenido'] = "REGISTROSECRETARIA/edit";
