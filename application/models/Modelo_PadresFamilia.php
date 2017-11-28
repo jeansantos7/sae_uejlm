@@ -85,12 +85,12 @@ class Modelo_PadresFamilia extends CI_Model {
                   'telf_Padre' =>$telf_Padre ,
                    'dir_Madre' =>$dir_Madre,
                     'dir_Padre' =>$dir_Padre  ,
-                     'ocup_Madre' => $ocup_Madre,
+                     'ocu_Madre' => $ocu_Madre,
                       'ocu_Padre' => $ocu_Padre,
             
         );
 
-        $this->db->where('id_PadresFamilia', $id_PadresFamilia);
+        $this->db->where('ced_Madre', $ced_Madre);
         $this->db->update('padresfamilia', $array2);
     }
 

@@ -12,7 +12,7 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade active in" id="new">
-            <table class="table table-striped" id="myTable">
+            <table class="table table-striped" id="myTable" style="text-align: left;">
                 <thead>
 
                 <th> ID</th>

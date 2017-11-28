@@ -151,7 +151,7 @@
                     con++;
                 });
                 html += '</tbody></table>';
-                html += '<input type="submit" value="Enviar" name="Enviar">';
+               // html += '<input type="submit" value="Enviar" name="Enviar">';
                 $("#notasmaterias").html(html);
             }
         });

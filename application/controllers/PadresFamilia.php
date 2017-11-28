@@ -109,12 +109,12 @@ if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('per
 
   
 
-    public function update($id_PadresFamilia = NULL) {
+    public function update() {
 
 
         $datos = $this->input->post();
 
-        $id_PadresFamilia = $datos['id_PadresFamilia'];
+        //$id_PadresFamilia = $datos['id_PadresFamilia'];
        
        
          $ced_Madre =$datos['ced_Madre'];

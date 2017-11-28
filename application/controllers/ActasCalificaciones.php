@@ -46,7 +46,7 @@ class ActasCalificaciones extends CI_Controller {
 
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
-        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Directivo') {
             $data['contenido'] = "ActasCalificaciones/q1";
             $data['contenido'] = "ActasCalificaciones/q1";
             $data['lista_Curso'] = $this->Modelo_ActasCalificaciones->ListaCurso();
@@ -70,7 +70,7 @@ class ActasCalificaciones extends CI_Controller {
 
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
-        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Directivo') {
             $data['contenido'] = "ActasCalificaciones/q2";
 
             $data['contenido'] = "ActasCalificaciones/q2";
@@ -85,7 +85,7 @@ class ActasCalificaciones extends CI_Controller {
 
     public function extra() {
 
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretario') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Secretaria') {
             $data['contenido'] = "ActasCalificaciones/extra";
             $data['lista_Curso'] = $this->Modelo_ActasCalificaciones->ListaCurso();
             //$data['selRepresentante'] = $this->Modelo_Estudiante->selRepresentante();
@@ -94,7 +94,7 @@ class ActasCalificaciones extends CI_Controller {
 
             $data['user'] = $this->session->userdata('username');
             $this->load->view("plantilla_Secretaria", $data);
-        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        } elseif ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Directivo') {
             $data['contenido'] = "ActasCalificaciones/extra";
             $data['contenido'] = "ActasCalificaciones/q2";
             $data['lista_Curso'] = $this->Modelo_ActasCalificaciones->ListaCurso();

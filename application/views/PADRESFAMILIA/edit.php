@@ -37,35 +37,35 @@
                                         <small> Madre de Familia</small>
                                         <input class="form-control" type="text"
                                                id="ced_Madre" name="ced_Madre" placeholder="Cédula" maxlength="10"
-                                               onkeypress="return soloNumeros(event)" value="<?php echo $value->ced_Madre; ?>">
+                                               onkeypress="return soloNumeros(event)" value="<?php echo $value->ced_Madre; ?>" style="text-transform:uppercase;">
                                                </br>
                                    
                                     
                                        
                                         <input class="form-control" type="text"
                                                id="ape_Madre" name="ape_Madre" placeholder="Apellidos"
-                                               onkeypress="return soloLetras(event)" value="<?php echo $value->ape_Madre; ?>">
+                                               onkeypress="return soloLetras(event)" value="<?php echo $value->ape_Madre; ?>" style="text-transform:uppercase;">
                                    </br>
                                     
                                        
                                         <input class="form-control" type="text"
                                                id="nom_Madre" name="nom_Madre" placeholder="Nombres"
-                                               onkeypress="return soloLetras(event)" value="<?php echo $value->nom_Madre; ?>">
+                                               onkeypress="return soloLetras(event)" value="<?php echo $value->nom_Madre; ?>" style="text-transform:uppercase;">
                                     </br>
                                   
                                   
                                     <input class="form-control" type="text"
-                                               id="telf_Madre" name="telf_Madre" placeholder="Teléfono o Celular">
+                                               id="telf_Madre" name="telf_Madre" placeholder="Teléfono o Celular" style="text-transform:uppercase;">
                                                     </br>
                                     
 
                                         
                                         <input class="form-control" type="text"
-                                               id="dir_Madre" name="dir_Madre" placeholder="Dirección">
+                                               id="dir_Madre" name="dir_Madre" placeholder="Dirección" style="text-transform:uppercase;">
                                                     </br>
                                 
                                 <input class="form-control" type="text"
-                                               id="ocu_Madre" name="ocu_Madre" placeholder="Ocupación">
+                                               id="ocu_Madre" name="ocu_Madre" placeholder="Ocupación" style="text-transform:uppercase;">
                                                     </br>
                                     
                                     
@@ -77,35 +77,35 @@
                            
                                         <input class="form-control" type="text"
                                                id="ced_Padre" name="ced_Padre" placeholder="Cédula" maxlength="10"
-                                               onkeypress="return soloNumeros(event)">
+                                               onkeypress="return soloNumeros(event)" style="text-transform:uppercase;">
                                                </br>
                                    
                                     
                                        
                                         <input class="form-control" type="text"
                                                id="ape_Padre" name="ape_Padre" placeholder="Apellidos"
-                                               onkeypress="return soloLetras(event)">
+                                               onkeypress="return soloLetras(event)" style="text-transform:uppercase;">
                                    </br>
                                     
                                        
                                         <input class="form-control" type="text"
                                                id="nom_Padre" name="nom_Padre" placeholder="Nombres"
-                                               onkeypress="return soloLetras(event)">
+                                               onkeypress="return soloLetras(event)" style="text-transform:uppercase;">
                                     </br>
                                   
                                   
                                     <input class="form-control" type="text"
-                                               id="telf_Padre" name="telf_Padre" placeholder="Teléfono o Celular">
+                                               id="telf_Padre" name="telf_Padre" placeholder="Teléfono o Celular" style="text-transform:uppercase;">
                                                     </br>
                                     
 
                                         
                                         <input class="form-control" type="text"
-                                               id="dir_Padre" name="dir_Padre" placeholder="Dirección">
+                                               id="dir_Padre" name="dir_Padre" placeholder="Dirección" style="text-transform:uppercase;">
                                                     </br>
                                 
                                 <input class="form-control" type="text"
-                                               id="ocu_Padre" name="ocu_Padre" placeholder="Ocupación">
+                                               id="ocu_Padre" name="ocu_Padre" placeholder="Ocupación" style="text-transform:uppercase;">
                                                     </br>
                                     
                                     

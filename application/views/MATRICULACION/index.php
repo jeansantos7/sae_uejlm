@@ -15,7 +15,7 @@
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-comments"></i>Estudiantes </div>
+                        </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse"> </a>
                         <a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -69,6 +69,7 @@
             <div class="form-group">
                 <label for="exampleInputEmail1">Curso </label>
                 <select size="1" id="cursoselect2" name="cursoselect2"  onchange="mostraralumnos(this.value)" class="form-control js-example-basic-single">
+                
                     <option value="">Seleccione</option>
                     <?php foreach ($selCursos as $key => $value) {
                         ?>
@@ -90,7 +91,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Matriculacion</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -101,7 +102,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Año lectivo </label>
+                                        Año lectivo 
                                         <select size="1" id="docenteselect" name="lectivo" class="form-control js-example-basic-single">
                                             <option value="">Seleccione</option>
                                             <?php foreach ($selLectivo as $key => $value) {
@@ -113,7 +114,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Curso </label>
+                                        Curso 
                                         <select size="1" id="cursoselect" name="cursoselect" class="form-control js-example-basic-single">
                                             <option value="">Seleccione</option>
                                             <?php foreach ($selCursos as $key => $value) {
@@ -125,9 +126,9 @@
 
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
+                                <div class="col-lg-8">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Valor De Pencion </label>
+                                        Valor De Pensión 
                                         <input type="tex" class="form-control" name="valorpencion" value=""/>
                                         <input type="hidden" id="cedula_Estudiante_matricula" class="form-control" name="cedula_Estudiante_matricula" value="">
                                     </div>
@@ -137,8 +138,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="gurdarmatricula" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="matricular();">Save changes</button>
+                    <button type="button" class="btn btn-secondary" id="gurdarmatricula" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="matricular();">Guardar Matricula</button>
 
 
 
