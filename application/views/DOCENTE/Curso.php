@@ -64,9 +64,9 @@
                                         <div class="modal-body" style="overflow-y: scroll;" >
                                             <div class="container-fluid">
                                                 <div class="row">
-                                                    <div class="col-md-12" id="12222"></div>
+                                                    <div class="col-md-8" id="12222"></div>
                                                     <form name="form12334" id="form12334" method="POST" id="observacion">
-                                                        <div class="col-md-12" >
+                                                        <div class="col-md-8" >
                                                             <input type="hidden" id="profeob" name="profeob" value="">
                                                             <input type="hidden" id="cedulaob" name="cedulaob" value="">
                                                             <label><h5>Incidencia</h5> </label>
@@ -104,7 +104,7 @@
 
                     <div class="container-fluid">
                         <div class="row">
-                        <div class="col-xs-12 col-md-4 col-md-offset-1">
+                        <div class="col-xs-8 col-md-8    col-md-offset-1">
                            <form name="form23" method="POST" action="<?php echo base_url(); ?>Docente/Obser12">
                                 <div class="form-group">
                                  
@@ -122,7 +122,7 @@
                                     <label><h5>Observación</h5> </label>
                                     <textarea id="observ" class="form-control" name="observ12" ></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
 
                             </form>  
                         </div>
@@ -313,7 +313,7 @@
 
             },
             success: function (data, textStatus, jqXHR) {
-                window.location = "../Docente/CursoTutor";
+                window.location = "..//CursoTutor";
 
 
             }
