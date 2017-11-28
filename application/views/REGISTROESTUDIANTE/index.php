@@ -180,9 +180,9 @@
 
 
                                     <div class="col-md-12">
-                        <button type="button" class="btn btn-info btn-raised btn-sm" id="btn-ingresar" >
+                        <button type="submit" class="btn btn-info btn-raised btn-sm" id="btn-ingresar" >
                         <i class="zmdi zmdi-floppy"> </i> Guardar Registro</button>
-                        
+                        <!--<button type="submit" class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> </button>-->
                         <button type="button"  class="btn btn- btn-raised btn-sm" id="btn-cancelar" >
                         <i class="zmdi zmdi-close"><a href="<?php echo base_url('/RegistroEstudiante/'); ?>"> </i> Cancelar</button>
 
@@ -207,13 +207,11 @@
 
 <script>
 $('#myTable').DataTable();
-
     function soloLetras(e){
        key = e.keyCode || e.which;
        tecla = String.fromCharCode(key).toLowerCase();
        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
        especiales = "8-37-39-46";
-
        tecla_especial = false
        for(var i in especiales){
             if(key == especiales[i]){
@@ -221,18 +219,15 @@ $('#myTable').DataTable();
                 break;
             }
         }
-
         if(letras.indexOf(tecla)==-1 && !tecla_especial){
             return false;
         }
     }
-
      function soloNumeros(e){
        key = e.keyCode || e.which;
        tecla = String.fromCharCode(key).toLowerCase();
        letras = " 1234567890";
        especiales = "";
-
        tecla_especial = false
        for(var i in especiales){
             if(key == especiales[i]){
@@ -240,7 +235,6 @@ $('#myTable').DataTable();
                 break;
             }
         }
-
         if(letras.indexOf(tecla)==-1 && !tecla_especial){
             return false;
         }
@@ -262,6 +256,4 @@ $('#myTable').DataTable();
             }
         }
     }
-
-
 </script>

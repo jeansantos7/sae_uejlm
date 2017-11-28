@@ -222,7 +222,7 @@
             </div>
         </div>
         <!--====== Scripts -->
-        <script src="<?php echo base_url(); ?>Public/prueba/js/jquery-3.1.1.min.js"></script>
+        <script src="<?php echo base_url(); ?>Public/js/jquery.min.js"></script>
         <script src="<?php echo base_url(); ?>Public/prueba/js/sweetalert2.min.js"></script>
         <script src="<?php echo base_url(); ?>Public/prueba/js/bootstrap.min.js"></script>
         <script src="<?php echo base_url(); ?>Public/prueba/js/material.min.js"></script>
@@ -332,6 +332,7 @@
                         },
                         errorPlacement: function (error, element) {
                             error.insertAfter(element.closest('.input-icon'));
+                            //alert(element.name);
                         },
                         submitHandler: function (form) {
                             form.submit(); // form validation success, call ajax form submit
