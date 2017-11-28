@@ -85,6 +85,17 @@ class Matriculacion extends CI_Controller {
 
 
     }
+    function Desmatricular($param) {
+         if ($param != NULL) {
+            $data = $this->Modelo_Matriculacion->Desmatricular($param);
+            echo json_encode($data, JSON_FORCE_OBJECT);
+            
+            redirect('/Matriculacion/');
+        } else {
+
+            redirect('');
+        }
+    }
 
 }
 ?>

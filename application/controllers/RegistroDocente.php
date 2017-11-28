@@ -108,7 +108,7 @@ class RegistroDocente extends CI_Controller {
         $user_Docente = $datos['user_Docente'];
         $pass_Docente = $datos['pass_Docente'];
 
-        $this->Modelo_Docente->updateDocente($cedula_Docente, $ape_Docente, $nom_Docente, $telf_Docente, $correo_Docente, $direc_Docente, $fech_nac_Docente, $user_Docente, $pass_Docente);
+        $this->Modelo_RegistroDocente->updateDocente($cedula_Docente, $ape_Docente, $nom_Docente, $telf_Docente, $correo_Docente, $direc_Docente, $fech_nac_Docente, $user_Docente, $pass_Docente);
         redirect('/Docente');
     }
 

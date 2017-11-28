@@ -8,7 +8,7 @@ class VistaObservaciones extends CI_Controller {
     }
 
     function index() {
-        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'administracion') {
+        if ($this->session->userdata('perfil') != FALSE && $this->session->userdata('perfil') == 'Directivo') {
 
             $data['contenido'] = "obs/bs";
             //$data['listarMaterias']=$this->Modelo_Materias->listarMaterias();

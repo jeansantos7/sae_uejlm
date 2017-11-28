@@ -139,85 +139,97 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id="gurdarmatricula" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" onclick="matricular();">Save changes</button>
+
+
+
                 </div>
             </div>
         </div>
     </div>
 </div>
- <script>
-        function Matriculas(cedula, nombre) {
+<script>
+    function Matriculas(cedula, nombre) {
 
 
-            $("#exampleModalLabel").html(nombre);
-            $("#cedula_Estudiante_matricula").val(cedula);
+        $("#exampleModalLabel").html(nombre);
+        $("#cedula_Estudiante_matricula").val(cedula);
+
+    }
+    function matricular() {
+
+        var url = "<?php echo base_url(); ?>Matriculacion/setguardarMartricula";
+
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $("#myForm").serialize(),
+            beforeSend: function () {
+                alert("Procesando, espere por favor...");
+            },
+            success: function (data)
+            {
+                alert("Exito");
+                location.href = "";
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    }
+
+
+    function mostraralumnos(id) {
+        var url = "<?php echo base_url('Matriculacion/datos/'); ?>" + id;
+        $.ajax({
+            type: "POST",
+            url: url,
+            beforeSend: function () {
+                alert("Procesando, espere por favor...");
+            },
+            success: function (data)
+            {
+                //alert(data);
+
+                var html = '<table class="table table-hover table-light">' +
+                        '<thead>' +
+                        '<tr>' +
+                        '<th>Cedula</th>' +
+                        '<th>Nombre</th>' +
+                        '</tr>' +
+                        '</thead>' +
+                        '<tbody>';
+
+
+                $.each(JSON.parse(data), function (i, item) {
+                    //alert(item.nom_Estudiante);
+                    html += "<tr><td>" + item.cedula_Estudiante + '</td>';
+                    html += "<td>" + item.nom_Estudiante + '</td>';
+                    html += "<td>" + item.ape_Estudiante + '</td>';
+                    html += '<td><button type="button" class="btn btn-primary" onclick="ma(' + item.cedula_Estudiante + ');">Eliminar</button></td></tr>';
+                });
+                html += '</tbody></table>';
+                $("#datos12").html(html);
+
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    }
+    function ma(id) {
+        var txt;
+        var r = confirm("Desea Eliminar");
+        if (r == true) {
+            window.location = "<?php echo base_url("Matriculacion/Desmatricular/"); ?>"+id;
+        } else {
 
         }
-        function matricular() {
-
-            var url = "<?php echo base_url(); ?>Matriculacion/setguardarMartricula";
+    }
 
 
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $("#myForm").serialize(),
-
-                beforeSend: function () {
-                    alert("Procesando, espere por favor...");
-                },
-                success: function (data)
-                {
-                    alert("Exito");
-                    location.href = "";
-
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown);
-                }
-            });
-        }
-
-     
-        function mostraralumnos(id) {
-            var url = "<?php echo base_url('Matriculacion/datos/'); ?>" + id;
-            $.ajax({
-                type: "POST",
-                url: url,
-
-                beforeSend: function () {
-                    alert("Procesando, espere por favor...");
-                },
-                success: function (data)
-                {
-                    //alert(data);
-
-                    var html = '<table class="table table-hover table-light">' +
-                            '<thead>' +
-                            '<tr>' +
-                            '<th>Cedula</th>' +
-                            '<th>Nombre</th>' +
-                            '</tr>' +
-                            '</thead>' +
-                            '<tbody>';
-
-
-                    $.each(JSON.parse(data), function (i, item) {
-                          //alert(item.nom_Estudiante);
-                            html += "<tr><td>" + item.cedula_Estudiante + '</td>';
-                              html += "<td>" + item.nom_Estudiante + '</td>';
-                             html += "<td>" + item.ape_Estudiante + '</td></tr>';
-                    });
-                    html += '</tbody></table>';
-                    $("#datos12").html(html);
-
-
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown);
-                }
-            });
-        }
-
-    </script>
+</script>
 
 

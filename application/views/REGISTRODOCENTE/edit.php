@@ -12,7 +12,7 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade active in" id="new">
-            <form method="POST" action="<?php echo base_url('Docente/update'); ?>">
+            <form method="POST" action="<?php echo base_url('RegistroDocente/update'); ?>">
                 <div class="row">
 
                     <?php foreach ($datosDocente as $value) { ?>

@@ -85,6 +85,17 @@ class Asignacion extends CI_Controller {
         }
     }
 
+    function deleteTutor($id) {
+        if ($id != NULL) {
+            $data = $this->Modelo_Asignacion->tutorborrar($id);
+            echo json_encode($data, JSON_FORCE_OBJECT);
+            redirect('/Asignacion/');
+        } else {
+
+            redirect('');
+        }
+    }
+
 }
 
 ?>

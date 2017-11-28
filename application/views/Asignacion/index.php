@@ -172,6 +172,10 @@
                                     <td>
                                         <?php echo $value->nom_Cursos; ?> 
                                     </td>
+                                    <td>
+                                        <a href="<?php echo base_url("Asignacion/deleteTutor/".$value->cedula_Docente);?>" class="btn btn-default">Eiminar Curso</a>
+                                    </td>
+                                    
 
                                 </tr>
                             <?php } ?>

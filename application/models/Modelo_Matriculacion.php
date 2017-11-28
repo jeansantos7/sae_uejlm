@@ -48,6 +48,18 @@ class Modelo_Matriculacion extends CI_Model {
         $query = $this->db->query("SELECT nom_Cursos,nom_Cursos,cedula_Estudiante,nom_Estudiante,ape_Estudiante FROM cursos,estudiante,matricula where cedula_Estudiante=cedula_estudiante_matricula and id_Cursos =id_curso and id_curso = ".$id_Estudiante);
         return $query->result();
     }
+    function Desmatricular($id_Estudiante) {
+       $array2 = array(
+            'Estado' => 0
+        );
+
+        $this->db->where('cedula_Estudiante', $id_Estudiante);
+        $this->db->update('estudiante', $array2);
+        
+        
+        $this->db->where('cedula_estudiante_matricula', $id_Estudiante);
+        $this->db->delete('matricula');
+    }
 
 }
 
