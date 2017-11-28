@@ -108,7 +108,7 @@
                            <form name="form23" method="POST" action="<?php echo base_url(); ?>Docente/Obser12">
                                 <div class="form-group">
                                  
-                                    <input type="hidden" id="curso12" name="curso12" value="<?php if(isset($curso)){echo $curso;} ?>"
+                                    <input type="hidden" id="curso12" name="curso12" value="<?php if(isset($curso)){echo $curso;} ?>">
                                     <input type="hidden" id="profeob" name="profeob12" value="<?php if(isset($curso)){echo $proferos;} ?>">
 
                                     <label><h5>Incidencia</h5> </label>
