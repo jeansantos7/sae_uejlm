@@ -10,11 +10,15 @@
         <li><a href="#list" data-toggle="tab">Registro<div class="ripple-container"></div></a></li>
 
     </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade active in" id="new">
-            <div class="row">
-                <div class="col-lg-12">
-                    <table class="table table-striped" id="myTable">
+    <div class="row">
+    <div class="col-lg-12">
+    <div class="tab-content" id="myTabContent">
+        
+    
+        
+             <div class="tab-pane fade active in" id="new">
+                <div class="table-responsive">
+                     <table id="myTable" class="table table-striped" cellspacing="0" width="100%" style="text-align: left;">
                         <thead>
 
                         <th> ID</th>
@@ -45,8 +49,8 @@
 
                     </table>
                 </div>
-            </div>
-        </div>
+                </div>
+            
         <div class="tab-pane fade" id="list">
            
                 <div class="row">
@@ -105,7 +109,7 @@
                                     
 
 
-                        <button type="button" class="btn btn-info btn-raised btn-sm" id="btn-ingresar" >
+                        <button type="submit" class="btn btn-info btn-raised btn-sm" id="btn-ingresar" >
                         <i class="zmdi zmdi-floppy"> </i> Guardar Registro</button>
                         
                         <button type="button"  class="btn btn- btn-raised btn-sm" id="btn-cancelar" >

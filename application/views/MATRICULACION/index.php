@@ -27,7 +27,7 @@
                     <div class="table-scrollable">
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="tab">
-                                <table class="table table-striped table-bordered table-advance table-hover" id="myTable">
+                                <table class="table table-striped table-bordered table-advance table-hover" id="myTable" style="text-align: left;"">
                                     <thead>
                                         <tr>
                                             <th> ID</th>
